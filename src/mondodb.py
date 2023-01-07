@@ -1,6 +1,7 @@
 import pymongo
+import constants as cons
 
-client = pymongo.MongoClient(connect)
+client = pymongo.MongoClient(cons.CONNECT)
 db = client["combat"]
 collection = db["log"]
 
