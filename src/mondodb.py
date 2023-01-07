@@ -5,7 +5,7 @@ client = pymongo.MongoClient(cons.CONNECT)
 db = client["combat"]
 collection = db["log"]
 
-dictionary = {"name": "John", "age": 36, "country": "Norway"}
+dictionary = {"name": "Tobias", "age": 34, "country": "Denmark", "pervert": True}
 
 collection.insert_one(dictionary)
 

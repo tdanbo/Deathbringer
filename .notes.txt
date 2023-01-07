@@ -1,0 +1,7 @@
+pip install --target=d:\somewhere\other\than\the\default package_name
+
+Substance Automation Toolkit
+IF YOU HAVE ISSUES WITH "Could not load the Qt platform plugin "windows" in "" even though it was found.""
+COPY C:\Program Files\Allegorithmic\Substance Automation Toolkit\plugins\platforms
+TO C:\Users\tobiasd\AppData\Local\Programs\Python\Python37\Lib\site-packages\PySide2\plugins\platforms
+It is because of versions not matching
