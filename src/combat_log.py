@@ -27,7 +27,7 @@ class CombatLog:
         json_doc = json.loads(json_util.dumps(doc))
         return list(reversed(json_doc))
 
-    def set_entry(self, character, roll, rolltype="Custom"):
+    def set_entry(self, character, roll, rolltype="Custom: Roll"):
         print(f"Adding entry to combat log: {character} rolled {roll}")
         now = datetime.now()
         entry = {
@@ -39,16 +39,22 @@ class CombatLog:
         self.collection.insert_one(entry)
 
     def start_watching(self):
+        self.running = True
         thread = threading.Thread(target=self.watch_collection) 
         thread.start()
 
+    def stop_watching(self):
+        self.running = False
+        print("Stopped watching combat log")
+        
     def watch_collection(self):
-        with self.collection.watch() as change_stream:
-            print("Watching collection")
-            for update_doc in change_stream:
-                print(update_doc)
-                self.update_combat_log()
-
+        while self.running:
+            with self.collection.watch() as change_stream:
+                print("Watching collection")
+                for update_doc in change_stream:
+                    print(update_doc)
+                    self.update_combat_log()
+        
     def update_combat_log(self):
         print("Updating combat log")
         combat_log = self.get_log()
@@ -59,9 +65,10 @@ class CombatLog:
             roll = self.log_widget_dictionary[count]["roll"]
             time = self.log_widget_dictionary[count]["time"]
 
-            character.setText(entry["character"])
-            icon.setIcon(QIcon(os.path.join(cons.ICONS,entry["character"]+".png")))
-            icon.setIconSize(QSize(30, 30))
-            type.setText(entry["type"])
+            character.setText(entry["character"].capitalize())
+            IconImage = QIcon(os.path.join(cons.ICONS,entry["character"]+".png"))
+            icon.setIcon(IconImage)
+            icon.setIconSize(QSize(40, 40))
+            type.setText(entry["type"].upper())
             roll.setText(str(entry["roll"]))
             time.setText(entry["time"])

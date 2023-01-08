@@ -2,9 +2,9 @@ DARK_STYLE = """
 QWidget  {
     border-style: outset;
     border: 1px solid #3b3b3b;
-    background-color: #2d2d2d;
+    background-color: hsl(0, 0%, 10%);
     color: hsl(0, 0%, 80%);
-    font: 11px;
+    font: 12px;
 }
 
 QWidget::placeholder{
@@ -13,14 +13,6 @@ QWidget::placeholder{
 
 QWidget::disabled  {
     color: hsl(0, 0%, 30%);
-}
-
-QProgressBar {
-    text-align: center;
-}
-
-QProgressBar::chunk {
-    background-color: #4f6b8c;
 }
 
 QWidget#scroll_widget  {
@@ -67,7 +59,7 @@ QLineEdit#upres_percent  {
 
 QLabel {
     border: 0px;
-    padding-left: 8px;
+    color: hsl(0%, 0%, 60%);
 }
 
 QGroupBox  {
