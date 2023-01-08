@@ -50,7 +50,8 @@ class MainWindow(QWidget):
             group=True,
         )
 
-        self.combat_log = CombatLog().get_log()
+        # Combat log class
+
 
         # we create 10 entries in the log, and update the different widget. This is to reduce the interface popping and too many entries to be added to the interface.
         self.log_dictionary = {}
@@ -60,7 +61,10 @@ class MainWindow(QWidget):
         latest_entry_ui = self.create_log_entry(self.log_latest.get_layout())
         self.log_dictionary[10] = {"character":latest_entry_ui[0],"icon":latest_entry_ui[1],"type":latest_entry_ui[2],"roll":latest_entry_ui[3],"time":latest_entry_ui[4]}  
 
-        self.update_combat_log()
+        self.combat_log = CombatLog(self.log_dictionary)        
+        self.combat_log_entries = self.combat_log.get_log()
+        self.combat_log.update_combat_log()
+        self.combat_log.start_watching()
 
         # BUTTONS
         dice = [("%",100),("D4",4),("D6",6), ("D8",8), ("D10",10), ("D12",12), ("D20",20)]
@@ -92,28 +96,10 @@ class MainWindow(QWidget):
         # setting stylesheet
         self.setStyleSheet(style.DARK_STYLE)
 
-    def update_combat_log(self):
-        combat_log = CombatLog().get_log()
-        for count,entry in enumerate(combat_log):
-            character = self.log_dictionary[count]["character"]
-            icon = self.log_dictionary[count]["icon"]
-            type = self.log_dictionary[count]["type"]
-            roll = self.log_dictionary[count]["roll"]
-            time = self.log_dictionary[count]["time"]
-
-            character.setText(entry["character"])
-            icon.setIcon(QIcon(os.path.join(cons.ICONS,entry["character"]+".png")))
-            icon.setIconSize(QSize(30, 30))
-            type.setText(entry["type"])
-            roll.setText(str(entry["roll"]))
-            time.setText(entry["time"])
-
-
     def update_log(self, modifier=0):
         die = int(self.sender().objectName())
         roll = func.roll_dice(die) + modifier
-        CombatLog().set_entry(self.character_name.get_widget().text(),roll)
-        self.update_combat_log()
+        self.combat_log.set_entry(self.character_name.get_widget().text(),roll)
 
     def create_log_entry(self, layout):
         # MAIN LOG LAYOUT
