@@ -1,19 +1,30 @@
 import pymongo
 import constants as cons
+from datetime import datetime
 from bson import json_util
 import json
 
 class CombatLog:
-    def __init__(self):
+    def __init__(
+        self,
+    ):
         self.client = pymongo.MongoClient(cons.CONNECT)
         self.db = self.client ["combat"]
-        self.collective = self.db["log"]
+        self.collection = self.db["log"]
         self.entry = {}
 
     def get_log(self):
-        doc = self.collective.find_one()
+        doc = self.collection.find().limit(10)
         json_doc = json.loads(json_util.dumps(doc))
         return json_doc
 
-    def write_entry(self):
-        collection.insert_one(self.entry)
+    def set_entry(self, character, roll, rolltype="Custom"):
+        print(f"Adding entry to combat log: {character} rolled {roll}")
+        now = datetime.now()
+        entry = {
+            "character": character,
+            "roll": roll,
+            "type": rolltype,
+            "time": now.strftime("%d/%m/%Y %H:%M")
+        }
+        self.collection.insert_one(entry)

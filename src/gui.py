@@ -23,14 +23,12 @@ class MainWindow(QWidget):
         # Widget height
         self.widget_height = 30
 
-        # Setting up layouts/sections
+        #Setting up layouts/sections
         self.log_section = Section(
             QVBoxLayout(),
             self.main_layout,
-            sub_layouts=2,
             group=True,
         )
-
         self.character_sheet = Section(
             QVBoxLayout(),
             self.main_layout,
@@ -38,75 +36,71 @@ class MainWindow(QWidget):
         )
         self.log_scroll = Section(
             QVBoxLayout(),
-            self.log_section.get_layout(1),
+            self.log_section.get_layout(),
             scroll=True,
         )
         self.log_latest = Section(
             QVBoxLayout(),
-            self.log_section.get_layout(1),
+            self.log_section.get_layout(),
             group=True,
         )
         self.log_dice = Section(
             QHBoxLayout(),
-            self.log_section.get_layout(1),
+            self.log_section.get_layout(),
         )
 
         combat_log = CombatLog().get_log()
-        print(combat_log)
-        '''
         for entry in combat_log:
             print(entry)
 
             self.log_latest_name = Section( 
                 QHBoxLayout(),
-                self.log_latest.get_layout(1),
+                self.log_latest.get_layout(),
             )
 
             self.log_latest_data = Section( 
                 QHBoxLayout(),
-                self.log_latest.get_layout(1),
+                self.log_latest.get_layout(),
             )
+
             self.log_latest_date = Section( 
                 QHBoxLayout(),
-                self.log_latest.get_layout(1),
+                self.log_latest.get_layout(),
             )
-            '''
 
+            self.log_character_name = Widget(
+                QLabel(),
+                layout = self.log_latest_name.get_layout(),
+                text = entry["character"],
+            )
+            
+            self.log_entry_date = Widget(
+                QLabel(),
+                layout = self.log_latest_date.get_layout(),
+                text = entry["time"],
+            )
 
         # BUTTONS
-        dice = ["%","D4", "D6", "D8", "D10", "D12", "D20"]
+        dice = [("%",100),("D4",4),("D6",6), ("D8",8), ("D10",10), ("D12",12), ("D20",20)]
         for die in dice:
             Widget(
                 widget=QPushButton(),
-                layout=self.log_dice.get_layout(1),
-                text=die,
-                tooltip=f"Roll {die}",
+                layout=self.log_dice.get_layout(),
+                text=die[0],
+                tooltip=f"Roll {die[0]}",
+                signal=lambda: CombatLog().set_entry("Vindicate",func.roll_dice(die[1])),
                 width=self.widget_height,
                 height=self.widget_height,
             )
                 
-        self.test_button = Widget(
-            widget=QPushButton(),
-            layout=self.character_sheet.get_layout(1),
-            text="Test",
-            objectname="test_button",
-            setting = "checked",
+        self.character_name = Widget(
+            widget=QLineEdit(),
+            layout=self.character_sheet.get_layout(),
+            text="Character Name",
+            setting = "text",
+            objectname="character_name_button",
             height=self.widget_height,
         )
-
-
-
-        '''''
-        self.boolean_button = Widget(
-            widget=QPushButton(),
-            layout=self.dynamesh_section.get_layout(1),
-            text="Boolean",
-            tooltip="Enable Boolean",
-            objectname="boolean_button",
-            checkable=True,
-            setting = "checked",
-            height=self.widget_height,
-        )'''
 
         # general settings and styling for UI
         self.main_layout.setSpacing(2)
@@ -126,7 +120,6 @@ class Section:
         self,
         layout_type,
         parent_layout,
-        sub_layouts=1,
         group=False,
         scroll=False,
         hidden=False,
@@ -140,36 +133,26 @@ class Section:
         else:
             parent_layout.addLayout(self.layout)
 
-        self.widget_layouts = []
-        for count in range(sub_layouts):
-            widget_layout = self.layout
-            self.widget_layouts.append(widget_layout)
-            self.layout.addLayout(widget_layout)
-
         if scroll == True:
-            if sub_layouts > 1:
-                raise ValueError("Only 1 widget layout allowed for scroll setup")
-            else:
-                self.scroll_layout = QVBoxLayout()
-                self.scroll_widget = QWidget()
-                self.scroll_widget.setObjectName("scroll_widget")
-                self.scroll_area_widget = QScrollArea()
-                self.scroll_area_widget.setWidget(self.scroll_widget)
-                self.scroll_widget.setLayout(self.scroll_layout)
+            self.scroll_layout = QVBoxLayout()
+            self.scroll_widget = QWidget()
+            self.scroll_widget.setObjectName("scroll_widget")
+            self.scroll_area_widget = QScrollArea()
+            self.scroll_area_widget.setWidget(self.scroll_widget)
+            self.scroll_widget.setLayout(self.scroll_layout)
 
-                self.scroll_layout.setAlignment(Qt.AlignTop)
-                self.scroll_layout.setSpacing(0)
+            self.scroll_layout.setAlignment(Qt.AlignBottom)
+            self.scroll_layout.setSpacing(0)
 
-                self.scroll_area_widget.setWidgetResizable(True)
-                self.scroll_area_widget.setHorizontalScrollBarPolicy(
-                    Qt.ScrollBarAlwaysOff
-                )
+            self.scroll_area_widget.setWidgetResizable(True)
+            self.scroll_area_widget.setHorizontalScrollBarPolicy(
+                Qt.ScrollBarAlwaysOff
+            )
 
-                self.widget_layouts[0].addWidget(self.scroll_area_widget)
-                self.widget_layouts.insert(0, self.scroll_layout)
+            self.layout.addWidget(self.scroll_area_widget)
 
-    def get_layout(self, index):
-        return self.widget_layouts[index - 1]
+    def get_layout(self):
+        return self.layout
 
     def get_group(self):
         return self.group
