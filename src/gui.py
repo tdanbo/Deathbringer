@@ -47,38 +47,21 @@ class MainWindow(QWidget):
         self.log_dice = Section(
             QHBoxLayout(),
             self.log_section.get_layout(),
+            group=True,
         )
 
-        combat_log = CombatLog().get_log()
-        for entry in combat_log:
+        self.combat_log = CombatLog().get_log()
+
+        # we create 10 entries in the log, and update the different widget. This is to reduce the interface popping and too many entries to be added to the interface.
+        self.log_dictionary = {}
+        for entry in range(10):
             print(entry)
+            entry_ui = self.create_log_entry(self.log_scroll.get_layout())
+            self.log_dictionary[entry] = {"character":entry_ui[0],"icon":entry_ui[1],"type":entry_ui[2],"roll":entry_ui[3],"time":entry_ui[4]}
+        latest_entry_ui = self.create_log_entry(self.log_latest.get_layout())
+        self.log_dictionary[10] = {"character":latest_entry_ui[0],"icon":latest_entry_ui[1],"type":latest_entry_ui[2],"roll":latest_entry_ui[3],"time":latest_entry_ui[4]}  
 
-            self.log_latest_name = Section( 
-                QHBoxLayout(),
-                self.log_latest.get_layout(),
-            )
-
-            self.log_latest_data = Section( 
-                QHBoxLayout(),
-                self.log_latest.get_layout(),
-            )
-
-            self.log_latest_date = Section( 
-                QHBoxLayout(),
-                self.log_latest.get_layout(),
-            )
-
-            self.log_character_name = Widget(
-                QLabel(),
-                layout = self.log_latest_name.get_layout(),
-                text = entry["character"],
-            )
-            
-            self.log_entry_date = Widget(
-                QLabel(),
-                layout = self.log_latest_date.get_layout(),
-                text = entry["time"],
-            )
+        self.update_combat_log()
 
         # BUTTONS
         dice = [("%",100),("D4",4),("D6",6), ("D8",8), ("D10",10), ("D12",12), ("D20",20)]
@@ -88,7 +71,7 @@ class MainWindow(QWidget):
                 layout=self.log_dice.get_layout(),
                 text=die[0],
                 tooltip=f"Roll {die[0]}",
-                signal=lambda: CombatLog().set_entry("Vindicate",func.roll_dice(die[1])),
+                signal=lambda: self.update_log(die[1]),
                 width=self.widget_height,
                 height=self.widget_height,
             )
@@ -109,6 +92,91 @@ class MainWindow(QWidget):
         # setting stylesheet
         self.setStyleSheet(style.DARK_STYLE)
 
+    def update_combat_log(self):
+        combat_log = CombatLog().get_log()
+        for count,entry in enumerate(combat_log):
+            print(count)
+            character = self.log_dictionary[count]["character"]
+            icon = self.log_dictionary[count]["icon"]
+            type = self.log_dictionary[count]["type"]
+            roll = self.log_dictionary[count]["roll"]
+            time = self.log_dictionary[count]["time"]
+
+            character.setText(entry["character"])
+            icon.setIcon(QIcon(os.path.join(cons.ICONS,entry["character"]+".png")))
+            icon.setIconSize(QSize(30, 30))
+            type.setText(entry["type"])
+            roll.setText(str(entry["roll"]))
+            time.setText(entry["time"])
+
+
+    def update_log(self, die, modifier=0):
+        roll = func.roll_dice(die) + modifier
+        CombatLog().set_entry(self.character_name.get_widget().text(),roll)
+        self.update_combat_log()
+
+    def create_log_entry(self, layout):
+        # MAIN LOG LAYOUT
+        self.log_layout = Section(
+            QVBoxLayout(),
+            layout,
+            group = True,
+        )
+
+        # MAIN LOG SUB LAYOUTS
+        self.log_name = Section( 
+            QHBoxLayout(),
+            self.log_layout.get_layout(),
+            group=False,
+        )
+
+        self.log_data = Section( 
+            QHBoxLayout(),
+            self.log_layout.get_layout(),
+            group=False,
+        )
+
+        self.log_date = Section( 
+            QHBoxLayout(),
+            self.log_layout.get_layout(),
+            group=False,
+        )
+
+        # LOG CONTENT
+        self.log_character_name = Widget(
+            QLabel(),
+            self.log_name.get_layout(),
+        )
+
+        self.log_character_icon = Widget(
+            QToolButton(),
+            self.log_data.get_layout(),
+        )
+
+        self.log_roll_type = Widget(
+            QLabel(),
+            self.log_data.get_layout(),
+        )
+
+        self.log_roll = Widget(
+            QLabel(),
+            self.log_data.get_layout(),
+        )
+
+        self.log_entry_date = Widget(
+            QLabel(),
+            self.log_date.get_layout(),
+            align="right",
+        )
+
+        return (
+            self.log_character_name.get_widget(), 
+            self.log_character_icon.get_widget(), 
+            self.log_roll_type.get_widget(), 
+            self.log_roll.get_widget(), 
+            self.log_entry_date.get_widget()
+        )
+
     def show_hide_settings(self):
         if self.sender().isChecked():
             self.settings_section.get_group().setHidden(False)
@@ -125,6 +193,8 @@ class Section:
         hidden=False,
     ):
         self.layout = layout_type
+        self.scroll = scroll
+
         if group == True:
             self.group = QGroupBox()
             self.group.setLayout(self.layout)
@@ -133,10 +203,9 @@ class Section:
         else:
             parent_layout.addLayout(self.layout)
 
-        if scroll == True:
+        if self.scroll == True:
             self.scroll_layout = QVBoxLayout()
             self.scroll_widget = QWidget()
-            self.scroll_widget.setObjectName("scroll_widget")
             self.scroll_area_widget = QScrollArea()
             self.scroll_area_widget.setWidget(self.scroll_widget)
             self.scroll_widget.setLayout(self.scroll_layout)
@@ -152,7 +221,10 @@ class Section:
             self.layout.addWidget(self.scroll_area_widget)
 
     def get_layout(self):
-        return self.layout
+        if self.scroll == False:
+            return self.layout
+        else:
+            return self.scroll_layout
 
     def get_group(self):
         return self.group
@@ -198,7 +270,7 @@ class Widget:
         self.set_placeholder(widget, placeholder)
         self.load_setting(objectname, setting)
         if icon != "":
-            self.set_icon(self.widget, icon, 30 / 2)
+            self.set_icon(self.widget, icon, 30)
         layout.addWidget(self.widget)
 
         if task == True:

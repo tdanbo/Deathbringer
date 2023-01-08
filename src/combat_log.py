@@ -14,9 +14,9 @@ class CombatLog:
         self.entry = {}
 
     def get_log(self):
-        doc = self.collection.find().limit(10)
+        doc = self.collection.find().sort([("_id", -1)]).limit(11)
         json_doc = json.loads(json_util.dumps(doc))
-        return json_doc
+        return list(reversed(json_doc))
 
     def set_entry(self, character, roll, rolltype="Custom"):
         print(f"Adding entry to combat log: {character} rolled {roll}")
