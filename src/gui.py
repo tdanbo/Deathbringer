@@ -55,7 +55,6 @@ class MainWindow(QWidget):
         # we create 10 entries in the log, and update the different widget. This is to reduce the interface popping and too many entries to be added to the interface.
         self.log_dictionary = {}
         for entry in range(10):
-            print(entry)
             entry_ui = self.create_log_entry(self.log_scroll.get_layout())
             self.log_dictionary[entry] = {"character":entry_ui[0],"icon":entry_ui[1],"type":entry_ui[2],"roll":entry_ui[3],"time":entry_ui[4]}
         latest_entry_ui = self.create_log_entry(self.log_latest.get_layout())
@@ -71,7 +70,8 @@ class MainWindow(QWidget):
                 layout=self.log_dice.get_layout(),
                 text=die[0],
                 tooltip=f"Roll {die[0]}",
-                signal=lambda: self.update_log(die[1]),
+                signal=self.update_log,
+                objectname=str(die[1]),
                 width=self.widget_height,
                 height=self.widget_height,
             )
@@ -95,7 +95,6 @@ class MainWindow(QWidget):
     def update_combat_log(self):
         combat_log = CombatLog().get_log()
         for count,entry in enumerate(combat_log):
-            print(count)
             character = self.log_dictionary[count]["character"]
             icon = self.log_dictionary[count]["icon"]
             type = self.log_dictionary[count]["type"]
@@ -110,7 +109,8 @@ class MainWindow(QWidget):
             time.setText(entry["time"])
 
 
-    def update_log(self, die, modifier=0):
+    def update_log(self, modifier=0):
+        die = int(self.sender().objectName())
         roll = func.roll_dice(die) + modifier
         CombatLog().set_entry(self.character_name.get_widget().text(),roll)
         self.update_combat_log()
