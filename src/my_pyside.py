@@ -8,78 +8,87 @@ import json
 import constants as cons
 
 class Section:
+    all_sections = []
     def __init__(
         self,
-        layout_type = QVBoxLayout(),
-        parent_layout = "No Parent Layout",
+        outer_layout = QVBoxLayout(),
+        inner_layout = (QHBoxLayout(), 1),
+        parent_layout = None,
         group=False,
         scroll=False,
-        hidden=False,
     ):
-        self.main_layout = layout_type
+        self.outer_layout_type = outer_layout
+        self.inner_layout_type = inner_layout[0]
+        self.inner_layout_count = inner_layout[1]
         self.parent_layout = parent_layout
         self.group = group
         self.scroll = scroll
 
-        print(self.main_layout)
-        print(self.parent_layout)
-        print(self.group)
-        print(self.scroll)
-        print("----------------")
-
-        if group == True:
-            self.groupbox = QGroupBox()
-            self.group_layout = layout_type
-            self.groupbox.setLayout(self.group_layout)
-            self.groupbox.setHidden(hidden)
+        self.inner_layouts = self.inner_layout_list()
 
         if self.scroll == True:
-            # Create a vertical layout for the main window
-            self.scroll_layout = QVBoxLayout()
+            if len(self.inner_layouts) > 1:
+                raise ValueError("Scroll layouts can't have more than 1 widget layout")
+            else:
+                self.scroll_area_widget = QScrollArea()
+                if self.group:
+                    self.scroll_widget = QGroupBox()
+                else:
+                    self.scroll_widget = QWidget()
 
-            # Create a scroll area
-            self.scroll_area_widget = QScrollArea()
+                i_layout = self.inner_layouts[0]
+                    
+                self.scroll_widget.setLayout(i_layout)
+                self.scroll_area_widget.setWidget(self.scroll_widget)
 
-            # Create a widget to hold the contents of the scroll area
-            # and set the layout as its layout
-            self.scroll_widget = QWidget()
-            self.scroll_widget.setLayout(self.scroll_layout)
+                i_layout.setAlignment(Qt.AlignBottom)
+                i_layout.setSpacing(0)
 
-            # Set the widget as the scroll area's widget
-            self.scroll_area_widget.setWidget(self.scroll_widget)
+                self.scroll_area_widget.setWidgetResizable(True)
+                self.scroll_area_widget.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
 
-            self.scroll_layout.setAlignment(Qt.AlignBottom)
-            self.scroll_layout.setSpacing(0)
+                self.outer_layout_type.addWidget(self.scroll_area_widget)
 
-            self.scroll_area_widget.setWidgetResizable(True)
-            self.scroll_area_widget.setHorizontalScrollBarPolicy(
-                Qt.ScrollBarAlwaysOff
-            )
+        elif self.group == True:
+            for layout in self.inner_layouts:
+                self.groupbox = QGroupBox()
+                self.groupbox.setLayout(layout)
+                self.outer_layout_type.addWidget(self.groupbox)
 
-            self.main_layout.addWidget(self.scroll_area_widget)
-
-        if self.parent_layout == "No Parent Layout":
-            pass
         else:
-            self.parent_layout.addLayout(self.main_layout)  
+            for layout in self.inner_layouts:
+                self.outer_layout_type.addLayout(layout)
 
-    def get_layout(self):
-        return self.main_layout
+        self.all_sections.append(self)
 
-    def get_scroll_layout(self):
-        return self.scroll_layout
+    def inner_layout_list(self):
+        self.all_inner_layouts = []
+        for number in range(self.inner_layout_count):
+            if self.inner_layout_type == "VBox":
+                i_layout = QVBoxLayout()
+            else:
+                i_layout = QHBoxLayout()
+            self.all_inner_layouts.append(i_layout)
+        return self.all_inner_layouts
 
-    def get_group_layout(self):
-        return self.group_layout
+    def inner_layout(self, count):
+        return self.all_inner_layouts[count]
+
+    def outer_layout(self):
+        return self.outer_layout_type
+
+    def connect_to_parent(self):
+        if self.parent_layout != None:
+            print('below is parent layout')
+            self.parent_layout.addLayout(self.outer_layout_type)
 
 class Widget:
-    _registry = []
-    _task_registry = []
+    all_widgets = []
 
     def __init__(
         self,
-        widget_type="",
-        parent_layout="",
+        widget_type,
+        parent_layout=None,
         text="",
         tooltip="",
         objectname="",
@@ -90,7 +99,6 @@ class Widget:
         align="",
         enabled=True,
         checkable=False,
-        task=False,
         validator="",
         placeholder="",
         setting ="",
@@ -98,6 +106,7 @@ class Widget:
     ):
         self.text = text
         self.widget = widget_type
+        self.parent_layout = parent_layout
         self.object = objectname
         self.setting = setting
         self.widget.setToolTip(tooltip)
@@ -115,12 +124,8 @@ class Widget:
         self.load_setting(objectname, setting)
         if icon != "":
             self.set_icon(self.widget, icon, 30)
-        parent_layout.addWidget(self.widget)
 
-        if task == True:
-            self._task_registry.append(self)
-        else:
-            self._registry.append(self)
+        self.all_widgets.append(self)
 
     def load_setting(self, objectname, setting):
         if os.path.exists(cons.SETTINGS):   
@@ -175,7 +180,7 @@ class Widget:
         except:
             pass
 
-    def get_parent_layout(self, layout):
+    def get_inner_layout(self, layout):
         return layout
 
     def get_widget(self):
@@ -239,3 +244,6 @@ class Widget:
         self.icon.addPixmap(QPixmap(os.path.join(cons.ICONS, icon)))
         widget.setIcon(self.icon)
         widget.setIconSize(QSize(size, size))
+
+    def connect_to_parent(self):
+        self.parent_layout.addWidget(self.widget)
