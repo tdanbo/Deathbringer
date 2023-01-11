@@ -28,10 +28,10 @@ class MainWindow(QWidget):
         combat_log_gui = CombatLogGUI()
         character_sheet_gui = CharacterSheetGUI()
         combat_log_widgets = combat_log_gui.get_widget_directory()
-        # print(combat_log_widgets)
-        # self.combat_log = CombatLog(combat_log_widgets)        
-        # self.combat_log.update_combat_log()
-        # self.combat_log.start_watching() 
+        print(combat_log_widgets)
+        self.combat_log = CombatLog(combat_log_widgets)        
+        self.combat_log.update_combat_log()
+        self.combat_log.start_watching() 
 
         for widget in Widget.all_widgets:
             widget.connect_to_parent()

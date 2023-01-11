@@ -32,7 +32,7 @@ QToolButton {
 }
 
 QToolButton::checked {
-    background-color: #4f6b8c;
+    background-color: hsl(0%, 0%, 80%);
     color: #CCCCCC
 }
 
@@ -59,6 +59,14 @@ QLineEdit#upres_percent  {
 
 QLabel {
     border: 0px;
+    color: hsl(0%, 0%, 60%);
+}
+
+QLabel#title {
+    border: 1px;
+    font-weight: bold;
+    border-style: outset;
+    border: 1px solid #3b3b3b;
     color: hsl(0%, 0%, 60%);
 }
 

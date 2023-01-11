@@ -14,10 +14,13 @@ class Section:
         outer_layout = QVBoxLayout(),
         inner_layout = (QHBoxLayout(), 1),
         parent_layout = None,
+        spacing = 0,
         group=False,
         scroll=False,
+        title="",
     ):
         self.outer_layout_type = outer_layout
+        self.group_layout_type = outer_layout
         self.inner_layout_type = inner_layout[0]
         self.inner_layout_count = inner_layout[1]
         self.parent_layout = parent_layout
@@ -25,19 +28,27 @@ class Section:
         self.scroll = scroll
 
         self.inner_layouts = self.inner_layout_list()
+        self.outer_layout_type.setSpacing(spacing)
+
+        if self.group == True:
+            if title != "":
+                self.grouplabel = QLabel(title)
+                self.grouplabel.setObjectName("title")
+                self.outer_layout_type.addWidget(self.grouplabel)
+                self.grouplabel.setFixedHeight(cons.WSIZE/1.5)
+            self.groupbox = QGroupBox()
+            self.outer_layout_type.addWidget(self.groupbox)
+
+            self.grouplayout = QVBoxLayout()
+            self.groupbox.setLayout(self.grouplayout)
 
         if self.scroll == True:
             if len(self.inner_layouts) > 1:
                 raise ValueError("Scroll layouts can't have more than 1 widget layout")
             else:
                 self.scroll_area_widget = QScrollArea()
-                if self.group:
-                    self.scroll_widget = QGroupBox()
-                else:
-                    self.scroll_widget = QWidget()
-
                 i_layout = self.inner_layouts[0]
-                    
+                self.scroll_widget = QWidget()
                 self.scroll_widget.setLayout(i_layout)
                 self.scroll_area_widget.setWidget(self.scroll_widget)
 
@@ -47,17 +58,16 @@ class Section:
                 self.scroll_area_widget.setWidgetResizable(True)
                 self.scroll_area_widget.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
 
-                self.outer_layout_type.addWidget(self.scroll_area_widget)
-
-        elif self.group == True:
-            for layout in self.inner_layouts:
-                self.groupbox = QGroupBox()
-                self.groupbox.setLayout(layout)
-                self.outer_layout_type.addWidget(self.groupbox)
-
+                if self.group == True:
+                    self.grouplayout.addWidget(self.scroll_area_widget)
+                else:
+                    self.outer_layout_type.addWidget(self.scroll_area_widget)
         else:
             for layout in self.inner_layouts:
-                self.outer_layout_type.addLayout(layout)
+                if self.group == True:
+                    self.grouplayout.addLayout(layout)
+                else:
+                    self.outer_layout_type.addLayout(layout)
 
         self.all_sections.append(self)
 
@@ -72,14 +82,13 @@ class Section:
         return self.all_inner_layouts
 
     def inner_layout(self, count):
-        return self.all_inner_layouts[count]
+        return self.all_inner_layouts[count-1]
 
     def outer_layout(self):
         return self.outer_layout_type
 
     def connect_to_parent(self):
         if self.parent_layout != None:
-            print('below is parent layout')
             self.parent_layout.addLayout(self.outer_layout_type)
 
 class Widget:
@@ -93,7 +102,7 @@ class Widget:
         tooltip="",
         objectname="",
         signal="",
-        icon="",
+        icon=("",30),
         width="",
         height="",
         align="",
@@ -102,7 +111,8 @@ class Widget:
         validator="",
         placeholder="",
         setting ="",
-        stylesheet=""
+        stylesheet="",
+        size_policy=None
     ):
         self.text = text
         self.widget = widget_type
@@ -116,14 +126,16 @@ class Widget:
         self.set_enabled(enabled)
         self.set_checkable(checkable)
         self.set_text(self.widget, self.text)
-        self.set_signal(self.widget, signal, setting)
+        self.set_signal(signal, setting)
         self.set_alignment(self.widget, align)
         self.set_size(self.widget, width, height)
         self.set_validator(self.widget, validator)
         self.set_placeholder(self.widget, placeholder)
         self.load_setting(objectname, setting)
-        if icon != "":
-            self.set_icon(self.widget, icon, 30)
+        if icon[0] != "":
+            self.set_icon(self.widget, icon[0], icon[1])
+        if size_policy != None:
+            self.widget.setSizePolicy(size_policy[0], size_policy[1])
 
         self.all_widgets.append(self)
 
@@ -218,7 +230,7 @@ class Widget:
         except:
             pass
 
-    def set_signal(self, widget, signal, setting):
+    def set_signal(self, signal, setting):
         if signal != "":
             try:
                 self.widget.clicked.connect(signal)

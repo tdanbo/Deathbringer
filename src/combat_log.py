@@ -23,7 +23,7 @@ class CombatLog:
         self.log_widget_dictionary = log_widget_dictionary
 
     def get_log(self):
-        doc = self.collection.find().sort([("_id", -1)]).limit(11)
+        doc = self.collection.find().sort([("_id", -1)]).limit(21)
         json_doc = json.loads(json_util.dumps(doc))
         return list(reversed(json_doc))
 
