@@ -19,6 +19,8 @@ class Section:
         scroll=False,
         title="",
     ):
+
+        self.section_layout = QVBoxLayout()
         self.outer_layout_type = outer_layout
         self.group_layout_type = outer_layout
         self.inner_layout_type = inner_layout[0]
@@ -29,18 +31,20 @@ class Section:
 
         self.inner_layouts = self.inner_layout_list()
         self.outer_layout_type.setSpacing(spacing)
-
+        self.section_layout.setSpacing(0)
         if self.group == True:
             if title != "":
                 self.grouplabel = QLabel(title)
                 self.grouplabel.setObjectName("title")
                 self.outer_layout_type.addWidget(self.grouplabel)
                 self.grouplabel.setFixedHeight(cons.WSIZE/1.5)
-            self.groupbox = QGroupBox()
-            self.outer_layout_type.addWidget(self.groupbox)
+                self.section_layout.addWidget(self.grouplabel)
 
-            self.grouplayout = QVBoxLayout()
-            self.groupbox.setLayout(self.grouplayout)
+            self.groupbox = QGroupBox()
+            self.groupbox.setLayout(self.outer_layout_type)   
+            self.section_layout.addWidget(self.groupbox)
+        else:
+            self.section_layout.addLayout(self.outer_layout_type)
 
         if self.scroll == True:
             if len(self.inner_layouts) > 1:
@@ -58,16 +62,10 @@ class Section:
                 self.scroll_area_widget.setWidgetResizable(True)
                 self.scroll_area_widget.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
 
-                if self.group == True:
-                    self.grouplayout.addWidget(self.scroll_area_widget)
-                else:
-                    self.outer_layout_type.addWidget(self.scroll_area_widget)
+                self.outer_layout_type.addWidget(self.scroll_area_widget)
         else:
             for layout in self.inner_layouts:
-                if self.group == True:
-                    self.grouplayout.addLayout(layout)
-                else:
-                    self.outer_layout_type.addLayout(layout)
+                self.outer_layout_type.addLayout(layout)
 
         self.all_sections.append(self)
 
@@ -85,11 +83,11 @@ class Section:
         return self.all_inner_layouts[count-1]
 
     def outer_layout(self):
-        return self.outer_layout_type
+        return self.section_layout
 
     def connect_to_parent(self):
         if self.parent_layout != None:
-            self.parent_layout.addLayout(self.outer_layout_type)
+            self.parent_layout.addLayout(self.section_layout)
 
 class Widget:
     all_widgets = []

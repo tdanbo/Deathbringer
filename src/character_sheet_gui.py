@@ -11,36 +11,30 @@ class CharacterSheetGUI:
     def __init__(self):
         self.character_sheet_layout = Section(
             outer_layout = QVBoxLayout(),
-            inner_layout = ("VBox", 5),
+            inner_layout = ("VBox", 1),
             spacing = 10,     
         )
 
         self.character_basic = Section(
-            outer_layout = QVBoxLayout(),
+            outer_layout = QHBoxLayout(),
             inner_layout = ("HBox", 1),
             parent_layout = self.character_sheet_layout.inner_layout(1),
             spacing=10,     
         )
 
         self.stat_layout = Section(
-            outer_layout = QVBoxLayout(),
-            inner_layout = ("HBox", 6),
-            parent_layout = self.character_basic.inner_layout(1),
+            outer_layout = QHBoxLayout(),
+            inner_layout = ("VBox", 6),
+            parent_layout = self.character_sheet_layout.inner_layout(1),
             group = True,
-            title = "STATS"    
-        )
-
-        self.character_layout = Section(
-            outer_layout = QVBoxLayout(),
-            inner_layout = ("VBox", 1),
-            parent_layout = self.character_basic.inner_layout(1),
-            spacing=10,       
+            title = "STATS",
+            spacing=0,    
         )
 
         self.name_layout = Section(
             outer_layout = QVBoxLayout(),
             inner_layout = ("HBox", 3),
-            parent_layout = self.character_layout.inner_layout(1),
+            parent_layout = self.character_basic.inner_layout(1),
             group = True,
             title = "CHARACTER"  
         )
@@ -48,31 +42,40 @@ class CharacterSheetGUI:
         self.defense_layout = Section(
             outer_layout = QVBoxLayout(),
             inner_layout = ("HBox", 1),
-            parent_layout = self.character_layout.inner_layout(1),
+            parent_layout = self.character_basic.inner_layout(1),
             group = True,
             title = "DEFENSE"     
         )
 
         self.deathbringer_layout = Section(
             outer_layout = QVBoxLayout(),
-            inner_layout = ("HBox", 2),
-            parent_layout = self.character_sheet_layout.inner_layout(2),
-            group = True,
-            title = "HERO DICE" 
+            inner_layout = ("HBox", 3),
+            parent_layout = self.defense_layout.inner_layout(1),
+            #title = "HERO DICE",
+            spacing = 10,
+            group = True,	
         )
 
         self.equipment_layout = Section(
             outer_layout = QVBoxLayout(),
             inner_layout = ("HBox", 4),
-            parent_layout = self.character_sheet_layout.inner_layout(3),
+            parent_layout = self.character_sheet_layout.inner_layout(1),
             group = True,
-            title = "EQUIPMENT" 
+            title = "WEAPONS" 
+        )
+        
+        self.armor_layout = Section(
+            outer_layout = QVBoxLayout(),
+            inner_layout = ("HBox", 1),
+            parent_layout = self.character_sheet_layout.inner_layout(1),
+            group = True,
+            title = "ARMOR" 
         )
 
         self.backpack_layout = Section(
             outer_layout = QVBoxLayout(),
             inner_layout = ("HBox", 11),
-            parent_layout = self.character_sheet_layout.inner_layout(4),
+            parent_layout = self.character_sheet_layout.inner_layout(1),
             group = True,
             title = "BACKPACK" 
         )
@@ -80,10 +83,30 @@ class CharacterSheetGUI:
         self.corruption_layout = Section(
             outer_layout = QVBoxLayout(),
             inner_layout = ("HBox", 1),
-            parent_layout = self.character_sheet_layout.inner_layout(5),
+            parent_layout = self.character_sheet_layout.inner_layout(1),
             group = True,
             title = "CORRUPTION"
         )
+
+        for number in range(9):
+            if number <= 2:
+                index = 1
+                print("1")
+            elif number <= 5:
+                index = 2
+                print("2")
+            else:
+                index = 3
+                print("3")
+
+            self.deathbringer_dice = Widget(
+                widget_type=QToolButton(),
+                checkable=True,
+                parent_layout = self.deathbringer_layout.inner_layout(index),
+                icon=("skull.png",cons.WSIZE/1.5),
+                #width = cons.WSIZE,
+                #height = cons.WSIZE
+            )
 
         for number,stat in enumerate(["STR", "DEX", "CON", "INT", "WIS", "CHA"]):
             self.stat_label = Widget(
@@ -104,17 +127,6 @@ class CharacterSheetGUI:
                 parent_layout = self.stat_layout.inner_layout(number),
                 stylesheet="padding-left: 10px;"
             )
-
-        for number in range(10):
-            self.deathbringer_dice = Widget(
-                widget_type=QToolButton(),
-                checkable=True,
-                parent_layout = self.deathbringer_layout.inner_layout(1),
-                icon=("skull.png",cons.WSIZE/1.5),
-                width = cons.WSIZE,
-                height = cons.WSIZE
-            )
-
 
         self.character_name_widget = Widget(
             widget_type=QLineEdit(),
@@ -159,7 +171,7 @@ class CharacterSheetGUI:
                 height = cons.WSIZE,
                 icon = ("attack.png",cons.WSIZE/2)	
             )
-            self.weapon_icon = Widget(
+            self.weapon_attack = Widget(
                 widget_type=QPushButton(),
                 text="Attack",
                 parent_layout=self.equipment_layout.inner_layout(count),
@@ -171,6 +183,26 @@ class CharacterSheetGUI:
                 parent_layout=self.equipment_layout.inner_layout(count),
                 height = cons.WSIZE
             )
+
+        self.armor_icon = Widget(
+            widget_type=QToolButton(),
+            parent_layout=self.armor_layout.inner_layout(1),
+            width = cons.WSIZE,
+            height = cons.WSIZE,
+            icon = ("defend.png",cons.WSIZE/2)	
+        )
+        self.armor_defend = Widget(
+            widget_type=QPushButton(),
+            text="Defend",
+            parent_layout=self.armor_layout.inner_layout(1),
+            width = 60,
+            height = cons.WSIZE
+        )
+        self.armor_line = Widget(
+            widget_type=QLineEdit(),
+            parent_layout=self.armor_layout.inner_layout(1),
+            height = cons.WSIZE
+        )        
 
         for count in range(1,11):
             print(count)
