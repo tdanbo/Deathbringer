@@ -27,13 +27,14 @@ class CombatLog:
         json_doc = json.loads(json_util.dumps(doc))
         return list(reversed(json_doc))
 
-    def set_entry(self, character, roll, rolltype="Custom: Roll"):
+    def set_entry(self, character, roll, roll_type, roll_breakdown):
         print(f"Adding entry to combat log: {character} rolled {roll}")
         now = datetime.now()
         entry = {
             "character": character,
             "roll": roll,
-            "type": rolltype,
+            "type": roll_type,
+            "breakdown": roll_breakdown,
             "time": now.strftime("%d/%m/%Y %H:%M")
         }
         self.collection.insert_one(entry)
@@ -62,6 +63,7 @@ class CombatLog:
             character = self.log_widget_dictionary[count]["character"]
             icon = self.log_widget_dictionary[count]["icon"]
             type = self.log_widget_dictionary[count]["type"]
+            breakdown = self.log_widget_dictionary[count]["breakdown"]
             roll = self.log_widget_dictionary[count]["roll"]
             time = self.log_widget_dictionary[count]["time"]
 
@@ -70,5 +72,6 @@ class CombatLog:
             icon.setIcon(IconImage)
             icon.setIconSize(QSize(40, 40))
             type.setText(entry["type"].upper())
+            breakdown.setText(entry["breakdown"])
             roll.setText(str(entry["roll"]))
             time.setText(entry["time"])

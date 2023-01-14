@@ -10,15 +10,15 @@ PACKAGES = os.path.join(os.path.abspath(os.path.dirname(__file__)), ".packages")
 [sys.path.append(p) for p in [ROOT, PACKAGES] if p not in sys.path]
 
 # CUSTOM MODULES
-import gui
+import gui_main
 import constants as cons
 import stylesheet as style
 import functions as func
 
-[reload(module) for module in [gui, func, cons, style]]
+[reload(module) for module in [gui_main, func, cons, style]]
 
 def run():
-    gui.run_gui(cons.SCRIPT_NAME, cons.VERSION)
+    gui_main.run_gui(cons.SCRIPT_NAME, cons.VERSION)
 
 
 if __name__ == "__main__":

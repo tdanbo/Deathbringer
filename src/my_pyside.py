@@ -37,7 +37,7 @@ class Section:
                 self.grouplabel = QLabel(title)
                 self.grouplabel.setObjectName("title")
                 self.outer_layout_type.addWidget(self.grouplabel)
-                self.grouplabel.setFixedHeight(cons.WSIZE/1.5)
+                self.grouplabel.setFixedHeight(cons.WSIZE)
                 self.section_layout.addWidget(self.grouplabel)
 
             self.groupbox = QGroupBox()

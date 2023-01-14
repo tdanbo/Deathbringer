@@ -110,22 +110,18 @@ class CharacterSheetGUI:
 
         for number,stat in enumerate(["STR", "DEX", "CON", "INT", "WIS", "CHA"]):
             self.stat_label = Widget(
-                widget_type=QLineEdit(),
-                enabled=False,
+                widget_type=QPushButton(),
                 text=stat,               
-                width = cons.WSIZE*2,
                 height = cons.WSIZE,
-                align = "center",
-                parent_layout = self.stat_layout.inner_layout(number)
+                parent_layout = self.stat_layout.inner_layout(number),
             )
             self.stat_label = Widget(
                 widget_type=QSpinBox(),
-                width = cons.WSIZE*2,
                 height = cons.WSIZE,
                 align = "center",
                 text=0,
                 parent_layout = self.stat_layout.inner_layout(number),
-                stylesheet="padding-left: 10px;"
+                stylesheet="padding-left: 10px;",
             )
 
         self.character_name_widget = Widget(
@@ -175,11 +171,11 @@ class CharacterSheetGUI:
                 widget_type=QPushButton(),
                 text="Attack",
                 parent_layout=self.equipment_layout.inner_layout(count),
-                width = 60,
+                width = cons.WSIZE*2.5,
                 height = cons.WSIZE
             )
             self.weapon_line = Widget(
-                widget_type=QLineEdit(),
+                widget_type=QComboBox(),
                 parent_layout=self.equipment_layout.inner_layout(count),
                 height = cons.WSIZE
             )
@@ -195,26 +191,34 @@ class CharacterSheetGUI:
             widget_type=QPushButton(),
             text="Defend",
             parent_layout=self.armor_layout.inner_layout(1),
-            width = 60,
+            width = cons.WSIZE*2.5,
             height = cons.WSIZE
         )
         self.armor_line = Widget(
-            widget_type=QLineEdit(),
+            widget_type=QComboBox(),
             parent_layout=self.armor_layout.inner_layout(1),
             height = cons.WSIZE
         )        
 
         for count in range(1,11):
-            print(count)
             self.backpack_icon = Widget(
-                widget_type=QToolBox(),
+                widget_type=QToolButton(),
                 parent_layout=self.backpack_layout.inner_layout(count),
-                width = cons.WSIZE/2,
-                height = cons.WSIZE/2
+                width = cons.WSIZE,
+                height = cons.WSIZE,
+                icon = ("misc.png",cons.WSIZE/2)	
+            )
+            self.armor_defend = Widget(
+                widget_type=QPushButton(),
+                text="Misc",
+                parent_layout=self.backpack_layout.inner_layout(count),
+                width = cons.WSIZE*2.5,
+                height = cons.WSIZE
             )
             self.backpack_line = Widget(
                 widget_type=QLineEdit(),
                 parent_layout=self.backpack_layout.inner_layout(count),
+                height = cons.WSIZE
             )
 
         for count in range(0,10):

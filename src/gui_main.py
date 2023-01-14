@@ -5,8 +5,8 @@ from PySide2.QtCore import *
 from my_pyside import Section
 from my_pyside import Widget
 
-from character_sheet_gui import CharacterSheetGUI
-from combat_log_gui import CombatLogGUI
+from gui_sheet import CharacterSheetGUI
+from gui_log import CombatLogGUI
 import os
 import sys
 import constants as cons
