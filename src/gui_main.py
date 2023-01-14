@@ -13,9 +13,10 @@ import constants as cons
 
 import functions as func
 import stylesheet as style
-from combat_log import CombatLog
 
-import json
+from combat_log import CombatLog
+from character_sheet import CharacterSheet
+
 
 
 class MainWindow(QWidget):
@@ -28,7 +29,11 @@ class MainWindow(QWidget):
         combat_log_gui = CombatLogGUI()
         character_sheet_gui = CharacterSheetGUI()
         combat_log_widgets = combat_log_gui.get_widget_directory()
-        self.combat_log = CombatLog(combat_log_widgets)        
+        
+        #initializing the two main classes
+        self.combat_log = CombatLog(combat_log_widgets)
+        self.character_sheet = CharacterSheet()        
+        
         self.combat_log.update_combat_log()
         self.combat_log.start_watching() 
 

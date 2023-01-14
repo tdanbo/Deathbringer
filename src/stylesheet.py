@@ -27,10 +27,6 @@ QPushButton {
     color: hsl(0, 0%, 30%);
 }
 
-QToolButton {
-    border: 1px solid #3b3b3b;
-}
-
 QToolButton::checked {
     background-color: hsl(0%, 0%, 80%);
     color: #CCCCCC

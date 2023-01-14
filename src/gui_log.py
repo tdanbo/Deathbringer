@@ -27,7 +27,8 @@ class CombatLogGUI:
             parent_layout = self.log_layout.inner_layout(0),
             scroll=True,
             group=True,
-            title="COMBAT LOG",	
+            title="COMBAT LOG",
+            icon = ("combatlog.png",cons.WSIZE/2,cons.ICON_COLOR)	 	
         )
 
         self.log_latest = Section(
@@ -40,8 +41,10 @@ class CombatLogGUI:
         self.log_dice = Section(
             outer_layout = QHBoxLayout(),
             inner_layout = ("HBox", 1),   
-            parent_layout = self.log_layout.inner_layout(0),  
-            group=True,  
+            parent_layout = self.log_layout.inner_layout(0),
+            title="DICE",  
+            group=True,
+            icon = ("dice.png",cons.WSIZE/2,cons.ICON_COLOR)	
         )
 
         #DICE
@@ -51,7 +54,7 @@ class CombatLogGUI:
             Widget(
                 widget_type=QPushButton(),
                 parent_layout=self.log_dice.inner_layout(0),
-                height=cons.WSIZE,
+                height=cons.WSIZE/1.25,
                 text=die_type[0],
                 signal=functools.partial(
                     func.roll_dice,
@@ -88,7 +91,6 @@ class CombatLogGUI:
 
     def create_log_entry(self, layout):
         # MAIN LOG LAYOUT
-        print(layout)
         self.single_log_layout = Section (
             outer_layout = QVBoxLayout(),
             inner_layout = ("HBox", 3),

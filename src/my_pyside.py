@@ -18,6 +18,7 @@ class Section:
         group=False,
         scroll=False,
         title="",
+        icon=""
     ):
 
         self.section_layout = QVBoxLayout()
@@ -34,11 +35,20 @@ class Section:
         self.section_layout.setSpacing(0)
         if self.group == True:
             if title != "":
-                self.grouplabel = QLabel(title)
-                self.grouplabel.setObjectName("title")
-                self.outer_layout_type.addWidget(self.grouplabel)
-                self.grouplabel.setFixedHeight(cons.WSIZE)
-                self.section_layout.addWidget(self.grouplabel)
+                self.title_layout = QHBoxLayout()
+
+                self.title_label = QLabel(title)
+                self.title_label.setObjectName("title")
+                self.outer_layout_type.addWidget(self.title_label)
+                self.title_label.setFixedHeight(cons.WSIZE)
+                if icon != "":
+                    self.title_icon = QToolButton()
+                    self.title_icon.setFixedSize(cons.WSIZE,cons.WSIZE)
+                    set_icon(self.title_icon, icon[0], icon[1], icon[2])
+                    self.title_layout.addWidget(self.title_icon)
+                self.title_layout.addWidget(self.title_label)
+
+                self.section_layout.addLayout(self.title_layout)
 
             self.groupbox = QGroupBox()
             self.groupbox.setLayout(self.outer_layout_type)   
@@ -131,7 +141,7 @@ class Widget:
         self.set_placeholder(self.widget, placeholder)
         self.load_setting(objectname, setting)
         if icon[0] != "":
-            self.set_icon(self.widget, icon[0], icon[1])
+            set_icon(self.widget, icon[0], icon[1], icon[2])
         if size_policy != None:
             self.widget.setSizePolicy(size_policy[0], size_policy[1])
 
@@ -249,11 +259,20 @@ class Widget:
         elif setting == "text":
             self.widget.textEdited.connect(self.save_setting)
 
-    def set_icon(self, widget, icon, size):
-        self.icon = QIcon()
-        self.icon.addPixmap(QPixmap(os.path.join(cons.ICONS, icon)))
-        widget.setIcon(self.icon)
-        widget.setIconSize(QSize(size, size))
-
     def connect_to_parent(self):
         self.parent_layout.addWidget(self.widget)
+
+def set_icon(widget, icon, size, color):
+    qicon = QIcon()
+    pixmap = QPixmap(os.path.join(cons.ICONS,icon))
+    if color != "":
+        paint = QPainter()
+        paint.begin(pixmap)
+        paint.setCompositionMode(QPainter.CompositionMode_SourceIn)
+        paint.fillRect(pixmap.rect(), QColor(color))
+        paint.end()
+    qicon.addPixmap(pixmap)
+    try:
+        widget.setIcon(qicon)
+    except:
+        widget.setPixmap(qicon.pixmap(size, size))
