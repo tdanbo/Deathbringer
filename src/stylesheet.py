@@ -11,10 +11,6 @@ QWidget::placeholder{
     color: hsl(0, 0%, 50%);
 }
 
-QWidget::disabled  {
-    color: hsl(0, 0%, 30%);
-}
-
 QWidget#scroll_widget  {
     border: 0px;
 }
@@ -46,7 +42,27 @@ QLineEdit {
 }
 
 QLineEdit::disabled {
-    color: hsl(0, 0%, 60%);
+    color: hsl(0, 0%, 30%);
+    background-color: hsl(0, 0%, 19%);    
+    border: 1px solid hsl(0, 0%, 20%);
+}
+
+QComboBox::disabled {
+    color: hsl(0, 0%, 30%);
+    background-color: hsl(0, 0%, 19%);
+    border: 1px solid hsl(0, 0%, 20%);
+}
+
+QPushButton::disabled {
+    color: hsl(0, 0%, 30%);
+    background-color: hsl(0, 0%, 19%);
+    border: 1px solid hsl(0, 0%, 20%);
+}
+
+QToolButton::disabled {
+    color: hsl(0, 0%, 30%);
+    background-color: hsl(0, 0%, 19%);
+    border: 1px solid hsl(0, 0%, 20%);
 }
 
 QLineEdit#upres_percent  {

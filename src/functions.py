@@ -1,8 +1,11 @@
+from PySide2.QtWidgets import *
+from PySide2.QtGui import *
+from PySide2.QtCore import *
+
 import os
 import random
 
 from combat_log import CombatLog
-from gui_sheet import CharacterSheetGUI
 
 def roll_dice(dictionary, character, die, roll_type, roll_breakdown, modifier=0):
     print(f"Rolling a {die} sided dice")

@@ -120,7 +120,8 @@ class Widget:
         placeholder="",
         setting ="",
         stylesheet="",
-        size_policy=None
+        size_policy=None,
+        checked=False
     ):
         self.text = text
         self.widget = widget_type
@@ -132,7 +133,7 @@ class Widget:
         self.widget.setStyleSheet(stylesheet)
         self.widget_key = f"{self.object}_{self.setting}"
         self.set_enabled(enabled)
-        self.set_checkable(checkable)
+        self.set_checkable(checkable,checked)
         self.set_text(self.widget, self.text)
         self.set_signal(signal, setting)
         self.set_alignment(self.widget, align)
@@ -193,10 +194,10 @@ class Widget:
         else:
             pass
 
-    def set_checkable(self, checkable):
+    def set_checkable(self, checkable,checked):
         try:
             self.widget.setCheckable(checkable)
-            self.widget.setChecked(checkable)
+            self.widget.setChecked(checked)
         except:
             pass
 
@@ -239,25 +240,23 @@ class Widget:
             pass
 
     def set_signal(self, signal, setting):
-        if signal != "":
-            try:
-                self.widget.clicked.connect(signal)
-            except:
-                pass
-            try:
-                self.widget.textEdited.connect(signal)
-
-            except:
-                pass
-            try:
-                self.widget.textChanged.connect(signal)
-            except:
-                pass
-
         if setting == "checked":
             self.widget.clicked.connect(self.save_setting)
         elif setting == "text":
             self.widget.textEdited.connect(self.save_setting)
+
+        if signal != "":
+            try:
+                self.widget.editingFinished.connect(signal)
+            except:
+                pass
+            try:
+                self.widget.clicked.connect(signal)
+                return
+            except:
+                pass
+
+
 
     def connect_to_parent(self):
         self.parent_layout.addWidget(self.widget)

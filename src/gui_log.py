@@ -11,9 +11,9 @@ import constants as cons
 import functions as func
 import functools
 
-class CombatLogGUI:
+class CombatLogGUI(QWidget):
     def __init__(self):
-
+        super().__init__()
         #Setting up layouts/sections
         self.log_layout = Section(
             outer_layout = QVBoxLayout(),
@@ -65,10 +65,9 @@ class CombatLogGUI:
                     roll_breakdown=die_type[0],
                     character="Beasttoe"
                 ),
-            )
-            
-            
-        
+            )       
+
+        self.setLayout(self.log_layout.outer_layout())
 
     def update_log(self,die=0, modifier=0, character="Dungeon Master"):
         roll = func.roll_dice(die) + modifier
@@ -161,6 +160,3 @@ class CombatLogGUI:
             self.log_roll.get_widget(), 
             self.log_entry_date.get_widget()
         )
-
-    def get_main_layout(self):
-        return self.log_layout.outer_layout()

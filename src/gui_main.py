@@ -31,8 +31,7 @@ class MainWindow(QWidget):
         combat_log_widgets = combat_log_gui.get_widget_directory()
         
         #initializing the two main classes
-        self.combat_log = CombatLog(combat_log_widgets)
-        self.character_sheet = CharacterSheet()        
+        self.combat_log = CombatLog(combat_log_widgets)    
         
         self.combat_log.update_combat_log()
         self.combat_log.start_watching() 
@@ -43,10 +42,10 @@ class MainWindow(QWidget):
         for section in Section.all_sections:
             section.connect_to_parent()
 
-        self.main_layout.addLayout(combat_log_gui.get_main_layout())
-        self.main_layout.addLayout(character_sheet_gui.get_main_layout())
+        character_sheet_gui.setFixedWidth(500)
 
-
+        self.main_layout.addWidget(combat_log_gui)
+        self.main_layout.addWidget(character_sheet_gui)
 
         self.setLayout(self.main_layout)
         self.setStyleSheet(style.DARK_STYLE)

@@ -16,8 +16,8 @@ class CombatLog:
         log_widget_dictionary,
     ):
         self.client = pymongo.MongoClient(cons.CONNECT)
-        self.db = self.client ["combat"]
-        self.collection = self.db["log"]
+        self.db = self.client ["dnd"]
+        self.collection = self.db["combatlog"]
         self.entry = {}
 
         self.log_widget_dictionary = log_widget_dictionary
