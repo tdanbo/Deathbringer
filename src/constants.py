@@ -18,7 +18,7 @@ CONNECT = f"mongodb+srv://{USER}:{PASSWORD}@cluster0.2oqhlud.mongodb.net/?retryW
 SETTINGS = os.path.join(LOCAL_DIRECTORY, "settings.json")
 ICONS = os.path.join(ROOT, ".icons")
 
-WSIZE = 25
+WSIZE = 22
 ICON_COLOR = "#CCCCCC"
 
 func.create_folder(LOCAL_DIRECTORY)

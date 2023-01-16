@@ -13,6 +13,7 @@ QWidget::placeholder{
 
 QWidget#scroll_widget  {
     border: 0px;
+    background-color: #333333
 }
 
 QWidget::pressed {
@@ -20,7 +21,7 @@ QWidget::pressed {
 }
 
 QPushButton {
-    color: hsl(0, 0%, 30%);
+    color: hsl(0, 0%, 60%);
 }
 
 QToolButton::checked {

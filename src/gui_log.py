@@ -26,8 +26,8 @@ class CombatLogGUI(QWidget):
             inner_layout = ("VBox", 1),
             parent_layout = self.log_layout.inner_layout(0),
             scroll=True,
-            group=True,
             title="COMBAT LOG",
+            group = (True,None,None),   
             icon = ("combatlog.png",cons.WSIZE/2,cons.ICON_COLOR)	 	
         )
 
@@ -35,7 +35,7 @@ class CombatLogGUI(QWidget):
             outer_layout = QVBoxLayout(),
             inner_layout = ("VBox", 1),
             parent_layout = self.log_layout.inner_layout(0), 
-            group=True,   
+            group = (True,None,None),   
         )
 
         self.log_dice = Section(
@@ -43,7 +43,7 @@ class CombatLogGUI(QWidget):
             inner_layout = ("HBox", 1),   
             parent_layout = self.log_layout.inner_layout(0),
             title="DICE",  
-            group=True,
+            group = (True,None,cons.WSIZE*2),
             icon = ("dice.png",cons.WSIZE/2,cons.ICON_COLOR)	
         )
 
@@ -54,8 +54,8 @@ class CombatLogGUI(QWidget):
             Widget(
                 widget_type=QPushButton(),
                 parent_layout=self.log_dice.inner_layout(0),
-                height=cons.WSIZE/1.25,
                 text=die_type[0],
+                size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
                 signal=functools.partial(
                     func.roll_dice,
                     dictionary = self.get_widget_directory, 

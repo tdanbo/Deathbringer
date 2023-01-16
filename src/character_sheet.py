@@ -5,6 +5,8 @@ from PySide2.QtCore import *
 import pymongo
 import constants as cons
 
+import math
+
 class CharacterSheet():
     def __init__(self, csheet):
         self.csheet = csheet
@@ -12,10 +14,21 @@ class CharacterSheet():
         self.character = ""
         self.level = ""
         self.coins = ""
-        self.hp = csheet.findChild(QLineEdit, "hp")
+
         self.ac = csheet.findChild(QPushButton, "ac")
         self.initiative = csheet.findChild(QPushButton, "initiative")
 
+        #hp
+        self.hp = csheet.findChild(QPushButton, "hp")
+
+        #stats
+        self.STR = int(csheet.findChild(QLineEdit, "STR").text())
+        self.DEX = int(csheet.findChild(QLineEdit, "DEX").text())
+        self.CON = int(csheet.findChild(QLineEdit, "CON").text())
+        self.INT = int(csheet.findChild(QLineEdit, "INT").text())
+        self.WIS = int(csheet.findChild(QLineEdit, "WIS").text())
+        self.CHA = int(csheet.findChild(QLineEdit, "CHA").text())
+        
         #all inventory slots
         self.inventory1 = csheet.findChild(QComboBox, "inventory1")
         self.inventory2 = csheet.findChild(QComboBox, "inventory2")
@@ -62,14 +75,6 @@ class CharacterSheet():
         self.corruption9 = csheet.findChild(QToolButton, "corruption9")
         self.corruption10 = csheet.findChild(QToolButton, "corruption10")
 
-        #stats
-        self.str = csheet.findChild(QSpinBox, "STR")
-        self.dex = csheet.findChild(QSpinBox, "DEX")
-        self.con = csheet.findChild(QSpinBox, "CON")
-        self.int = csheet.findChild(QSpinBox, "INT")
-        self.wis = csheet.findChild(QSpinBox, "WIS")
-        self.cha = csheet.findChild(QSpinBox, "CHA")
-
         updated_character_sheet = self.update_dictionary()
 
         #self.update_database(updated_character_sheet)
@@ -84,12 +89,12 @@ class CharacterSheet():
             "ac": self.ac.text(),
             "initiative": self.initiative.text(),
             "stats": {
-                "str": self.str.value(),
-                "dex": self.dex.value(),
-                "con": self.con.value(),
-                "int": self.int.value(),
-                "wis": self.wis.value(),
-                "cha": self.cha.value(),
+                "str": self.STR,
+                "dex": self.DEX,
+                "con": self.CON,
+                "int": self.INT,
+                "wis": self.WIS,
+                "cha": self.CHA,
             },
             "inventory": {
                 "inventory1": self.inventory1.currentText(),
@@ -159,47 +164,78 @@ class CharacterSheet():
 
     def update_sheet(self):
         #INVENTORY RULES
-        self.strenght(self.str.value())
-        self.dexterity(self.dex.value())
-        self.constitution(self.con.value())
-        self.intelligence(self.int.value())
-        self.wisdom(self.wis.value())
-        self.charisma(self.cha.value())
+        self.strenght()
+        self.dexterity()
+        self.constitution()
+        self.intelligence()
+        self.wisdom()
+        self.charisma()
         
-    def strenght(self, stat_value):
+        self.set_level()
+
+    def set_level(self):
+        widget =  self.csheet.stat_layout.get_label()
+        print(widget)
+        ranks = {
+            0: "Soul",
+            1: "Squire",
+            2: "Page",
+            3: "Adventurer",
+            4: "Explorer",
+            5: "Soldier",
+            6: "Warrior",
+            7: "Vanquisher",
+            8: "Champion",
+            9: "Guardian",
+            10: "Legend"
+            }
+
+        stats_per_level = 3
+        all_stats = self.STR + self.DEX + self.CON + self.INT + self.WIS + self.CHA
+        level = math.floor(all_stats//stats_per_level)
+        widget.setText(f"{ranks[level]} - Level {level}".upper())
+        self.current_level = level
+        # THIS WILL HAPPEN WHEN A CHARACTER LEVELS UP
+        self.set_hp()
+        
+
+    def set_hp(self):
+        hp_formula = (6*self.current_level) + self.CON
+        self.hp.setText(str(hp_formula))
+
+    def strenght(self):
+        pass 
+    def dexterity(self):
         pass
-    def dexterity(self, stat_value):
-        pass
-    def constitution(self, stat_value):
+    def constitution(self):
         for count in range(1,21):
             for w in [(QPushButton,"selector"),(QPushButton,"action"),(QLineEdit,"modifier"),(QComboBox,"inventory")]:#
-                print(w)
                 widget =  self.csheet.findChild(w[0], w[1]+str(count))
-                if count <= stat_value+10:
+                if count <= self.CON+10:
                     widget.setEnabled(True)
                 else:
                     widget.setEnabled(False)
 
-    def intelligence(self, stat_value):
+    def intelligence(self):
         for count in range(1,11):
             for w in [(QToolButton,"corruption")]:
                 widget =  self.csheet.findChild(w[0], w[1]+str(count))
-                if count <= stat_value:
+                if count <= self.INT:
                     widget.setEnabled(True)
                 else:
                     widget.setEnabled(False)
 
-    def wisdom(self, stat_value):
+    def wisdom(self):
         for count in range(1,11):
             for w in [(QToolButton,"herodice")]:
                 widget =  self.csheet.findChild(w[0], w[1]+str(count))
-                if count <= stat_value:
+                if count <= self.WIS:
                     widget.setEnabled(True)
                 else:
                     widget.setEnabled(False)
 
-    def charisma(self, stat_value):
+    def charisma(self):
         initiative_widget = self.csheet.findChild(QPushButton, "initiative")
-        initiative_widget.setText(str(stat_value+10))
+        initiative_widget.setText(str(self.CHA+10))
 
     

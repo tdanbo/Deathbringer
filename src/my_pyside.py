@@ -15,7 +15,7 @@ class Section:
         inner_layout = (QHBoxLayout(), 1),
         parent_layout = None,
         spacing = 0,
-        group=False,
+        group=(False,None,None),
         scroll=False,
         title="",
         icon=""
@@ -29,18 +29,19 @@ class Section:
         self.parent_layout = parent_layout
         self.group = group
         self.scroll = scroll
+        self.spacing = spacing
 
         self.inner_layouts = self.inner_layout_list()
         self.outer_layout_type.setSpacing(spacing)
         self.section_layout.setSpacing(0)
-        if self.group == True:
+        if self.group[0] == True:
             if title != "":
                 self.title_layout = QHBoxLayout()
-
                 self.title_label = QLabel(title)
                 self.title_label.setObjectName("title")
                 self.outer_layout_type.addWidget(self.title_label)
                 self.title_label.setFixedHeight(cons.WSIZE)
+                self.title_label.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
                 if icon != "":
                     self.title_icon = QToolButton()
                     self.title_icon.setFixedSize(cons.WSIZE,cons.WSIZE)
@@ -51,7 +52,12 @@ class Section:
                 self.section_layout.addLayout(self.title_layout)
 
             self.groupbox = QGroupBox()
-            self.groupbox.setLayout(self.outer_layout_type)   
+            if self.group[1] != None:
+                self.groupbox.setFixedWidth(self.group[1])
+            if self.group[2] != None:
+                self.groupbox.setFixedHeight(self.group[2])            
+
+            self.groupbox.setLayout(self.outer_layout_type)
             self.section_layout.addWidget(self.groupbox)
         else:
             self.section_layout.addLayout(self.outer_layout_type)
@@ -61,21 +67,24 @@ class Section:
                 raise ValueError("Scroll layouts can't have more than 1 widget layout")
             else:
                 self.scroll_area_widget = QScrollArea()
+                self.scroll_area_widget.setObjectName("scroll_widget")
                 i_layout = self.inner_layouts[0]
                 self.scroll_widget = QWidget()
+                self.scroll_widget.setObjectName("scroll_widget")
                 self.scroll_widget.setLayout(i_layout)
                 self.scroll_area_widget.setWidget(self.scroll_widget)
 
                 i_layout.setAlignment(Qt.AlignBottom)
-                i_layout.setSpacing(0)
+                i_layout.setSpacing(spacing)
 
                 self.scroll_area_widget.setWidgetResizable(True)
                 self.scroll_area_widget.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-
+                self.outer_layout_type.setContentsMargins(0,0,0,0)
                 self.outer_layout_type.addWidget(self.scroll_area_widget)
         else:
             for layout in self.inner_layouts:
                 self.outer_layout_type.addLayout(layout)
+
 
         self.all_sections.append(self)
 
@@ -98,6 +107,9 @@ class Section:
     def connect_to_parent(self):
         if self.parent_layout != None:
             self.parent_layout.addLayout(self.section_layout)
+
+    def get_label(self):
+        return self.title_label
 
 class Widget:
     all_widgets = []
@@ -274,4 +286,5 @@ def set_icon(widget, icon, size, color):
     try:
         widget.setIcon(qicon)
     except:
-        widget.setPixmap(qicon.pixmap(size, size))
+        widget.setPixmap(pixmap)
+        widget.setScaledContents(True)
