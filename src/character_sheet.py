@@ -6,9 +6,16 @@ import pymongo
 import constants as cons
 
 import math
+import constants as cons
+import os
+import functions as func
+
+import copy
 
 class CharacterSheet():
     def __init__(self, csheet):
+        print("Character Sheet Created")
+
         self.csheet = csheet
 
         self.character = ""
@@ -30,26 +37,26 @@ class CharacterSheet():
         self.CHA = int(csheet.findChild(QLineEdit, "CHA").text())
         
         #all inventory slots
-        self.inventory1 = csheet.findChild(QComboBox, "inventory1")
-        self.inventory2 = csheet.findChild(QComboBox, "inventory2")
-        self.inventory3 = csheet.findChild(QComboBox, "inventory3")
-        self.inventory4 = csheet.findChild(QComboBox, "inventory4")
-        self.inventory5 = csheet.findChild(QComboBox, "inventory5")
-        self.inventory6 = csheet.findChild(QComboBox, "inventory6")
-        self.inventory7 = csheet.findChild(QComboBox, "inventory7")
-        self.inventory8 = csheet.findChild(QComboBox, "inventory8")
-        self.inventory9 = csheet.findChild(QComboBox, "inventory9")
-        self.inventory10 = csheet.findChild(QComboBox, "inventory10")
-        self.inventory11 = csheet.findChild(QComboBox, "inventory11")
-        self.inventory12 = csheet.findChild(QComboBox, "inventory12")
-        self.inventory13 = csheet.findChild(QComboBox, "inventory13")
-        self.inventory14 = csheet.findChild(QComboBox, "inventory14")
-        self.inventory15 = csheet.findChild(QComboBox, "inventory15")
-        self.inventory16 = csheet.findChild(QComboBox, "inventory16")
-        self.inventory17 = csheet.findChild(QComboBox, "inventory17")
-        self.inventory18 = csheet.findChild(QComboBox, "inventory18")
-        self.inventory19 = csheet.findChild(QComboBox, "inventory19")
-        self.inventory20 = csheet.findChild(QComboBox, "inventory20")
+        self.inventory1 = csheet.findChild(QLineEdit, "inventory1")
+        self.inventory2 = csheet.findChild(QLineEdit, "inventory2")
+        self.inventory3 = csheet.findChild(QLineEdit, "inventory3")
+        self.inventory4 = csheet.findChild(QLineEdit, "inventory4")
+        self.inventory5 = csheet.findChild(QLineEdit, "inventory5")
+        self.inventory6 = csheet.findChild(QLineEdit, "inventory6")
+        self.inventory7 = csheet.findChild(QLineEdit, "inventory7")
+        self.inventory8 = csheet.findChild(QLineEdit, "inventory8")
+        self.inventory9 = csheet.findChild(QLineEdit, "inventory9")
+        self.inventory10 = csheet.findChild(QLineEdit, "inventory10")
+        self.inventory11 = csheet.findChild(QLineEdit, "inventory11")
+        self.inventory12 = csheet.findChild(QLineEdit, "inventory12")
+        self.inventory13 = csheet.findChild(QLineEdit, "inventory13")
+        self.inventory14 = csheet.findChild(QLineEdit, "inventory14")
+        self.inventory15 = csheet.findChild(QLineEdit, "inventory15")
+        self.inventory16 = csheet.findChild(QLineEdit, "inventory16")
+        self.inventory17 = csheet.findChild(QLineEdit, "inventory17")
+        self.inventory18 = csheet.findChild(QLineEdit, "inventory18")
+        self.inventory19 = csheet.findChild(QLineEdit, "inventory19")
+        self.inventory20 = csheet.findChild(QLineEdit, "inventory20")
 
         #all hero dice slots
         self.herodice1 = csheet.findChild(QToolButton, "herodice1")
@@ -80,7 +87,8 @@ class CharacterSheet():
         #self.update_database(updated_character_sheet)
         self.update_sheet()
 
-    def update_dictionary(self):    
+    def update_dictionary(self):
+        print("Updating Character Sheet Dictionary")    
         character_sheet_dictionary = {
             "character": self.character,
             "level": self.level,
@@ -97,26 +105,26 @@ class CharacterSheet():
                 "cha": self.CHA,
             },
             "inventory": {
-                "inventory1": self.inventory1.currentText(),
-                "inventory2": self.inventory2.currentText(),
-                "inventory3": self.inventory3.currentText(),
-                "inventory4": self.inventory4.currentText(),
-                "inventory5": self.inventory5.currentText(),
-                "inventory6": self.inventory6.currentText(),
-                "inventory7": self.inventory7.currentText(),
-                "inventory8": self.inventory8.currentText(),
-                "inventory9": self.inventory9.currentText(),
-                "inventory10": self.inventory10.currentText(),
-                "inventory11": self.inventory1.currentText(),
-                "inventory12": self.inventory2.currentText(),
-                "inventory13": self.inventory3.currentText(),
-                "inventory14": self.inventory4.currentText(),
-                "inventory15": self.inventory5.currentText(),
-                "inventory16": self.inventory6.currentText(),
-                "inventory17": self.inventory7.currentText(),
-                "inventory18": self.inventory8.currentText(),
-                "inventory19": self.inventory9.currentText(),
-                "inventory20": self.inventory10.currentText(),
+                "inventory1": self.inventory1.text(),
+                "inventory2": self.inventory2.text(),
+                "inventory3": self.inventory3.text(),
+                "inventory4": self.inventory4.text(),
+                "inventory5": self.inventory5.text(),
+                "inventory6": self.inventory6.text(),
+                "inventory7": self.inventory7.text(),
+                "inventory8": self.inventory8.text(),
+                "inventory9": self.inventory9.text(),
+                "inventory10": self.inventory10.text(),
+                "inventory11": self.inventory1.text(),
+                "inventory12": self.inventory2.text(),
+                "inventory13": self.inventory3.text(),
+                "inventory14": self.inventory4.text(),
+                "inventory15": self.inventory5.text(),
+                "inventory16": self.inventory6.text(),
+                "inventory17": self.inventory7.text(),
+                "inventory18": self.inventory8.text(),
+                "inventory19": self.inventory9.text(),
+                "inventory20": self.inventory10.text(),
             },            
             "corruption": { 
                 "corruption1": self.corruption1.isChecked(),
@@ -172,10 +180,50 @@ class CharacterSheet():
         self.charisma()
         
         self.set_level()
+        self.update_inventory()
+
+    # ITERATE OVER ITEM JSON TO FIND ITEM
+    def update_inventory(self):
+        all_items = []
+        for slot in range(1,cons.MAX_SLOTS+1):
+            self.inventory_slot = self.csheet.findChild(QLineEdit, f"inventory{slot}")
+            if self.inventory_slot.text() != "":
+                all_items.append(self.inventory_slot.text())
+                self.update_item(slot, "", "", {"Action":"","Modifier":""})
+            else:
+                self.update_item(slot, "", "", {"Action":"","Modifier":""})
+
+        misc_items = copy.deepcopy(all_items)
+        slot = 1
+        for item_type in os.listdir(cons.ITEMS):
+            item_type_json = func.read_json(os.path.join(cons.ITEMS,item_type))
+            for item in all_items:
+                for item_key in item_type_json:
+                    if item_key.lower() == item.lower():
+                        self.update_item(slot, item_key, item_type.split(".")[0].split("_")[1], item_type_json[item_key])
+                        misc_items.remove(item)
+                        slot += 1
+
+        print(misc_items)
+
+        for item in misc_items:
+            self.update_item(slot, item, "Misc", {"Action":"","Modifier":""})
+            all_items.remove(item)
+            slot += 1
+
+    def update_item(self, slot, item, inventory_type, inventory_item):
+        self.inventory_slot = self.csheet.findChild(QLineEdit, f"inventory{slot}")
+        self.inventory_icon = self.csheet.findChild(QToolButton, f"icon{slot}")
+        self.inventory_action = self.csheet.findChild(QPushButton, f"action{slot}")
+        self.inventory_modifier = self.csheet.findChild(QLineEdit, f"modifier{slot}")
+
+        func.set_icon(self.inventory_icon,f"{inventory_type}.png",cons.ICON_COLOR)
+        self.inventory_action.setText(inventory_type.capitalize())
+        self.inventory_modifier.setText(inventory_item["Modifier"])
+        self.inventory_slot.setText(item)
 
     def set_level(self):
         widget =  self.csheet.stat_layout.get_label()
-        print(widget)
         ranks = {
             0: "Soul",
             1: "Squire",
@@ -200,7 +248,7 @@ class CharacterSheet():
         
 
     def set_hp(self):
-        hp_formula = (6*self.current_level) + self.CON
+        hp_formula = (3*self.current_level) + self.CON
         self.hp.setText(str(hp_formula))
 
     def strenght(self):
@@ -208,10 +256,10 @@ class CharacterSheet():
     def dexterity(self):
         pass
     def constitution(self):
-        for count in range(1,21):
-            for w in [(QPushButton,"selector"),(QPushButton,"action"),(QLineEdit,"modifier"),(QComboBox,"inventory")]:#
+        for count in range(1,cons.MAX_SLOTS+1):
+            for w in [(QToolButton,"icon"),(QPushButton,"action"),(QLineEdit,"modifier"),(QLineEdit,"inventory")]:#
                 widget =  self.csheet.findChild(w[0], w[1]+str(count))
-                if count <= self.CON+10:
+                if count <= self.CON+6:
                     widget.setEnabled(True)
                 else:
                     widget.setEnabled(False)

@@ -2,8 +2,8 @@ from PySide2.QtWidgets import *
 from PySide2.QtGui import *
 from PySide2.QtCore import *
 
-from my_pyside import Section
-from my_pyside import Widget
+from pyside import Section
+from pyside import Widget
 
 from combat_log import CombatLog
 
@@ -25,7 +25,7 @@ class CombatLogGUI(QWidget):
             outer_layout = QVBoxLayout(),
             inner_layout = ("VBox", 1),
             parent_layout = self.log_layout.inner_layout(0),
-            scroll=True,
+            scroll=(True,"bottom"),
             title="COMBAT LOG",
             group = (True,None,None),   
             icon = ("combatlog.png",cons.WSIZE/2,cons.ICON_COLOR)	 	

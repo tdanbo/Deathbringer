@@ -2,8 +2,8 @@ from PySide2.QtWidgets import *
 from PySide2.QtGui import *
 from PySide2.QtCore import *
 
-from my_pyside import Section
-from my_pyside import Widget
+from pyside import Section
+from pyside import Widget
 
 from gui_sheet import CharacterSheetGUI
 from gui_log import CombatLogGUI
@@ -38,6 +38,7 @@ class MainWindow(QWidget):
 
         for widget in Widget.all_widgets:
             widget.connect_to_parent()
+            widget.set_signal()
 
         for section in Section.all_sections:
             section.connect_to_parent()

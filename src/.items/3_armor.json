@@ -1,0 +1,44 @@
+{
+	"Shield": {
+		"Action": "Defend",
+		"Modifier": "+1",
+		"Slots": 1,
+		"Cost": 100
+	},
+	"Helmet": {
+		"Action": "Defend",
+		"Modifier": "+1",
+		"Slots": 1,
+		"Cost": 100
+	},
+	"Gambeson": {
+		"Action": "Defend",
+		"Modifier": "+1",
+		"Slots": 1,
+		"Cost": 300
+	},
+	"Chain Shirt": {
+		"Action": "Defend",
+		"Modifier": "+1",
+		"Slots": 1,
+		"Cost": 900
+	},
+	"Breastplate": {
+		"Action": "Defend",
+		"Modifier": "+1",
+		"Slots": 2,
+		"Cost": 1800
+	},
+	"Arm Plate": {
+		"Action": "Defend",
+		"Modifier": "+1",
+		"Slots": 1,
+		"Cost": 900
+	},
+	"Leg Plate": {
+		"Action": "Defend",
+		"Modifier": "+1",
+		"Slots": 1,
+		"Cost": 900
+	}
+}

@@ -1,0 +1,8 @@
+{
+	"Ration": {
+		"Action": "Heal",
+		"Modifier": "2d4",
+		"Slots": 1,
+		"Cost": 100
+	}
+}

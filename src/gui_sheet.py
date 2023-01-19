@@ -2,8 +2,8 @@ from PySide2.QtWidgets import *
 from PySide2.QtGui import *
 from PySide2.QtCore import *
 
-from my_pyside import Section
-from my_pyside import Widget
+from pyside import Section
+from pyside import Widget
 
 import functions as func
 import constants as cons
@@ -94,7 +94,7 @@ class CharacterSheetGUI(QWidget):
             title = "INVENTORY",
             group = (True,None,None),
             icon = ("backpack.png",cons.WSIZE/2,cons.ICON_COLOR),
-            scroll=True,	 
+            scroll=(True,"top"),	 
         )
 
         self.character_lower_basic = Section(
@@ -257,20 +257,20 @@ class CharacterSheetGUI(QWidget):
                 parent_layout=self.inventory_layout.inner_layout(1),
             )
             self.backpack= Widget(
-                widget_type=QPushButton(),
+                widget_type=QToolButton(),
                 text="",
                 parent_layout=self.slot_layot.inner_layout(1),
-                width = cons.WSIZE*2.5,
-                height = cons.WSIZE,
+                width = cons.WSIZE*1.25,
+                height = cons.WSIZE*1.25,
                 enabled=False,
-                objectname=f"selector{count}",
+                objectname=f"icon{count}",
             )
             self.backpack= Widget(
                 widget_type=QPushButton(),
                 text="",
                 parent_layout=self.slot_layot.inner_layout(1),
-                width = cons.WSIZE*2.5,
-                height = cons.WSIZE,
+                width = cons.WSIZE*3,
+                height = cons.WSIZE*1.25,
                 enabled=False,
                 objectname=f"action{count}",
             )
@@ -278,16 +278,18 @@ class CharacterSheetGUI(QWidget):
                 widget_type=QLineEdit(),
                 parent_layout=self.slot_layot.inner_layout(1),
                 width = cons.WSIZE*2.5,
-                height = cons.WSIZE,
+                height = cons.WSIZE*1.25,
                 objectname=f"modifier{count}",
+                align="center",
                 enabled=False,
             )
             self.backpack_item = Widget(
-                widget_type=QComboBox(),
+                widget_type=QLineEdit(),
                 parent_layout=self.slot_layot.inner_layout(1),
-                height = cons.WSIZE,
+                height = cons.WSIZE*1.25,
                 signal=lambda: CharacterSheet(self).update_dictionary(),
                 objectname=f"inventory{count}",
+                align="center",
                 enabled=False,
 
             )
