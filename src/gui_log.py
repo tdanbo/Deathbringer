@@ -10,6 +10,7 @@ from combat_log import CombatLog
 import constants as cons
 import functions as func
 import functools
+import stylesheet as style
 
 class CombatLogGUI(QWidget):
     def __init__(self):
@@ -35,7 +36,9 @@ class CombatLogGUI(QWidget):
             outer_layout = QVBoxLayout(),
             inner_layout = ("VBox", 1),
             parent_layout = self.log_layout.inner_layout(0), 
-            group = (True,None,None),   
+            title="LAST ROLL",  
+            group = (True,None,100), 
+            icon = ("combatlog.png",cons.WSIZE/2,cons.ICON_COLOR)	
         )
 
         self.log_dice = Section(
@@ -53,6 +56,7 @@ class CombatLogGUI(QWidget):
         for die_type in dice:
             Widget(
                 widget_type=QPushButton(),
+                stylesheet=style.QPUSHBUTTON,
                 parent_layout=self.log_dice.inner_layout(0),
                 text=die_type[0],
                 size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
@@ -98,12 +102,12 @@ class CombatLogGUI(QWidget):
 
         roll_type = {"Custom":"#bd4f00", "Attack":"#bd0000", "Defend":"#0062bd"}
 
-        name_stylesheet = "font-size: 12px; font-weight: bold; color: hsl(0%, 0%, 50%)"
+        name_stylesheet = "font-size: 12px; font-weight: bold; color: hsl(0%, 0%, 50%); background-color: hsl(0%, 0%, 20%)"
         icon_stylesheet = "background-color: hsl(0%, 0%, 80%);"
         type_stylesheet = f"font-size: 12px; font-weight: bold; background-color: hsl(0%, 0%, 80%); color: hsl(0%, 0%, 20%); border: 0px;"
-        breakdown_stylesheet = "font-size: 10px; color: hsl(0%, 0%, 30%)"
+        breakdown_stylesheet = "font-size: 10px; color: hsl(0%, 0%, 30%); background-color: hsl(0%, 0%, 20%)"
         roll_stylesheet = "font-size: 20px; font-weight: bold; background-color: hsl(0%, 0%, 80%); color: hsl(0%, 0%, 10%); border: 0px; border-top-right-radius: 8px; border-bottom-right-radius: 8px;"
-        date_stylesheet = "font-size: 10px; color: hsl(0%, 0%, 30%)"
+        date_stylesheet = "font-size: 10px; color: hsl(0%, 0%, 30%); background-color: hsl(0%, 0%, 20%)"
 
         # LOG CONTENT
         self.log_character_name = Widget(

@@ -9,6 +9,8 @@ import functions as func
 import constants as cons
 from character_sheet import CharacterSheet
 
+import stylesheet as style
+
 class CharacterSheetGUI(QWidget):
     def __init__(self):
         super().__init__()
@@ -134,6 +136,7 @@ class CharacterSheetGUI(QWidget):
                 layout_nr = 2
             self.feats = Widget(
                 widget_type=QToolButton(),
+                stylesheet=style.QTOOLBUTTON,
                 parent_layout = self.feat_layout.inner_layout(layout_nr),
                 size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
                 signal=lambda: CharacterSheet(self).update_dictionary(),
@@ -143,6 +146,7 @@ class CharacterSheetGUI(QWidget):
         for number in range(1,11):
             self.hero_dice = Widget(
                 widget_type=QToolButton(),
+                stylesheet=style.QTOOLBUTTON,
                 checkable=True,
                 parent_layout = self.herodice_layout.inner_layout(1),
                 size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
@@ -156,17 +160,18 @@ class CharacterSheetGUI(QWidget):
             number = number + 1
             self.stat_label = Widget(
                 widget_type=QPushButton(),
+                stylesheet=style.QSTATS,
                 text=stat,               
                 height = cons.WSIZE/1.25,
                 parent_layout = self.stat_layout.inner_layout(number),
             )
             self.stat_label = Widget(
                 widget_type=QLineEdit(),
+                stylesheet=style.QSTATS,
                 height = cons.WSIZE*1.5,
                 align = "center",
                 text="0",
                 parent_layout = self.stat_layout.inner_layout(number),
-                stylesheet="font-size: 18px;",
                 signal=lambda: CharacterSheet(self).update_dictionary(),
                 objectname=stat,
             )
@@ -174,9 +179,8 @@ class CharacterSheetGUI(QWidget):
         #INITIATIVE AND AC AND HP FEATS
         self.character_initiative = Widget(
             widget_type=QPushButton(),
-            text="10",
+            stylesheet=style.QPUSHBUTTON,
             parent_layout=self.initiative_layout.inner_layout(1),
-            stylesheet="font-size: 18px;",
             signal=lambda: CharacterSheet(self).update_dictionary(),
             objectname = "initiative",
             size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
@@ -184,9 +188,8 @@ class CharacterSheetGUI(QWidget):
 
         self.character_ac = Widget(
             widget_type=QPushButton(),
-            text="10",
+            stylesheet=style.QPUSHBUTTON,
             parent_layout=self.defense_layout.inner_layout(1),
-            stylesheet="font-size: 18px;",
             signal=lambda: CharacterSheet(self).update_dictionary(),
             objectname = "ac",
             size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
@@ -194,9 +197,8 @@ class CharacterSheetGUI(QWidget):
 
         self.character_hp_max = Widget(
             widget_type=QPushButton(),
-            text="0",
+            stylesheet=style.QPUSHBUTTON,
             parent_layout=self.hp_layout.inner_layout(1),
-            stylesheet="font-size: 18px;",
             signal=lambda: CharacterSheet(self).update_dictionary(),
             objectname = "hp",
             size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
@@ -207,12 +209,12 @@ class CharacterSheetGUI(QWidget):
             text="0",
             parent_layout=self.hp_layout.inner_layout(1),
             signal=lambda: CharacterSheet(self).update_dictionary(),
-            stylesheet="font-size: 18px;",
             size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
         )
 
         self.character_hp_minus = Widget(
             widget_type=QPushButton(),
+            stylesheet=style.QPUSHBUTTON,
             text="-",
             parent_layout=self.hp_layout.inner_layout(2),
             signal=lambda: CharacterSheet(self).update_dictionary(),
@@ -222,6 +224,7 @@ class CharacterSheetGUI(QWidget):
 
         self.character_hp_line = Widget(
             widget_type=QLineEdit(),
+            stylesheet=style.QLINEEDIT,
             text="",
             align="center",
             parent_layout=self.hp_layout.inner_layout(2),
@@ -233,9 +236,9 @@ class CharacterSheetGUI(QWidget):
 
         self.character_hp_plus = Widget(
             widget_type=QPushButton(),
+            stylesheet=style.QPUSHBUTTON,
             text="+",
             parent_layout=self.hp_layout.inner_layout(2),
-            stylesheet="font-size: 15px;",
             signal=lambda: CharacterSheet(self).update_dictionary(),
             objectname = "hp_plus",
             size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
@@ -250,7 +253,7 @@ class CharacterSheetGUI(QWidget):
         )
 
 
-        for count in range(1,21):
+        for count in range(1,cons.MAX_SLOTS+1):
             self.slot_layot = Section(
                 outer_layout = QVBoxLayout(),
                 inner_layout = ("HBox", 1),
@@ -258,45 +261,59 @@ class CharacterSheetGUI(QWidget):
             )
             self.backpack= Widget(
                 widget_type=QToolButton(),
+                stylesheet=style.QTOOLBUTTON,
                 text="",
                 parent_layout=self.slot_layot.inner_layout(1),
-                width = cons.WSIZE*1.25,
-                height = cons.WSIZE*1.25,
+                width = cons.WSIZE*1.50,
+                height = cons.WSIZE*1.50,
                 enabled=False,
                 objectname=f"icon{count}",
             )
-            self.backpack= Widget(
-                widget_type=QPushButton(),
-                text="",
-                parent_layout=self.slot_layot.inner_layout(1),
-                width = cons.WSIZE*3,
-                height = cons.WSIZE*1.25,
-                enabled=False,
-                objectname=f"action{count}",
-            )
-            self.weapon_modifier = Widget(
-                widget_type=QLineEdit(),
-                parent_layout=self.slot_layot.inner_layout(1),
-                width = cons.WSIZE*2.5,
-                height = cons.WSIZE*1.25,
-                objectname=f"modifier{count}",
-                align="center",
-                enabled=False,
-            )
             self.backpack_item = Widget(
                 widget_type=QLineEdit(),
+                stylesheet=style.QLINEEDIT,
                 parent_layout=self.slot_layot.inner_layout(1),
-                height = cons.WSIZE*1.25,
+                height = cons.WSIZE*1.50,
                 signal=lambda: CharacterSheet(self).update_dictionary(),
                 objectname=f"inventory{count}",
                 align="center",
                 enabled=False,
 
             )
+            self.backpack= Widget(
+                widget_type=QPushButton(),
+                stylesheet=style.QPUSHBUTTON,
+                text="",
+                parent_layout=self.slot_layot.inner_layout(1),
+                width = cons.WSIZE*3,
+                height = cons.WSIZE*1.50,
+                enabled=False,
+                objectname=f"action{count}",
+            )
+            self.backpack= Widget(
+                widget_type=QPushButton(),
+                stylesheet=style.QPUSHBUTTON,
+                text="",
+                parent_layout=self.slot_layot.inner_layout(1),
+                width = cons.WSIZE*2,
+                height = cons.WSIZE*1.50,
+                enabled=False,
+                objectname=f"modifier{count}",
+            )
+            self.weapon_modifier = Widget(
+                widget_type=QPushButton(),
+                stylesheet=style.QPUSHBUTTON,
+                parent_layout=self.slot_layot.inner_layout(1),
+                width = cons.WSIZE*2,
+                height = cons.WSIZE*1.50,
+                objectname=f"roll{count}",
+                enabled=False,
+            )
 
         for count in range(1,11):
             self.corruption_icon = Widget(
                 widget_type=QToolButton(),
+                stylesheet=style.QTOOLBUTTON,
                 parent_layout=self.corruption_layout.inner_layout(1),
                 size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
                 height=cons.WSIZE/1.25,

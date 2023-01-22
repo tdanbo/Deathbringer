@@ -1,123 +1,211 @@
 {
 	"Sling": {
-		"Action": "Attack",
-		"min range": false,
-		"Modifier": "d6",
+		"Action": "Hit",
+		"Action Mod": "DEX",
+		"Roll": [
+			"1",
+			"d4",
+			"DEX"
+		],
+		"Reach": true,
 		"Slots": 1,
 		"Hands": 1,
 		"Range": "60/240",
 		"Cost": 5
 	},
-	"Cudgel": {
-		"Action": "Attack",
+	"Knuckles": {
+		"Action": "Hit",
+		"Action Mod": "STR",
+		"Roll": [
+			"1",
+			"d4",
+			"STR"
+		],
 		"Reach": false,
-		"Modifier": "d4",
+		"Slots": 1,
+		"Hands": 1,
+		"Cost": 5
+	},
+	"Cudgel": {
+		"Action": "Hit",
+		"Action Mod": "STR",
+		"Roll": [
+			"1",
+			"d4",
+			"STR"
+		],
+		"Reach": false,
 		"Slots": 1,
 		"Hands": 1,
 		"Cost": 5
 	},
 	"Staff": {
-		"Action": "Attack",
+		"Action": "Hit",
+		"Action Mod": "STR",
+		"Roll": [
+			"1",
+			"d4",
+			"STR"
+		],
 		"Reach": true,
-		"Modifier": "d4",
 		"Slots": 2,
 		"Hands": 2,
 		"Cost": 5
 	},
 	"Bow": {
-		"Action": "Attack",
-		"min range": false,
-		"Modifier": "d6",
+		"Action": "Hit",
+		"Action Mod": "DEX",
+		"Roll": [
+			"1",
+			"d6",
+			"DEX"
+		],
+		"Reach": true,
 		"Slots": 2,
 		"Hands": 2,
 		"Range": "150/600",
 		"Cost": 50
 	},
 	"Dagger": {
-		"Action": "Attack",
+		"Action": "Hit",
+		"Action Mod": "STR",
+		"Roll": [
+			"1",
+			"d6",
+			"STR"
+		],
 		"Reach": false,
-		"Modifier": "d6",
 		"Slots": 1,
 		"Hands": 1,
 		"Cost": 50
 	},
 	"Flail": {
-		"Action": "Attack",
+		"Action": "Hit",
+		"Action Mod": "STR",
+		"Roll": [
+			"1",
+			"d6",
+			"STR"
+		],
 		"Reach": false,
-		"Modifier": "d6",
 		"Slots": 1,
 		"Hands": 1,
 		"Cost": 50
 	},
 	"Hand Axe": {
-		"Action": "Attack",
+		"Action": "Hit",
+		"Action Mod": "STR",
+		"Roll": [
+			"1",
+			"d6",
+			"STR"
+		],
 		"Reach": false,
-		"Modifier": "d6",
 		"Slots": 1,
 		"Hands": 1,
 		"Cost": 50
 	},
 	"Mace": {
-		"Action": "Attack",
+		"Action": "Hit",
+		"Action Mod": "STR",
+		"Roll": [
+			"1",
+			"d6",
+			"STR"
+		],
 		"Reach": false,
-		"Modifier": "d6",
 		"Slots": 1,
 		"Hands": 1,
 		"Cost": 50
 	},
 	"Short Sword": {
-		"Action": "Attack",
+		"Action": "Hit",
+		"Action Mod": "STR",
+		"Roll": [
+			"1",
+			"d6",
+			"STR"
+		],
 		"Reach": false,
-		"Modifier": "d6",
 		"Slots": 1,
 		"Hands": 1,
 		"Cost": 50
 	},
 	"Spear": {
-		"Action": "Attack",
+		"Action": "Hit",
+		"Action Mod": "STR",
+		"Roll": [
+			"1",
+			"d6",
+			"STR"
+		],
 		"Reach": true,
-		"Modifier": "d6",
 		"Slots": 2,
 		"Hands": 2,
 		"Cost": 50
 	},
 	"Crossbow": {
-		"Action": "Attack",
-		"min range": false,
-		"Modifier": "d8",
+		"Action": "Hit",
+		"Action Mod": "DEX",
+		"Roll": [
+			"1",
+			"d8",
+			"DEX"
+		],
+		"Reach": true,
 		"Slots": 2,
 		"Hands": 2,
 		"Range": "300/1200",
 		"Cost": 500
 	},
 	"Battle Axe": {
-		"Action": "Attack",
+		"Action": "Hit",
+		"Action Mod": "STR",
+		"Roll": [
+			"1",
+			"d8",
+			"STR"
+		],
 		"Reach": false,
-		"Modifier": "d8",
 		"Slots": 2,
 		"Hands": 2,
 		"Cost": 100
 	},
 	"Warhammer": {
-		"Action": "Attack",
+		"Action": "Hit",
+		"Action Mod": "STR",
+		"Roll": [
+			"1",
+			"d8",
+			"STR"
+		],
 		"Reach": false,
-		"Modifier": "d8",
 		"Slots": 2,
 		"Hands": 2,
 		"Cost": 100
 	},
 	"Longsword": {
-		"Action": "Attack",
+		"Action": "Hit",
+		"Action Mod": "STR",
+		"Roll": [
+			"1",
+			"d8",
+			"STR"
+		],
 		"Reach": false,
-		"Modifier": "d8",
 		"Slots": 2,
 		"Hands": 2,
 		"Cost": 100
 	},
 	"Halberd": {
-		"Action": "Attack",
-		"Reach": true,
-		"Modifier": "d8",
+		"Action": "Hit",
+		"Action Mod": "STR",
+		"Roll": [
+			"1",
+			"d8",
+			"STR"
+		],
+		"Reach": false,
 		"Slots": 3,
 		"Hands": 2,
 		"Cost": 100

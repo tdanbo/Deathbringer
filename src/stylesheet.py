@@ -1,3 +1,30 @@
+RADIUS = "6px"
+
+
+TEXT_COLOR = "hsl(0, 0%, 80%)"
+
+VIBRANT_COLOR = "#113300"
+DARK_COLOR = "hsl(0, 0%, 10%)"
+LIGHT_COLOR = "hsl(0, 0%, 20%)"
+DISABLED_COLOR = "hsl(0, 0%, 19%);"
+
+QPUSHBUTTON = f"QPushButton {{color: {TEXT_COLOR}; background-color: {DARK_COLOR}; border-radius: {RADIUS}}}"\
+              f"QPushButton:disabled {{color: {TEXT_COLOR}; background-color: {DISABLED_COLOR}}}"
+
+QLINEEDIT = f"QLineEdit {{color: {TEXT_COLOR}; background-color: {DARK_COLOR}; border-radius: {RADIUS}}}"\
+            f"QLineEdit:disabled {{color: {TEXT_COLOR}; background-color: {DISABLED_COLOR}}}"
+
+QTOOLBUTTON = f"QToolButton {{color: {TEXT_COLOR}; background-color: {DARK_COLOR}; border-radius: {RADIUS}}}"\
+              f"QToolButton:disabled {{color: {TEXT_COLOR}; background-color: {DISABLED_COLOR}}}"
+
+QGROUPBOX = f"QGroupBox {{background-color: {LIGHT_COLOR}; border-bottom-right-radius: {RADIUS}; border-bottom-left-radius: {RADIUS}}}"
+
+QTITLE = f"QToolButton {{background-color: {VIBRANT_COLOR}}}"\
+         f"QLabel {{background-color: {DARK_COLOR}; border-top-right-radius: {RADIUS}}}"
+
+QSTATS = f"QPushButton {{background-color: {DARK_COLOR};border-top-right-radius: {RADIUS}}}"\
+         f"QLineEdit {{background-color: {DARK_COLOR}; border-bottom-right-radius: {RADIUS}; border-bottom-left-radius: {RADIUS}}}"
+
 DARK_STYLE = """
 QWidget  {
     border-style: outset;

@@ -36,6 +36,9 @@ class CharacterSheet():
         self.WIS = int(csheet.findChild(QLineEdit, "WIS").text())
         self.CHA = int(csheet.findChild(QLineEdit, "CHA").text())
         
+        #stats dictionary
+        self.stats_dict = {"":"","AC":1,"STR": self.STR, "DEX": self.DEX, "CON": self.CON, "INT": self.INT, "WIS": self.WIS, "CHA": self.CHA}
+
         #all inventory slots
         self.inventory1 = csheet.findChild(QLineEdit, "inventory1")
         self.inventory2 = csheet.findChild(QLineEdit, "inventory2")
@@ -82,10 +85,10 @@ class CharacterSheet():
         self.corruption9 = csheet.findChild(QToolButton, "corruption9")
         self.corruption10 = csheet.findChild(QToolButton, "corruption10")
 
-        updated_character_sheet = self.update_dictionary()
 
-        #self.update_database(updated_character_sheet)
         self.update_sheet()
+        updated_character_sheet = self.update_dictionary()
+        #self.update_database(updated_character_sheet)
 
     def update_dictionary(self):
         print("Updating Character Sheet Dictionary")    
@@ -185,42 +188,92 @@ class CharacterSheet():
     # ITERATE OVER ITEM JSON TO FIND ITEM
     def update_inventory(self):
         all_items = []
+        empty_slot_dict = {"Action":"","Action Mod":"","Roll":["","",""]}
         for slot in range(1,cons.MAX_SLOTS+1):
             self.inventory_slot = self.csheet.findChild(QLineEdit, f"inventory{slot}")
             if self.inventory_slot.text() != "":
                 all_items.append(self.inventory_slot.text())
-                self.update_item(slot, "", "", {"Action":"","Modifier":""})
+                self.update_item(slot, "", "", empty_slot_dict)
             else:
-                self.update_item(slot, "", "", {"Action":"","Modifier":""})
+                self.update_item(slot, "", "", empty_slot_dict)
 
         misc_items = copy.deepcopy(all_items)
+        self.armor_items = []
         slot = 1
         for item_type in os.listdir(cons.ITEMS):
             item_type_json = func.read_json(os.path.join(cons.ITEMS,item_type))
             for item in all_items:
                 for item_key in item_type_json:
                     if item_key.lower() == item.lower():
+                        self.armor_items.append(item)
                         self.update_item(slot, item_key, item_type.split(".")[0].split("_")[1], item_type_json[item_key])
                         misc_items.remove(item)
                         slot += 1
 
-        print(misc_items)
-
         for item in misc_items:
-            self.update_item(slot, item, "Misc", {"Action":"","Modifier":""})
+            self.update_item(slot, item, "Misc", empty_slot_dict)
             all_items.remove(item)
             slot += 1
 
+        self.set_ac()
+
     def update_item(self, slot, item, inventory_type, inventory_item):
-        self.inventory_slot = self.csheet.findChild(QLineEdit, f"inventory{slot}")
         self.inventory_icon = self.csheet.findChild(QToolButton, f"icon{slot}")
         self.inventory_action = self.csheet.findChild(QPushButton, f"action{slot}")
-        self.inventory_modifier = self.csheet.findChild(QLineEdit, f"modifier{slot}")
+        self.inventory_modifier = self.csheet.findChild(QPushButton, f"modifier{slot}")
+        self.inventory_roll = self.csheet.findChild(QPushButton, f"roll{slot}")
+        self.inventory_slot = self.csheet.findChild(QLineEdit, f"inventory{slot}")
 
         func.set_icon(self.inventory_icon,f"{inventory_type}.png",cons.ICON_COLOR)
-        self.inventory_action.setText(inventory_type.capitalize())
-        self.inventory_modifier.setText(inventory_item["Modifier"])
+        self.inventory_action.setText(inventory_item["Action"])
+        print(inventory_item)
+        self.inventory_modifier.setText(self.get_action_modifier(inventory_item["Action Mod"]))
+        self.inventory_roll.setText(self.get_roll(inventory_item["Roll"],inventory_type))
         self.inventory_slot.setText(item)
+
+    def get_roll(self, roll, type):
+        if roll != ["","",""]:
+            make_roll = []
+            print(roll)
+            if roll[0] in self.stats_dict:
+                make_roll.append(self.stats_dict[roll[0]])
+            else:
+                if int(roll[0]) > 1:
+                    make_roll.append(roll[0])
+            
+            make_roll.append(roll[1])
+
+            if roll[2] != "":
+                if roll[2] in self.stats_dict:
+                    if type == "weapon":
+                        roll_mod = math.floor(self.stats_dict[roll[2]]) #full damage
+                        #roll_mod = math.floor(self.stats_dict[roll[2]]/2)
+                    else:
+                        roll_mod = math.floor(self.stats_dict[roll[2]])
+                else:
+                    roll_mod = roll[2]
+                
+                if int(roll_mod) > 0:
+                    make_roll.append(f"+{roll_mod}")
+                else:
+                    pass
+
+            final_roll = "".join(make_roll)
+            return final_roll
+        else:
+            return ""
+
+
+    def get_action_modifier(self, action_mod):
+        if action_mod != "":
+            return f"+{self.stats_dict[action_mod]}"
+        else:
+            return ""
+
+    def set_ac(self):
+        ac = int(self.ac.text())
+        ac += len(self.armor_items)
+        self.ac.setText(str(ac))
 
     def set_level(self):
         widget =  self.csheet.stat_layout.get_label()
@@ -235,7 +288,8 @@ class CharacterSheet():
             7: "Vanquisher",
             8: "Champion",
             9: "Guardian",
-            10: "Legend"
+            10: "Legend",
+            11: "Legend",
             }
 
         stats_per_level = 3
@@ -246,18 +300,19 @@ class CharacterSheet():
         # THIS WILL HAPPEN WHEN A CHARACTER LEVELS UP
         self.set_hp()
         
-
     def set_hp(self):
-        hp_formula = (3*self.current_level) + self.CON
+        hp_formula = (cons.HIT_DICE*self.current_level) + self.CON
         self.hp.setText(str(hp_formula))
 
     def strenght(self):
         pass 
     def dexterity(self):
-        pass
+        #ac_calculation = str(cons.BASE_AC+math.floor(int(self.DEX)/2))
+        ac_calculation = str(cons.BASE_AC+math.floor(int(self.DEX)))
+        self.ac.setText(ac_calculation)
     def constitution(self):
         for count in range(1,cons.MAX_SLOTS+1):
-            for w in [(QToolButton,"icon"),(QPushButton,"action"),(QLineEdit,"modifier"),(QLineEdit,"inventory")]:#
+            for w in [(QToolButton,"icon"),(QPushButton,"action"),(QPushButton,"modifier"),(QPushButton,"roll"),(QLineEdit,"inventory")]:#
                 widget =  self.csheet.findChild(w[0], w[1]+str(count))
                 if count <= self.CON+6:
                     widget.setEnabled(True)

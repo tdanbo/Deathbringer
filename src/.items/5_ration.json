@@ -1,7 +1,12 @@
 {
 	"Ration": {
-		"Action": "Heal",
-		"Modifier": "2d4",
+		"Action": "Daily Heal",
+		"Action Mod": "",
+		"Roll": [
+			"CON",
+			"d4",
+			""
+		],
 		"Slots": 1,
 		"Cost": 100
 	}

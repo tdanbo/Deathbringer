@@ -1,7 +1,12 @@
 {
 	"Potion of Healing": {
 		"Action": "Heal",
-		"Modifier": "2d4+2",
+		"Action Mod": "",
+		"Roll": [
+			"2",
+			"d4",
+			"2"
+		],
 		"Slots": 1,
 		"Cost": 100
 	}

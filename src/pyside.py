@@ -8,6 +8,7 @@ import json
 import constants as cons
 import re
 
+import stylesheet as style
 
 class Section:
     all_sections = []
@@ -41,6 +42,7 @@ class Section:
             if title != "":
                 self.title_layout = QHBoxLayout()
                 self.title_label = QLabel(title)
+                self.title_label.setStyleSheet(style.QTITLE)
                 self.title_label.setObjectName("title")
                 self.outer_layout_type.addWidget(self.title_label)
                 self.title_label.setFixedHeight(cons.WSIZE)
@@ -49,6 +51,7 @@ class Section:
                 )
                 if icon != "":
                     self.title_icon = QToolButton()
+                    self.title_icon.setStyleSheet(style.QTITLE)
                     self.title_icon.setFixedSize(cons.WSIZE, cons.WSIZE)
                     set_icon(self.title_icon, icon[0], icon[2])
                     self.title_layout.addWidget(self.title_icon)
@@ -57,6 +60,7 @@ class Section:
                 self.section_layout.addLayout(self.title_layout)
 
             self.groupbox = QGroupBox()
+            self.groupbox.setStyleSheet(style.QGROUPBOX)
             if self.group[1] != None:
                 self.groupbox.setFixedWidth(self.group[1])
             if self.group[2] != None:

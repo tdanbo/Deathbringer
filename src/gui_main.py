@@ -51,6 +51,8 @@ class MainWindow(QWidget):
         self.setLayout(self.main_layout)
         self.setStyleSheet(style.DARK_STYLE)
 
+        CharacterSheet(character_sheet_gui).update_dictionary()
+
     def closeEvent(self, event: QCloseEvent):
         self.combat_log.stop_watching()
 

@@ -1,7 +1,12 @@
 {
 	"Tome of Fireball": {
-		"Action": "Spell",
-		"Modifier": "8d6",
+		"Action": "Hit",
+		"Action Mod": "INT",
+		"Roll": [
+			"6",
+			"d8",
+			""
+		],
 		"Range": "20-foot-radius sphere",
 		"Slots": 1,
 		"Cost": 100
