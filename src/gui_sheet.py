@@ -53,13 +53,13 @@ class CharacterSheetGUI(QWidget):
             spacing=10,   
         )
 
-        self.initiative_layout = Section(
+        self.hp_layout = Section(
             outer_layout = QVBoxLayout(),
-            inner_layout = ("VBox", 1),
+            inner_layout = ("HBox", 2),
             parent_layout = self.combat_layout.inner_layout(1),
             group = (True,None,cons.WSIZE*3),
-            title = "INIT",
-            icon = ("initiative.png",cons.WSIZE/2,cons.ICON_COLOR)	 
+            title = "HP",
+            icon = ("hp.png",cons.WSIZE/2,cons.ICON_COLOR) 
         )
 
         self.defense_layout = Section(
@@ -80,13 +80,13 @@ class CharacterSheetGUI(QWidget):
             icon = ("feats.png",cons.WSIZE/2,cons.ICON_COLOR)
         )
 
-        self.hp_layout = Section(
+        self.initiative_layout = Section(
             outer_layout = QVBoxLayout(),
-            inner_layout = ("HBox", 2),
+            inner_layout = ("VBox", 1),
             parent_layout = self.combat_layout.inner_layout(1),
             group = (True,None,cons.WSIZE*3),
-            title = "HP",
-            icon = ("hp.png",cons.WSIZE/2,cons.ICON_COLOR) 
+            title = "INIT",
+            icon = ("initiative.png",cons.WSIZE/2,cons.ICON_COLOR)	 
         )
 
         self.inventory_layout = Section(
@@ -177,12 +177,12 @@ class CharacterSheetGUI(QWidget):
             )
 
         #INITIATIVE AND AC AND HP FEATS
-        self.character_initiative = Widget(
+        self.initiative_stat_label = Widget(
             widget_type=QPushButton(),
-            stylesheet=style.QPUSHBUTTON,
-            parent_layout=self.initiative_layout.inner_layout(1),
+            text="0",
+            parent_layout = self.initiative_layout.inner_layout(1),
             signal=lambda: CharacterSheet(self).update_dictionary(),
-            objectname = "initiative",
+            objectname="initiative",
             size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
         )
 
@@ -200,15 +200,18 @@ class CharacterSheetGUI(QWidget):
             stylesheet=style.QPUSHBUTTON,
             parent_layout=self.hp_layout.inner_layout(1),
             signal=lambda: CharacterSheet(self).update_dictionary(),
-            objectname = "hp",
+            objectname = "max_hp",
+            text = cons.HIT_DICE,
             size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
         )
 
         self.character_hp_current= Widget(
             widget_type=QPushButton(),
-            text="0",
+            stylesheet=style.QPUSHBUTTON,
             parent_layout=self.hp_layout.inner_layout(1),
             signal=lambda: CharacterSheet(self).update_dictionary(),
+            objectname = "current_hp",
+            text = "0",
             size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
         )
 
@@ -217,7 +220,7 @@ class CharacterSheetGUI(QWidget):
             stylesheet=style.QPUSHBUTTON,
             text="-",
             parent_layout=self.hp_layout.inner_layout(2),
-            signal=lambda: CharacterSheet(self).update_dictionary(),
+            signal=lambda: CharacterSheet(self).adjust_hp("minus",self.character_hp_line.get_widget().text()),
             objectname = "hp_minus",
             size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
         )
@@ -229,7 +232,7 @@ class CharacterSheetGUI(QWidget):
             align="center",
             parent_layout=self.hp_layout.inner_layout(2),
             signal=lambda: CharacterSheet(self).update_dictionary(),
-            objectname = "hp_line",
+            objectname = "hp_adjuster",
             size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
             width=cons.WSIZE*2,
         )
@@ -239,7 +242,7 @@ class CharacterSheetGUI(QWidget):
             stylesheet=style.QPUSHBUTTON,
             text="+",
             parent_layout=self.hp_layout.inner_layout(2),
-            signal=lambda: CharacterSheet(self).update_dictionary(),
+            signal=lambda: CharacterSheet(self).adjust_hp("plus",self.character_hp_line.get_widget().text()),
             objectname = "hp_plus",
             size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
         )
@@ -261,7 +264,7 @@ class CharacterSheetGUI(QWidget):
             )
             self.backpack= Widget(
                 widget_type=QToolButton(),
-                stylesheet=style.QTOOLBUTTON,
+                stylesheet=style.INVENTORY,
                 text="",
                 parent_layout=self.slot_layot.inner_layout(1),
                 width = cons.WSIZE*1.50,
@@ -271,7 +274,7 @@ class CharacterSheetGUI(QWidget):
             )
             self.backpack_item = Widget(
                 widget_type=QLineEdit(),
-                stylesheet=style.QLINEEDIT,
+                stylesheet=style.INVENTORY,
                 parent_layout=self.slot_layot.inner_layout(1),
                 height = cons.WSIZE*1.50,
                 signal=lambda: CharacterSheet(self).update_dictionary(),
@@ -282,7 +285,7 @@ class CharacterSheetGUI(QWidget):
             )
             self.backpack= Widget(
                 widget_type=QPushButton(),
-                stylesheet=style.QPUSHBUTTON,
+                stylesheet=style.INVENTORY,
                 text="",
                 parent_layout=self.slot_layot.inner_layout(1),
                 width = cons.WSIZE*3,
@@ -292,7 +295,7 @@ class CharacterSheetGUI(QWidget):
             )
             self.backpack= Widget(
                 widget_type=QPushButton(),
-                stylesheet=style.QPUSHBUTTON,
+                stylesheet=style.INVENTORY,
                 text="",
                 parent_layout=self.slot_layot.inner_layout(1),
                 width = cons.WSIZE*2,
@@ -302,7 +305,7 @@ class CharacterSheetGUI(QWidget):
             )
             self.weapon_modifier = Widget(
                 widget_type=QPushButton(),
-                stylesheet=style.QPUSHBUTTON,
+                stylesheet=style.INVENTORY,
                 parent_layout=self.slot_layot.inner_layout(1),
                 width = cons.WSIZE*2,
                 height = cons.WSIZE*1.50,

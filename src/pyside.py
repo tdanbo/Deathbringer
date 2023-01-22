@@ -157,6 +157,8 @@ class Widget:
         self.widget = widget_type
         if isinstance(self.widget, QComboBox):
             self.setup_combobox(self.widget, text)
+        if isinstance(self.widget, QPushButton):
+            self.widget.setFocusPolicy(Qt.NoFocus)
         self.parent_layout = parent_layout
         self.object = objectname
         self.setting = setting

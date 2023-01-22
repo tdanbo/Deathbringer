@@ -3,13 +3,20 @@ RADIUS = "6px"
 
 TEXT_COLOR = "hsl(0, 0%, 80%)"
 
-VIBRANT_COLOR = "#113300"
+
+INJURY_RED = "#330000"
+INJURY_RED_BRIGHT = "#800000"
+
+VIBRANT_COLOR = "hsl(0, 0%, 10%)"
 DARK_COLOR = "hsl(0, 0%, 10%)"
+MID_COLOR = "hsl(0, 0%, 25%)"
 LIGHT_COLOR = "hsl(0, 0%, 20%)"
 DISABLED_COLOR = "hsl(0, 0%, 19%);"
 
 QPUSHBUTTON = f"QPushButton {{color: {TEXT_COLOR}; background-color: {DARK_COLOR}; border-radius: {RADIUS}}}"\
               f"QPushButton:disabled {{color: {TEXT_COLOR}; background-color: {DISABLED_COLOR}}}"
+
+QPUSHBUTTON_INJURY = f"QPushButton {{color: {INJURY_RED_BRIGHT}; background-color: {INJURY_RED}; border-radius: {RADIUS}}}"\
 
 QLINEEDIT = f"QLineEdit {{color: {TEXT_COLOR}; background-color: {DARK_COLOR}; border-radius: {RADIUS}}}"\
             f"QLineEdit:disabled {{color: {TEXT_COLOR}; background-color: {DISABLED_COLOR}}}"
@@ -24,6 +31,17 @@ QTITLE = f"QToolButton {{background-color: {VIBRANT_COLOR}}}"\
 
 QSTATS = f"QPushButton {{background-color: {DARK_COLOR};border-top-right-radius: {RADIUS}}}"\
          f"QLineEdit {{background-color: {DARK_COLOR}; border-bottom-right-radius: {RADIUS}; border-bottom-left-radius: {RADIUS}}}"
+
+INVENTORY = f"QToolButton {{background-color: {DARK_COLOR}; border-top-left-radius: {RADIUS}; border-bottom-left-radius: {RADIUS}; border: 1px solid {MID_COLOR};}}"\
+             f"QLineEdit {{background-color: {DARK_COLOR}; border-top-right-radius: {RADIUS}; border-bottom-right-radius: {RADIUS}; border: 1px solid {MID_COLOR};}}"\
+             f"QPushButton {{color: {TEXT_COLOR}; background-color: {DARK_COLOR}; border-radius: {RADIUS}; border: 1px solid {MID_COLOR};}}"\
+             f"QPushButton:disabled {{color: {TEXT_COLOR}; background-color: {DISABLED_COLOR}}}"\
+             f"QToolButton:disabled {{color: {TEXT_COLOR}; background-color: {DISABLED_COLOR}}}"\
+             f"QLineEdit:disabled {{color: {TEXT_COLOR}; background-color: {DISABLED_COLOR}}}"\
+              
+INVENTORY_INJURY = f"QToolButton {{background-color: {INJURY_RED}; border-top-left-radius: {RADIUS}; border-bottom-left-radius: {RADIUS}; border: 1px solid {MID_COLOR};}}"\
+                   f"QLineEdit {{color: {INJURY_RED_BRIGHT}; background-color: {INJURY_RED}; border-top-right-radius: {RADIUS}; border-bottom-right-radius: {RADIUS}; border: 1px solid {MID_COLOR};}}"\
+                   f"QPushButton {{color: {INJURY_RED_BRIGHT}; background-color: {INJURY_RED}; border-radius: {RADIUS}; border: 1px solid {MID_COLOR};}}"\
 
 DARK_STYLE = """
 QWidget  {

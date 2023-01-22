@@ -23,6 +23,7 @@ ITEMS = os.path.join(ROOT, ".items")
 WSIZE = 22
 ICON_COLOR = "#CCCCCC"
 
+START_SLOTS = 6
 MAX_SLOTS = 16
 BASE_AC = 9
 HIT_DICE = 6

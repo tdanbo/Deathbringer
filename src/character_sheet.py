@@ -10,6 +10,9 @@ import constants as cons
 import os
 import functions as func
 
+import random
+import stylesheet as style
+
 import copy
 
 class CharacterSheet():
@@ -26,7 +29,9 @@ class CharacterSheet():
         self.initiative = csheet.findChild(QPushButton, "initiative")
 
         #hp
-        self.hp = csheet.findChild(QPushButton, "hp")
+        self.max_hp = csheet.findChild(QPushButton, "max_hp")
+        self.current_hp = csheet.findChild(QPushButton, "current_hp")
+        self.hp_adjuster = csheet.findChild(QLineEdit, "hp_adjuster")
 
         #stats
         self.STR = int(csheet.findChild(QLineEdit, "STR").text())
@@ -96,7 +101,8 @@ class CharacterSheet():
             "character": self.character,
             "level": self.level,
             "coins": self.coins,
-            "hp": self.hp.text(),
+            "max hp": self.max_hp.text(),
+            "current hp": self.current_hp.text(),
             "ac": self.ac.text(),
             "initiative": self.initiative.text(),
             "stats": {
@@ -188,14 +194,14 @@ class CharacterSheet():
     # ITERATE OVER ITEM JSON TO FIND ITEM
     def update_inventory(self):
         all_items = []
-        empty_slot_dict = {"Action":"","Action Mod":"","Roll":["","",""]}
+        self.empty_slot_dict = {"Action":"","Action Mod":"","Roll":["","",""]}
         for slot in range(1,cons.MAX_SLOTS+1):
             self.inventory_slot = self.csheet.findChild(QLineEdit, f"inventory{slot}")
             if self.inventory_slot.text() != "":
                 all_items.append(self.inventory_slot.text())
-                self.update_item(slot, "", "", empty_slot_dict)
+                self.update_item(slot, "", "", self.empty_slot_dict)
             else:
-                self.update_item(slot, "", "", empty_slot_dict)
+                self.update_item(slot, "", "", self.empty_slot_dict)
 
         misc_items = copy.deepcopy(all_items)
         self.armor_items = []
@@ -205,13 +211,15 @@ class CharacterSheet():
             for item in all_items:
                 for item_key in item_type_json:
                     if item_key.lower() == item.lower():
-                        self.armor_items.append(item)
-                        self.update_item(slot, item_key, item_type.split(".")[0].split("_")[1], item_type_json[item_key])
+                        this_item_type = item_type.split(".")[0].split("_")[1]
+                        if this_item_type == "armor":
+                            self.armor_items.append(item)
+                        self.update_item(slot, item_key, this_item_type, item_type_json[item_key])
                         misc_items.remove(item)
                         slot += 1
 
         for item in misc_items:
-            self.update_item(slot, item, "Misc", empty_slot_dict)
+            self.update_item(slot, item, "Misc", self.empty_slot_dict)
             all_items.remove(item)
             slot += 1
 
@@ -224,12 +232,21 @@ class CharacterSheet():
         self.inventory_roll = self.csheet.findChild(QPushButton, f"roll{slot}")
         self.inventory_slot = self.csheet.findChild(QLineEdit, f"inventory{slot}")
 
+        inventory_widgets = [self.inventory_icon,self.inventory_action,self.inventory_modifier,self.inventory_roll,self.inventory_slot]
+
         func.set_icon(self.inventory_icon,f"{inventory_type}.png",cons.ICON_COLOR)
         self.inventory_action.setText(inventory_item["Action"])
         print(inventory_item)
         self.inventory_modifier.setText(self.get_action_modifier(inventory_item["Action Mod"]))
         self.inventory_roll.setText(self.get_roll(inventory_item["Roll"],inventory_type))
         self.inventory_slot.setText(item)
+
+        if inventory_type == "injury":
+            [widget.setStyleSheet(style.INVENTORY_INJURY) for widget in inventory_widgets]
+            func.set_icon(self.inventory_icon,f"{inventory_type}.png",style.INJURY_RED_BRIGHT)
+        else:
+            [widget.setStyleSheet(style.INVENTORY) for widget in inventory_widgets]
+            func.set_icon(self.inventory_icon,f"{inventory_type}.png",cons.ICON_COLOR)
 
     def get_roll(self, roll, type):
         if roll != ["","",""]:
@@ -301,8 +318,52 @@ class CharacterSheet():
         self.set_hp()
         
     def set_hp(self):
-        hp_formula = (cons.HIT_DICE*self.current_level) + self.CON
-        self.hp.setText(str(hp_formula))
+        if self.current_level == 0:
+            hp_formula = cons.HIT_DICE
+            self.current_hp.setText(str(hp_formula))
+        else:
+            hp_formula = (cons.HIT_DICE*self.current_level) + self.CON
+        self.max_hp.setText(str(hp_formula))
+        
+
+    def adjust_hp(self, state, value):
+        current_hp = int(self.current_hp.text())
+        if state == "minus":
+            current_hp -= int(value)
+        else:
+            current_hp += int(value)
+        self.current_hp.setText(str(current_hp))
+        self.current_hp.setStyleSheet(style.QPUSHBUTTON)
+        if current_hp < 0:
+            self.current_hp.setStyleSheet(style.QPUSHBUTTON_INJURY)
+            injuries = abs(current_hp)
+            self.add_injury(injuries)
+        if current_hp > int(self.max_hp.text()):
+            self.current_hp.setText(self.max_hp.text())
+
+        
+        self.hp_adjuster.setText("")
+        self.hp_adjuster.clearFocus()
+        self.update_dictionary()
+
+    def add_injury(self, injuries):
+        for injury in range(injuries):
+            current_slots = int(self.CON)+cons.START_SLOTS
+
+            free_slots = []
+            for slot in range(1,current_slots+1):
+                widget_slot = self.csheet.findChild(QLineEdit, f"inventory{slot}")
+                if widget_slot.text() == "Injury":
+                    pass
+                else:
+                    free_slots.append(slot)
+            if free_slots == []:
+                print("DEAD")
+                return
+            else:
+                injury_slot = random.choice(free_slots)
+                self.update_item(injury_slot, "Injury", "injury", self.empty_slot_dict)
+
 
     def strenght(self):
         pass 
@@ -314,7 +375,7 @@ class CharacterSheet():
         for count in range(1,cons.MAX_SLOTS+1):
             for w in [(QToolButton,"icon"),(QPushButton,"action"),(QPushButton,"modifier"),(QPushButton,"roll"),(QLineEdit,"inventory")]:#
                 widget =  self.csheet.findChild(w[0], w[1]+str(count))
-                if count <= self.CON+6:
+                if count <= self.CON+cons.START_SLOTS:
                     widget.setEnabled(True)
                 else:
                     widget.setEnabled(False)
