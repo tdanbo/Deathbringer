@@ -1,11 +1,11 @@
 {
 	"Sling": {
 		"Action": "Hit",
-		"Action Mod": "DEX",
+		"Action Mod": "STR",
 		"Roll": [
 			"1",
 			"d4",
-			"DEX"
+			"STR"
 		],
 		"Reach": true,
 		"Slots": 1,
@@ -54,11 +54,11 @@
 	},
 	"Bow": {
 		"Action": "Hit",
-		"Action Mod": "DEX",
+		"Action Mod": "STR",
 		"Roll": [
 			"1",
 			"d6",
-			"DEX"
+			"STR"
 		],
 		"Reach": true,
 		"Slots": 2,
@@ -146,11 +146,11 @@
 	},
 	"Crossbow": {
 		"Action": "Hit",
-		"Action Mod": "DEX",
+		"Action Mod": "STR",
 		"Roll": [
 			"1",
 			"d8",
-			"DEX"
+			"STR"
 		],
 		"Reach": true,
 		"Slots": 2,

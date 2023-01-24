@@ -33,6 +33,8 @@ class CharacterSheet():
         self.current_hp = csheet.findChild(QPushButton, "current_hp")
         self.hp_adjuster = csheet.findChild(QLineEdit, "hp_adjuster")
 
+
+
         #stats
         self.STR = int(csheet.findChild(QLineEdit, "STR").text())
         self.DEX = int(csheet.findChild(QLineEdit, "DEX").text())
@@ -41,6 +43,8 @@ class CharacterSheet():
         self.WIS = int(csheet.findChild(QLineEdit, "WIS").text())
         self.CHA = int(csheet.findChild(QLineEdit, "CHA").text())
         
+        self.max_slots = int(self.CON)+cons.START_SLOTS
+
         #stats dictionary
         self.stats_dict = {"":"","AC":1,"STR": self.STR, "DEX": self.DEX, "CON": self.CON, "INT": self.INT, "WIS": self.WIS, "CHA": self.CHA}
 
@@ -236,7 +240,6 @@ class CharacterSheet():
 
         func.set_icon(self.inventory_icon,f"{inventory_type}.png",cons.ICON_COLOR)
         self.inventory_action.setText(inventory_item["Action"])
-        print(inventory_item)
         self.inventory_modifier.setText(self.get_action_modifier(inventory_item["Action Mod"]))
         self.inventory_roll.setText(self.get_roll(inventory_item["Roll"],inventory_type))
         self.inventory_slot.setText(item)
@@ -251,14 +254,14 @@ class CharacterSheet():
     def get_roll(self, roll, type):
         if roll != ["","",""]:
             make_roll = []
-            print(roll)
             if roll[0] in self.stats_dict:
-                make_roll.append(self.stats_dict[roll[0]])
+                if int(self.stats_dict[roll[0]]) > 1:
+                    make_roll.append(str(self.stats_dict[roll[0]]))
             else:
                 if int(roll[0]) > 1:
-                    make_roll.append(roll[0])
+                    make_roll.append(str(roll[0]))
             
-            make_roll.append(roll[1])
+            make_roll.append(str(roll[1]))
 
             if roll[2] != "":
                 if roll[2] in self.stats_dict:
@@ -328,41 +331,60 @@ class CharacterSheet():
 
     def adjust_hp(self, state, value):
         current_hp = int(self.current_hp.text())
-        if state == "minus":
-            current_hp -= int(value)
-        else:
-            current_hp += int(value)
-        self.current_hp.setText(str(current_hp))
         self.current_hp.setStyleSheet(style.QPUSHBUTTON)
-        if current_hp < 0:
-            self.current_hp.setStyleSheet(style.QPUSHBUTTON_INJURY)
-            injuries = abs(current_hp)
-            self.add_injury(injuries)
+        for point in range(1,int(value)+1):
+            if state == "minus":
+                current_hp -= 1
+                if current_hp < 0:
+                    self.add_injury()
+            else:  
+                if current_hp < 0:
+                    self.remove_injury()
+                current_hp += 1
+
+
         if current_hp > int(self.max_hp.text()):
             self.current_hp.setText(self.max_hp.text())
+        elif current_hp < -abs(self.max_slots):
+            self.current_hp.setText(str(-abs(self.max_slots)))
+        else:
+            self.current_hp.setText(str(current_hp))   
 
-        
+        if current_hp >= 0:
+            self.current_hp.setStyleSheet(style.QPUSHBUTTON)
+        else:
+            self.current_hp.setStyleSheet(style.QPUSHBUTTON_INJURY)
+
         self.hp_adjuster.setText("")
         self.hp_adjuster.clearFocus()
         self.update_dictionary()
 
-    def add_injury(self, injuries):
-        for injury in range(injuries):
-            current_slots = int(self.CON)+cons.START_SLOTS
-
-            free_slots = []
-            for slot in range(1,current_slots+1):
-                widget_slot = self.csheet.findChild(QLineEdit, f"inventory{slot}")
-                if widget_slot.text() == "Injury":
-                    pass
-                else:
-                    free_slots.append(slot)
-            if free_slots == []:
-                print("DEAD")
+    def remove_injury(self):
+        print("remove injury")
+        print("remove injury")
+        for slot in range(1,self.max_slots+1):
+            widget_slot = self.csheet.findChild(QLineEdit, f"inventory{slot}")
+            if widget_slot.text() == "Injury":
+                self.update_item(slot, "", "", self.empty_slot_dict)
                 return
             else:
-                injury_slot = random.choice(free_slots)
-                self.update_item(injury_slot, "Injury", "injury", self.empty_slot_dict)
+                pass
+
+    def add_injury(self):
+        current_slots = int(self.CON)+cons.START_SLOTS
+        free_slots = []
+        for slot in range(1,current_slots+1):
+            widget_slot = self.csheet.findChild(QLineEdit, f"inventory{slot}")
+            if widget_slot.text() == "Injury":
+                pass
+            else:
+                free_slots.append(slot)
+        if free_slots == []:
+            print("DEAD")
+            return
+        else:
+            injury_slot = random.choice(free_slots)
+            self.update_item(injury_slot, "Injury", "injury", self.empty_slot_dict)
 
 
     def strenght(self):

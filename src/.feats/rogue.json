@@ -1,0 +1,68 @@
+[
+    {
+        "Name": "Sneak Attack",
+        "Level": 1,
+        "Description": "Deals an extra (2d6) damage when attacking a creature that is surprised or has an ally within 5 feet of it.",
+        "icon": "Sneak Attack.png"
+    },
+    {
+        "Name": "Expertise",
+        "Level": 3,
+        "Description": "Becomes proficient in two skills or tools of their choice.",
+        "icon": "Expertise.png"
+    },
+    {
+        "Name": "Thieves' Cant",
+        "Level": 3,
+        "Description": "Can communicate with other thieves using a secret language called thieves' cant.",
+        "icon": "Thieves' Cant.png"
+    },
+    {
+        "Name": "Cunning Action",
+        "Level": 2,
+        "Description": "Can use a bonus action to take the Dash, Disengage, or Hide action.",
+        "icon": "Cunning Action.png"
+    },
+    {
+        "Name": "Uncanny Dodge",
+        "Level": 5,
+        "Description": "Can use a reaction to halve the damage taken from an attack that hits.",
+        "icon": "Uncanny Dodge.png"
+    },
+    {
+        "Name": "Evasion",
+        "Level": 7,
+        "Description": "Can use a reaction to completely avoid taking damage from certain area of effect spells and traps.",
+        "icon": "Evasion.png"
+    },
+    {
+        "Name": "Reliable Talent",
+        "Level": 11,
+        "Description": "Can always roll a natural 10 or higher on ability checks with a certain skill or tool.",
+        "icon": "Reliable Talent.png"
+    },
+    {
+        "Name": "Blindsense",
+        "Level": 14,
+        "Description": "Can sense the presence and location of creatures within 10 feet, even if they are invisible or in darkness.",
+        "icon": "Blindsense.png"
+    },
+    {
+        "Name": "Slipperiness",
+        "Level": 15,
+        "Description": "Can use a bonus action to escape from being grappled or restrained.",
+        "icon": "Slipperiness.png"
+    },
+    {
+        "Name": "Elusive",
+        "Level": 18,
+        "Description": "Has advantage on saving throws against spells and other effects that target them.",
+        "icon": "Elusive.png"
+    },
+    {
+        "Name": "Stroke of Luck",
+        "Level": 20,
+        "Description": "Can use a reaction to turn a missed attack into a hit or a failed ability check into a success.",
+        "icon": "Stroke of Luck.png"
+    }
+]

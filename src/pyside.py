@@ -288,6 +288,10 @@ class Widget:
         except:
             pass
         try:
+            widget.setPlainText(text)
+        except:
+            pass
+        try:
             widget.setValue(int(text))
         except:
             pass

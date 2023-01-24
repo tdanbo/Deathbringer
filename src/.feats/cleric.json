@@ -1,0 +1,50 @@
+[
+   {
+      "Name": "Spellcasting",
+      "Level": 1,
+      "Description": "Can cast spells from the Cleric spell list.",
+      "icon": "Spellcasting.png"
+   },
+   {
+      "Name": "Divine Domain",
+      "Level": 1,
+      "Description": "Gains domain spells and a domain feature related to their deity.",
+      "icon": "Divine Domain.png"
+   },
+   {
+      "Name": "Divine Sense",
+      "Level": 1,
+      "Description": "Can use an action to detect the presence of celestials, fiends, and undead within 60 feet.",
+      "icon": "Divine Sense.png"
+   },
+   {
+      "Name": "Lay on Hands",
+      "Level": 1,
+      "Description": "Can use an action to heal a creature within 5 feet for a number of hit points equal to their level.",
+      "icon": "Lay on Hands.png"
+   },
+   {
+      "Name": "Ability Score Improvement",
+      "Level": 4,
+      "Description": "Can increase one ability score by 2 or two ability scores by 1.",
+      "icon": "Ability Score Improvement.png"
+   },
+   {
+      "Name": "Destroy Undead",
+      "Level": 5,
+      "Description": "Can use an action to turn or destroy undead within 30 feet that have challenge rating of 1/2 or lower.",
+      "icon": "Destroy Undead.png"
+   },
+   {
+      "Name": "Divine Intervention",
+      "Level": 10,
+      "Description": "Can call on their deity for aid, which can take various forms depending on the deity.",
+      "icon": "Divine Intervention.png"
+   },
+   {
+      "Name": "Potent Spellcasting",
+      "Level": 17,
+      "Description": "Spells that deal damage deal extra damage equal to level.",
+      "icon": "Potent Spellcasting.png"
+   }
+]

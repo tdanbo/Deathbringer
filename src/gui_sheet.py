@@ -10,6 +10,7 @@ import constants as cons
 from character_sheet import CharacterSheet
 
 import stylesheet as style
+from gui_feats import FeatsGUI
 
 class CharacterSheetGUI(QWidget):
     def __init__(self):
@@ -139,7 +140,7 @@ class CharacterSheetGUI(QWidget):
                 stylesheet=style.QTOOLBUTTON,
                 parent_layout = self.feat_layout.inner_layout(layout_nr),
                 size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
-                signal=lambda: CharacterSheet(self).update_dictionary(),
+                signal=self.open_features,
                 objectname=f"feat{number}",
             )
 
@@ -161,7 +162,7 @@ class CharacterSheetGUI(QWidget):
             self.stat_label = Widget(
                 widget_type=QPushButton(),
                 stylesheet=style.QSTATS,
-                text=stat,               
+                text=stat,
                 height = cons.WSIZE/1.25,
                 parent_layout = self.stat_layout.inner_layout(number),
             )
@@ -328,3 +329,9 @@ class CharacterSheetGUI(QWidget):
             )
 
         self.setLayout(self.character_sheet_layout.outer_layout())
+
+    def open_features(self):
+        sender = self.sender()
+        print(sender)
+        self.features = FeatsGUI(sender)
+        self.features.show()

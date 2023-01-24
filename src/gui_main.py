@@ -7,6 +7,7 @@ from pyside import Widget
 
 from gui_sheet import CharacterSheetGUI
 from gui_log import CombatLogGUI
+
 import os
 import sys
 import constants as cons

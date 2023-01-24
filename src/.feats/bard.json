@@ -1,0 +1,56 @@
+[
+   {
+      "Name": "Spellcasting",
+      "Level": 1,
+      "Description": "Can cast spells from the Bard spell list.",
+      "icon": "Spellcasting.png"
+   },
+   {
+      "Name": "Bardic Inspiration",
+      "Level": 1,
+      "Description": "Can use a bonus action to grant an ally within 60 feet a d6 inspiration die, which can be added to an ability check or save.",
+      "icon": "Bardic Inspiration.png"
+   },
+   {
+      "Name": "Jack of All Trades",
+      "Level": 2,
+      "Description": "Can add half proficiency bonus to ability checks that don't already include it.",
+      "icon": "Jack of All Trades.png"
+   },
+   {
+      "Name": "Song of Rest",
+      "Level": 2,
+      "Description": "Can use a bonus action to grant allies within earshot the ability to regain hit points equal to a d6 during a short rest.",
+      "icon": "Song of Rest.png"
+   },
+   {
+      "Name": "Expertise",
+      "Level": 3,
+      "Description": "Becomes proficient in two skills or tools of their choice.",
+      "icon": "Expertise.png"
+   },
+   {
+      "Name": "Ability Score Improvement",
+      "Level": 4,
+      "Description": "Can increase one ability score by 2 or two ability scores by 1.",
+      "icon": "Ability Score Improvement.png"
+   },
+   {
+      "Name": "Countercharm",
+      "Level": 6,
+      "Description": "Can use an action to grant allies within earshot advantage on saving throws against being frightened or charmed.",
+      "icon": "Countercharm.png"
+   },
+   {
+      "Name": "Magical Secrets",
+      "Level": 10,
+      "Description": "Can learn spells from any class's spell list.",
+      "icon": "Magical Secrets.png"
+   },
+   {
+      "Name": "Superior Inspiration",
+      "Level": 20,
+      "Description": "The inspiration die becomes a d8.",
+      "icon": "Superior Inspiration.png"
+   }
+]

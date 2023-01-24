@@ -1,0 +1,50 @@
+[
+    {
+        "Name": "Spellcasting",
+        "Level": 1,
+        "Description": "Can cast spells from the Druid spell list.",
+        "icon": "Spellcasting.png"
+    },
+    {
+        "Name": "Druidic",
+        "Level": 1,
+        "Description": "Can speak the Druidic language and has access to the Druidic circle spells.",
+        "icon": "Druidic.png"
+    },
+    {
+        "Name": "Wild Shape",
+        "Level": 2,
+        "Description": "Can use an action to transform into a beast that has a challenge rating of 1/4 or lower.",
+        "icon": "Wild Shape.png"
+    },
+    {
+        "Name": "Druid Circle",
+        "Level": 2,
+        "Description": "Gains access to additional spells and abilities based on the chosen Druid Circle.",
+        "icon": "Druid Circle.png"
+    },
+    {
+        "Name": "Ability Score Improvement",
+        "Level": 4,
+        "Description": "Can increase one ability score by 2 or two ability scores by 1.",
+        "icon": "Ability Score Improvement.png"
+    },
+    {
+        "Name": "Timeless Body",
+        "Level": 18,
+        "Description": "No longer suffers aging penalties and cannot be aged magically.",
+        "icon": "Timeless Body.png"
+    },
+    {
+        "Name": "Beast Spells",
+        "Level": 18,
+        "Description": "Can cast certain spells while in Wild Shape.",
+        "icon": "Beast Spells.png"
+    },
+    {
+        "Name": "Archdruid",
+        "Level": 20,
+        "Description": "Gains access to powerful abilities and spells, and can use Wild Shape to transform into a elemental.",
+        "icon": "Archdruid.png"
+    }
+]

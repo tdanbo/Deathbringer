@@ -1,0 +1,56 @@
+[
+    {
+        "Name": "Fighting Style",
+        "Level": 1,
+        "Description": "Choose a fighting style that modifies the way the fighter can attack and defend.",
+        "icon": "Fighting Style.png"
+    },
+    {
+        "Name": "Second Wind",
+        "Level": 1,
+        "Description": "Can use a bonus action to regain hit points equal to 1d10 + fighter level.",
+        "icon": "Second Wind.png"
+    },
+    {
+        "Name": "Action Surge",
+        "Level": 2,
+        "Description": "Can take an additional action on their turn.",
+        "icon": "Action Surge.png"
+    },
+    {
+        "Name": "Martial Archetype",
+        "Level": 3,
+        "Description": "Chooses a archetype that grants additional abilities and options.",
+        "icon": "Martial Archetype.png"
+    },
+    {
+        "Name": "Ability Score Improvement",
+        "Level": 4,
+        "Description": "Can increase one ability score by 2 or two ability scores by 1.",
+        "icon": "Ability Score Improvement.png"
+    },
+    {
+        "Name": "Extra Attack",
+        "Level": 5,
+        "Description": "Can attack twice, instead of once, whenever they take the Attack action on their turn.",
+        "icon": "Extra Attack.png"
+    },
+    {
+        "Name": "Indomitable",
+        "Level": 9,
+        "Description": "Can reroll a failed saving throw, but must use the new roll.",
+        "icon": "Indomitable.png"
+    },
+    {
+        "Name": "Relentless",
+        "Level": 11,
+        "Description": "Can regain use of Second Wind while at 0 hit points, but must finish a short or long rest before doing so again.",
+        "icon": "Relentless.png"
+    },
+    {
+        "Name": "Survivor",
+        "Level": 18,
+        "Description": "Regain",
+        "icon": "Survivor.png"
+    }
+]

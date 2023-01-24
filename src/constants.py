@@ -17,6 +17,8 @@ PASSWORD = "7kHYdt9kna9d9w3t"
 CONNECT = f"mongodb+srv://{USER}:{PASSWORD}@cluster0.2oqhlud.mongodb.net/?retryWrites=true&w=majority"
 SETTINGS = os.path.join(LOCAL_DIRECTORY, "settings.json")
 ICONS = os.path.join(ROOT, ".icons")
+FEATURES = os.path.join(ROOT, ".feats", "features.json")
+
 
 ITEMS = os.path.join(ROOT, ".items")
 
