@@ -29,8 +29,8 @@ class CharacterSheetGUI(QWidget):
         )
 
         self.portrais_layout = Section(
-            outer_layout = QHBoxLayout(),
-            inner_layout = ("HBox", 1),
+            outer_layout = QVBoxLayout(),
+            inner_layout = ("HBox", 2),
             group = (True,113,cons.WSIZE*3),
             title = "Beasttoe",
             parent_layout = self.character_basic.inner_layout(1),
@@ -72,12 +72,12 @@ class CharacterSheetGUI(QWidget):
             icon = ("armorclass.png",cons.WSIZE/2,cons.ICON_COLOR)	 
         )
 
-        self.feat_layout = Section(
+        self.morale_layout = Section(
             outer_layout = QVBoxLayout(),
             inner_layout = ("HBox", 2),
             parent_layout = self.combat_layout.inner_layout(1),
             group = (True,None,cons.WSIZE*3),
-            title = "FEATS",
+            title = "MORALE",
             icon = ("feats.png",cons.WSIZE/2,cons.ICON_COLOR)
         )
 
@@ -86,7 +86,7 @@ class CharacterSheetGUI(QWidget):
             inner_layout = ("VBox", 1),
             parent_layout = self.combat_layout.inner_layout(1),
             group = (True,None,cons.WSIZE*3),
-            title = "INIT",
+            title = "Mobility",
             icon = ("initiative.png",cons.WSIZE/2,cons.ICON_COLOR)	 
         )
 
@@ -107,14 +107,24 @@ class CharacterSheetGUI(QWidget):
             spacing=10,     
         )
 
+        self.feats_layout = Section(
+            outer_layout = QVBoxLayout(),
+            inner_layout = ("HBox", 1),
+            parent_layout = self.character_lower_basic.inner_layout(1),
+            title = "FEATS",
+            spacing = 2,
+            group = (True,None,cons.WSIZE*2),
+            icon = ("feats.png",cons.WSIZE/2,cons.ICON_COLOR)	 
+        )
+
         self.herodice_layout = Section(
             outer_layout = QVBoxLayout(),
             inner_layout = ("HBox", 1),
             parent_layout = self.character_lower_basic.inner_layout(1),
-            title = "HERO DICE",
-            spacing = 5,
+            title = "FOCUS",
+            spacing = 2,
             group = (True,None,cons.WSIZE*2),
-            icon = ("herodice.png",cons.WSIZE/2,cons.ICON_COLOR)	 
+            icon = ("focus.png",cons.WSIZE/2,cons.ICON_COLOR)	 
         )
 
         self.corruption_layout = Section(
@@ -122,25 +132,31 @@ class CharacterSheetGUI(QWidget):
             inner_layout = ("HBox", 1),
             parent_layout = self.character_lower_basic.inner_layout(1),
             group = (True,None,cons.WSIZE*2),
-            spacing = 5,
+            spacing = 2,
             title = "CORRUPTION",
             icon = ("corruption.png",cons.WSIZE/2,cons.ICON_COLOR), 
         )
 
         #Below is all the widgets used in the character sheet
 
+        self.portrait = Widget(
+            widget_type=QLabel(),
+            parent_layout=self.portrais_layout.inner_layout(1),
+            icon=("beasttoe.png","",""),
+            stylesheet=style.QTOOLBUTTON,
+            objectname="portrait",
+            size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
+        )
 
-        for number in range(1,5):
-            if number <= 2:
-                layout_nr = 1
-            else:
-                layout_nr = 2
+        for number in range(1,4):
             self.feats = Widget(
                 widget_type=QToolButton(),
                 stylesheet=style.QTOOLBUTTON,
-                parent_layout = self.feat_layout.inner_layout(layout_nr),
+                parent_layout = self.feats_layout.inner_layout(1),
                 size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
                 signal=self.open_features,
+                #height=cons.WSIZE*1.25,
+                width=cons.WSIZE*1.25,
                 objectname=f"feat{number}",
             )
 
@@ -151,7 +167,7 @@ class CharacterSheetGUI(QWidget):
                 checkable=True,
                 parent_layout = self.herodice_layout.inner_layout(1),
                 size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
-                height=cons.WSIZE/1.25,
+                #height=cons.WSIZE/1.25,
                 signal=lambda: CharacterSheet(self).update_dictionary(),
                 objectname=f"herodice{number}",
                 enabled=False,
@@ -163,27 +179,37 @@ class CharacterSheetGUI(QWidget):
                 widget_type=QPushButton(),
                 stylesheet=style.QSTATS,
                 text=stat,
-                height = cons.WSIZE/1.25,
                 parent_layout = self.stat_layout.inner_layout(number),
+                size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
+                height=cons.WSIZE/1.25,
             )
             self.stat_label = Widget(
                 widget_type=QLineEdit(),
                 stylesheet=style.QSTATS,
-                height = cons.WSIZE*1.5,
                 align = "center",
                 text="0",
                 parent_layout = self.stat_layout.inner_layout(number),
                 signal=lambda: CharacterSheet(self).update_dictionary(),
                 objectname=stat,
+                size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
             )
 
         #INITIATIVE AND AC AND HP FEATS
         self.initiative_stat_label = Widget(
             widget_type=QPushButton(),
-            text="0",
+            text="0 Init",
             parent_layout = self.initiative_layout.inner_layout(1),
             signal=lambda: CharacterSheet(self).update_dictionary(),
             objectname="initiative",
+            size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
+        )
+
+        self.speed_stat_label = Widget(
+            widget_type=QPushButton(),
+            text="0 ft.",
+            parent_layout = self.initiative_layout.inner_layout(1),
+            signal=lambda: CharacterSheet(self).update_dictionary(),
+            objectname="movement",
             size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
         )
 
@@ -196,6 +222,16 @@ class CharacterSheetGUI(QWidget):
             size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
         )
 
+        self.character_morale = Widget(
+            widget_type=QPushButton(),
+            stylesheet=style.QPUSHBUTTON,
+            parent_layout=self.morale_layout.inner_layout(1),
+            signal=lambda: CharacterSheet(self).update_dictionary(),
+            text = "0",
+            objectname = "morale",
+            size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
+        )
+
         self.character_hp_max = Widget(
             widget_type=QPushButton(),
             stylesheet=style.QPUSHBUTTON,
@@ -204,6 +240,7 @@ class CharacterSheetGUI(QWidget):
             objectname = "max_hp",
             text = cons.HIT_DICE,
             size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
+            #height=cons.WSIZE*1.5,
         )
 
         self.character_hp_current= Widget(
@@ -214,6 +251,7 @@ class CharacterSheetGUI(QWidget):
             objectname = "current_hp",
             text = "0",
             size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
+            #height=cons.WSIZE*1.5,
         )
 
         self.character_hp_minus = Widget(
@@ -224,6 +262,7 @@ class CharacterSheetGUI(QWidget):
             signal=lambda: CharacterSheet(self).adjust_hp("minus",self.character_hp_line.get_widget().text()),
             objectname = "hp_minus",
             size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
+            height=cons.WSIZE,
         )
 
         self.character_hp_line = Widget(
@@ -235,7 +274,8 @@ class CharacterSheetGUI(QWidget):
             signal=lambda: CharacterSheet(self).update_dictionary(),
             objectname = "hp_adjuster",
             size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
-            width=cons.WSIZE*2,
+            width=cons.WSIZE*1.5,
+            height=cons.WSIZE,
         )
 
         self.character_hp_plus = Widget(
@@ -246,16 +286,8 @@ class CharacterSheetGUI(QWidget):
             signal=lambda: CharacterSheet(self).adjust_hp("plus",self.character_hp_line.get_widget().text()),
             objectname = "hp_plus",
             size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
+            height=cons.WSIZE,
         )
-
-
-        self.portrait = Widget(
-            widget_type=QLabel(),
-            parent_layout=self.portrais_layout.inner_layout(1),
-            icon=("beasttoe_portrait.png","",""),
-            align="center",
-        )
-
 
         for count in range(1,cons.MAX_SLOTS+1):
             self.slot_layot = Section(
@@ -320,7 +352,7 @@ class CharacterSheetGUI(QWidget):
                 stylesheet=style.QTOOLBUTTON,
                 parent_layout=self.corruption_layout.inner_layout(1),
                 size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
-                height=cons.WSIZE/1.25,
+                #height=cons.WSIZE/1.25,
                 checkable=True,
                 checked=False,	
                 signal=lambda: CharacterSheet(self).update_dictionary(),

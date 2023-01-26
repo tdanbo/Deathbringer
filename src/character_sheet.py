@@ -198,7 +198,7 @@ class CharacterSheet():
     # ITERATE OVER ITEM JSON TO FIND ITEM
     def update_inventory(self):
         all_items = []
-        self.empty_slot_dict = {"Action":"","Action Mod":"","Roll":["","",""]}
+        self.empty_slot_dict = {"Action":"","Action Mod":[],"Roll":["","",""]}
         for slot in range(1,cons.MAX_SLOTS+1):
             self.inventory_slot = self.csheet.findChild(QLineEdit, f"inventory{slot}")
             if self.inventory_slot.text() != "":
@@ -285,8 +285,12 @@ class CharacterSheet():
 
 
     def get_action_modifier(self, action_mod):
-        if action_mod != "":
-            return f"+{self.stats_dict[action_mod]}"
+        if action_mod != []:
+            mod_list = []
+            for mod in action_mod:
+                print(mod)
+                mod_list.append(self.stats_dict[mod])
+            return f"+{sum(mod_list)}"
         else:
             return ""
 
@@ -412,6 +416,8 @@ class CharacterSheet():
                     widget.setEnabled(False)
 
     def wisdom(self):
+
+
         for count in range(1,11):
             for w in [(QToolButton,"herodice")]:
                 widget =  self.csheet.findChild(w[0], w[1]+str(count))
@@ -422,6 +428,8 @@ class CharacterSheet():
 
     def charisma(self):
         initiative_widget = self.csheet.findChild(QPushButton, "initiative")
-        initiative_widget.setText(str(self.CHA+10))
+        movement_widget = self.csheet.findChild(QPushButton, "movement")
+        initiative_widget.setText(f"{self.CHA+10} init.")
+        movement_widget.setText(f"{20+(self.CHA*5)} ft.")
 
     

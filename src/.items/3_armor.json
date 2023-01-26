@@ -1,7 +1,9 @@
 {
 	"Shield": {
 		"Action": "AC",
-		"Action Mod": "AC",
+		"Action Mod": [
+			"AC"
+		],
 		"Roll": [
 			"",
 			"",
@@ -13,7 +15,9 @@
 	},
 	"Helmet": {
 		"Action": "AC",
-		"Action Mod": "AC",
+		"Action Mod": [
+			"AC"
+		],
 		"Roll": [
 			"",
 			"",
@@ -24,7 +28,9 @@
 	},
 	"Gambeson": {
 		"Action": "AC",
-		"Action Mod": "AC",
+		"Action Mod": [
+			"AC"
+		],
 		"Roll": [
 			"",
 			"",
@@ -35,7 +41,9 @@
 	},
 	"Chain Shirt": {
 		"Action": "AC",
-		"Action Mod": "AC",
+		"Action Mod": [
+			"AC"
+		],
 		"Roll": [
 			"",
 			"",
@@ -46,7 +54,9 @@
 	},
 	"Breastplate": {
 		"Action": "AC",
-		"Action Mod": "AC",
+		"Action Mod": [
+			"AC"
+		],
 		"Roll": [
 			"",
 			"",
@@ -57,7 +67,9 @@
 	},
 	"Arm Plate": {
 		"Action": "AC",
-		"Action Mod": "AC",
+		"Action Mod": [
+			"AC"
+		],
 		"Roll": [
 			"",
 			"",
@@ -68,7 +80,9 @@
 	},
 	"Leg Plate": {
 		"Action": "AC",
-		"Action Mod": "AC",
+		"Action Mod": [
+			"AC"
+		],
 		"Roll": [
 			"",
 			"",

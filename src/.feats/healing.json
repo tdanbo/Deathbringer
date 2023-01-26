@@ -1,0 +1,37 @@
+[
+    {
+        "name": "Disciple of Life",
+        "level": 5,
+        "category": "Healing",
+        "description": "Whenever you use a spell to restore hit points to a creature, the creature regains additional hit points equal to your level + the spell's level.",
+        "icon": "feat_placeholder.png"
+    },
+    {
+        "name": "Healing Aura",
+        "level": 7,
+        "category": "Healing",
+        "description": "You can emit an aura of healing energy as a bonus action, restoring hit points to all creatures within a 10-foot radius of you. The hit points restored is equal to your level.",
+        "icon": "feat_placeholder.png"
+    },
+    {
+        "name": "Life Link",
+        "level": 5,
+        "category": "Healing",
+        "description": "When you cast a healing spell, you can choose to divide the healing among any number of creatures within range, including yourself.",
+        "icon": "feat_placeholder.png"
+    },
+    {
+        "name": "Revitalizing Strike",
+        "level": 5,
+        "category": "Healing",
+        "description": "When you hit a creature with a weapon attack, you can choose to restore hit points to yourself or an ally within 5 feet of the creature, equal to half the damage dealt by the attack.",
+        "icon": "feat_placeholder.png"
+    },
+    {
+        "name": "Inspiring Leader",
+        "level": 5,
+        "category": "General",
+        "description": "On a successful long rest, you heal your party members for an amount equal to your level + Charisma modifier.",
+        "icon": "feat_placeholder.png"
+    }
+]

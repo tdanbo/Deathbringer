@@ -1,0 +1,37 @@
+[
+    {
+        "name": "Bountiful Luck",
+        "level": 1,
+        "category": "General",
+        "description": "When an ally you can see within 30 feet of you rolls a 1 on a d20, you can use your reaction to let the ally reroll the die. The ally must use the new roll.",
+        "icon": "feat_placeholder.png"
+    },
+    {
+        "name": "Alert",
+        "level": 1,
+        "category": "General",
+        "description": "You gain a +5 bonus to initiative and can't be surprised while you are conscious. Other creatures don't gain advantage on attack rolls against you as a result of being hidden from you.",
+        "icon": "feat_placeholder.png"
+    },
+    {
+        "name": "Atonement",
+        "level": 1,
+        "category": "General",
+        "description": "After a long rest, instead of regaining hit points, you can choose to remove one corruption from yourself.",
+        "icon": "feat_placeholder.png"
+    },
+    {
+        "name": "Sure-footed",
+        "level": 1,
+        "category": "General",
+        "description": "Your speed increases by 10 feet. When you use the Dash action, difficult terrain doesn't cost you extra movement on that turn. You can't be knocked prone, and have advantage on DEX saving throws.",
+        "icon": "feat_placeholder.png"
+    },
+    {
+        "name": "Beast Companion",
+        "level": 1,
+        "category": "General",
+        "description": "You can tame any beast half the cr of your level. They will follow your orders.",
+        "icon": "feat_placeholder.png"
+    }
+]

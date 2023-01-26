@@ -1,7 +1,10 @@
 {
 	"Sling": {
 		"Action": "Hit",
-		"Action Mod": "STR",
+		"Action Mod": [
+			"STR",
+			"WIS"
+		],
 		"Roll": [
 			"1",
 			"d4",
@@ -15,7 +18,10 @@
 	},
 	"Knuckles": {
 		"Action": "Hit",
-		"Action Mod": "STR",
+		"Action Mod": [
+			"STR",
+			"WIS"
+		],
 		"Roll": [
 			"1",
 			"d4",
@@ -28,7 +34,10 @@
 	},
 	"Cudgel": {
 		"Action": "Hit",
-		"Action Mod": "STR",
+		"Action Mod": [
+			"STR",
+			"WIS"
+		],
 		"Roll": [
 			"1",
 			"d4",
@@ -41,7 +50,10 @@
 	},
 	"Staff": {
 		"Action": "Hit",
-		"Action Mod": "STR",
+		"Action Mod": [
+			"STR",
+			"WIS"
+		],
 		"Roll": [
 			"1",
 			"d4",
@@ -54,7 +66,10 @@
 	},
 	"Bow": {
 		"Action": "Hit",
-		"Action Mod": "STR",
+		"Action Mod": [
+			"STR",
+			"WIS"
+		],
 		"Roll": [
 			"1",
 			"d6",
@@ -68,7 +83,10 @@
 	},
 	"Dagger": {
 		"Action": "Hit",
-		"Action Mod": "STR",
+		"Action Mod": [
+			"STR",
+			"WIS"
+		],
 		"Roll": [
 			"1",
 			"d6",
@@ -81,7 +99,10 @@
 	},
 	"Flail": {
 		"Action": "Hit",
-		"Action Mod": "STR",
+		"Action Mod": [
+			"STR",
+			"WIS"
+		],
 		"Roll": [
 			"1",
 			"d6",
@@ -94,7 +115,10 @@
 	},
 	"Hand Axe": {
 		"Action": "Hit",
-		"Action Mod": "STR",
+		"Action Mod": [
+			"STR",
+			"WIS"
+		],
 		"Roll": [
 			"1",
 			"d6",
@@ -107,7 +131,10 @@
 	},
 	"Mace": {
 		"Action": "Hit",
-		"Action Mod": "STR",
+		"Action Mod": [
+			"STR",
+			"WIS"
+		],
 		"Roll": [
 			"1",
 			"d6",
@@ -120,7 +147,10 @@
 	},
 	"Short Sword": {
 		"Action": "Hit",
-		"Action Mod": "STR",
+		"Action Mod": [
+			"STR",
+			"WIS"
+		],
 		"Roll": [
 			"1",
 			"d6",
@@ -133,7 +163,10 @@
 	},
 	"Spear": {
 		"Action": "Hit",
-		"Action Mod": "STR",
+		"Action Mod": [
+			"STR",
+			"WIS"
+		],
 		"Roll": [
 			"1",
 			"d6",
@@ -146,7 +179,10 @@
 	},
 	"Crossbow": {
 		"Action": "Hit",
-		"Action Mod": "STR",
+		"Action Mod": [
+			"STR",
+			"WIS"
+		],
 		"Roll": [
 			"1",
 			"d8",
@@ -160,7 +196,10 @@
 	},
 	"Battle Axe": {
 		"Action": "Hit",
-		"Action Mod": "STR",
+		"Action Mod": [
+			"STR",
+			"WIS"
+		],
 		"Roll": [
 			"1",
 			"d8",
@@ -173,7 +212,10 @@
 	},
 	"Warhammer": {
 		"Action": "Hit",
-		"Action Mod": "STR",
+		"Action Mod": [
+			"STR",
+			"WIS"
+		],
 		"Roll": [
 			"1",
 			"d8",
@@ -186,7 +228,10 @@
 	},
 	"Longsword": {
 		"Action": "Hit",
-		"Action Mod": "STR",
+		"Action Mod": [
+			"STR",
+			"WIS"
+		],
 		"Roll": [
 			"1",
 			"d8",
@@ -199,7 +244,10 @@
 	},
 	"Halberd": {
 		"Action": "Hit",
-		"Action Mod": "STR",
+		"Action Mod": [
+			"STR",
+			"WIS"
+		],
 		"Roll": [
 			"1",
 			"d8",

@@ -1,0 +1,35 @@
+[
+    {
+        "name": "Savage Attacker",
+        "level": 1,
+        "description": "Once per turn when you roll damage, you can reroll the weapon's damage dice and use either total.",
+        "icon": "feat_placeholder.png"
+    },
+    {
+        "name": "Weapon Master",
+        "level": 5,
+        "category": "Combat",
+        "description": "Before making an attack, you can choose to take a penalty to your attack roll equal to your level in order to add damage to your damage roll equal to twice your level.",
+        "icon": "feat_placeholder.png"
+    },
+    {
+        "name": "Brutal Critical",
+        "level": 9,
+        "category": "Combat",
+        "description": "You can roll one additional damage die when determining the extra damage for a critical hit",
+        "icon": "feat_placeholder.png"
+    },
+    {
+        "name": "Accuracy",
+        "level": 1,
+        "description": "Whenever you have advantage on an attack roll, you can reroll one of the dice once.",
+        "icon": "feat_placeholder.png"
+    },
+    {
+        "name": "Frenzy",
+        "level": 5,
+        "category": "Combat",
+        "description": "When you score a critical hit or reduce a creature to 0 hit points, you can make one attack as a bonus action.",
+        "icon": "feat_placeholder.png"
+    }
+]

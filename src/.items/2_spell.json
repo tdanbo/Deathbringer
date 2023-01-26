@@ -1,7 +1,10 @@
 {
 	"Tome of Fireball": {
 		"Action": "Hit",
-		"Action Mod": "INT",
+		"Action Mod": [
+			"INT",
+			"WIS"
+		],
 		"Roll": [
 			"6",
 			"d8",

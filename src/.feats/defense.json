@@ -1,0 +1,37 @@
+[
+    {
+        "name": "Anti Mage",
+        "level": 2,
+        "category": "Defense",
+        "description": "You have advantage on saving throws against spells and other magical effects, and you can use your reaction to disrupt a creature within 5 feet of you that is casting a spell.",
+        "icon": "feat_placeholder.png"
+    },
+    {
+        "name": "Mage Armor",
+        "level": 1,
+        "category": "Defense",
+        "description": "While only carrying two slots of armor your AC becomes 9+INT",
+        "icon": "feat_placeholder.png"
+    },
+    {
+        "name": "Retribution",
+        "level": 5,
+        "category": "Healing",
+        "description": "When an ally within 30 feet of you takes damage, you can use your reaction to take that damage on yourself and redirect half of the damage to an enemy within 5 feet of you.",
+        "icon": "feat_placeholder.png"
+    },
+    {
+        "name": "Guardian",
+        "level": 3,
+        "category": "Defense",
+        "description": "You can use your reaction when a creature within 5 feet of you attacks to make a melee weapon attack against it.",
+        "icon": "feat_placeholder.png"
+    },
+    {
+        "name": "Sentinel",
+        "level": 5,
+        "category": "Defense",
+        "description": "You gain the ability to opportunity attack. If a creature provokoe an opportunity attack from you they lose all movement speed for the rest of their turn.",
+        "icon": "sentinel.png"
+    }
+]

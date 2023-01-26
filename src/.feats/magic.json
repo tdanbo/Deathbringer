@@ -1,0 +1,37 @@
+[
+    {
+        "name": "Quicken Spell",
+        "level": 5,
+        "category": "Spell casting",
+        "description": "You can cast a spell as a bonus action.",
+        "icon": "feat_placeholder.png"
+    },
+    {
+        "name": "Empower Spell",
+        "level": 5,
+        "category": "Spell casting",
+        "description": "When you roll damage for a spell, you can choose to reroll a number of the damage dice up to your INT. You must use the new rolls.",
+        "icon": "feat_placeholder.png"
+    },
+    {
+        "name": "Twinned Spell",
+        "level": 3,
+        "category": "Spell casting",
+        "description": "When you cast a spell that targets only one creature and doesn't have a range of self, you can target a second creature in range with the same spell. You reroll hit and damage rolls for the second target",
+        "icon": "feat_placeholder.png"
+    },
+    {
+        "name": "Reckless Magic",
+        "level": 3,
+        "category": "Spell casting",
+        "description": "You can choose to take disadvantage on your spell attack roll to gain advantage on the spell's damage roll.",
+        "icon": "feat_placeholder.png"
+    },
+    {
+        "name": "War Caster",
+        "level": 3,
+        "category": "Spell casting",
+        "description": "When you take damage, you gain advantage on Constitution saving throws to maintain concentration on a spell. When a hostile creature moves out of a 5ft radius from you, you can use your reaction to cast a spell with a casting time of 1 action on that creature as the target.",
+        "icon": "feat_placeholder.png"
+    }
+]

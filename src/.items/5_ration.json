@@ -1,7 +1,7 @@
 {
 	"Ration": {
 		"Action": "Daily Heal",
-		"Action Mod": "",
+		"Action Mod": [],
 		"Roll": [
 			"CON",
 			"d4",
