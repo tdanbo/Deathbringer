@@ -20,6 +20,7 @@ class CharacterSheet():
         print("Character Sheet Created")
 
         self.csheet = csheet
+        self.stat_button = None
 
         self.character = ""
         self.level = ""
@@ -27,6 +28,10 @@ class CharacterSheet():
 
         self.ac = csheet.findChild(QPushButton, "ac")
         self.initiative = csheet.findChild(QPushButton, "initiative")
+
+        #morale
+        self.max_morale = csheet.findChild(QPushButton, "max_morale")
+        self.current_morale = csheet.findChild(QPushButton, "current_morale")
 
         #hp
         self.max_hp = csheet.findChild(QPushButton, "max_hp")
@@ -36,12 +41,12 @@ class CharacterSheet():
 
 
         #stats
-        self.STR = int(csheet.findChild(QLineEdit, "STR").text())
-        self.DEX = int(csheet.findChild(QLineEdit, "DEX").text())
-        self.CON = int(csheet.findChild(QLineEdit, "CON").text())
-        self.INT = int(csheet.findChild(QLineEdit, "INT").text())
-        self.WIS = int(csheet.findChild(QLineEdit, "WIS").text())
-        self.CHA = int(csheet.findChild(QLineEdit, "CHA").text())
+        self.STR = int(csheet.findChild(QPushButton, "STR").text())
+        self.DEX = int(csheet.findChild(QPushButton, "DEX").text())
+        self.CON = int(csheet.findChild(QPushButton, "CON").text())
+        self.INT = int(csheet.findChild(QPushButton, "INT").text())
+        self.WIS = int(csheet.findChild(QPushButton, "WIS").text())
+        self.CHA = int(csheet.findChild(QPushButton, "CHA").text())
         
         self.max_slots = int(self.CON)+cons.START_SLOTS
 
@@ -98,6 +103,11 @@ class CharacterSheet():
         self.update_sheet()
         updated_character_sheet = self.update_dictionary()
         #self.update_database(updated_character_sheet)
+
+    def set_button(self, button):
+        print("!!!!!!!!!!!!!!!!!!!!!!!!")
+        self.stat_button = button
+        self.stat_button.mousePressEvent = self.adjust_stat
 
     def update_dictionary(self):
         print("Updating Character Sheet Dictionary")    
@@ -228,6 +238,7 @@ class CharacterSheet():
             slot += 1
 
         self.set_ac()
+        self.set_morale()
 
     def update_item(self, slot, item, inventory_type, inventory_item):
         self.inventory_icon = self.csheet.findChild(QToolButton, f"icon{slot}")
@@ -294,6 +305,11 @@ class CharacterSheet():
         else:
             return ""
 
+    def set_morale(self):
+        self.max_morale.setText(f"{cons.BASE_MORALE+int(self.CHA)}")
+        if self.current_level == 0:
+            self.current_morale.setText(f"{cons.BASE_MORALE+int(self.CHA)}")
+
     def set_ac(self):
         ac = int(self.ac.text())
         ac += len(self.armor_items)
@@ -323,7 +339,7 @@ class CharacterSheet():
         self.current_level = level
         # THIS WILL HAPPEN WHEN A CHARACTER LEVELS UP
         self.set_hp()
-        
+
     def set_hp(self):
         if self.current_level == 0:
             hp_formula = cons.HIT_DICE
@@ -334,6 +350,7 @@ class CharacterSheet():
         
 
     def adjust_hp(self, state, value):
+        print(state, value)
         current_hp = int(self.current_hp.text())
         self.current_hp.setStyleSheet(style.QPUSHBUTTON)
         for point in range(1,int(value)+1):
@@ -359,12 +376,9 @@ class CharacterSheet():
         else:
             self.current_hp.setStyleSheet(style.QPUSHBUTTON_INJURY)
 
-        self.hp_adjuster.setText("")
-        self.hp_adjuster.clearFocus()
         self.update_dictionary()
 
     def remove_injury(self):
-        print("remove injury")
         print("remove injury")
         for slot in range(1,self.max_slots+1):
             widget_slot = self.csheet.findChild(QLineEdit, f"inventory{slot}")

@@ -9,6 +9,7 @@ import constants as cons
 import re
 
 import stylesheet as style
+import functions as func
 
 class Section:
     all_sections = []
@@ -53,7 +54,7 @@ class Section:
                     self.title_icon = QToolButton()
                     self.title_icon.setStyleSheet(style.QTITLE)
                     self.title_icon.setFixedSize(cons.WSIZE, cons.WSIZE)
-                    set_icon(self.title_icon, icon[0], icon[2])
+                    func.set_icon(self.title_icon, icon[0], icon[2])
                     self.title_layout.addWidget(self.title_icon)
                 self.title_layout.addWidget(self.title_label)
 
@@ -176,7 +177,7 @@ class Widget:
         self.set_placeholder(self.widget, placeholder)
         self.load_setting(self.setting)
         if icon[0] != "":
-            set_icon(self.widget, icon[0], icon[2])
+            func.set_icon(self.widget, icon[0], icon[2])
         if size_policy != None:
             self.widget.setSizePolicy(size_policy[0], size_policy[1])
 
@@ -327,18 +328,5 @@ class Widget:
         self.parent_layout.addWidget(self.widget)
 
 
-def set_icon(widget, icon, color):
-    qicon = QIcon()
-    pixmap = QPixmap(os.path.join(cons.ICONS, icon))
-    if color != "":
-        paint = QPainter()
-        paint.begin(pixmap)
-        paint.setCompositionMode(QPainter.CompositionMode_SourceIn)
-        paint.fillRect(pixmap.rect(), QColor(color))
-        paint.end()
-    qicon.addPixmap(pixmap)
-    try:
-        widget.setIcon(qicon)
-    except:
-        widget.setPixmap(pixmap)
-        widget.setScaledContents(True)
+
+

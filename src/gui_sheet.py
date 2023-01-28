@@ -9,8 +9,10 @@ import functions as func
 import constants as cons
 from character_sheet import CharacterSheet
 
+import functools
 import stylesheet as style
 from gui_feats import FeatsGUI
+from gui_add_sub import AddSubGUI
 
 class CharacterSheetGUI(QWidget):
     def __init__(self):
@@ -22,23 +24,16 @@ class CharacterSheetGUI(QWidget):
         )
 
         self.character_basic = Section(
-            outer_layout = QHBoxLayout(),
+            outer_layout = QVBoxLayout(),
             inner_layout = ("HBox", 1),
             parent_layout = self.character_sheet_layout.inner_layout(1),
             spacing=10,     
         )
 
-        self.portrais_layout = Section(
-            outer_layout = QVBoxLayout(),
-            inner_layout = ("HBox", 2),
-            group = (True,113,cons.WSIZE*3),
-            title = "Beasttoe",
-            parent_layout = self.character_basic.inner_layout(1),
-        )
 
         self.stat_layout = Section(
             outer_layout = QHBoxLayout(),
-            inner_layout = ("VBox", 6),
+            inner_layout = ("VBox", 7),
             parent_layout = self.character_basic.inner_layout(1),
             group = (True,None,cons.WSIZE*3),
             title = "STATS",
@@ -63,15 +58,6 @@ class CharacterSheetGUI(QWidget):
             icon = ("hp.png",cons.WSIZE/2,cons.ICON_COLOR) 
         )
 
-        self.defense_layout = Section(
-            outer_layout = QVBoxLayout(),
-            inner_layout = ("VBox", 1),
-            parent_layout = self.combat_layout.inner_layout(1),
-            group = (True,None,cons.WSIZE*3),
-            title = "AC",
-            icon = ("armorclass.png",cons.WSIZE/2,cons.ICON_COLOR)	 
-        )
-
         self.morale_layout = Section(
             outer_layout = QVBoxLayout(),
             inner_layout = ("HBox", 2),
@@ -79,6 +65,15 @@ class CharacterSheetGUI(QWidget):
             group = (True,None,cons.WSIZE*3),
             title = "MORALE",
             icon = ("feats.png",cons.WSIZE/2,cons.ICON_COLOR)
+        )
+
+        self.defense_layout = Section(
+            outer_layout = QVBoxLayout(),
+            inner_layout = ("VBox", 1),
+            parent_layout = self.combat_layout.inner_layout(1),
+            group = (True,None,cons.WSIZE*3),
+            title = "AC",
+            icon = ("armorclass.png",cons.WSIZE/2,cons.ICON_COLOR)	 
         )
 
         self.initiative_layout = Section(
@@ -140,8 +135,8 @@ class CharacterSheetGUI(QWidget):
         #Below is all the widgets used in the character sheet
 
         self.portrait = Widget(
-            widget_type=QLabel(),
-            parent_layout=self.portrais_layout.inner_layout(1),
+            widget_type=QToolButton(),
+            parent_layout=self.stat_layout.inner_layout(1),
             icon=("beasttoe.png","",""),
             stylesheet=style.QTOOLBUTTON,
             objectname="portrait",
@@ -174,7 +169,7 @@ class CharacterSheetGUI(QWidget):
             )
 
         for number,stat in enumerate(["STR", "DEX", "INT", "CON", "WIS", "CHA"]):
-            number = number + 1
+            number = number + 2
             self.stat_label = Widget(
                 widget_type=QPushButton(),
                 stylesheet=style.QSTATS,
@@ -183,13 +178,17 @@ class CharacterSheetGUI(QWidget):
                 size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
                 height=cons.WSIZE/1.25,
             )
-            self.stat_label = Widget(
-                widget_type=QLineEdit(),
+            self.stat_button = Widget(
+                widget_type=QPushButton(),
                 stylesheet=style.QSTATS,
-                align = "center",
                 text="0",
                 parent_layout = self.stat_layout.inner_layout(number),
-                signal=lambda: CharacterSheet(self).update_dictionary(),
+                signal=functools.partial(
+                    func.adjust_stat_widget,
+                    self,
+                    stat,
+                    "add"
+                ),
                 objectname=stat,
                 size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
             )
@@ -222,13 +221,22 @@ class CharacterSheetGUI(QWidget):
             size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
         )
 
-        self.character_morale = Widget(
+        self.character_max_morale = Widget(
             widget_type=QPushButton(),
             stylesheet=style.QPUSHBUTTON,
             parent_layout=self.morale_layout.inner_layout(1),
-            signal=lambda: CharacterSheet(self).update_dictionary(),
             text = "0",
-            objectname = "morale",
+            objectname = "max_morale",
+            size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
+        )
+
+        self.character_current_morale = Widget(
+            widget_type=QPushButton(),
+            stylesheet=style.QPUSHBUTTON,
+            parent_layout=self.morale_layout.inner_layout(1),
+            signal=lambda: func.adjust_stat_widget(self, "current_morale", "add"),
+            text = "0",
+            objectname = "current_morale",
             size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
         )
 
@@ -247,46 +255,11 @@ class CharacterSheetGUI(QWidget):
             widget_type=QPushButton(),
             stylesheet=style.QPUSHBUTTON,
             parent_layout=self.hp_layout.inner_layout(1),
-            signal=lambda: CharacterSheet(self).update_dictionary(),
+            signal=self.open_addsub,
             objectname = "current_hp",
             text = "0",
             size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
             #height=cons.WSIZE*1.5,
-        )
-
-        self.character_hp_minus = Widget(
-            widget_type=QPushButton(),
-            stylesheet=style.QPUSHBUTTON,
-            text="-",
-            parent_layout=self.hp_layout.inner_layout(2),
-            signal=lambda: CharacterSheet(self).adjust_hp("minus",self.character_hp_line.get_widget().text()),
-            objectname = "hp_minus",
-            size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
-            height=cons.WSIZE,
-        )
-
-        self.character_hp_line = Widget(
-            widget_type=QLineEdit(),
-            stylesheet=style.QLINEEDIT,
-            text="",
-            align="center",
-            parent_layout=self.hp_layout.inner_layout(2),
-            signal=lambda: CharacterSheet(self).update_dictionary(),
-            objectname = "hp_adjuster",
-            size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
-            width=cons.WSIZE*1.5,
-            height=cons.WSIZE,
-        )
-
-        self.character_hp_plus = Widget(
-            widget_type=QPushButton(),
-            stylesheet=style.QPUSHBUTTON,
-            text="+",
-            parent_layout=self.hp_layout.inner_layout(2),
-            signal=lambda: CharacterSheet(self).adjust_hp("plus",self.character_hp_line.get_widget().text()),
-            objectname = "hp_plus",
-            size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
-            height=cons.WSIZE,
         )
 
         for count in range(1,cons.MAX_SLOTS+1):
@@ -361,9 +334,23 @@ class CharacterSheetGUI(QWidget):
             )
 
         self.setLayout(self.character_sheet_layout.outer_layout())
+    
+    def mousePressEvent(self, event): #this is a very specific event used to subtract values when right clicking on a widget
+        if event.button() == Qt.RightButton:
+            widget = self.childAt(event.pos())
+            if widget.objectName() in ["STR", "DEX", "CON", "INT", "WIS", "CHA","current_morale"]:
+                print("Right button was clicked on a stat widget")
+                func.adjust_stat_widget(self, widget.objectName(), "subtract")
+            print("Right button was clicked") 
 
     def open_features(self):
         sender = self.sender()
         print(sender)
         self.features = FeatsGUI(sender)
         self.features.show()
+
+    def open_addsub(self):
+        sender = self.sender()
+        print(sender)
+        self.addsub = AddSubGUI(self, sender)
+        self.addsub.show()
