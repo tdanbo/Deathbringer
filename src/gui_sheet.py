@@ -7,6 +7,8 @@ from pyside import Widget
 
 import functions as func
 import constants as cons
+
+from gui_spells import SpellsGUI
 from character_sheet import CharacterSheet
 
 import functools
@@ -92,7 +94,8 @@ class CharacterSheetGUI(QWidget):
             title = "INVENTORY",
             group = (True,None,None),
             icon = ("backpack.png",cons.WSIZE/2,cons.ICON_COLOR),
-            scroll=(True,"top"),	 
+            scroll=(True,"top"),
+            spacing=5,	 
         )
 
         self.character_lower_basic = Section(
@@ -128,8 +131,8 @@ class CharacterSheetGUI(QWidget):
             parent_layout = self.character_lower_basic.inner_layout(1),
             group = (True,None,cons.WSIZE*2),
             spacing = 2,
-            title = "CORRUPTION",
-            icon = ("corruption.png",cons.WSIZE/2,cons.ICON_COLOR), 
+            title = "SPELL SLOTS",
+            icon = ("spell.png",cons.WSIZE/2,cons.ICON_COLOR), 
         )
 
         #Below is all the widgets used in the character sheet
@@ -262,10 +265,11 @@ class CharacterSheetGUI(QWidget):
             #height=cons.WSIZE*1.5,
         )
 
+        # below you will find the widges that make up the inventory
         for count in range(1,cons.MAX_SLOTS+1):
             self.slot_layot = Section(
-                outer_layout = QVBoxLayout(),
-                inner_layout = ("HBox", 1),
+                outer_layout = QHBoxLayout(),
+                inner_layout = ("VBox", 5),
                 parent_layout=self.inventory_layout.inner_layout(1),
             )
             self.backpack= Widget(
@@ -274,49 +278,103 @@ class CharacterSheetGUI(QWidget):
                 text="",
                 parent_layout=self.slot_layot.inner_layout(1),
                 width = cons.WSIZE*1.50,
-                height = cons.WSIZE*1.50,
+                height = cons.WSIZE,
                 enabled=False,
                 objectname=f"icon{count}",
             )
+
+            self.backpack_label = Widget(
+                widget_type=QLabel(),
+                stylesheet=style.INVENTORY_LABEL,
+                parent_layout=self.slot_layot.inner_layout(1),
+                height = cons.WSIZE/1.5,
+                objectname=f"icon_label{count}",
+                text=f"{count}.",
+                align="center",
+            )
+                
             self.backpack_item = Widget(
                 widget_type=QLineEdit(),
                 stylesheet=style.INVENTORY,
-                parent_layout=self.slot_layot.inner_layout(1),
-                height = cons.WSIZE*1.50,
-                signal=lambda: CharacterSheet(self).update_dictionary(),
+                parent_layout=self.slot_layot.inner_layout(2),
+                height = cons.WSIZE,
+                signal= self.select_item,
                 objectname=f"inventory{count}",
                 align="center",
                 enabled=False,
 
             )
-            self.backpack= Widget(
+
+            self.backpack_item_label = Widget(
+                widget_type=QPushButton(),
+                stylesheet=style.INVENTORY_LABEL,
+                text="",
+                parent_layout=self.slot_layot.inner_layout(2),
+                enabled=False,
+                height = cons.WSIZE/1.5,
+                objectname=f"inventory_label{count}"
+            )
+
+            self.backpack_action= Widget(
                 widget_type=QPushButton(),
                 stylesheet=style.INVENTORY,
                 text="",
-                parent_layout=self.slot_layot.inner_layout(1),
+                parent_layout=self.slot_layot.inner_layout(3),
                 width = cons.WSIZE*3,
-                height = cons.WSIZE*1.50,
+                height = cons.WSIZE,
                 enabled=False,
-                objectname=f"action{count}",
+                objectname=f"evoke{count}",
             )
+
+            self.backpack_action_label = Widget(
+                widget_type=QPushButton(),
+                stylesheet=style.INVENTORY_LABEL,
+                text="",
+                parent_layout=self.slot_layot.inner_layout(3),
+                enabled=False,
+                height = cons.WSIZE/1.5,  
+                objectname=f"evoke_label{count}"
+            )
+
             self.backpack= Widget(
                 widget_type=QPushButton(),
                 stylesheet=style.INVENTORY,
                 text="",
-                parent_layout=self.slot_layot.inner_layout(1),
-                width = cons.WSIZE*2,
-                height = cons.WSIZE*1.50,
+                parent_layout=self.slot_layot.inner_layout(4),
+                width = cons.WSIZE*3,
+                height = cons.WSIZE,
                 enabled=False,
-                objectname=f"modifier{count}",
+                objectname=f"hit_dc{count}",
             )
+
+            self.backpack_hit_label = Widget(
+                widget_type=QPushButton(),
+                stylesheet=style.INVENTORY_LABEL,
+                text="",
+                parent_layout=self.slot_layot.inner_layout(4),
+                enabled=False,
+                height = cons.WSIZE/1.5,
+                objectname=f"hit_dc_label{count}"
+            )
+
             self.weapon_modifier = Widget(
                 widget_type=QPushButton(),
                 stylesheet=style.INVENTORY,
-                parent_layout=self.slot_layot.inner_layout(1),
-                width = cons.WSIZE*2,
-                height = cons.WSIZE*1.50,
+                parent_layout=self.slot_layot.inner_layout(5),
+                width = cons.WSIZE*3,
+                height = cons.WSIZE,
                 objectname=f"roll{count}",
                 enabled=False,
+            )
+
+            self.backpack_damage_label = Widget(
+                widget_type=QPushButton(),
+                stylesheet=style.INVENTORY_LABEL,
+                text="",
+                parent_layout=self.slot_layot.inner_layout(5),
+                enabled=False,
+                height = cons.WSIZE/1.5,
+                objectname=f"roll_label{count}",
             )
 
         for count in range(1,11):
@@ -343,14 +401,20 @@ class CharacterSheetGUI(QWidget):
                 func.adjust_stat_widget(self, widget.objectName(), "subtract")
             print("Right button was clicked") 
 
+    def select_item(self):
+        sender = self.sender()
+        if sender.text().lower() in cons.SPELL_LISTS:
+            print("found in list")
+            self.spells = SpellsGUI(self, sender)
+        else:
+            CharacterSheet(self).update_dictionary()
+
     def open_features(self):
         sender = self.sender()
-        print(sender)
         self.features = FeatsGUI(sender)
         self.features.show()
 
     def open_addsub(self):
         sender = self.sender()
-        print(sender)
         self.addsub = AddSubGUI(self, sender)
         self.addsub.show()

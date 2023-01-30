@@ -1,24 +1,25 @@
 {
 	"Shield": {
-		"Action": "AC",
-		"Action Mod": [
-			"AC"
+		"Hit": "",
+		"Hit Mod": [
+			""
 		],
-		"Roll": [
+		"Roll": "",
+		"Roll Mod": [
 			"",
 			"",
 			""
 		],
-		"Roll Modifier": "",
 		"Slots": 1,
 		"Cost": 100
 	},
 	"Helmet": {
-		"Action": "AC",
-		"Action Mod": [
-			"AC"
+		"Hit": "",
+		"Hit Mod": [
+			""
 		],
-		"Roll": [
+		"Roll": "",
+		"Roll Mod": [
 			"",
 			"",
 			""
@@ -27,11 +28,12 @@
 		"Cost": 100
 	},
 	"Gambeson": {
-		"Action": "AC",
-		"Action Mod": [
-			"AC"
+		"Hit": "",
+		"Hit Mod": [
+			""
 		],
-		"Roll": [
+		"Roll": "",
+		"Roll Mod": [
 			"",
 			"",
 			""
@@ -40,11 +42,12 @@
 		"Cost": 300
 	},
 	"Chain Shirt": {
-		"Action": "AC",
-		"Action Mod": [
+		"Hit": "",
+		"Hit Mod": [
 			"AC"
 		],
-		"Roll": [
+		"Roll": "",
+		"Roll Mod": [
 			"",
 			"",
 			""
@@ -53,11 +56,12 @@
 		"Cost": 900
 	},
 	"Breastplate": {
-		"Action": "AC",
-		"Action Mod": [
-			"AC"
+		"Hit": "",
+		"Hit Mod": [
+			""
 		],
-		"Roll": [
+		"Roll": "",
+		"Roll Mod": [
 			"",
 			"",
 			""
@@ -66,11 +70,12 @@
 		"Cost": 1800
 	},
 	"Arm Plate": {
-		"Action": "AC",
-		"Action Mod": [
-			"AC"
+		"Hit": "",
+		"Hit Mod": [
+			""
 		],
-		"Roll": [
+		"Roll": "",
+		"Roll Mod": [
 			"",
 			"",
 			""
@@ -79,11 +84,12 @@
 		"Cost": 900
 	},
 	"Leg Plate": {
-		"Action": "AC",
-		"Action Mod": [
-			"AC"
+		"Hit": "",
+		"Hit Mod": [
+			""
 		],
-		"Roll": [
+		"Roll": "",
+		"Roll Mod": [
 			"",
 			"",
 			""

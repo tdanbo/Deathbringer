@@ -1,0 +1,1025 @@
+{
+    "Aid": {
+        "level": "2",
+        "school": "abjuration",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: 8 hours",
+        "description": "Your spell bolsters your allies with toughness and resolve. Choose up to three creatures within range. Each target's hit point maximum and current hit points increase by 5 for the duration.",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Alarm": {
+        "level": "1",
+        "school": "abjuration",
+        "casting": "Casting Time: 1 minute",
+        "duration": "Duration: 8 hours",
+        "description": "You set an alarm against unwanted intrusion. Choose a door, a window, or an area within range that is no larger than a 20-foot cube. Until the spell ends, an alarm alerts you whenever a Tiny or larger creature touches or enters the warded area. When you cast the spell, you can designate creatures that won't set off the alarm. You also choose whether the alarm is mental or audible.A mental alarm alerts you with a ping in your mind if you are within 1 mile of the warded area. This ping awakens you if you are sleeping. An audible alarm produces the sound of a hand bell for 10 seconds within 60 feet.",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Antilife Shell": {
+        "level": "5",
+        "school": "abjuration",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Concentration, up to 1 hour",
+        "description": "A shimmering barrier extends out from you in a 10-foot radius and moves with you, remaining centered on you and hedging out creatures other than undead and constructs. The barrier lasts for the duration.The barrier prevents an affected creature from passing or reaching through. An affected creature can cast spells or make attacks with ranged or reach weapons through the barrier.If you move so that an affected creature is forced to pass through the barrier, the spell ends.",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Antimagic Field": {
+        "level": "8",
+        "school": "abjuration",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Concentration, up to 1 hour",
+        "description": "A 10-foot-radius invisible sphere of antimagic surrounds you. This area is divorced from the magical energy that suffuses the multiverse. Within the sphere, spells can't be cast, summoned creatures disappear, and even magic items become mundane. Until the spell ends, the sphere moves with you, centered on you.Spells and other magical effects, except those created by an artifact or a deity, are suppressed in the sphere and can't protrude into it. A slot expended to cast a suppressed spell is consumed. While an effect is suppressed, it doesn't function, but the time it spends suppressed counts against its duration.Targeted Effects. Spells and other magical effects, such as magic missile and charm person, that target a creature or an object in the sphere have no effect on that target.Areas of Magic. The area of another spell or magical effect, such as fireball, can't extend into the sphere. If the sphere overlaps an area of magic, the part of the area that is covered by the sphere is suppressed. For example, the flames created by a wall of fire are suppressed within the sphere, creating a gap in the wall if the overlap is large enough.Spells. Any active spell or other magical effect on a creature or an object in the sphere is suppressed while the creature or object is in it.Magic Items. The properties and powers of magic items are suppressed in the sphere. For example, a +1 longsword in the sphere functions as a nonmagical longsword.A magic weapon's properties and powers are suppressed if it is used against a target in the sphere or wielded by an attacker in the sphere. If a magic weapon or a piece of magic ammunition fully leaves the sphere (for example, if you fire a magic arrow or throw a magic spear at a target outside the sphere), the magic of the item ceases to be suppressed as soon as it exits.Magical Travel. Teleportation and planar travel fail to work in the sphere, whether the sphere is the destination or the departure point for such magical travel. A portal to another location, world, or plane of existence, as well as an opening to an extradimensional space such as that created by the rope trick spell, temporarily closes while in the sphere.Creatures and Objects. A creature or object summoned or created by magic temporarily winks out of existence in the sphere. Such a creature instantly reappears once the space the creature occupied is no longer within the sphere.Dispel Magic. Spells and magical effects such as dispel magic have no effect on the sphere. Likewise, the spheres created by different antimagic field spells don't nullify each other.",
+        "Evoke": "Evoke 26",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Arcane Lock": {
+        "level": "2",
+        "school": "abjuration",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Until dispelled",
+        "description": "You touch a closed door, window, gate, chest, or other entryway, and it becomes locked for the duration. You and the creatures you designate when you cast this spell can open the object normally. You can also set a password that, when spoken within 5 feet of the object, suppresses this spell for 1 minute. Otherwise, it is impassable until it is broken or the spell is dispelled or suppressed. Casting knock on the object suppresses arcane lock for 10 minutes.While affected by this spell, the object is more difficult to break or force open; the DC to break it or pick any locks on it increases by 10.",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Armor of Agathys": {
+        "level": "1",
+        "school": "abjuration",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: 1 hour",
+        "description": "A protective magical force surrounds you, manifesting as a spectral frost that covers you and your gear. You gain 5 temporary hit points for the duration. If a creature hits you with a melee attack while you have these hit points, the creature takes 5 cold damage.",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Aura of Life": {
+        "level": "4",
+        "school": "abjuration",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Concentration, up to 10 minutes",
+        "description": "Creatures in a 30-ft radius gain resistance to necrotic damage and regain 1 hp when at 0 hp.",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Aura of Purity": {
+        "level": "4",
+        "school": "abjuration",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Concentration, up to 10 minutes",
+        "description": "Creatures in a 30-ft radius can not become diseased, gain resistance to poison, and get advantage to various saving throws.",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Banishing Smite": {
+        "level": "5",
+        "school": "abjuration",
+        "casting": "Casting Time: 1 action bonus",
+        "duration": "Duration: Concentration, up to 1 minute",
+        "description": "If the weapon attack hits, deal an extra 5d10 force damage. Target reduced to 50 hp or fewer this way are banised.",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "5",
+            "d10",
+            ""
+        ]
+    },
+    "Banishment": {
+        "level": "4",
+        "school": "abjuration",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Concentration, up to 1 minute",
+        "description": "You attempt to send one creature that you can see within range to another plane of existence. The target must succeed on a Charisma saving throw or be banished.If the target is native to the plane of existence you're on, you banish the target to a harmless demiplane. While there, the target is incapacitated. The target remains there until the spell ends, at which point the target reappears in the space it left or in the nearest unoccupied space if that space is occupied.If the target is native to a different plane of existence than the one you're on, the target is banished with a faint popping noise, returning to its home plane. If the spell ends before 1 minute has passed, the target reappears in the space it left or in the nearest unoccupied space if that space is occupied. Otherwise, the target doesn't return.",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "CHA Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Beacon of Hope": {
+        "level": "3",
+        "school": "abjuration",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Concentration, up to 1 minute",
+        "description": "This spell bestows hope and vitality. Choose any number of creatures within range. For the duration, each target has advantage on Wisdom saving throws and death saving throws, and regains the maximum number of hit points possible from any healing.",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "Healing",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Blade Ward": {
+        "level": "0",
+        "school": "abjuration",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: 1 round",
+        "description": "You extend your hand and trace a sigil of warding in the air. Until the end of your next turn, you have resistance against bludgeoning, piercing, and slashing damage dealt by weapon attacks.",
+        "Evoke": "Evoke 10",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Circle of Power": {
+        "level": "5",
+        "school": "abjuration",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Concentration, up to 10 minutes",
+        "description": "Friendly creatures in a 30-ft radius have advantage on saving throws against spells and other magicial effects.",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Counterspell": {
+        "level": "3",
+        "school": "abjuration",
+        "casting": "Casting Time: 1 reaction, which you take when you see a creature within 60 feet of you casting a spell",
+        "duration": "Duration: Instantaneous",
+        "description": "You attempt to interrupt a creature in the process of casting a spell. If the creature is casting a spell of 3rd level or lower, its spell fails and has no effect. If it is casting a spell of 4th level or higher, make an ability check using your spellcasting ability. The DC equals 10 + the spell's level. On a success, the creature's spell fails and has no effect.",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Death Ward": {
+        "level": "4",
+        "school": "abjuration",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: 8 hours",
+        "description": "You touch a creature and grant it a measure of protection from death.The first time the target would drop to 0 hit points as a result of taking damage, the target instead drops to 1 hit point, and the spell ends.If the spell is still in effect when the target is subjected to an effect that would kill it instantaneously without dealing damage, that effect is instead negated against the target, and the spell ends.",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Dispel Evil and Good": {
+        "level": "5",
+        "school": "abjuration",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Concentration, up to 1 minute",
+        "description": "Shimmering energy surrounds and protects you from fey, undead, and creatures originating from beyond the Material Plane. For the duration, celestials, elementals, fey, fiends, and undead have disadvantage on attack rolls against you.You can end the spell early by using either of the following special functions.Break Enchantment. As your action, you touch a creature you can reach that is charmed, frightened, or possessed by a celestial, an elemental, a fey, a fiend, or an undead. The creature you touch is no longer charmed, frightened, or possessed by such creatures.Dismissal. As your action, make a melee spell attack against a celestial, an elemental, a fey, a fiend, or an undead you can reach. On a hit, you attempt to drive the creature back to its home plane. The creature must succeed on a Charisma saving throw or be sent back to its home plane (if it isn't there already). If they aren't on their home plane, undead are sent to the Shadowfell, and fey are sent to the Feywild.",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "CHA Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Dispel Magic": {
+        "level": "3",
+        "school": "abjuration",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Instantaneous",
+        "description": "Choose one creature, object, or magical effect within range. Any spell of 3rd level or lower on the target ends. For each spell of 4th level or higher on the target, make an ability check using your spellcasting ability. The DC equals 10 + the spell's level. On a successful check, the spell ends.",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Forbiddance": {
+        "level": "6",
+        "school": "abjuration",
+        "casting": "Casting Time: 10 minutes",
+        "duration": "Duration: 1 day",
+        "description": "You create a ward against magical travel that protects up to 40,000 square feet of floor space to a height of 30 feet above the floor. For the duration, creatures can't teleport into the area or use portals, such as those created by the gate spell, to enter the area. The spell proofs the area against planar travel, and therefore prevents creatures from accessing the area by way of the Astral Plane, Ethereal Plane, Feywild, Shadowfell, or the plane shift spell.In addition, the spell damages types of creatures that you choose when you cast it. Choose one or more of the following: celestials, elementals, fey, fiends, and undead. When a chosen creature enters the spell's area for the first time on a turn or starts its turn there, the creature takes 5d10 radiant or necrotic damage (your choice when you cast this spell).When you cast this spell, you can designate a password. A creature that speaks the password as it enters the area takes no damage from the spell.The spell's area can't overlap with the area of another forbiddance spell. If you cast forbiddance every day for 30 days in the same location, the spell lasts until it is dispelled, and the material components are consumed on the last casting.",
+        "Evoke": "Evoke 22",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "5",
+            "d10",
+            ""
+        ]
+    },
+    "Freedom of Movement": {
+        "level": "4",
+        "school": "abjuration",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: 1 hour",
+        "description": "You touch a willing creature. For the duration, the target's movement is unaffected by difficult terrain, and spells and other magical effects can neither reduce the target's speed nor cause the target to be paralyzed or restrained.The target can also spend 5 feet of movement to automatically escape from nonmagical restraints, such as manacles or a creature that has it grappled. Finally, being underwater imposes no penalties on the target's movement or attacks.",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Globe of Invulnerability": {
+        "level": "6",
+        "school": "abjuration",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Concentration, up to 1 minute",
+        "description": "An immobile, faintly shimmering barrier springs into existence in a 10-foot radius around you and remains for the duration.Any spell of 5th level or lower cast from outside the barrier can't affect creatures or objects within it, even if the spell is cast using a higher level spell slot. Such a spell can target creatures and objects within the barrier, but the spell has no effect on them. Similarly, the area within the barrier is excluded from the areas affected by such spells.",
+        "Evoke": "Evoke 22",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Glyph of Warding": {
+        "level": "3",
+        "school": "abjuration",
+        "casting": "Casting Time: 1 hour",
+        "duration": "Duration: Until dispelled or triggered",
+        "description": "When you cast this spell, you inscribe a glyph that harms other creatures, either upon a surface (such as a table or a section of floor or wall) or within an object that can be closed (such as a book, a scroll, or a treasure chest) to conceal the glyph. The glyph can cover an area no larger than 10 feet in diameter. If the surface or object is moved more than 10 feet from where you cast this spell, the glyph is broken, and the spell ends without being triggered.The glyph is nearly invisible and requires a successful Intelligence (Investigation) check against your spell save DC to be found.You decide what triggers the glyph when you cast the spell. For glyphs inscribed on a surface, the most typical triggers include touching or standing on the glyph, removing another object covering the glyph, approaching within a certain distance of the glyph, or manipulating the object on which the glyph is inscribed. For glyphs inscribed within an object, the most common triggers include opening that object, approaching within a certain distance of the object, or seeing or reading the glyph. Once a glyph is triggered, this spell ends.You can further refine the trigger so the spell activates only under certain circumstances or according to physical characteristics (such as height or weight), creature kind (for example, the ward could be set to affect aberrations or drow), or alignment. You can also set conditions for creatures that don't trigger the glyph, such as those who say a certain password.When you inscribe the glyph, choose explosive runes or a spell glyph.Explosive Runes. When triggered, the glyph erupts with magical energy in a 20-foot-radius sphere centered on the glyph. The sphere spreads around corners. Each creature in the area must make a Dexterity saving throw. A creature takes 5d8 acid, cold, fire, lightning, or thunder damage on a failed saving throw (your choice when you create the glyph), or half as much damage on a successful one.Spell Glyph. You can store a prepared spell of 3rd level or lower in the glyph by casting it as part of creating the glyph. The spell must target a single creature or an area. The spell being stored has no immediate effect when cast in this way. When the glyph is triggered, the stored spell is cast. If the spell has a target, it targets the creature that triggered the glyph. If the spell affects an area, the area is centered on that creature. If the spell summons hostile creatures or creates harmful objects or traps, they appear as close as possible to the intruder and attack it. If the spell requires concentration, it lasts until the end of its full duration.",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "DEX Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "5",
+            "d8",
+            ""
+        ]
+    },
+    "Greater Restoration": {
+        "level": "5",
+        "school": "abjuration",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Instantaneous",
+        "description": "You imbue a creature you touch with positive energy to undo a debilitating effect. You can reduce the target's exhaustion level by one, or end one of the following effects on the target:\u2022 One effect that charmed or petrified the target\u2022 One curse, including the target's attunement to a cursed magic item\u2022 Any reduction to one of the target's ability scores\u2022 One effect reducing the target's hit point maximum",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Guards and Wards": {
+        "level": "6",
+        "school": "abjuration",
+        "casting": "Casting Time: 10 minutes",
+        "duration": "Duration: 24 hours",
+        "description": "You create a ward that protects up to 2,500 square feet of floor space (an area 50 feet square, or one hundred 5-foot squares or twenty-five 10-foot squares). The warded area can be up to 20 feet tall, and shaped as you desire. You can ward several stories of a stronghold by dividing the area among them, as long as you can walk into each contiguous area while you are casting the spell.When you cast this spell, you can specify individuals that are unaffected by any or all of the effects that you choose. You can also specify a password that, when spoken aloud, makes the speaker immune to these effects.Guards and wards creates the following effects within the warded area.Corridors. Fog fills all the warded corridors, making them heavily obscured. In addition, at each intersection or branching passage offering a choice of direction, there is a 50 percent chance that a creature other than you will believe it is going in the opposite direction from the one it chooses.Doors. All doors in the warded area are magically locked, as if sealed by an arcane lock spell. In addition, you can cover up to ten doors with an illusion (equivalent to the illusory object function of the minor illusion spell) to make them appear as plain sections of wall.Stairs. Webs fill all stairs in the warded area from top to bottom, as the web spell. These strands regrow in 10 minutes if they are burned or torn away while guards and wards lasts.Other Spell Effect. You can place your choice of one of the following magical effects within the warded area of the stronghold.\u2022 Place dancing lights in four corridors. You can designate a simple program that the lights repeat as long as guards and wards lasts.\u2022 Place magic mouth in two locations.\u2022 Place stinking cloud in two locations. The vapors appear in the places you designate; they return within 10 minutes if dispersed by wind while guards and wards lasts.\u2022 Place a constant gust of wind in one corridor or room.\u2022 Place a suggestion in one location. You select an area of up to 5 feet square, and any creature that enters or passes through the area receives the suggestion mentally.The whole warded area radiates magic. A dispel magic cast on a specific effect, if successful, removes only that effect.You can create a permanently guarded and warded structure by casting this spell there every day for one year.",
+        "Evoke": "Evoke 22",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Holy Aura": {
+        "level": "8",
+        "school": "abjuration",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Concentration, up to 1 minute",
+        "description": "Divine light washes out from you and coalesces in a soft radiance in a 30-foot radius around you. Creatures of your choice in that radius when you cast this spell shed dim light in a 5-foot radius and have advantage on all saving throws, and other creatures have disadvantage on attack rolls against them until the spell ends. In addition, when a fiend or an undead hits an affected creature with a melee attack, the aura flashes with brilliant light. The attacker must succeed on a Constitution saving throw or be blinded until the spell ends.",
+        "Evoke": "Evoke 26",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "CON Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Imprisonment": {
+        "level": "9",
+        "school": "abjuration",
+        "casting": "Casting Time: 1 minute",
+        "duration": "Duration: Until dispelled",
+        "description": "You create a magical restraint to hold a creature that you can see within range. The target must succeed on a Wisdom saving throw or be bound by the spell; if it succeeds, it is immune to this spell if you cast it again. While affected by this spell, the creature doesn't need to breathe, eat, or drink, and it doesn't age. Divination spells can't locate or perceive the target.When you cast the spell, you choose one of the following forms of imprisonment.Burial. The target is entombed far beneath the earth in a sphere of magical force that is just large enough to contain the target. Nothing can pass through the sphere, nor can any creature teleport or use planar travel to get into or out of it.The special component for this version of the spell is a small mithral orb.Chaining. Heavy chains, firmly rooted in the ground, hold the target in place. The target is restrained until the spell ends, and it can't move or be moved by any means until then.The special component for this version of the spell is a fine chain of precious metal.Hedged Prison. The spell transports the target into a tiny demiplane that is warded against teleportation and planar travel. The demiplane can be a labyrinth, a cage, a tower, or any similar confined structure or area of your choice.The special component for this version of the spell is a miniature representation of the prison made from jade.Minimus Containment. The target shrinks to a height of 1 inch and is imprisoned inside a gemstone or similar object. Light can pass through the gemstone normally (allowing the target to see out and other creatures to see in), but nothing else can pass through, even by means of teleportation or planar travel. The gemstone can't be cut or broken while the spell remains in effect.The special component for this version of the spell is a large, transparent gemstone, such as a corundum, diamond, or ruby.Slumber. The target falls asleep and can't be awoken.The special component for this version of the spell consists of rare soporific herbs.Ending the Spell. During the casting of the spell, in any of its versions, you can specify a condition that will cause the spell to end and release the target. The condition can be as specific or as elaborate as you choose, but the DM must agree that the condition is reasonable and has a likelihood of coming to pass. The conditions can be based on a creature's name, identity, or deity but otherwise must be based on observable actions or qualities and not based on intangibles such as level, class, or hit points.A dispel magic spell can end the spell only if it is cast as a 9th-level spell, targeting either the prison or the special component used to create it.You can use a particular special component to create only one prison at a time. If you cast the spell again using the same component, the target of the first casting is immediately freed from its binding.",
+        "Evoke": "Evoke 28",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "WIS Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Lesser Restoration": {
+        "level": "2",
+        "school": "abjuration",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Instantaneous",
+        "description": "You touch a creature and can end either one disease or one condition afflicting it. The condition can be blinded, deafened, paralyzed, or poisoned.",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Mage Armor": {
+        "level": "1",
+        "school": "abjuration",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: 8 hours",
+        "description": "You touch a willing creature who isn't wearing armor, and a protective magical force surrounds it until the spell ends. The target's base AC becomes 13 + its Dexterity modifier. The spell ends if the target dons armor or if you dismiss the spell as an action.",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Magic Circle": {
+        "level": "3",
+        "school": "abjuration",
+        "casting": "Casting Time: 1 minute",
+        "duration": "Duration: 1 hour",
+        "description": "You create a 10-foot-radius, 20-foot-tall cylinder of magical energy centered on a point on the ground that you can see within range. Glowing runes appear wherever the cylinder intersects with the floor or other surface.Choose one or more of the following types of creatures: celestials, elementals, fey, fiends, or undead. The circle affects a creature of the chosen type in the following ways:\u2022 The creature can't willingly enter the cylinder by nonmagical means. If the creature tries to use teleportation or interplanar travel to do so, it must first succeed on a Charisma saving throw.\u2022 The creature has disadvantage on attack rolls against targets within the cylinder.\u2022 Targets within the cylinder can't be charmed, frightened, or possessed by the creature.When you cast this spell, you can elect to cause its magic to operate in the reverse direction, preventing a creature of the specified type from leaving the cylinder and protecting targets outside it.",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "CHA Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Mind Blank": {
+        "level": "8",
+        "school": "abjuration",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: 24 hours",
+        "description": "Until the spell ends, one willing creature you touch is immune to psychic damage, any effect that would sense its emotions or read its thoughts, divination spells, and the charmed condition. The spell even foils wish spells and spells or effects of similar power used to affect the target's mind or to gain information about the target.",
+        "Evoke": "Evoke 26",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Mordenkainen's Private Sanctum": {
+        "level": "4",
+        "school": "abjuration",
+        "casting": "Casting Time: 10 minutes",
+        "duration": "Duration: 24 hours",
+        "description": "You make an area within range magically secure. The area is a cube that can be as small as 5 feet to as large as 100 feet on each side. The spell lasts for the duration or until you use an action to dismiss it.When you cast the spell, you decide what sort of security the spell provides, choosing any or all of the following properties:\u2022 Sound can't pass through the barrier at the edge of the warded area.\u2022 The barrier of the warded area appears dark and foggy, preventing vision (including darkvision through it.\u2022 Sensors created by divination spells can't appear inside the protected area or pass through the barrier at its perimeter.\u2022 Creatures in the area can't be targeted by divination spells.\u2022 Nothing can teleport into or out of the warded area.\u2022 Planar travel is blocked within the warded area.Casting this spell on the same spot every day for a year makes this effect permanent.",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Nondetection": {
+        "level": "3",
+        "school": "abjuration",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: 8 hours",
+        "description": "For the duration, you hide a target that you touch from divination magic. The target can be a willing creature or a place or an object no larger than 10 feet in any dimension. The target can't be targeted by any divination magic or perceived through magical scrying sensors.",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Pass without Trace": {
+        "level": "2",
+        "school": "abjuration",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Concentration, up to 1 hour",
+        "description": "A veil of shadows and silence radiates from you, masking you and your companions from detection. For the duration, each creature you choose within 30 feet of you (including you) has a +10 bonus to Dexterity (Stealth) checks and can't be tracked except by magical means. A creature that receives this bonus leaves behind no tracks or other traces of its passage.",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Planar Binding": {
+        "level": "5",
+        "school": "abjuration",
+        "casting": "Casting Time: 1 hour",
+        "duration": "Duration: 24 hours",
+        "description": "With this spell, you attempt to bind a celestial, an elemental, a fey, or a fiend to your service. The creature must be within range for the entire casting of the spell. (Typically, the creature is first summoned into the center of an inverted magic circle in order to keep it trapped while this spell is cast.) At the completion of the casting, the target must make a Charisma saving throw. On a failed save, it is bound to serve you for the duration. If the creature was summoned or created by another spell, that spell's duration is extended to match the duration of this spell.A bound creature must follow your instructions to the best of its ability. You might command the creature to accompany you on an adventure, to guard a location, or to deliver a message. The creature obeys the letter of your instructions, but if the creature is hostile to you, it strives to twist your words to achieve its own objectives. If the creature carries out your instructions completely before the spell ends, it travels to you to report this fact if you are on the same plane of existence. If you are on a different plane of existence, it returns to the place where you bound it and remains there until the spell ends.",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "CHA Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Prismatic Wall": {
+        "level": "9",
+        "school": "abjuration",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: 10 minutes",
+        "description": "A shimmering, multicolored plane of light forms a vertical opaque wall\u2014up to 90 feet long, 30 feet high, and 1 inch thick\u2014centered on a point you can see within range. Alternatively, you can shape the wall into a sphere up to 30 feet in diameter centered on a point you choose within range. The wall remains in place for the duration. If you position the wall so that it passes through a space occupied by a creature, the spell fails, and your action and the spell slot are wasted.The wall sheds bright light out to a range of 100 feet and dim light for an additional 100 feet. You and creatures you designate at the time you cast the spell can pass through and remain near the wall without harm. If another creature that can see the wall moves to within 20 feet of it or starts its turn there, the creature must succeed on a Constitution saving throw or become blinded for 1 minute.The wall consists of seven layers, each with a different color. When a creature attempts to reach into or pass through the wall, it does so one layer at a time through all the wall's layers. As it passes or reaches through each layer, the creature must make a Dexterity saving throw or be affected by that layer's properties as described below.The wall can be destroyed, also one layer at a time, in order from red to violet, by means specific to each layer. Once a layer is destroyed, it remains so for the duration of the spell. Antimagic field has no effect on the wall and dispel magic can affect only the violet layer.1. Red. The creature takes 10d6 fire damage on a failed save, or half as much damage on a successful one. While this layer is in place, nonmagical ranged attacks can't pass through the wall. The layer can be destroyed by dealing at least 25 cold damage to it.2. Orange. The creature takes 10d6 acid damage on a failed save, or half as much damage on a successful one. While this layer is in place, magical ranged attacks can't pass through the wall. The layer is destroyed by a strong wind.3. Yellow. The creature takes 10d6 lightning damage on a failed save, or half as much damage on a successful one. This layer can be destroyed by dealing at least 60 force damage to it.4. Green. The creature takes 10d6 poison damage on a failed save, or half as much damage on a successful one. A passwall spell, or another spell of equal or greater level that can open a portal on a solid surface, destroys this layer.5. Blue. The creature takes 10d6 cold damage on a failed save, or half as much damage on a successful one. This layer can be destroyed by dealing at least 25 fire damage to it.6. Indigo. On a failed save, the creature is restrained. It must then make a Constitution saving throw at the end of each of its turns. If it successfully saves three times, the spell ends. If it fails its save three times, it permanently turns to stone and is subjected to the petrified condition. The successes and failures don't need to be consecutive; keep track of both until the creature collects three of a kind.While this layer is in place, spells can't be cast through the wall. The layer is destroyed by bright light shed by a daylight spell or a similar spell of equal or higher level.7. Violet. On a failed save, the creature is blinded. It must then make a Wisdom saving throw at the start of your next turn. A successful save ends the blindness. If it fails that save, the creature is transported to another plane of the DM's choosing and is no longer blinded. (Typically, a creature that is on a plane that isn't its home plane is banished home, while other creatures are usually cast into the Astral or Ethereal planes.) This layer is destroyed by a dispel magic spell or a similar spell of equal or higher level that can end spells and magical effects.",
+        "Evoke": "Evoke 28",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "DEX Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "10",
+            "d6",
+            ""
+        ]
+    },
+    "Protection from Energy": {
+        "level": "3",
+        "school": "abjuration",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Concentration, up to 1 hour",
+        "description": "For the duration, the willing creature you touch has resistance to one damage type of your choice: acid, cold, fire, lightning, or thunder.",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Protection from Evil and Good": {
+        "level": "1",
+        "school": "abjuration",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Concentration, up to 10 minutes",
+        "description": "Until the spell ends, one willing creature you touch is protected against certain types of creatures: aberrations, celestials, elementals, fey, fiends, and undead.The protection grants several benefits. Creatures of those types have disadvantage on attack rolls against the target. The target also can't be charmed, frightened, or possessed by them. If the target is already charmed, frightened, or possessed by such a creature, the target has advantage on any new saving throw against the relevant effect.",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Protection from Poison": {
+        "level": "2",
+        "school": "abjuration",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: 1 hour",
+        "description": "You touch a creature. If it is poisoned, you neutralize the poison. If more than one poison afflicts the targe you neutralize one poison that you know is present, or you neutralize one at random.For the duration, the target has advantage on saving throws against being poisoned, and it has resistance to poison damage.",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Remove Curse": {
+        "level": "3",
+        "school": "abjuration",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Instantaneous",
+        "description": "At your touch, all curses affecting one creature or object end. If the object is a cursed magic item, its curse remains, but the spell breaks its owner's attunement to the object so it can be removed or discarded.",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Resistance": {
+        "level": "0",
+        "school": "abjuration",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Concentration, up to 1 minute",
+        "description": "You touch one willing creature. Once before the spell ends, the target can roll a d4 and add the number rolled to one saving throw of its choice. It can roll the die before or after making the saving throw. The spell then ends.",
+        "Evoke": "Evoke 10",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Sanctuary": {
+        "level": "1",
+        "school": "abjuration",
+        "casting": "Casting Time: 1 bonus action",
+        "duration": "Duration: 1 minute",
+        "description": "You ward a creature within range against attack. Until the spell ends, any creature who targets the warded creature with an attack or a harmful spell must first make a Wisdom saving throw. On a failed save, the creature must choose a new target or lose the attack or spell. This spell doesn't protect the warded creature from area effects, such as the explosion of a fireball.If the warded creature makes an attack, casts a spell that affects an enemy creature, or deal dommage to another creature, this spell ends.",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "WIS Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Magic Shield": {
+        "level": "1",
+        "school": "abjuration",
+        "casting": "Casting Time: 1 reaction, which you take when you are hit by an attack or targeted by the magic missile spell",
+        "duration": "Duration: 1 round",
+        "description": "An invisible barrier of magical force appears and protects you. Until the start of your next turn, you have a +5 bonus to AC, including against the triggering attack, and you take no damage from magic missile.",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Shield of Faith": {
+        "level": "1",
+        "school": "abjuration",
+        "casting": "Casting Time: 1 bonus action",
+        "duration": "Duration: Concentration, up to 10 minutes",
+        "description": "A shimmering field appears and surrounds a creature of your choice within range, granting it a +2 bonus to AC for the duration.",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Stoneskin": {
+        "level": "4",
+        "school": "abjuration",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Concentration, up to 1 hour",
+        "description": "This spell turns the flesh of a willing creature you touch as hard as stone. Until the spell ends, the target has resistance to nonmagical bludgeoning, piercing, and slashing damage.",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Symbol": {
+        "level": "7",
+        "school": "abjuration",
+        "casting": "Casting Time: 1 minute",
+        "duration": "Duration: Until dispelled or triggered",
+        "description": "When you cast this spell, you inscribe a harmful glyph either on a surface (such as a section of floor, a wall, or a table) or within an object that can be closed to conceal the glyph (such as a book, a scroll, or a treasure chest). If you choose a surface, the glyph can cover an area of the surface no larger than 10 feet in diameter. If you choose an object, that object must remain in its place; if the object is moved more than 10 feet from where you cast this spell, the glyph is broken, and the spell ends without being triggered.The glyph is nearly invisible, requiring an Intelligence (Investigation) check against your spell save DC to find it.You decide what triggers the glyph when you cast the spell. For glyphs inscribed on a surface, the most typical triggers include touching or stepping on the glyph, removing another object covering it, approaching within a certain distance of it, or manipulating the object that holds it. For glyphs inscribed within an object, the most common triggers are opening the object, approaching within a certain distance of it, or seeing or reading the glyph.You can further refine the trigger so the spell is activated only under certain circumstances or according to a creature's physical characteristics (such as height or weight), or physical kind (for example, the ward could be set to affect hags or shapechangers). You can also specify creatures that don't trigger the glyph, such as those who say a certain password.When you inscribe the glyph, choose one of the options below for its effect. Once triggered, the glyph glows, filling a 60-foot-radius sphere with dim light for 10 minutes, after which time the spell ends. Each creature in the sphere when the glyph activates is targeted by its effect, as is a creature that enters the sphere for the first time on a turn or ends its turn there.Death. Each target must make a Constitution saving throw, taking 10d10 necrotic damage on a failed save, or half as much damage on a successful save.Discord. Each target must make a Constitution saving throw. On a failed save, a target bickers and argues with other creatures for 1 minute. During this time, it is incapable of meaningful communication and has disadvantage on attack rolls and ability checks.Fear. Each target must make a Wisdom saving throw and becomes frightened for 1 minute on a failed save. While frightened, the target drops whatever it is holding and must move at least 30 feet away from the glyph on each of its turns, if able.Hopelessness. Each target must make a Charisma saving throw. On a failed save, the target is overwhelmed with despair for 1 minute. During this time, it can't attack or target any creature with harmful abilities, spells, or other magical effects.Insanity. Each target must make an Intelligence saving throw. On a failed save, the target is driven insane for 1 minute. An insane creature can't take actions, can't understand what other creatures say, can't read, and speaks only in gibberish. The DM controls its movement, which is erratic.Pain. Each target must make a Constitution saving throw and becomes incapacitated with excruciating pain for 1 minute on a failed save.Sleep. Each target must make a Wisdom saving throw and falls unconscious for 10 minutes on a failed save. A creature awakens if it takes damage or if someone uses an action to shake or slap it awake.Stunning. Each target must make a Wisdom saving throw and becomes stunned for 1 minute on a failed save.",
+        "Evoke": "Evoke 24",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "WIS Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "10",
+            "d10",
+            ""
+        ]
+    },
+    "Warding Bond": {
+        "level": "2",
+        "school": "abjuration",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: 1 hour",
+        "description": "This spell wards a willing creature you touch and creates a mystic connection between you and the target until the spell ends. While the target is within 60 feet of you, it gains a +1 bonus to AC and saving throws, and it has resistance to all damage. Also, each time it takes damage, you take the same amount of damage.The spell ends if you drop to 0 hit points or if you and the target become separated by more than 60 feet. It also ends if the spell is cast again on either of the connected creatures. You can also dismiss the spell as an action.",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    }
+}

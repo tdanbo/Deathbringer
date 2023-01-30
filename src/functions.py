@@ -9,8 +9,8 @@ from combat_log import CombatLog
 import constants as cons
 import json
 from character_sheet import CharacterSheet
-
 import stylesheet as style
+
 
 def adjust_stat_widget(self, stat, state):
     sender_widget = self.findChild(QPushButton, stat)
@@ -68,5 +68,3 @@ def set_icon(widget, icon, color):
     except:
         widget.setPixmap(pixmap)
         widget.setScaledContents(True)
-    print(widget)
-    print(icon)

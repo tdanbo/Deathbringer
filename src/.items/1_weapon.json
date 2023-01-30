@@ -1,11 +1,12 @@
 {
 	"Sling": {
-		"Action": "Hit",
-		"Action Mod": [
+		"Hit": "Hit",
+		"Hit Mod": [
 			"STR",
 			"WIS"
 		],
-		"Roll": [
+		"Roll": "Damage",
+		"Roll Mod": [
 			"1",
 			"d4",
 			"STR"
@@ -17,12 +18,13 @@
 		"Cost": 5
 	},
 	"Knuckles": {
-		"Action": "Hit",
-		"Action Mod": [
+		"Hit": "Hit",
+		"Hit Mod": [
 			"STR",
 			"WIS"
 		],
-		"Roll": [
+		"Roll": "Damage",
+		"Roll Mod": [
 			"1",
 			"d4",
 			"STR"
@@ -33,12 +35,13 @@
 		"Cost": 5
 	},
 	"Cudgel": {
-		"Action": "Hit",
-		"Action Mod": [
+		"Hit": "Hit",
+		"Hit Mod": [
 			"STR",
 			"WIS"
 		],
-		"Roll": [
+		"Roll": "Damage",
+		"Roll Mod": [
 			"1",
 			"d4",
 			"STR"
@@ -49,12 +52,13 @@
 		"Cost": 5
 	},
 	"Staff": {
-		"Action": "Hit",
-		"Action Mod": [
+		"Hit": "Hit",
+		"Hit Mod": [
 			"STR",
 			"WIS"
 		],
-		"Roll": [
+		"Roll": "Damage",
+		"Roll Mod": [
 			"1",
 			"d4",
 			"STR"
@@ -65,12 +69,13 @@
 		"Cost": 5
 	},
 	"Bow": {
-		"Action": "Hit",
-		"Action Mod": [
+		"Hit": "Hit",
+		"Hit Mod": [
 			"STR",
 			"WIS"
 		],
-		"Roll": [
+		"Roll": "Damage",
+		"Roll Mod": [
 			"1",
 			"d6",
 			"STR"
@@ -82,12 +87,13 @@
 		"Cost": 50
 	},
 	"Dagger": {
-		"Action": "Hit",
-		"Action Mod": [
+		"Hit": "Hit",
+		"Hit Mod": [
 			"STR",
 			"WIS"
 		],
-		"Roll": [
+		"Roll": "Damage",
+		"Roll Mod": [
 			"1",
 			"d6",
 			"STR"
@@ -98,12 +104,13 @@
 		"Cost": 50
 	},
 	"Flail": {
-		"Action": "Hit",
-		"Action Mod": [
+		"Hit": "Hit",
+		"Hit Mod": [
 			"STR",
 			"WIS"
 		],
-		"Roll": [
+		"Roll": "Damage",
+		"Roll Mod": [
 			"1",
 			"d6",
 			"STR"
@@ -114,12 +121,13 @@
 		"Cost": 50
 	},
 	"Hand Axe": {
-		"Action": "Hit",
-		"Action Mod": [
+		"Hit": "Hit",
+		"Hit Mod": [
 			"STR",
 			"WIS"
 		],
-		"Roll": [
+		"Roll": "Damage",
+		"Roll Mod": [
 			"1",
 			"d6",
 			"STR"
@@ -130,12 +138,13 @@
 		"Cost": 50
 	},
 	"Mace": {
-		"Action": "Hit",
-		"Action Mod": [
+		"Hit": "Hit",
+		"Hit Mod": [
 			"STR",
 			"WIS"
 		],
-		"Roll": [
+		"Roll": "Damage",
+		"Roll Mod": [
 			"1",
 			"d6",
 			"STR"
@@ -146,12 +155,13 @@
 		"Cost": 50
 	},
 	"Short Sword": {
-		"Action": "Hit",
-		"Action Mod": [
+		"Hit": "Hit",
+		"Hit Mod": [
 			"STR",
 			"WIS"
 		],
-		"Roll": [
+		"Roll": "Damage",
+		"Roll Mod": [
 			"1",
 			"d6",
 			"STR"
@@ -162,12 +172,13 @@
 		"Cost": 50
 	},
 	"Spear": {
-		"Action": "Hit",
-		"Action Mod": [
+		"Hit": "Hit",
+		"Hit Mod": [
 			"STR",
 			"WIS"
 		],
-		"Roll": [
+		"Roll": "Damage",
+		"Roll Mod": [
 			"1",
 			"d6",
 			"STR"
@@ -178,12 +189,13 @@
 		"Cost": 50
 	},
 	"Crossbow": {
-		"Action": "Hit",
-		"Action Mod": [
+		"Hit": "Hit",
+		"Hit Mod": [
 			"STR",
 			"WIS"
 		],
-		"Roll": [
+		"Roll": "Damage",
+		"Roll Mod": [
 			"1",
 			"d8",
 			"STR"
@@ -195,12 +207,13 @@
 		"Cost": 500
 	},
 	"Battle Axe": {
-		"Action": "Hit",
-		"Action Mod": [
+		"Hit": "Hit",
+		"Hit Mod": [
 			"STR",
 			"WIS"
 		],
-		"Roll": [
+		"Roll": "Damage",
+		"Roll Mod": [
 			"1",
 			"d8",
 			"STR"
@@ -211,12 +224,13 @@
 		"Cost": 100
 	},
 	"Warhammer": {
-		"Action": "Hit",
-		"Action Mod": [
+		"Hit": "Hit",
+		"Hit Mod": [
 			"STR",
 			"WIS"
 		],
-		"Roll": [
+		"Roll": "Damage",
+		"Roll Mod": [
 			"1",
 			"d8",
 			"STR"
@@ -227,12 +241,13 @@
 		"Cost": 100
 	},
 	"Longsword": {
-		"Action": "Hit",
-		"Action Mod": [
+		"Hit": "Hit",
+		"Hit Mod": [
 			"STR",
 			"WIS"
 		],
-		"Roll": [
+		"Roll": "Damage",
+		"Roll Mod": [
 			"1",
 			"d8",
 			"STR"
@@ -243,12 +258,13 @@
 		"Cost": 100
 	},
 	"Halberd": {
-		"Action": "Hit",
-		"Action Mod": [
+		"Hit": "Hit",
+		"Hit Mod": [
 			"STR",
 			"WIS"
 		],
-		"Roll": [
+		"Roll": "Damage",
+		"Roll Mod": [
 			"1",
 			"d8",
 			"STR"

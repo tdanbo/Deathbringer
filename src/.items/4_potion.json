@@ -1,8 +1,9 @@
 {
 	"Potion of Healing": {
-		"Action": "Heal",
-		"Action Mod": [],
-		"Roll": [
+		"Hit": "",
+		"Hit Mod": [],
+		"Roll": "Healing",
+		"Roll Mod": [
 			"2",
 			"d4",
 			"2"

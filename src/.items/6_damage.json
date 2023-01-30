@@ -1,8 +1,9 @@
 {
 	"Injury": {
-		"Action": "",
-		"Action Mod": [],
-		"Roll": [
+		"Hit": "",
+		"Hit Mod": [],
+		"Roll": "",
+		"Roll Mod": [
 			"",
 			"",
 			""

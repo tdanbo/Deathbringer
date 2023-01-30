@@ -1,8 +1,9 @@
 {
 	"Ration": {
-		"Action": "Daily Heal",
-		"Action Mod": [],
-		"Roll": [
+		"Hit": "",
+		"Hit Mod": [],
+		"Roll": "Healing",
+		"Roll Mod": [
 			"CON",
 			"d4",
 			""

@@ -1,0 +1,757 @@
+{
+    "Animal Friendship": {
+        "level": "1",
+        "school": "enchantment",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: 24 hours",
+        "description": "This spell lets you convince a beast that you mean it no harm. Choose a beast that you can see within range. It must see and hear you. If the beast's Intelligence is 4 or higher, the spell fails. Otherwise, the beast must succeed on a Wisdom saving throw or be charmed by you for the spell's duration. If you or one of your companions harms the target, the spell ends.",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "WIS Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Animal Messenger": {
+        "level": "2",
+        "school": "enchantment",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: 24 hours",
+        "description": "By means of this spell, you use an animal to deliver a message. Choose a Tiny beast you can see within range, such as a squirrel, a blue jay, or a bat. You specify a location, which you must have visited, and a recipient who matches a general description, such as \"a man or woman dressed in the uniform of the town guard\" or \"a red-haired dwarf wearing a pointed hat.\" You also speak a message of up to twenty-five words. The target beast travels for the duration of the spell toward the specified location, covering about 50 miles per 24 hours for a flying messenger, or 25 miles for other animals.When the messenger arrives, it delivers your message to the creature that you described, replicating the sound of your voice. The messenger speaks only to a creature matching the description you gave. If the messenger doesn't reach its destination before the spell ends, the message is lost, and the beast makes its way back to where you cast this spell.",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Antipathy/Sympathy": {
+        "level": "8",
+        "school": "enchantment",
+        "casting": "Casting Time: 1 hour",
+        "duration": "Duration: 10 days",
+        "description": "This spell attracts or repels creatures of your choice. You target something within range, either a Huge or smaller object or creature or an area that is no larger than a 200-foot cube. Then specify a kind of intelligent creature, such as red dragons, goblins, or vampires. You invest the target with an aura that either attracts or repels the specified creatures for the duration. Choose antipathy or sympathy as the aura's effect.Antipathy. The enchantment causes creatures of the kind you designated to feel an intense urge to leave the area and avoid the target. When such a creature can see the target or comes within 60 feet of it, the creature must succeed on a Wisdom saving throw or become frightened. The creature remains frightened while it can see the target or is within 60 feet of it. While frightened by the target, the creature must use its movement to move to the nearest safe spot from which it can't see the target. If the creature moves more than 60 feet from the target and can't see it, the creature is no longer frightened, but the creature becomes frightened again if it regains sight of the target or moves within 60 feet of it.Sympathy. The enchantment causes the specified creatures to feel an intense urge to approach the target while within 60 feet of it or able to see it. When such a creature can see the target or comes within 60 feet of it, the creature must succeed on a Wisdom saving throw or use its movement on each of its turns to enter the area or move within reach of the target. When the creature has done so, it can't willingly move away from the target.If the target damages or otherwise harms an affected creature, the affected creature can make a Wisdom saving throw to end the effect, as described below.Ending the Effect. If an affected creature ends its turn while not within 60 feet of the target or able to see it, the creature makes a Wisdom saving throw. On a successful save, the creature is no longer affected by the target and recognizes the feeling of repugnance or attraction as magical. In addition, a creature affected by the spell is allowed another Wisdom saving throw every 24 hours while the spell persists.A creature that successfully saves against this effect is immune to it for 1 minute, after which time it can be affected again.",
+        "Evoke": "Evoke 26",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "WIS Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Bane": {
+        "level": "1",
+        "school": "enchantment",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Concentration, up to 1 minute",
+        "description": "Up to three creatures of your choice that you can see within range must make Charisma saving throws. Whenever a target that fails this saving throw makes an attack roll or a saving throw before the spell ends, the target must roll a d4 and subtract the number rolled from the attack roll or saving throw.",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "CHA Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Bless": {
+        "level": "1",
+        "school": "enchantment",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Concentration, up to 1 minute",
+        "description": "You bless up to three creatures of your choice within range. Whenever a target makes an attack roll or a saving throw before the spell ends, the target can roll a d4 and add the number rolled to the attack roll or saving throw.",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Calm Emotions": {
+        "level": "2",
+        "school": "enchantment",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Concentration, up to 1 minute",
+        "description": "You attempt to suppress strong emotions in a group of people. Each humanoid in a 20-foot-radius sphere centered on a point you choose within range must make a Charisma saving throw; a creature can choose to fail this saving throw if it wishes. If a creature fails its saving throw, choose one of the following two effects.You can suppress any effect causing a target to be charmed or frightened. When this spell ends, any suppressed effect resumes, provided that its duration has not expired in the meantime.Alternatively, you can make a target indifferent about creatures of your choice that it is hostile toward. This indifference ends if the target is attacked or harmed by a spell or if it witnesses any of its friends being harmed. When the spell ends, the creature becomes hostile again, unless the DM rules otherwise.",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "CHA Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Charm Person": {
+        "level": "1",
+        "school": "enchantment",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: 1 hour",
+        "description": "You attempt to charm a humanoid you can see within range. It must make a Wisdom saving throw, and does so with advantage if you or your companions are fighting it. If it fails the saving throw, it is charmed by you until the spell ends or until you or your companions do anything harmful to it. The charmed creature regards you as a friendly acquaintance. When the spell ends, the creature knows it was charmed by you.",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "WIS Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Command": {
+        "level": "1",
+        "school": "enchantment",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: 1 round",
+        "description": "You speak a one-word command to a creature you can see within range. The target must succeed on a Wisdom saving throw or follow the command on its next turn. The spell has no effect if the target is undead, if it doesn't understand your language, or if your command is directly harmful to it.Some typical commands and their effects follow. You might issue a command other than one described here. If you do so, the DM determines how the target behaves. If the target is prevented from following your command, the spell ends.Approach. The target moves toward you by the shortest and most direct route, ending its turn if it moves within 5 feet of you.Drop. The target drops whatever it is holding and then ends its turn.Flee. The target spends its turn moving away from you by the fastest available means.Grovel. The target falls prone and then ends its turn.Halt. The target stays where it is and takes no actions.",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "WIS Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Compelled Duel": {
+        "level": "1",
+        "school": "enchantment",
+        "casting": "Casting Time: 1 bonus action",
+        "duration": "Duration: Concentration, up to 1 minute",
+        "description": "You attempt to compel a creature into a duel. One creature that you can see within range must make a Wisdom saving throw. On a failed save, the creature is drawn to you, compelled by your divine demand. For the duration, it has disadvantage on attack rolls against creatures other than you, and must make a Wisdom saving throw each time it attempts to move to a space that is more than 30 feet away from you; if it succeeds on this saving throw, this spell doesn't restrict the target's movement for that turn.The spell ends if you attack any other creature, if you cast a spell that targets a hostile creature other than the target, if a creature friendly to you damages the target or casts a harmful spell on it, or if you end your turn more than 30 feet away from the target.",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "WIS Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Compulsion": {
+        "level": "4",
+        "school": "enchantment",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Concentration, up to 1 minute",
+        "description": "Creatures of your choice that you can see within range and that can hear you must make a Wisdom saving throw. A target automatically succeeds on this saving throw if it can't be charmed. On a failed save, a target is affected by this spell. Until the spell ends, you can use a bonus action on each of your turns to designate a direction that is horizontal to you. Each affected target must use as much of its movement as possible to move in that direction on its next turn. It can take its action before it moves. After moving in this way, it can make another Wisdom saving to try to end the effect.A target isn't compelled to move into an obviously deadly hazard, such as a fire or pit, but it will provoke opportunity attacks to move in the designated direction.",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "WIS Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Confusion": {
+        "level": "4",
+        "school": "enchantment",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Concentration, up to 1 minute",
+        "description": "This spell assaults and twists creatures' minds, spawning delusions and provoking uncontrolled action. Each creature in a 10-foot-radius sphere centered on a point you choose within range must succeed on a Wisdom saving throw when you cast this spell or be affected by it.An affected target can't take reactions and must roll a d10 at the start of each of its turns to determine its behavior for that turn.d10Behavior1The creature uses all its movement to move in a random direction. To determine the direction, roll a d8 and assign a direction to each die face. The creature doesn't take an action this turn.2-6The creature doesn't move or take actions this turn.7-8The creature uses its action to make a melee attack against a randomly determined creature within its reach. If there is no creature within its reach, the creature does nothing this turn.9-10The creature can act and move normally.At the end of each of its turns, an affected target can make a Wisdom saving throw. If it succeeds, this effect ends for that target.",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "WIS Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Crown of Madness": {
+        "level": "2",
+        "school": "enchantment",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Concentration, up to 1 minute",
+        "description": "The target must succeed on a Wis. save or be charmed. It then can attack a target designated by the caster.",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Dissonant Whispers": {
+        "level": "1",
+        "school": "enchantment",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Instantaneous",
+        "description": "You whisper a discordant melody that only one creature of your choice within range can hear, wracking it with terrible pain. The target must make a Wisdom saving throw. On a failed save, it takes 3d6 psychic damage and must immediately use its reaction, if available, to move as far as its speed allows away from you. The creature doesn't move into obviously dangerous ground, such as a fire or a pit. On a successful save, the target takes half as much damage and doesn't have to move away. A deafened creature automatically succeeds on the save.",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "WIS Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "3",
+            "d6",
+            ""
+        ]
+    },
+    "Dominate Beast": {
+        "level": "4",
+        "school": "enchantment",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Concentration, up to 1 minute",
+        "description": "You attempt to beguile a beast that you can see within range. It must succeed on a Wisdom saving throw or be charmed by you for the duration. If you or creatures that are friendly to you are fighting it, it has advantage on the saving throw.While the beast is charmed, you have a telepathic link with it as long as the two of you are on the same plane of existence. You can use this telepathic link to issue commands to the creature while you are conscious (no action required), which it does its best to obey. You can specify a simple and general course of action, such as \"Attack that creature,\" \"Run over there,\" or \"Fetch that object.\" If the creature completes the order and doesn't receive further direction from you, it defends and preserves itself to the best of its ability.You can use your action to take total and precise control of the target. Until the end of your next turn, the creature takes only the actions you choose, and doesn't do anything that you don't allow it to do. During this time, you can also cause the creature to use a reaction, but this requires you to use your own reaction as well. Each time the target takes damage, it makes a new Wisdom saving throw against the spell. If the saving throw succeeds, the spell ends.",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "WIS Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Dominate Monster": {
+        "level": "8",
+        "school": "enchantment",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Concentration, up to 1 hour",
+        "description": "You attempt to beguile a creature that you can see within range. It must succeed on a Wisdom saving throw or be charmed by you for the duration. If you or creatures that are friendly to you are fighting it, it has advantage on the saving throw.While the creature is charmed, you have a telepathic link with it as long as the two of you are on the same plane of existence. You can use this telepathic link to issue commands to the creature while you are conscious (no action required), which it does its best to obey. You can specify a simple and general course of action, such as \"Attack that creature,\" \"Run over there,\" or \"Fetch that object.\" If the creature completes the order and doesn't receive further direction from you, it defends and preserves itself to the best of its ability.You can use your action to take total and precise control of the target. Until the end of your next turn, the creature takes only the actions you choose, and doesn't do anything that you don't allow it to do. During this time, you can also cause the creature to use a reaction, but this requires you to use your own reaction as well.Each time the target takes damage, it makes a new Wisdom saving throw against the spell. If the saving throw succeeds, the spell ends.",
+        "Evoke": "Evoke 26",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "WIS Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Dominate Person": {
+        "level": "5",
+        "school": "enchantment",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Concentration, up to 1 minute",
+        "description": "You attempt to beguile a humanoid that you can see within range. It must succeed on a Wisdom saving throw or be charmed by you for the duration. If you or creatures that are friendly to you are fighting it, it has advantage on the saving throw.While the target is charmed, you have a telepathic link with it as long as the two of you are on the same plane of existence. You can use this telepathic link to issue commands to the creature while you are conscious (no action required), which it does its best to obey. You can specify a simple and general course of action, such as \"Attack that creature,\" \"Run over there,\" or \"Fetch that object.\" If the creature completes the order and doesn't receive further direction from you, it defends and preserves itself to the best of its ability.You can use your action to take total and precise control of the target. Until the end of your next turn, the creature takes only the actions you choose, and doesn't do anything that you don't allow it to do. During this time you can also cause the creature to use a reaction, but this requires you to use your own reaction as well.Each time the target takes damage, it makes a newWisdom saving throw against the spell. If the saving throw succeeds, the spell ends.",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "WIS Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Enthrall": {
+        "level": "2",
+        "school": "enchantment",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: 1 minute",
+        "description": "You weave a distracting string of words, causing creatures of your choice that you can see within range and that can hear you to make a Wisdom saving throw. Any creature that can't be charmed succeeds on this saving throw automatically, and if you or your companions are fighting a creature, it has advantage on the save. On a failed save, the target has disadvantage on Wisdom (Perception) checks made to perceive any creature other than you until the spell ends or until the target can no longer hear you. The spell ends if you are incapacitated or can no longer speak.",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "WIS Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Feeblemind": {
+        "level": "8",
+        "school": "enchantment",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Instantaneous",
+        "description": "You blast the mind of a creature that you can see within range, attempting to shatter its intellect and personality. The target takes 4d6 psychic damage and must make an Intelligence saving throw.On a failed save, the creature's Intelligence and Charisma scores become 1. The creature can't cast spells, activate magic items, understand language, or communicate in any intelligible way. The creature can, however, identify its friends, follow them, and even protect them.At the end of every 30 days, the creature can repeat its saving throw against this spell. If it succeeds on its saving throw, the spell ends.The spell can also be ended by greater restoration, heal, or wish.",
+        "Evoke": "Evoke 26",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "CHA Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "4",
+            "d6",
+            ""
+        ]
+    },
+    "Friends": {
+        "level": "0",
+        "school": "enchantment",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Concentration, up to 1 minute",
+        "description": "For the duration, you have advantage on all Charisma checks directed at one creature of your choice that isn't hostile toward you. When the spell ends, the creature realizes that you used magic to influence its mood and becomes hostile toward you. A creature prone to violence might attack you. Another creature might seek retribution in other ways (at the DM's discretion), depending on the nature of your interaction with it.",
+        "Evoke": "Evoke 10",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Geas": {
+        "level": "5",
+        "school": "enchantment",
+        "casting": "Casting Time: 1 minute",
+        "duration": "Duration: 30 days",
+        "description": "You place a magical command on a creature that you can see within range, forcing it to carry out some service or refrain from some action or course of activity as you decide. If the creature can understand you, it must succeed on a Wisdom saving throw or become charmed by you for the duration. While the creature is charmed by you, it takes 5d10 psychic damage each time it acts in a manner directly counter to your instructions, but no more than once each day. A creature that can't understand you is unaffected by the spell.You can issue any command you choose, short of an activity that would result in certain death. Should you issue a suicidal command, the spell ends.You can end the spell early by using an action to dismiss it. A remove curse, greater restoration, or wish spell also ends it.",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "WIS Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "5",
+            "d10",
+            ""
+        ]
+    },
+    "Heroism": {
+        "level": "1",
+        "school": "enchantment",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Concentration, up to 1 minute",
+        "description": "A willing creature you touch is imbued with bravery. Until the spell ends, the creature is immune to being frightened and gains temporary hit points equal to your spellcasting ability modifier at the start of each of its turns. When the spell ends, the target loses any remaining temporary hit points from this spell.",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Hex": {
+        "level": "1",
+        "school": "enchantment",
+        "casting": "Casting Time: 1 bonus action",
+        "duration": "Duration: Concentration, up to 1 hour",
+        "description": "You place a curse on a creature that you can see within range. Until the spell ends, you deal an extra 1d6 necrotic damage to the target whenever you hit it with an attack. Also, choose one ability when you cast the spell. The target has disadvantage on ability checks made with the chosen ability.If the target drops to 0 hit points before this spell ends, you can use a bonus action on a subsequent turn of yours to curse a new creature.A remove curse cast on the target ends this spell early.",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "1",
+            "d6",
+            ""
+        ]
+    },
+    "Hold Monster": {
+        "level": "5",
+        "school": "enchantment",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Concentration, up to 1 minute",
+        "description": "Choose a creature that you can see within range. The target must succeed on a Wisdom saving throw or be paralyzed for the duration. This spell has no effect on undead. At the end of each of its turns, the target can make another Wisdom saving throw. On a success, the spell ends on the target.",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "WIS Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Hold Person": {
+        "level": "2",
+        "school": "enchantment",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Concentration, up to 1 minute",
+        "description": "Choose a humanoid that you can see within range. The target must succeed on a Wisdom saving throw or be paralyzed for the duration. At the end of each of its turns, the target can make another Wisdom saving throw. On a success, the spell ends on the target.",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "WIS Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Mass Suggestion": {
+        "level": "6",
+        "school": "enchantment",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: 24 hours",
+        "description": "You suggest a course of activity (limited to a sentence or two) and magically influence up to twelve creatures of your choice that you can see within range and that can hear and understand you. Creatures that can't be charmed are immune to this effect. The suggestion must be worded in such a manner as to make the course of action sound reasonable. Asking the creature to stab itself, throw itself onto a spear, immolate itself, or do some other obviously harmful act automatically negates the effect of the spell.Each target must make a Wisdom saving throw. On a failed save, it pursues the course of action you described to the best of its ability. The suggested course of action can continue for the entire duration. If the suggested activity can be completed in a shorter time, the spell ends when the subject finishes what it was asked to do.You can also specify conditions that will trigger a special activity during the duration. For example, you might suggest that a group of soldiers give all their money to the first beggar they meet. If the condition isn't met before the spell ends, the activity isn't performed.If you or any of your companions damage a creature affected by this spell, the spell ends for that creature.",
+        "Evoke": "Evoke 22",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "WIS Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Modify Memory": {
+        "level": "5",
+        "school": "enchantment",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Concentration, up to 1 minute",
+        "description": "You attempt to reshape another creature's memories. One creature that you can see must make a Wisdom saving throw. If you are fighting the creature, it has advantage on the saving throw. On a failed save, the target becomes charmed by you for the duration. The charmed target is incapacitated and unaware of its surroundings, though it can still hear you. If it takes any damage or is targeted by another spell, this spell ends, and none of the target's memories are modified.While this charm lasts, you can affect the target's memory of an event that it experienced within the last 24 hours and that lasted no more than 10 minutes. You can permanently eliminate all memory of the event, allow the target to recall the event with perfect clarity and exacting detail, change its memory of the details of the event, or create a memory of some other event.You must speak to the target to describe how its memories are affected, and it must be able to understand your language for the modified memories to take root. Its mind fills in any gaps in the details of your description. If the spell ends before you have finished describing the modified memories, the creature's memory isn't altered. Otherwise, the modified memories take hold when the spell ends.A modified memory doesn't necessarily affect how a creature behaves, particularly if the memory contradicts the creature's natural inclinations, alignment, or beliefs. An illogical modified memory, such as implanting a memory of how much the creature enjoyed dousing itself in acid, is dismissed, perhaps as a bad dream. The DM might deem a modified memory too nonsensical to affect a creature in a significant manner.A remove curse or greater restoration spell cast on the target restores the creature's true memory.",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "WIS Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Otto's Irresistible Dance": {
+        "level": "6",
+        "school": "enchantment",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Concentration, up to 1 minute",
+        "description": "Choose one creature that you can see within range. The target begins a comic dance in place: shuffling, tapping its feet, and capering for the duration. Creatures that can't be charmed are immune to this spell.A dancing creature must use all its movement to dance without leaving its space and has disadvantage on Dexterity saving throws and attack rolls. While the target is affected by this spell, other creatures have advantage on attack rolls against it. As an action, a dancing creature makes a Wisdom saving throw to regain control of itself. On a successful save, the spell ends.",
+        "Evoke": "Evoke 22",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "DEX Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Power Word Kill": {
+        "level": "9",
+        "school": "enchantment",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Instantaneous",
+        "description": "You utter a word of power that can compel one creature you can see within range to die instantly. If the creature you choose has 100 hit points or fewer, it dies. Otherwise, the spell has no effect.",
+        "Evoke": "Evoke 28",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Power Word Stun": {
+        "level": "8",
+        "school": "enchantment",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Instantaneous",
+        "description": "You speak a word of power that can overwhelm the mind of one creature you can see within range, leaving it dumbfounded. If the target has 150 hit points or fewer, it is stunned. Otherwise, the spell has no effect.The stunned target must make a Constitution saving throw at the end of each of its turns. On a successful save, this stunning effect ends.",
+        "Evoke": "Evoke 26",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "CON Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Sleep": {
+        "level": "1",
+        "school": "enchantment",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: 1 minute",
+        "description": "This spell sends creatures into a magical slumber. Roll 5d8; the total is how many hit points of creatures this spell can affect. Creatures within 20 feet of a point you choose within range are affected in ascending order of their current hit points (ignoring unconscious creatures).Starting with the creature that has the lowest current hit points, each creature affected by this spell falls unconscious until the spell ends, the sleeper takes damage, or someone uses an action to shake or slap the sleeper awake. Subtract each creature's hit points from the total before moving on to the creature with the next lowest hit points. A creature's hit points must be equal to or less than the remaining total for that creature to be affected.Undead and creatures immune to being charmed aren't affected by this spell.",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "5",
+            "d8",
+            ""
+        ]
+    },
+    "Suggestion": {
+        "level": "2",
+        "school": "enchantment",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Concentration, up to 8 hours",
+        "description": "You suggest a course of activity (limited to a sentence or two) and magically influence a creature you can see within range that can hear and understand you. Creatures that can't be charmed are immune to this effect. The suggestion must be worded in such a manner as to make the course of action sound reasonable. Asking the creature to stab itself, throw itself onto a spear, immolate itself, or do some other obviously harmful act ends the spell.The target must make a Wisdom saving throw. On a failed save, it pursues the course of action you described to the best of its ability. The suggested course of action can continue for the entire duration. If the suggested activity can be completed in a shorter time, the spell ends when the subject finishes what it was asked to do.You can also specify conditions that will trigger a special activity during the duration. For example, you might suggest that a knight give her warhorse to the first beggar she meets. If the condition isn't met before the spell expires, the activity isn't performed.If you or any of your companions damage the target, the spell ends.",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "WIS Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Tasha's Hideous Laughter": {
+        "level": "1",
+        "school": "enchantment",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Concentration, up to 1 minute",
+        "description": "A creature of your choice that you can see within range perceives everything as hilariously funny and falls into fits of laughter if this spell affects it. The target must succeed on a Wisdom saving throw or fall prone, becoming incapacitated and unable to stand up for the duration. A creature with an Intelligence score of 4 or less isn't affected.At the end of each of its turns, and each time it takes damage, the target can make another Wisdom saving throw. The target has advantage on the saving throw if it's triggered by damage. On a success, the spell ends.",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "WIS Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Vicious Mockery": {
+        "level": "0",
+        "school": "enchantment",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Instantaneous",
+        "description": "You unleash a string of insults laced with subtle enchantments at a creature you can see within range. If the target can hear you (though it need not understand you), it must succeed on a Wisdom saving throw or take 1d4 psychic damage and have disadvantage on the next attack roll it makes before the end of its next turn.This spell's damage increases by 1d4 when you reach 5th level (2d4), 11th level (3d4), and 17th level (4d4).",
+        "Evoke": "Evoke 10",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "WIS Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "1",
+            "d4",
+            ""
+        ]
+    },
+    "Zone of Truth": {
+        "level": "2",
+        "school": "enchantment",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: 10 minutes",
+        "description": "You create a magical zone that guards against deception in a 15-foot-radius sphere centered on a point of your choice within range. Until the spell ends, a creature that enters the spell's area for the first time on a turn or starts its turn there must make a Charisma saving throw. On a failed save, a creature can't speak a deliberate lie while in the radius. You know whether each creature succeeds or fails on its saving throw.An affected creature is aware of the spell and can thus avoid answering questions to which it would normally respond with a lie. Such a creature can be evasive in its answers as long as it remains within the boundaries of the truth.",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "CHA Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    }
+}

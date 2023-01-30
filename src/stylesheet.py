@@ -2,10 +2,11 @@ RADIUS = "6px"
 
 
 TEXT_COLOR = "hsl(0, 0%, 80%)"
-
+TEXT_DARK_COLOR = "hsl(0, 0%, 40%)"	
 
 INJURY_RED = "#330000"
 INJURY_RED_BRIGHT = "#800000"
+INJURY_RED_DARK = "#2b0000"
 
 VIBRANT_COLOR = "hsl(0, 0%, 10%)"
 DARK_COLOR = "hsl(0, 0%, 10%)"
@@ -22,6 +23,7 @@ QLINEEDIT = f"QLineEdit {{color: {TEXT_COLOR}; background-color: {DARK_COLOR}; b
             f"QLineEdit:disabled {{color: {TEXT_COLOR}; background-color: {DISABLED_COLOR}}}"
 
 QTOOLBUTTON = f"QToolButton {{color: {TEXT_COLOR}; background-color: {DARK_COLOR}; border-radius: {RADIUS}}}"\
+              f"QToolButton:checked {{color: {TEXT_COLOR}; background-color: {TEXT_COLOR}; border-radius: {RADIUS}}}"\
               f"QToolButton:disabled {{color: {TEXT_COLOR}; background-color: {DISABLED_COLOR}}}"\
               f"QToolTip {{color: {TEXT_COLOR}; background-color: {DARK_COLOR}; border-radius: {RADIUS}}}"\
 
@@ -35,17 +37,29 @@ QTITLE = f"QToolButton {{background-color: {VIBRANT_COLOR}}}"\
 QSTATS = f"QPushButton {{background-color: {DARK_COLOR};border-top-right-radius: {RADIUS}}}"\
          f"QLineEdit {{background-color: {DARK_COLOR}; border-bottom-right-radius: {RADIUS}; border-bottom-left-radius: {RADIUS}}}"
 
-INVENTORY = f"QToolButton {{background-color: {DARK_COLOR}; border-top-left-radius: {RADIUS}; border-bottom-left-radius: {RADIUS}; border: 1px solid {MID_COLOR};}}"\
-             f"QLineEdit {{background-color: {DARK_COLOR}; border-top-right-radius: {RADIUS}; border-bottom-right-radius: {RADIUS}; border: 1px solid {MID_COLOR};}}"\
-             f"QPushButton {{color: {TEXT_COLOR}; background-color: {DARK_COLOR}; border-radius: {RADIUS}; border: 1px solid {MID_COLOR};}}"\
+INVENTORY = f"QToolButton {{background-color: {DARK_COLOR}; border: 0px solid {MID_COLOR};}}"\
+             f"QLineEdit {{background-color: {DARK_COLOR}; border: 0px solid {MID_COLOR};}}"\
+             f"QPushButton {{color: {TEXT_COLOR}; background-color: {DARK_COLOR}; border: 0px solid {MID_COLOR};}}"\
+             f"QPushButton#icon_label_bottom_left {{font: 10px; background-color: {DARK_COLOR}; border-bottom-left-radius: {RADIUS}; border: 0px solid {MID_COLOR};}}"\
+             f"QPushButton#roll_label {{font: 10px; color: {TEXT_DARK_COLOR}; background-color: {DARK_COLOR}; border-bottom-right-radius: {RADIUS}; border: 0px solid {MID_COLOR};}}"\
              f"QPushButton:disabled {{color: {TEXT_COLOR}; background-color: {DISABLED_COLOR}}}"\
              f"QToolButton:disabled {{color: {TEXT_COLOR}; background-color: {DISABLED_COLOR}}}"\
              f"QLineEdit:disabled {{color: {TEXT_COLOR}; background-color: {DISABLED_COLOR}}}"\
-              
-INVENTORY_INJURY = f"QToolButton {{background-color: {INJURY_RED}; border-top-left-radius: {RADIUS}; border-bottom-left-radius: {RADIUS}; border: 1px solid {MID_COLOR};}}"\
-                   f"QLineEdit {{color: {INJURY_RED_BRIGHT}; background-color: {INJURY_RED}; border-top-right-radius: {RADIUS}; border-bottom-right-radius: {RADIUS}; border: 1px solid {MID_COLOR};}}"\
-                   f"QPushButton {{color: {INJURY_RED_BRIGHT}; background-color: {INJURY_RED}; border-radius: {RADIUS}; border: 1px solid {MID_COLOR};}}"\
 
+INVENTORY_LABEL = f"QPushButton {{font: 10px; color: {TEXT_DARK_COLOR}; background-color: {DARK_COLOR}; border: 0px solid {MID_COLOR};}}"\
+                  f"QLabel {{font: 10px; color: {TEXT_DARK_COLOR}; background-color: {DARK_COLOR}; border: 0px solid {MID_COLOR};}}"\
+                  f"QPushButton:disabled {{color: {DISABLED_COLOR}; background-color: {DISABLED_COLOR}}}"\
+                  f"QLabel:disabled {{color: {DISABLED_COLOR}; background-color: {DISABLED_COLOR}}}"\
+
+INVENTORY_INJURY = f"QToolButton {{background-color: {INJURY_RED}; border: 0px solid {MID_COLOR};}}"\
+                   f"QLineEdit {{color: {INJURY_RED_BRIGHT}; background-color: {INJURY_RED}; border: 0px solid {MID_COLOR};}}"\
+                   f"QPushButton {{color: {INJURY_RED_BRIGHT}; background-color: {INJURY_RED}; border: 0px solid {MID_COLOR};}}"\
+
+INVENTORY_INJURY_LABELS = f"QToolButton {{background-color: {INJURY_RED}; border: 0px; border-bottom: 1px solid {INJURY_RED_DARK};}}"\
+                   f"QLineEdit {{color: {TEXT_COLOR}; background-color: {INJURY_RED}; border: 0px; border-bottom: 1px solid {INJURY_RED_DARK};}}"\
+                   f"QPushButton {{font: 10px; color: {TEXT_DARK_COLOR}; background-color: {INJURY_RED}; border: 0px; border-bottom: 1px solid {INJURY_RED_DARK};}}"\
+                   f"QLabel {{font: 10px; color: {TEXT_DARK_COLOR}; background-color: {INJURY_RED_DARK}; border: 0px; border-bottom: 1px solid {INJURY_RED_DARK};}}"\
+                   
 DARK_STYLE = """
 QWidget  {
     border-style: outset;

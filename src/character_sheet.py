@@ -101,15 +101,11 @@ class CharacterSheet():
 
 
         self.update_sheet()
-        updated_character_sheet = self.update_dictionary()
+        #updated_character_sheet = self.update_dictionary()
         #self.update_database(updated_character_sheet)
 
-    def set_button(self, button):
-        print("!!!!!!!!!!!!!!!!!!!!!!!!")
-        self.stat_button = button
-        self.stat_button.mousePressEvent = self.adjust_stat
-
     def update_dictionary(self):
+        print("---------------------------") 
         print("Updating Character Sheet Dictionary")    
         character_sheet_dictionary = {
             "character": self.character,
@@ -208,15 +204,20 @@ class CharacterSheet():
     # ITERATE OVER ITEM JSON TO FIND ITEM
     def update_inventory(self):
         all_items = []
-        self.empty_slot_dict = {"Action":"","Action Mod":[],"Roll":["","",""]}
+        print("updating inventory")
+
+        self.empty_slot_dict = {"Hit":"","Evoke":"","Evoke Mod":["","",""],"Hit Mod":["","",""],"Roll":"","Roll Mod":["","",""]}
         for slot in range(1,cons.MAX_SLOTS+1):
             self.inventory_slot = self.csheet.findChild(QLineEdit, f"inventory{slot}")
             if self.inventory_slot.text() != "":
                 all_items.append(self.inventory_slot.text())
-                self.update_item(slot, "", "", self.empty_slot_dict)
             else:
-                self.update_item(slot, "", "", self.empty_slot_dict)
+                pass
 
+        for slot in range(1,cons.MAX_SLOTS+1):
+            self.update_item(slot, "", "", self.empty_slot_dict)
+
+        print(all_items)
         misc_items = copy.deepcopy(all_items)
         self.armor_items = []
         slot = 1
@@ -233,7 +234,7 @@ class CharacterSheet():
                         slot += 1
 
         for item in misc_items:
-            self.update_item(slot, item, "Misc", self.empty_slot_dict)
+            self.update_item(slot, item, "misc", self.empty_slot_dict)
             all_items.remove(item)
             slot += 1
 
@@ -242,25 +243,71 @@ class CharacterSheet():
 
     def update_item(self, slot, item, inventory_type, inventory_item):
         self.inventory_icon = self.csheet.findChild(QToolButton, f"icon{slot}")
-        self.inventory_action = self.csheet.findChild(QPushButton, f"action{slot}")
-        self.inventory_modifier = self.csheet.findChild(QPushButton, f"modifier{slot}")
+        self.inventory_evoke = self.csheet.findChild(QPushButton, f"evoke{slot}")
+        self.inventory_hit = self.csheet.findChild(QPushButton, f"hit_dc{slot}")
         self.inventory_roll = self.csheet.findChild(QPushButton, f"roll{slot}")
         self.inventory_slot = self.csheet.findChild(QLineEdit, f"inventory{slot}")
 
-        inventory_widgets = [self.inventory_icon,self.inventory_action,self.inventory_modifier,self.inventory_roll,self.inventory_slot]
+        self.inventory_icon_label = self.csheet.findChild(QLabel, f"icon_label{slot}")
+        self.inventory_evoke_label = self.csheet.findChild(QPushButton, f"evoke_label{slot}")
+        self.inventory_hit_label = self.csheet.findChild(QPushButton, f"hit_dc_label{slot}")
+        self.inventory_roll_label = self.csheet.findChild(QPushButton, f"roll_label{slot}")
+        self.inventory_slot_label = self.csheet.findChild(QPushButton, f"inventory_label{slot}")
 
+        inventory_widgets = [self.inventory_icon,self.inventory_evoke,self.inventory_hit,self.inventory_roll,self.inventory_slot]
+        inventory_labels = [self.inventory_icon_label,self.inventory_evoke_label,self.inventory_hit_label,self.inventory_roll_label,self.inventory_slot_label]
         func.set_icon(self.inventory_icon,f"{inventory_type}.png",cons.ICON_COLOR)
-        self.inventory_action.setText(inventory_item["Action"])
-        self.inventory_modifier.setText(self.get_action_modifier(inventory_item["Action Mod"]))
-        self.inventory_roll.setText(self.get_roll(inventory_item["Roll"],inventory_type))
+
+        self.inventory_evoke.setText("")
+        self.inventory_evoke_label.setText("")
+        self.inventory_hit.setText("")
+        self.inventory_hit_label.setText("")
+        self.inventory_roll.setText("")
+        self.inventory_roll_label.setText("")   
+
+        if "Evoke" in inventory_item:
+            if inventory_item["Evoke"] != "":
+                self.inventory_evoke.setText(self.get_action_modifier(inventory_item["Evoke"],inventory_item["Evoke Mod"]))
+                self.inventory_evoke_label.setText(inventory_item["Evoke"])
+
+
+        if "Hit" in inventory_item:
+            if inventory_item["Hit"] != "":
+                self.inventory_hit.setText(self.get_action_modifier(inventory_item["Hit"],inventory_item["Hit Mod"]))
+                self.inventory_hit_label.setText(inventory_item["Hit"])
+
+        if "Roll" in inventory_item:
+            if inventory_item["Roll"] != "":
+                self.inventory_roll.setText(self.get_roll(inventory_item["Roll Mod"],inventory_type))
+                self.inventory_roll_label.setText(inventory_item["Roll"])
+                
         self.inventory_slot.setText(item)
 
-        if inventory_type == "injury":
+        if "level" in inventory_item:
+            self.inventory_slot_label.setText(inventory_type.capitalize()+" "+inventory_item["level"])
+        else:
+            self.inventory_slot_label.setText(inventory_type.capitalize())
+
+        if inventory_type == "damage":     
             [widget.setStyleSheet(style.INVENTORY_INJURY) for widget in inventory_widgets]
+            [widget.setStyleSheet(style.INVENTORY_INJURY_LABELS) for widget in inventory_labels]
             func.set_icon(self.inventory_icon,f"{inventory_type}.png",style.INJURY_RED_BRIGHT)
+        elif inventory_type != "":
+            label_style = f"QLabel {{font: 10px; color:{style.TEXT_DARK_COLOR}; background-color: {cons.COLOR_LABEL[inventory_type]}; border: 0px; border-bottom: 1px solid {cons.COLOR_LABEL[inventory_type]};}}"
+            label_style2 = f"QPushButton {{font: 10px; color:{style.TEXT_DARK_COLOR}; background-color: {style.DARK_COLOR}; border: 0px; border-bottom: 1px solid {cons.COLOR_LABEL[inventory_type]};}}"
+
+            self.inventory_icon_label.setStyleSheet(label_style)
+
+            self.inventory_slot_label.setStyleSheet(label_style2)
+            self.inventory_evoke_label.setStyleSheet(label_style2)
+            self.inventory_hit_label.setStyleSheet(label_style2)
+            self.inventory_roll_label.setStyleSheet(label_style2)
         else:
             [widget.setStyleSheet(style.INVENTORY) for widget in inventory_widgets]
-            func.set_icon(self.inventory_icon,f"{inventory_type}.png",cons.ICON_COLOR)
+            [widget.setStyleSheet(style.INVENTORY_LABEL) for widget in inventory_labels]
+
+        self.inventory_slot.clearFocus()        
+
 
     def get_roll(self, roll, type):
         if roll != ["","",""]:
@@ -295,13 +342,25 @@ class CharacterSheet():
             return ""
 
 
-    def get_action_modifier(self, action_mod):
-        if action_mod != []:
-            mod_list = []
-            for mod in action_mod:
-                print(mod)
-                mod_list.append(self.stats_dict[mod])
-            return f"+{sum(mod_list)}"
+    def get_action_modifier(self, hit_type, hit_mod):
+        if hit_mod != []:
+            if hit_type == "Hit":
+                mod_list = []
+                for mod in hit_mod:
+                    mod_list.append(self.stats_dict[mod])
+                return f"+{sum(mod_list)}"
+            elif "Evoke" in hit_type:
+                mod_list = []
+                for mod in hit_mod:
+                    mod_list.append(self.stats_dict[mod])
+                return f"+{sum(mod_list)}"
+            elif "Save" in hit_type:
+                mod_list = []
+                for mod in hit_mod:
+                    mod_list.append(self.stats_dict[mod])
+                return(str(cons.BASE_SAVE+sum(mod_list)))
+            else:
+                return ""
         else:
             return ""
 
@@ -377,6 +436,7 @@ class CharacterSheet():
             self.current_hp.setStyleSheet(style.QPUSHBUTTON_INJURY)
 
         self.update_dictionary()
+        self.update_inventory()
 
     def remove_injury(self):
         print("remove injury")
@@ -402,7 +462,7 @@ class CharacterSheet():
             return
         else:
             injury_slot = random.choice(free_slots)
-            self.update_item(injury_slot, "Injury", "injury", self.empty_slot_dict)
+            self.update_item(injury_slot, "Injury", "damage", self.empty_slot_dict)
 
 
     def strenght(self):
@@ -413,16 +473,17 @@ class CharacterSheet():
         self.ac.setText(ac_calculation)
     def constitution(self):
         for count in range(1,cons.MAX_SLOTS+1):
-            for w in [(QToolButton,"icon"),(QPushButton,"action"),(QPushButton,"modifier"),(QPushButton,"roll"),(QLineEdit,"inventory")]:#
+            for w in [(QToolButton,"icon"),(QPushButton,"evoke"),(QPushButton,"hit_dc"),(QPushButton,"roll"),(QLineEdit,"inventory"),(QLabel,"icon_label"),(QPushButton,"inventory_label"),(QPushButton,"evoke_label"),(QPushButton,"hit_dc_label"),(QPushButton,"roll_label")]:
                 widget =  self.csheet.findChild(w[0], w[1]+str(count))
                 if count <= self.CON+cons.START_SLOTS:
                     widget.setEnabled(True)
                 else:
+                    widget.setText("")
                     widget.setEnabled(False)
 
     def intelligence(self):
         for count in range(1,11):
-            for w in [(QToolButton,"corruption")]:
+            for w in [(QToolButton,"herodice")]:
                 widget =  self.csheet.findChild(w[0], w[1]+str(count))
                 if count <= self.INT:
                     widget.setEnabled(True)
@@ -430,15 +491,14 @@ class CharacterSheet():
                     widget.setEnabled(False)
 
     def wisdom(self):
-
-
         for count in range(1,11):
-            for w in [(QToolButton,"herodice")]:
+            for w in [(QToolButton,"corruption")]:
                 widget =  self.csheet.findChild(w[0], w[1]+str(count))
                 if count <= self.WIS:
                     widget.setEnabled(True)
                 else:
                     widget.setEnabled(False)
+
 
     def charisma(self):
         initiative_widget = self.csheet.findChild(QPushButton, "initiative")

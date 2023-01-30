@@ -1,0 +1,1656 @@
+{
+    "Aura of Vitality": {
+        "level": "3",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Concentration, up to 1 minute",
+        "description": "One target in a 30-ft radius regains 2d6 hp.",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "2",
+            "d6",
+            ""
+        ]
+    },
+    "Bigby's Hand": {
+        "level": "5",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Concentration, up to 1 minute",
+        "description": "You create a Large hand of shimmering, translucent force in an unoccupied space that you can see within range. The hand lasts for the spell's duration, and it moves at your command, mimicking the movements of your own hand.The hand is an object that has AC 20 and hit points equal to your hit point maximum. If it drops to 0 hit points, the spell ends. It has a Strength of 26 (+8) and a Dexterity of 10 (+0). The hand doesn't fill its space.When you cast the spell and as a bonus action on your subsequent turns, you can move the hand up to 60 feet and then cause one of the following effects with it.Clenched Fist. The hand strikes one creature or object within 5 feet of it. Make a melee spell attack for the hand using your game statistics. On a hit, the target takes 4d8 force damage.Forceful Hand. The hand attempts to push a creature within 5 feet of it in a direction you choose. Make a check with the hand's Strength contested by the Strength (Athletics) check of the target. If the target is Medium or smaller, you have advantage on the check. If you succeed, the hand pushes the target up to 5 feet plus a number of feet equal to five times your spellcasting ability modifier. The hand moves with the target to remain within 5 feet of it.Grasping Hand. The hand attempts to grapple a Huge or smaller creature within 5 feet of it. You use the hand's Strength score to resolve the grapple. If the target is Medium or smaller, you have advantage on the check. While the hand is grappling the target, you can use a bonus action to have the hand crush it. When you do so, the target takes bludgeoning damage equal to 2d6 + your spellcasting ability modifier.Interposing Hand. The hand interposes itself between you and a creature you choose until you give the hand a different command. The hand moves to stay between you and the target, providing you with half cover against the target. The target can't move through the hand's space if its Strength score is less than or equal to the hand's Strength score. If its Strength score is higher than the hand's Strength score, the target can move toward you through the hand's space, but that space is difficult terrain for the target.",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "Hit",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "4",
+            "d8",
+            ""
+        ]
+    },
+    "Blade Barrier": {
+        "level": "6",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Concentration, up to 10 minutes",
+        "description": "You create a vertical wall of whirling, razor-sharp blades made of magical energy. The wall appears within range and lasts for the duration. You can make a straight wall up to 100 feet long, 20 feet high, and 5 feet thick, or a ringed wall up to 60 feet in diameter, 20 feet high, and 5 feet thick. The wall provides three-quarters cover to creatures behind it, and its space is difficult terrain.When a creature enters the wall's area for the first time on a turn or starts its turn there, the creature must make a Dexterity saving throw. On a failed save, the creature takes 6d10 slashing damage. On a successful save, the creature takes half as much damage.",
+        "Evoke": "Evoke 22",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "DEX Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "6",
+            "d10",
+            ""
+        ]
+    },
+    "Blinding Smite": {
+        "level": "3",
+        "school": "evocation",
+        "casting": "Casting Time: 1 bonus action",
+        "duration": "Duration: Concentration, up to 1 minute",
+        "description": "If the attack hits, deals an extra 3d8 radiant damage and the target must succeed on a Con. save or be blinded.",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "3",
+            "d8",
+            ""
+        ]
+    },
+    "Branding Smite": {
+        "level": "2",
+        "school": "evocation",
+        "casting": "Casting Time: 1 bonus action",
+        "duration": "Duration: Concentration, up to 1 minute",
+        "description": "The next time you hit a creature with a weapon attack before this spell ends, the weapon gleams with astral radiance as you strike. The attack deals an extra 2d6 radiant damage to the target, which becomes visible if it's invisible, and the target sheds dim light in a 5-foot radius and can't become invisible until the spell ends.",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "2",
+            "d6",
+            ""
+        ]
+    },
+    "Burning Hands": {
+        "level": "1",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Instantaneous",
+        "description": "As you hold your hands with thumbs touching and fingers spread, a thin sheet of flames shoots forth from your outstretched fingertips. Each creature in a 15-foot cone must make a Dexterity saving throw. A creature takes 3d6 fire damage on a failed save, or half as much damage on a successful one.The fire ignites any flammable objects in the area that aren't being worn or carried.",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "DEX Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "3",
+            "d6",
+            ""
+        ]
+    },
+    "Chain Lightning": {
+        "level": "6",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Instantaneous",
+        "description": "You create a bolt of lightning that arcs toward a target of your choice that you can see within range. Three bolts then leap from that target to as many as three other targets, each of which must be within 30 feet of the first target. A target can be a creature or an object and can be targeted by only one of the bolts.A target must make a Dexterity saving throw. The target takes 10d8 lightning damage on a failed save, or half as much damage on a successful one.",
+        "Evoke": "Evoke 22",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "DEX Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "10",
+            "d8",
+            ""
+        ]
+    },
+    "Chromatic Orb": {
+        "level": "1",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Instantaneous",
+        "description": "You hurl a 4-inch-diameter sphere of energy at a creature that you can see within range. You choose acid, cold, fire, lightning, poison, or thunder for the type of orb you create, and then make a ranged spell attack against the target. If the attack hits, the creature takes 3d8 damage of the type you chose.",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "Hit",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "3",
+            "d8",
+            ""
+        ]
+    },
+    "Cone of Cold": {
+        "level": "5",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Instantaneous",
+        "description": "A blast of cold air erupts from your hands. Each creature in a 60-foot cone must make a Constitution saving throw. A creature takes 8d8 cold damage on a failed save, or half as much damage on a successful one.A creature killed by this spell becomes a frozen statue until it thaws.",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "CON Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "8",
+            "d8",
+            ""
+        ]
+    },
+    "Contingency": {
+        "level": "6",
+        "school": "evocation",
+        "casting": "Casting Time: 10 minutes",
+        "duration": "Duration: 10 days",
+        "description": "Choose a spell of 5th level or lower that you can cast, that has a casting time of 1 action, and that can target you. You cast that spell\u2014called the contingent spell\u2014as part of casting contingency, expending spell slots for both, but the contingent spell doesn't come into effect. Instead, it takes effect when a certain circumstance occurs. You describe that circumstance when you cast the two spells. For example, a contingency cast with water breathing might stipulate that water breathing comes into effect when you are engulfed in water or a similar liquid.The contingent spell takes effect immediately after the circumstance is met for the first time, whether or not you want it to, and then contingency ends.The contingent spell takes effect only on you, even if it can normally target others. You can use only one contingency spell at a time. If you cast this spell again, the effect of another contingency spell on you ends. Also, contingency ends on you if its material component is ever not on your person.",
+        "Evoke": "Evoke 22",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Continual Flame": {
+        "level": "2",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Until dispelled",
+        "description": "A flame, equivalent in brightness to a torch, springs forth from an object that you touch. The effect looks like a regular flame, but it creates no heat and doesn't use oxygen. A continual flame can be covered or hidden but not smothered or quenched.",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Crusader's Mantle": {
+        "level": "3",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Concentration, up to 1 minute",
+        "description": "Friendly creatures in a 30-ft radius deal an extra 1d4 radiant damage when they hit with a weapon attack.",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "1",
+            "d4",
+            ""
+        ]
+    },
+    "Cure Wounds": {
+        "level": "1",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Instantaneous",
+        "description": "A creature you touch regains a number of hit points equal to 1d8 + your spellcasting ability modifier. This spell has no effect on undead or constructs.",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "1",
+            "d8",
+            ""
+        ]
+    },
+    "Dancing Lights": {
+        "level": "0",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Concentration, up to 1 minute",
+        "description": "You create up to four torch-sized lights within range, making them appear as torches, lanterns, or glowing orbs that hover in the air for the duration. You can also combine the four lights into one glowing vaguely humanoid form of Medium size. Whichever form you choose, each light sheds dim light in a 10-foot radius.As a bonus action on your turn, you can move the lights up to 60 feet to a new spot within range. A light must be within 20 feet of another light created by this spell, and a light winks out if it exceeds the spell's range.",
+        "Evoke": "Evoke 10",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Darkness": {
+        "level": "2",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Concentration, up to 10 minutes",
+        "description": "Magical darkness spreads from a point you choose within range to fill a 15-foot-radius sphere for the duration. The darkness spreads around corners. A creature with darkvision can't see through this darkness, and nonmagical light can't illuminate it.If the point you choose is on an object you are holding or one that isn't being worn or carried, the darkness emanates from the object and moves with it. Completely covering the source of the darkness with an opaque object, such as a bowl or a helm, blocks the darkness.If any of this spell's area overlaps with an area of light created by a spell of 2nd level or lower, the spell that created the light is dispelled.",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Daylight": {
+        "level": "3",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: 1 hour",
+        "description": "A 60-foot-radius sphere of light spreads out from a point you choose within range. The sphere is bright light and sheds dim light for an additional 60 feet.If you chose a point on an object you are holding or one that isn't being worn or carried, the light shines from the object and moves with it. Completely covering the affected object with an opaque object, such as a bowl or a helm, blocks the light.If any of this spell's area overlaps with an area of darkness created by a spell of 3rd level or lower, the spell that created the darkness is dispelled.",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Delayed Blast Fireball": {
+        "level": "7",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Concentration, up to 1 minute",
+        "description": "A beam of yellow light flashes from your pointing finger, then condenses to linger at a chosen point within range as a glowing bead for the duration. When the spell ends, either because your concentration is broken or because you decide to end it, the bead blossoms with a low roar into an explosion of flame that spreads around corners. Each creature in a 20-foot-radius sphere centered on that point must make a Dexterity saving throw. A creature takes fire damage equal to the total accumulated damage on a failed save, or half as much damage on a successful one.The spell's base damage is 12d6. If at the end of your turn the bead has not yet detonated, the damage increases by 1d6.If the glowing bead is touched before the interval has expired, the creature touching it must make a Dexterity saving throw. On a failed save, the spell ends immediately, causing the bead to erupt in flame. On a successful save, the creature can throw the bead up to 40 feet. When it strikes a creature or a solid object, the spell ends, and the bead explodes.The fire damages objects in the area and ignites flammable objects that aren't being worn or carried.",
+        "Evoke": "Evoke 24",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "DEX Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "12",
+            "d6",
+            ""
+        ]
+    },
+    "Destructive Wave": {
+        "level": "5",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Instantaneous",
+        "description": "Targets in a 30-ft radius must succeed on a Con. save or take 5d6 thunder damage and 5d6 radiant or necrotic damage.",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "5",
+            "d6",
+            ""
+        ]
+    },
+    "Divine Favor": {
+        "level": "1",
+        "school": "evocation",
+        "casting": "Casting Time: 1 bonus action",
+        "duration": "Duration: Concentration, up to 1 minute",
+        "description": "Your prayer empowers you with divine radiance. Until the spell ends, your weapon attacks deal an extra 1d4 radiant damage on a hit.",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "1",
+            "d4",
+            ""
+        ]
+    },
+    "Divine Word": {
+        "level": "7",
+        "school": "evocation",
+        "casting": "Casting Time: 1 bonus action",
+        "duration": "Duration: Instantaneous",
+        "description": "You utter a divine word, imbued with the power that shaped the world at the dawn of creation. Choose any number of creatures you can see within range. Each creature that can hear you must make a Charisma saving throw. On a failed save, a creature suffers an effect based on its current hit points:\u2022 50 hit points or fewer: deafened for 1 minute\u2022 40 hit points or fewer: deafened and blinded for 10 minutes\u2022 30 hit points or fewer: blinded, deafened, and stunned for 1 hour\u2022 20 hit points or fewer: killed instantlyRegardless of its current hit points, a celestial, an elemental, a fey, or a fiend that fails its save is forced back to its plane of origin (if it isn't there already) and can't return to your current plane for 24 hours by any means short of a wish spell.",
+        "Evoke": "Evoke 24",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "CHA Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Earthquake": {
+        "level": "8",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Concentration, up to 1 minute",
+        "description": "You create a seismic disturbance at a point on the ground that you can see within range. For the duration, an intense tremor rips through the ground in a 100-foot-radius circle centered on that point and shakes creatures and structures in contact with the ground in that area.The ground in the area becomes difficult terrain. Each creature on the ground that is concentrating must make a Constitution saving throw. On a failed save, the creature's concentration is broken.When you cast this spell and at the end of each turn you spend concentrating on it, each creature on the ground in the area must make a Dexterity saving throw. On a failed save, the creature is knocked prone.This spell can have additional effects depending on the terrain in the area, as determined by the DM.Fissures. Fissures open throughout the spell's area at the start of your next turn after you cast the spell. A total of 1d6 such fissures open in locations chosen by the DM. Each is 1d10 x 10 feet deep, 10 feet wide, and extends from one edge of the spell's area to the opposite side. A creature standing on a spot where a fissure opens must succeed on a Dexterity saving throw or fall in. A creature that successfully saves moves with the fissure's edge as it opens.A fissure that opens beneath a structure causes it to automatically collapse (see below).Structures. The tremor deals 50 bludgeoning damage to any structure in contact with the ground in the area when you cast the spell and at the start of each of your turns until the spell ends. If a structure drops to 0 hit points, it collapses and potentially damages nearby creatures. A creature within half the distance of a structure's height must make a Dexterity saving throw. On a failed save, the creature takes 5d6 bludgeoning damage, is knocked prone, and is buried in the rubble, requiring a DC 20 Strength (Athletics) check as an action to escape. The DM can adjust the DC higher or lower, depending on the nature of the rubble. On a successful save, the creature takes half as much damage and doesn't fall prone or become buried.",
+        "Evoke": "Evoke 26",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "STR Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "1",
+            "d6",
+            ""
+        ]
+    },
+    "Eldritch Blast": {
+        "level": "0",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Instantaneous",
+        "description": "A beam of crackling energy streaks toward a creature within range. Make a ranged spell attack against the target. On a hit, the target takes 1d10 force damage.The spell creates more than one beam when you reach higher levels: two beams at 5th level, three beams at 11th level, and four beams at 17th level. You can direct the beams at the same target or at different ones. Make a separate attack roll for each beam.",
+        "Evoke": "Evoke 10",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "Hit",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "1",
+            "d10",
+            ""
+        ]
+    },
+    "Faerie Fire": {
+        "level": "1",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Concentration, up to 1 minute",
+        "description": "Each object in a 20-foot cube within range is outlined in blue, green, or violet light (your choice). Any creature in the area when the spell is cast is also outlined in light if it fails a Dexterity saving throw. For the duration, objects and affected creatures shed dim light in a 10-foot radius.Any attack roll against an affected creature or object has advantage if the attacker can see it, and the affected creature or object can't benefit from being invisible.",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "DEX Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Fire Bolt": {
+        "level": "0",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Instantaneous",
+        "description": "You hurl a mote of fire at a creature or object within range. Make a ranged spell attack against the target. On a hit, the target takes 1d10 fire damage. A flammable object hit by this spell ignites if it isn't being worn or carried.This spell's damage increases by 1d10 when you reach 5th level (2d10), 11th level (3d10), and 17th level (4d10).",
+        "Evoke": "Evoke 10",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "Hit",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "1",
+            "d10",
+            ""
+        ]
+    },
+    "Fire Shield": {
+        "level": "4",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: 10 minutes",
+        "description": "Thin and wispy flames wreathe your body for the duration, shedding bright light in a 10-foot radius and dim light for an additional 10 feet. You can end the spell early by using an action to dismiss it.The flames provide you with a warm shield or a chill shield, as you choose. The warm shield grants you resistance to cold damage, and the chill shield grants you resistance to fire damage.In addition, whenever a creature within 5 feet of you hits you with a melee attack, the shield erupts with flame. The attacker takes 2d8 fire damage from a warm shield, or 2d8 cold damage from a cold shield.",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "2",
+            "d8",
+            ""
+        ]
+    },
+    "Fire Storm": {
+        "level": "7",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Instantaneous",
+        "description": "A storm made up of sheets of roaring flame appears in a location you choose within range. The area of the storm consists of up to ten 10-foot cubes, which you can arrange as you wish. Each cube must have at least one face adjacent to the face of another cube. Each creature in the area must make a Dexterity saving throw. It takes 7d10 fire damage on a failed save, or half as much damage on a successful one.The fire damages objects in the area and ignites flammable objects that aren't being worn or carried. If you choose, plant life in the area is unaffected by this spell.",
+        "Evoke": "Evoke 24",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "DEX Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "7",
+            "d10",
+            ""
+        ]
+    },
+    "Fireball": {
+        "level": "3",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Instantaneous",
+        "description": "A bright streak flashes from your pointing finger to a point you choose within range and then blossoms with a low roar into an explosion of flame. Each creature in a 20-foot-radius sphere centered on that point must make a Dexterity saving throw. A target takes 8d6 fire damage on a failed save, or half as much damage on a successful one.The fire spreads around corners. It ignites flammable objects in the area that aren't being worn or carried.",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "DEX Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "8",
+            "d6",
+            ""
+        ]
+    },
+    "Flame Blade": {
+        "level": "2",
+        "school": "evocation",
+        "casting": "Casting Time: 1 bonus action",
+        "duration": "Duration: Concentration, up to 10 minutes",
+        "description": "You evoke a fiery blade in your free hand. The blade is similar in size and shape to a scimitar, and it lasts for the duration. If you let go of the blade, it disappears, but you can evoke the blade again as a bonus action.You can use your action to make a melee spell attack with the fiery blade. On a hit, the target takes 3d6 fire damage.The flaming blade sheds bright light in a 10-foot radius and dim light for an additional 10 feet.",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "Hit",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "3",
+            "d6",
+            ""
+        ]
+    },
+    "Flame Strike": {
+        "level": "5",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Instantaneous",
+        "description": "A vertical column of divine fire roars down from the heavens in a location you specify. Each creature in a 10-foot-radius, 40-foot-high cylinder centered on a point within range must make a Dexterity saving throw. A creature takes 4d6 fire damage and 4d6 radiant damage on a failed save, or half as much damage on a successful one.",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "DEX Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "4",
+            "d6",
+            ""
+        ]
+    },
+    "Forcecage": {
+        "level": "7",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: 1 hour",
+        "description": "An immobile, invisible, cube-shaped prison composed of magical force springs into existence around an area you choose within range. The prison can be a cage or a solid box, as you choose.A prison in the shape of a cage can be up to 20 feet on a side and is made from 1/2-inch diameter bars spaced 1/2 inch apart.A prison in the shape of a box can be up to 10 feet on a side, creating a solid barrier that prevents any matter from passing through it and blocking any spells cast into or out from the area.When you cast the spell, any creature that is completely inside the cage's area is trapped. Creatures only partially within the area, or those too large to fit inside the area, are pushed away from the center of the area until they are completely outside the area.A creature inside the cage can't leave it by nonmagical means. If the creature tries to use teleportation or interplanar travel to leave the cage, it must first make a Charisma saving throw. On a success, the creature can use that magic to exit the cage. On a failure, the creature can't exit the cage and wastes the use of the spell or effect. The cage also extends into the Ethereal Plane, blocking ethereal travel.This spell can't be dispelled by dispel magic.",
+        "Evoke": "Evoke 24",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "CHA Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Guiding Bolt": {
+        "level": "1",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: 1 round",
+        "description": "A flash of light streaks toward a creature of your choice within range. Make a ranged spell attack against the target. On a hit, the target takes 4d6 radiant damage, and the next attack roll made against this target before the end of your next turn has advantage, thanks to the mystical dim light glittering on the target until then.",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "Hit",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "4",
+            "d6",
+            ""
+        ]
+    },
+    "Gust of Wind": {
+        "level": "2",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Concentration, up to 1 minute",
+        "description": "A line of strong wind 60 feet long and 10 feet wide blasts from you in a direction you choose for the spell's duration. Each creature that starts its turn in the line must succeed on a Strength saving throw or be pushed 15 feet away from you in a direction following the line.Any creature in the line must spend 2 feet of movement for every 1 foot it moves when moving closer to you.The gust disperses gas or vapor, and it extinguishes candles, torches, and similar unprotected flames in the area. It causes protected flames, such as those of lanterns, to dance wildly and has a 50 percent chance to extinguish them.As a bonus action on each of your turns before the spell ends, you can change the direction in which the line blasts from you.",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "STR Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Hallow": {
+        "level": "5",
+        "school": "evocation",
+        "casting": "Casting Time: 24 hours",
+        "duration": "Duration: Until dispelled",
+        "description": "You touch a point and infuse an area around it with holy (or unholy) power. The area can have a radius up to 60 feet, and the spell fails if the radius includes an area already under the effect a hallow spell. The affected area is subject to the following effects.First, celestials, elementals, fey, fiends, and undead can't enter the area, nor can such creatures charm, frighten, or possess creatures within it. Any creature charmed, frightened, or possessed by such a creature is no longer charmed, frightened, or possessed upon entering the area. You can exclude one or more of those types of creatures from this effect.Second, you can bind an extra effect to the area. Choose the effect from the following list, or choose an effect offered by the DM. Some of these effects apply to creatures in the area; you can designate whether the effect applies to all creatures, creatures that follow a specific deity or leader, or creatures of a specific sort, such as orcs or trolls. When a creature that would be affected enters the spell's area for the first time on a turn or starts its turn there, it can make a Charisma saving throw. On a success, the creature ignores the extra effect until it leaves the area.Courage. Affected creatures can't be frightened while in the area.Darkness. Darkness fills the area. Normal light, as well as magical light created by spells of a lower level than the slot you used to cast this spell, can't illuminate the area.Daylight. Bright light fills the area. Magical darkness created by spells of a lower level than the slot you used to cast this spell can't extinguish the light.Energy Protection. Affected creatures in the area have resistance to one damage type of your choice, except for bludgeoning, piercing, or slashing.Energy Vulnerability. Affected creatures in the area have vulnerability to one damage type of your choice, except for bludgeoning, piercing, or slashing.Everlasting Rest. Dead bodies interred in the area can't be turned into undead.Extradimensional Interference. Affected creatures can't move or travel using teleportation or by extradimensional or interplanar means.Fear. Affected creatures are frightened while in the area.Silence. No sound can emanate from within the area, and no sound can reach into it.Tongues. Affected creatures can communicate with any other creature in the area, even if they don't share a common language.",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "CHA Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Heal": {
+        "level": "6",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Instantaneous",
+        "description": "Choose a creature that you can see within range. A surge of positive energy washes through the creature, causing it to regain 70 hit points. This spell also ends blindness, deafness, and any diseases affecting the target. This spell has no effect on constructs or undead.",
+        "Evoke": "Evoke 22",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Healing Word": {
+        "level": "1",
+        "school": "evocation",
+        "casting": "Casting Time: 1 bonus action",
+        "duration": "Duration: Instantaneous",
+        "description": "A creature of your choice that you can see within range regains hit points equal to 1d4 + your spellcasting ability modifier. This spell has no effect on undead or constructs.",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "1",
+            "d4",
+            ""
+        ]
+    },
+    "Hellish Rebuke": {
+        "level": "1",
+        "school": "evocation",
+        "casting": "Casting Time: 1 reaction, which you take in response to being damaged by a creature within 60 feet of you that you can see",
+        "duration": "Duration: Instantaneous",
+        "description": "You point your finger, and the creature that damaged you is momentarily surrounded by hellish flames. The creature must make a Dexterity saving throw. It takes 2d10 fire damage on a failed save, or half as much damage on a successful one.",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "DEX Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "2",
+            "d10",
+            ""
+        ]
+    },
+    "Ice Storm": {
+        "level": "4",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Instantaneous",
+        "description": "A hail of rock-hard ice pounds to the ground in a 20-foot-radius, 40-foot-high cylinder centered on a point within range. Each creature in the cylinder must make a Dexterity saving throw. A creature takes 2d8 bludgeoning damage and 4d6 cold damage on a failed save, or half as much damage on a successful one.Hailstones turn the storm's area of effect into difficult terrain until the end of your next turn.",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "DEX Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "2",
+            "d8",
+            ""
+        ]
+    },
+    "Leomund's Tiny Hut": {
+        "level": "3",
+        "school": "evocation",
+        "casting": "Casting Time: 1 minute",
+        "duration": "Duration: 8 hours",
+        "description": "A 10-foot-radius immobile dome of force springs into existence around and above you and remains stationary for the duration. The spell ends if you leave its area.Nine creatures of Medium size or smaller can fit inside the dome with you. The spell fails if its area includes a larger creature or more than nine creatures. Creatures and objects within the dome when you cast this spell can move through it freely. All other creatures and objects are barred from passing through it. Spells and other magical effects can't extend through the dome or be cast through it. The atmosphere inside the space is comfortable and dry, regardless of the weather outside.Until the spell ends, you can command the interior to become dimly lit or dark. The dome is opaque from the outside, of any color you choose, but it is transparent from the inside.",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Light": {
+        "level": "0",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: 1 hour",
+        "description": "You touch one object that is no larger than 10 feet in any dimension. Until the spell ends, the object sheds bright light in a 20-foot radius and dim light for an additional 20 feet. The light can be colored as you like. Completely covering the object with something opaque blocks the light. The spell ends if you cast it again or dismiss it as an action.If you target an object held or worn by a hostile creature, that creature must succeed on a Dexterity saving throw to avoid the spell.",
+        "Evoke": "Evoke 10",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "DEX Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Lightning Bolt": {
+        "level": "3",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Instantaneous",
+        "description": "A stroke of lightning forming a line 100 feet long and 5 feet wide blasts out from you in a direction you choose. Each creature in the line must make a Dexterity saving throw. A creature takes 8d6 lightning damage on a failed save, or half as much damage on a successful one.The lightning ignites flammable objects in the area that aren't being worn or carried.",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "DEX Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "8",
+            "d6",
+            ""
+        ]
+    },
+    "Magic Missile": {
+        "level": "1",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Instantaneous",
+        "description": "You create three glowing darts of magical force. Each dart hits a creature of your choice that you can see within range. A dart deals 1d4 + 1 force damage to its target. The darts all strike simultaneously, and you can direct them to hit one creature or several.",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "1",
+            "d4",
+            ""
+        ]
+    },
+    "Mass Cure Wounds": {
+        "level": "5",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Instantaneous",
+        "description": "A wave of healing energy washes out from a point of your choice within range. Choose up to six creatures in a 30-foot-radius sphere centered on that point. Each target regains hit points equal to 3d8 + your spellcasting ability modifier. This spell has no effect on undead or constructs.",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "Healing",
+        "Roll Mod": [
+            "3",
+            "d8",
+            ""
+        ]
+    },
+    "Mass Heal": {
+        "level": "9",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Instantaneous",
+        "description": "A flood of healing energy flows from you into injured creatures around you. You restore up to 700 hit points, divided as you choose among any number of creatures that you can see within range. Creatures healed by this spell are also cured of all diseases and any effect making them blinded or deafened. This spell has no effect on undead or constructs.",
+        "Evoke": "Evoke 28",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "Healing",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Mass Healing Word": {
+        "level": "3",
+        "school": "evocation",
+        "casting": "Casting Time: 1 bonus action",
+        "duration": "Duration: Instantaneous",
+        "description": "As you call out words of restoration, up to six creatures of your choice that you can see within range regain hit points equal to 1d4 + your spellcasting ability modifier. This spell has no effect on undead or constructs.",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "1",
+            "d4",
+            ""
+        ]
+    },
+    "Melf's Acid Arrow": {
+        "level": "2",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Instantaneous",
+        "description": "A shimmering green arrow streaks toward a target within range and bursts in a spray of acid. Make a ranged spell attack against the target. On a hit, the target takes 4d4 acid damage immediately and 2d4 acid damage at the end of its next turn. On a miss, the arrow splashes the target with acid for half as much of the initial damage and no damage at the end of its next turn.",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "Hit",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "4",
+            "d4",
+            ""
+        ]
+    },
+    "Meteor Swarm": {
+        "level": "9",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Instantaneous",
+        "description": "Blazing orbs of fire plummet to the ground at four different points you can see within range. Each creature in a 40-foot-radius sphere centered on each point you choose must make a Dexterity saving throw. The sphere spreads around corners. A creature takes 20d6 fire damage and 20d6 bludgeoning damage on a failed save, or half as much damage on a successful one. A creature in the area of more than one fiery burst is affected only once.The spell damages objects in the area and ignites flammable objects that aren't being worn or carried.",
+        "Evoke": "Evoke 28",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "DEX Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "20",
+            "d6",
+            ""
+        ]
+    },
+    "Moonbeam": {
+        "level": "2",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Concentration, up to 1 minute",
+        "description": "A silvery beam of pale light shines down in a 5-foot-radius, 40-foot-high cylinder centered on a point within range. Until the spell ends, dim light fills the cylinder.When a creature enters the spell's area for the first time on a turn or starts its turn there, it is engulfed in ghostly flames that cause searing pain, and it must make a Constitution saving throw. It takes 2d10 radiant damage on a failed save, or half as much damage on a successful one.A shapechanger makes its saving throw with disadvantage. If it fails, it also instantly reverts to its original form and can't assume a different form until it leaves the spell's light.On each of your turns after you cast this spell, you can use an action to move the beam up to 60 feet in any direction.",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "CON Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "2",
+            "d10",
+            ""
+        ]
+    },
+    "Mordenkainen's Sword": {
+        "level": "7",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Concentration, up to 1 minute",
+        "description": "You create a sword-shaped plane of force that hovers within range. It lasts for the duration.When the sword appears, you make a melee spell attack against a target of your choice within 5 feet of the sword. On a hit, the target takes 3d10 force damage. Until the spell ends, you can use a bonus action on each of your turns to move the sword up to 20 feet to a spot you can see and repeat this attack against the same target or a different one.",
+        "Evoke": "Evoke 24",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "Hit",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "3",
+            "d10",
+            ""
+        ]
+    },
+    "Otiluke's Freezing Sphere": {
+        "level": "6",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Instantaneous",
+        "description": "A frigid globe of cold energy streaks from your fingertips to a point of your choice within range, where it explodes in a 60-foot-radius sphere. Each creature within the area must make a Constitution saving throw. On a failed save, a creature takes 10d6 cold damage. On a successful save, it takes half as much damage.If the globe strikes a body of water or a liquid that is principally water (not including water-based creatures), it freezes the liquid to a depth of 6 inches over an area 30 feet square. This ice lasts for 1 minute. Creatures that were swimming on the surface of frozen water are trapped in the ice. A trapped creature can use an action to make a Strength check against your spell save DC to break free.You can refrain from firing the globe after completing the spell, if you wish. A small globe about the size of a sling stone, cool to the touch, appears in your hand. At any time, you or a creature you give the globe to can throw the globe (to a range of 40 feet) or hurl it with a sling (to the sling's normal range). It shatters on impact, with the same effect as the normal casting of the spell. You can also set the globe down without shattering it. After 1 minute, if the globe hasn't already shattered, it explodes.",
+        "Evoke": "Evoke 22",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "STR Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "10",
+            "d6",
+            ""
+        ]
+    },
+    "Otiluke's Resilient Sphere": {
+        "level": "4",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Concentration, up to 1 minute",
+        "description": "A sphere of shimmering force encloses a creature or object of Large size or smaller within range. An unwilling creature must make a Dexterity saving throw. On a failed save, the creature is enclosed for the duration.Nothing\u2014not physical objects, energy, or other spell effects\u2014can pass through the barrier, in or out, though a creature in the sphere can breathe there. The sphere is immune to all damage, and a creature or object inside can't be damaged by attacks or effects originating from outside, nor can a creature inside the sphere damage anything outside it.The sphere is weightless and just large enough to contain the creature or object inside. An enclosed creature can use its action to push against the sphere's walls and thus roll the sphere at up to half the creature's speed. Similarly, the globe can be picked up and moved by other creatures.A disintegrate spell targeting the globe destroys it without harming anything inside it.",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "DEX Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Power Word Heal": {
+        "level": "9",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Instantaneous",
+        "description": "The target regains all its hp and charmed, frightened, paralyzed, and stunned conditions end.",
+        "Evoke": "Evoke 28",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Prayer of Healing": {
+        "level": "2",
+        "school": "evocation",
+        "casting": "Casting Time: 10 minutes",
+        "duration": "Duration: Instantaneous",
+        "description": "Up to six creatures of your choice that you can see within range each regain hit points equal to 2d8 + your spellcasting ability modifier. This spell has no effect on undead or constructs.",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "2",
+            "d8",
+            ""
+        ]
+    },
+    "Prismatic Spray": {
+        "level": "7",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Instantaneous",
+        "description": "Eight multicolored rays of light flash from your hand. Each ray is a different color and has a different power and purpose. Each creature in a 60-foot cone must make a Dexterity saving throw. For each target, roll a d8 to determine which color ray affects it.1. Red. The target takes 10d6 fire damage on a failed save, or half as much damage on a successful one.2. Orange. The target takes 10d6 acid damage on a failed save, or half as much damage on a successful one.3. Yellow. The target takes 10d6 lightning damage on a failed save, or half as much damage on a successful one.4. Green. The target takes 10d6 poison damage on a failed save, or half as much damage on a successful one.5. Blue. The target takes 10d6 cold damage on a failed save, or half as much damage on a successful one.6. Indigo. On a failed save, the target is restrained. It must then make a Constitution saving throw at the end of each of its turns. If it successfully saves three times, the spell ends. If it fails its save three times, it permanently turns to stone and is subjected to the petrified condition. The successes and failures don't need to be consecutive; keep track of both until the target collects three of a kind.7. Violet. On a failed save, the target is blinded. It must then make a Wisdom saving throw at the start of your next turn. A successful save ends the blindness. If it fails that save, the creature is transported to another plane of existence of the DM's choosing and is no longer blinded. (Typically, a creature that is on a plane that isn't its home plane is banished home, while other creatures are usually cast into the Astral or Ethereal planes.)8. Special. The target is struck by two rays. Roll twice more, rerolling any 8.",
+        "Evoke": "Evoke 24",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "DEX Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "10",
+            "d6",
+            ""
+        ]
+    },
+    "Ray of Frost": {
+        "level": "0",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Instantaneous",
+        "description": "A frigid beam of blue-white light streaks toward a creature within range. Make a ranged spell attack against the target. On a hit, it takes 1d8 cold damage, and its speed is reduced by 10 feet until the start of your next turn.The spell's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).",
+        "Evoke": "Evoke 10",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "Hit",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "1",
+            "d8",
+            ""
+        ]
+    },
+    "Sacred Flame": {
+        "level": "0",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Instantaneous",
+        "description": "Flame like radiance descends on a creature that you can see within range. The target must succeed on a Dexterity saving throw or take 1d8 radiant damage. The target gains no benefit from cover for this saving throw.The spell's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).",
+        "Evoke": "Evoke 10",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "DEX Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "1",
+            "d8",
+            ""
+        ]
+    },
+    "Scorching Ray": {
+        "level": "2",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Instantaneous",
+        "description": "You create three rays of fire and hurl them at targets within range. You can hurl them at one target or several.Make a ranged spell attack for each ray. On a hit, the target takes 2d6 fire damage.",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "Hit",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "2",
+            "d6",
+            ""
+        ]
+    },
+    "Searing Smite": {
+        "level": "1",
+        "school": "evocation",
+        "casting": "Casting Time: 1 bonus action",
+        "duration": "Duration: Concentration, up to 1 minute",
+        "description": "The next time you hit a creature with a melee weapon attack during the spell's duration, your weapon flares with white-hot intensity, and the attack deals an extra 1d6 fire damage to the target and causes the target to ignite in flames. At the start of each of its turns until the spell ends, the target must make a Constitution saving throw. On a failed save, it takes 1d6 fire damage. On a successful save, the spell ends. If the target or a creature within 5 feet of it uses an action to put out the flames, or if some other effect douses the flames (such as the target being submerged in water), the spell ends.",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "CON Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "1",
+            "d6",
+            ""
+        ]
+    },
+    "Sending": {
+        "level": "3",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: 1 round",
+        "description": "You send a short message of twenty-five words or less to a creature with which you are familiar. The creature hears the message in its mind, recognizes you as the sender if it knows you, and can answer in a like manner immediately. The spell enables creatures with Intelligence scores of at least 1 to understand the meaning of your message.You can send the message across any distance and even to other planes of existence, but if the target is on a different plane than you, there is a 5 percent chance that the message doesn't arrive.",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Shatter": {
+        "level": "2",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Instantaneous",
+        "description": "A sudden loud ringing noise, painfully intense, erupts from a point of your choice within range. Each creature in a 10-foot-radius sphere centered on that point must make a Constitution saving throw. A creature takes 3d8 thunder damage on a failed save, or half as much damage on a successful one. A creature made of inorganic material such as stone, crystal, or metal has disadvantage on this saving throw.A nonmagical object that isn't being worn or carried also takes the damage if it's in the spell's area.",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "CON Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "3",
+            "d8",
+            ""
+        ]
+    },
+    "Shocking Grasp": {
+        "level": "0",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Instantaneous",
+        "description": "Lightning springs from your hand to deliver a shock to a creature you try to touch. Make a melee spell attack against the target. You have advantage on the attack roll if the target is wearing armor made of metal. On a hit, the target takes 1d8 lightning damage, and it can't take reactions until the start of its next turn.The spell's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).",
+        "Evoke": "Evoke 10",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "Hit",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "1",
+            "d8",
+            ""
+        ]
+    },
+    "Spiritual Weapon": {
+        "level": "2",
+        "school": "evocation",
+        "casting": "Casting Time: 1 bonus action",
+        "duration": "Duration: 1 minute",
+        "description": "You create a floating, spectral weapon within range that lasts for the duration or until you cast this spell again. When you cast the spell, you can make a melee spell attack against a creature within 5 feet of the weapon. On a hit, the target takes force damage equal to 1d8 + your spellcasting ability modifier.As a bonus action on your turn, you can move the weapon up to 20 feet and repeat the attack against a creature within 5 feet of it.The weapon can take whatever form you choose. Clerics of deities who are associated with a particular weapon (as St. Cuthbert is known for his mace and Thor for his hammer) make this spell's effect resemble that weapon.",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "Hit",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "1",
+            "d8",
+            ""
+        ]
+    },
+    "Staggering Smite": {
+        "level": "4",
+        "school": "evocation",
+        "casting": "Casting Time: 1 bonus action",
+        "duration": "Duration: Concentration, up to 1 minute",
+        "description": "If the attack hits, deals an extra 4d6 pyschic damage and the target must succeed on a Wis. save or have a disadvantage.",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "4",
+            "d6",
+            ""
+        ]
+    },
+    "Sunbeam": {
+        "level": "6",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Concentration, up to 1 minute",
+        "description": "A beam of brilliant light flashes out from your hand in a 5-foot-wide, 60-foot-long line. Each creature in the line must make a Constitution saving throw. On a failed save, a creature takes 6d8 radiant damage and is blinded until your next turn. On a successful save, it takes half as much damage and isn't blinded by this spell. Undead and oozes have disadvantage on this saving throw.You can create a new line of radiance as your action on any turn until the spell ends.For the duration, a mote of brilliant radiance shines in your hand. It sheds bright light in a 30-foot radius and dim light for an additional 30 feet. This light is sunlight.",
+        "Evoke": "Evoke 22",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "CON Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "6",
+            "d8",
+            ""
+        ]
+    },
+    "Sunburst": {
+        "level": "8",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Instantaneous",
+        "description": "Brilliant sunlight flashes in a 60-foot radius centered on a point you choose within range. Each creature in that light must make a Constitution saving throw. On a failed save, a creature takes 12d6 radiant damage and is blinded for 1 minute. On a successful save, it takes half as much damage and isn't blinded by this spell. Undead and oozes have disadvantage on this saving throw.A creature blinded by this spell makes another Constitution saving throw at the end of each of its turns. On a successful save, it is no longer blinded.This spell dispels any darkness in its area that was created by a spell.",
+        "Evoke": "Evoke 26",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "CON Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "12",
+            "d6",
+            ""
+        ]
+    },
+    "Telepathy": {
+        "level": "8",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: 24 hours",
+        "description": "Comunicate via telepathy with a known and willing creature on the same plane of existence.",
+        "Evoke": "Evoke 26",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Thunderous Smite": {
+        "level": "1",
+        "school": "evocation",
+        "casting": "Casting Time: 1 bonus action",
+        "duration": "Duration: Concentration, up to 1 minute",
+        "description": "The first time you hit with a melee weapon attack during this spell's duration, your weapon rings with thunder that is audible within 300 feet of you, and the attack deals an extra 2d6 thunder damage to the target. Additionally, if the target is a creature, it must succeed on a Strength saving throw or be pushed 10 feet away from you and knocked prone.",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "STR Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "2",
+            "d6",
+            ""
+        ]
+    },
+    "Thunderwave": {
+        "level": "1",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Instantaneous",
+        "description": "A wave of thunderous force sweeps out from you. Each creature in a 15-foot cube originating from you must make a Constitution saving throw. On a failed save, a creature takes 2d8 thunder damage and is pushed 10 feet away from you. On a successful save, the creature takes half as much damage and isn't pushed.In addition, unsecured objects that are completely within the area of effect are automatically pushed 10 feet away from you by the spell's effect, and the spell emits a thunderous boom audible out to 300 feet.",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "CON Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "2",
+            "d8",
+            ""
+        ]
+    },
+    "Wall of Fire": {
+        "level": "4",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Concentration, up to 1 minute",
+        "description": "You create a wall of fire on a solid surface within range. You can make the wall up to 60 feet long, 20 feet high, and 1 foot thick, or a ringed wall up to 20 feet in diameter, 20 feet high, and 1 foot thick. The wall is opaque and lasts for the duration.When the wall appears, each creature within its area must make a Dexterity saving throw. On a failed save, a creature takes 5d8 fire damage, or half as much damage on a successful save.One side of the wall, selected by you when you cast this spell, deals 5d8 fire damage to each creature that ends its turn within 10 feet of that side or inside the wall. A creature takes the same damage when it enters the wall for the first time on a turn or ends its turn there.The other side of the wall deals no damage.",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "DEX Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "5",
+            "d8",
+            ""
+        ]
+    },
+    "Wall of Force": {
+        "level": "5",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Concentration, up to 10 minutes",
+        "description": "An invisible wall of force springs into existence at a point you choose within range. The wall appears in any orientation you choose, as a horizontal or vertical barrier or at an angle. It can be free floating or resting on a solid surface. You can form it into a hemispherical dome or a sphere with a radius of up to 10 feet, or you can shape a flat surface made up of ten 10-foot-by-10-foot panels. Each panel must be contiguous with another panel. In any form, the wall is 1/4 inch thick. It lasts for the duration. If the wall cuts through a creature's space when it appears, the creature is pushed to one side of the wall (your choice which side).Nothing can physically pass through the wall. It is immune to all damage and can't be dispelled by dispel magic. A disintegrate spell destroys the wall instantly, however. The wall also extends into the Ethereal Plane, blocking ethereal travel through the wall.",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Wall of Ice": {
+        "level": "6",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Concentration, up to 10 minutes",
+        "description": "You create a wall of ice on a solid surface within range. You can form it into a hemispherical dome or a sphere with a radius of up to 10 feet, or you can shape a flat surface made up of ten 10-foot-square panels. Each panel must be contiguous with another panel. In any form, the wall is 1 foot thick and lasts for the duration.If the wall cuts through a creature's space when it appears, the creature within its area is pushed to one side of the wall and must make a Dexterity saving throw. On a failed save, the creature takes 10d6 cold damage, or half as much damage on a successful save.The wall is an object that can be damaged and thus breached. It has AC 12 and 30 hit points per 10-foot section, and it is vulnerable to fire damage. Reducing a 10-foot section of wall to 0 hit points destroys it and leaves behind a sheet of frigid air in the space the wall occupied. A creature moving through the sheet of frigid air for the first time on a turn must make a Constitution saving throw. That creature takes 5d6 cold damage on a failed save, or half as much damage on a successful one.",
+        "Evoke": "Evoke 22",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "DEX Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "10",
+            "d6",
+            ""
+        ]
+    },
+    "Wall of Stone": {
+        "level": "5",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Concentration, up to 10 minutes",
+        "description": "A nonmagical wall of solid stone springs into existence at a point you choose within range. The wall is 6 inches thick and is composed of ten 10-foot-by-10-foot panels. Each panel must be contiguous with at least one other panel. Alternatively, you can create 10-foot-by-20-foot panels that are only 3 inches thick.If the wall cuts through a creature's space when it appears, the creature is pushed to one side of the wall (your choice). If a creature would be surrounded on all sides by the wall (or the wall and another solid surface), that creature can make a Dexterity saving throw. On a success, it can use its reaction to move up to its speed so that it is no longer enclosed by the wall.The wall can have any shape you desire, though it can't occupy the same space as a creature or object. The wall doesn't need to be vertical or rest on any firm foundation. It must, however, merge with and be solidly supported by existing stone. Thus, you can use this spell to bridge a chasm or create a ramp.If you create a span greater than 20 feet in length, you must halve the size of each panel to create supports. You can crudely shape the wall to create crenellations, battlements, and so on.The wall is an object made of stone that can be damaged and thus breached. Each panel has AC 15 and 30 hit points per inch of thickness. Reducing a panel to 0 hit points destroys it and might cause connected panels to collapse at the DM's discretion.If you maintain your concentration on this spell for its whole duration, the wall becomes permanent and can't be dispelled. Otherwise, the wall disappears when the spell ends.",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "DEX Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Wind Wall": {
+        "level": "3",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Concentration, up to 1 minute",
+        "description": "A wall of strong wind rises from the ground at a point you choose within range. You can make the wall up to 50 feet long, 15 feet high, and 1 foot thick. You can shape the wall in any way you choose so long as it makes one continuous path along the ground. The wall lasts for the duration.When the wall appears, each creature within its area must make a Strength saving throw. A creature takes 3d8 bludgeoning damage on a failed save, or half as much damage on a successful one.The strong wind keeps fog, smoke, and other gases at bay. Small or smaller flying creatures or objects can't pass through the wall. Loose, lightweight materials brought into the wall fly upward. Arrows, bolts, and other ordinary projectiles launched at targets behind the wall are deflected upward and automatically miss. (Boulders hurled by giants or siege engines, and similar projectiles, are unaffected.) Creatures in gaseous form can't pass through it.",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "STR Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "3",
+            "d8",
+            ""
+        ]
+    },
+    "Witch Bolt": {
+        "level": "1",
+        "school": "evocation",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Concentration, up to 1 minute",
+        "description": "A beam of crackling, blue energy lances out toward a creature within range, forming a sustained arc of lightning between you and the target. Make a ranged spell attack against that creature. On a hit, the target takes 1d12 lightning damage, and on each of your turns for the duration, you can use your action to deal 1d12 lightning damage to the target automatically. The spell ends if you use your action to do anything else. The spell also ends if the target is ever outside the spell's range or if it has total cover from you.",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "Hit",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "1",
+            "d12",
+            ""
+        ]
+    },
+    "Wrathful Smite": {
+        "level": "1",
+        "school": "evocation",
+        "casting": "Casting Time: 1 bonus action",
+        "duration": "Duration: Concentration, up to 1 minute",
+        "description": "The next time you hit with a melee weapon attack during this spell's duration, your attack deals an extra 1d6 psychic damage. Additionally, if the target is a creature, it must make a Wisdom saving throw or be frightened of you until the spell ends. As an action, the creature can make a Wisdom check against your spell save DC to steel its resolve and end this spell.",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "WIS Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "1",
+            "d6",
+            ""
+        ]
+    }
+}
