@@ -70,7 +70,7 @@ class CombatLog:
             character.setText(entry["character"].capitalize())
             IconImage = QIcon(os.path.join(cons.ICONS,entry["character"]+".png"))
             icon.setIcon(IconImage)
-            icon.setIconSize(QSize(40, 40))
+            #icon.setIconSize(QSize(40, 40))
             type.setText(entry["type"].upper())
             breakdown.setText(entry["breakdown"])
             roll.setText(str(entry["roll"]))

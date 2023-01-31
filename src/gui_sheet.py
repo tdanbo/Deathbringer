@@ -9,6 +9,7 @@ import functions as func
 import constants as cons
 
 from gui_spells import SpellsGUI
+from gui_log import CombatLogGUI
 from character_sheet import CharacterSheet
 
 import functools
@@ -281,6 +282,7 @@ class CharacterSheetGUI(QWidget):
                 height = cons.WSIZE,
                 enabled=False,
                 objectname=f"icon{count}",
+                signal=functools.partial(func.inventory_roll,self,CombatLogGUI().get_widget_directory(),"Beasttoe",count),
             )
 
             self.backpack_label = Widget(

@@ -313,11 +313,9 @@ class CharacterSheet():
         if roll != ["","",""]:
             make_roll = []
             if roll[0] in self.stats_dict:
-                if int(self.stats_dict[roll[0]]) > 1:
-                    make_roll.append(str(self.stats_dict[roll[0]]))
+                make_roll.append(str(self.stats_dict[roll[0]]))
             else:
-                if int(roll[0]) > 1:
-                    make_roll.append(str(roll[0]))
+                make_roll.append(str(roll[0]))
             
             make_roll.append(str(roll[1]))
 

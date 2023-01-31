@@ -104,7 +104,7 @@ class CombatLogGUI(QWidget):
 
         name_stylesheet = "font-size: 12px; font-weight: bold; color: hsl(0%, 0%, 50%); background-color: hsl(0%, 0%, 20%)"
         icon_stylesheet = "background-color: hsl(0%, 0%, 80%);"
-        type_stylesheet = f"font-size: 12px; font-weight: bold; background-color: hsl(0%, 0%, 80%); color: hsl(0%, 0%, 20%); border: 0px;"
+        type_stylesheet = f"font-size: 11px; font-weight: bold; background-color: hsl(0%, 0%, 80%); color: hsl(0%, 0%, 20%); border: 0px;"
         breakdown_stylesheet = "font-size: 10px; color: hsl(0%, 0%, 30%); background-color: hsl(0%, 0%, 20%)"
         roll_stylesheet = "font-size: 20px; font-weight: bold; background-color: hsl(0%, 0%, 80%); color: hsl(0%, 0%, 10%); border: 0px; border-top-right-radius: 8px; border-bottom-right-radius: 8px;"
         date_stylesheet = "font-size: 10px; color: hsl(0%, 0%, 30%); background-color: hsl(0%, 0%, 20%)"
@@ -128,9 +128,9 @@ class CombatLogGUI(QWidget):
             widget_type = QLineEdit(),
             parent_layout = self.single_log_layout.inner_layout(2),
             stylesheet = type_stylesheet,
-            align="right",
+            align="left",
             height = cons.WSIZE*1.50,
-            width = cons.WSIZE*2.5, 
+            size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
         )
 
         self.log_roll = Widget(
@@ -138,6 +138,7 @@ class CombatLogGUI(QWidget):
             parent_layout = self.single_log_layout.inner_layout(2),
             enabled = False,
             height = cons.WSIZE*1.50,
+            width = cons.WSIZE*2, 
             align="right",
             stylesheet = roll_stylesheet,
         )
