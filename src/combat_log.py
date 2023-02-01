@@ -27,16 +27,31 @@ class CombatLog:
         json_doc = json.loads(json_util.dumps(doc))
         return list(reversed(json_doc))
 
-    def set_entry(self, character, roll, roll_type, roll_breakdown):
+    def set_entry(self, character, action_type="", action_name="", hit_desc="", roll_desc="", hit="", roll="", breakdown=""):
         print(f"Adding entry to combat log: {character} rolled {roll}")
-        now = datetime.now()
+        
+        self.character = character
+        self.action_type = action_type
+        self.action_name = action_name
+        self.hit_desc = hit_desc
+        self.roll_desc = roll_desc
+        self.hit = hit
+        self.roll = roll
+        self.breakdown = breakdown
+        self.time = datetime.now()
+
         entry = {
-            "character": character,
-            "roll": roll,
-            "type": roll_type,
-            "breakdown": roll_breakdown,
-            "time": now.strftime("%d/%m/%Y %H:%M")
+            "character": self.character,
+            "type": self.action_type,
+            "name": self.action_name,
+            "hit desc": self.hit_desc,
+            "roll desc": self.roll_desc,
+            "hit": self.hit,
+            "roll": self.roll,
+            "breakdown": self.breakdown,
+            "time": self.time.strftime("%H:%M:%S")
         }
+
         self.collection.insert_one(entry)
 
     def start_watching(self):
@@ -63,15 +78,24 @@ class CombatLog:
             character = self.log_widget_dictionary[count]["character"]
             icon = self.log_widget_dictionary[count]["icon"]
             type = self.log_widget_dictionary[count]["type"]
-            breakdown = self.log_widget_dictionary[count]["breakdown"]
+            name = self.log_widget_dictionary[count]["name"]
+            hit_desc = self.log_widget_dictionary[count]["hit desc"]
+            roll_desc = self.log_widget_dictionary[count]["roll desc"]
+            hit = self.log_widget_dictionary[count]["hit"]
             roll = self.log_widget_dictionary[count]["roll"]
             time = self.log_widget_dictionary[count]["time"]
+            breakdown = self.log_widget_dictionary[count]["breakdown"]
 
             character.setText(entry["character"].capitalize())
-            IconImage = QIcon(os.path.join(cons.ICONS,entry["character"]+".png"))
-            icon.setIcon(IconImage)
-            #icon.setIconSize(QSize(40, 40))
+            IconImage = QIcon()
+            pixmap = QPixmap(os.path.join(cons.ICONS,entry["character"]+".png"))
+            icon.setPixmap(pixmap)
+            icon.setScaledContents(True)
             type.setText(entry["type"].upper())
-            breakdown.setText(entry["breakdown"])
+            name.setText(entry["name"].upper())
+            hit_desc.setText(entry["hit desc"].upper())
+            roll_desc.setText(entry["roll desc"].upper())
+            hit.setText(str(entry["hit"]))
             roll.setText(str(entry["roll"]))
             time.setText(entry["time"])
+            breakdown.setText(entry["breakdown"])

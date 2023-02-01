@@ -47,6 +47,7 @@ def inventory_roll(self,dictionary,character,slot):
     print(f"Rolling for {character} {slot}")
     print("--------------------")
     item = self.findChild(QLineEdit, f"inventory{slot}").text()
+    item_label = self.findChild(QPushButton, f"inventory_label{slot}").text()
 
     evoke = self.findChild(QPushButton, f"evoke{slot}").text().replace("+","")
     hit = self.findChild(QPushButton, f"hit_dc{slot}").text().replace("+","")
@@ -60,14 +61,19 @@ def inventory_roll(self,dictionary,character,slot):
         evoke_roll = random.randint(1, 20)+int(evoke)
         evoke_dc = int(evoke_mod)
         if evoke_roll >= evoke_dc:
-            double_roll(dictionary,item,character,hit,hit_mod,roll,roll_mod)
+            double_roll(dictionary,character,item,item_label,hit,hit_mod,roll,roll_mod)
         else:
             print(f"Evoke Failed: {evoke_roll}")
-            CombatLog(dictionary).set_entry(character, evoke_roll, f"{item}: Spell Failed", "test")
+            CombatLog(dictionary).set_entry(character, action_type=item, action_name="Spell Cast", hit_desc="", roll_desc="Evoke", hit="", roll=evoke_roll, breakdown="")
     else:
-        double_roll(dictionary,item,character,hit,hit_mod,roll,roll_mod)
+        double_roll(dictionary,character,item,item_label,hit,hit_mod,roll,roll_mod)
 
-def double_roll(dictionary,item,character,hit,hit_mod,roll,roll_mod):
+def double_roll(dictionary,character,item,item_label,hit,hit_mod,roll,roll_mod):
+    if item_label == "Weapon":
+        action_type = "Attack"
+    else:
+        action_type = "Spell Cast"
+
     if hit != "":
         if "Save" in hit_mod:
             total_hit = hit
@@ -76,6 +82,8 @@ def double_roll(dictionary,item,character,hit,hit_mod,roll,roll_mod):
             hit_roll = random.randint(1, 20)+int(hit)
             total_hit = hit_roll
             print(f"Hit Roll: {total_hit}")
+    else:
+        total_hit=""
 
     if roll != "":
         result = [0, 0, 0]
@@ -91,11 +99,13 @@ def double_roll(dictionary,item,character,hit,hit_mod,roll,roll_mod):
         for i in range(roll_multiplier):
             all_roll.append(random.randint(1, roll_die))
 
+        roll_breakdown = " + ".join(str(x) for x in all_roll)+" + "+str(roll_modifier)
+
         print(all_roll)
         total_roll = sum(all_roll)+roll_modifier
         print(f"{roll_mod} Roll: {total_roll}")
 
-    CombatLog(dictionary).set_entry(character, total_roll, f"{item}: Attack", "test")
+    CombatLog(dictionary).set_entry(character, action_type=item, action_name=action_type, hit_desc=hit_mod, roll_desc=roll_mod, hit=total_hit, roll=total_roll, breakdown=roll_breakdown)
 
 def create_folder(dir_path):
     isExist = os.path.exists(dir_path)
