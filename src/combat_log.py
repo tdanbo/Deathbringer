@@ -2,6 +2,8 @@ from PySide2.QtWidgets import *
 from PySide2.QtGui import *
 from PySide2.QtCore import *
 
+from qt_thread_updater import get_updater
+
 import pymongo
 import os
 import constants as cons
@@ -9,6 +11,7 @@ from datetime import datetime
 from bson import json_util
 import json
 import threading
+import stylesheet as style
 
 class CombatLog:
     def __init__(
@@ -84,7 +87,7 @@ class CombatLog:
             hit = self.log_widget_dictionary[count]["hit"]
             roll = self.log_widget_dictionary[count]["roll"]
             time = self.log_widget_dictionary[count]["time"]
-            breakdown = self.log_widget_dictionary[count]["breakdown"]
+            #breakdown = self.log_widget_dictionary[count]["breakdown"]
 
             character.setText(entry["character"].capitalize())
             IconImage = QIcon()
@@ -98,4 +101,14 @@ class CombatLog:
             hit.setText(str(entry["hit"]))
             roll.setText(str(entry["roll"]))
             time.setText(entry["time"])
-            breakdown.setText(entry["breakdown"])
+
+            if entry["roll desc"].upper() == "DAMAGE":
+                get_updater().call_latest(roll_desc.setStyleSheet, style.COMBAT_LABEL_DAMAGE)
+            elif entry["roll desc"].upper() == "HEALING":
+                get_updater().call_latest(roll_desc.setStyleSheet, style.COMBAT_LABEL_HEALING)
+            elif entry["roll desc"].upper() == "EVOKE":
+                get_updater().call_latest(roll_desc.setStyleSheet, style.COMBAT_LABEL_EVOKE)
+            else:
+                get_updater().call_latest(roll_desc.setStyleSheet, style.COMBAT_LABEL)
+
+            #breakdown.setText(entry["breakdown"])

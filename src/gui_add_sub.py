@@ -36,7 +36,7 @@ class AddSubGUI(QWidget):
 
         self.integer_line = Widget(
             widget_type=QLineEdit(),
-            stylesheet=style.QLINEEDIT,
+            stylesheet=style.QADDSUB,
             text="",
             align="center",
             objectname = "adjuster",
@@ -46,7 +46,7 @@ class AddSubGUI(QWidget):
 
         self.minus_widget = Widget(
             widget_type=QPushButton(),
-            stylesheet=style.QPUSHBUTTON,
+            stylesheet=style.BUTTONS,
             text="-",
             objectname = "minus",
             size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
@@ -54,7 +54,7 @@ class AddSubGUI(QWidget):
 
         self.plus_widget = Widget(
             widget_type=QPushButton(),
-            stylesheet=style.QPUSHBUTTON,
+            stylesheet=style.BUTTONS,
             text="+",
             objectname = "plus",
             size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
@@ -73,7 +73,7 @@ class AddSubGUI(QWidget):
 
         self.setWindowTitle("Set Value")
         self.setLayout(self.addsub_main_layout.outer_layout())
-        self.setStyleSheet(style.DARK_STYLE)
+        self.setStyleSheet(style.BASE_STYLE)
         self.setFixedHeight(125)
 
     def send_value(self):

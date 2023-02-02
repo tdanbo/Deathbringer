@@ -30,9 +30,9 @@ def adjust_stat_widget(self, stat, state):
                 current_value = 0
 
     if current_value >= 0:
-        sender_widget.setStyleSheet(style.QPUSHBUTTON)
+        sender_widget.setStyleSheet(style.BIG_BUTTONS)
     else:
-        sender_widget.setStyleSheet(style.QPUSHBUTTON_INJURY)
+        sender_widget.setStyleSheet(style.BUTTONS_INJURY)
 
     sender_widget.setText(str(current_value))
     CharacterSheet(self).update_dictionary()        
@@ -69,10 +69,6 @@ def inventory_roll(self,dictionary,character,slot):
         double_roll(dictionary,character,item,item_label,hit,hit_mod,roll,roll_mod)
 
 def double_roll(dictionary,character,item,item_label,hit,hit_mod,roll,roll_mod):
-    if item_label == "Weapon":
-        action_type = "Attack"
-    else:
-        action_type = "Spell Cast"
 
     if hit != "":
         if "Save" in hit_mod:
@@ -105,7 +101,7 @@ def double_roll(dictionary,character,item,item_label,hit,hit_mod,roll,roll_mod):
         total_roll = sum(all_roll)+roll_modifier
         print(f"{roll_mod} Roll: {total_roll}")
 
-    CombatLog(dictionary).set_entry(character, action_type=item, action_name=action_type, hit_desc=hit_mod, roll_desc=roll_mod, hit=total_hit, roll=total_roll, breakdown=roll_breakdown)
+    CombatLog(dictionary).set_entry(character, action_type=item, action_name=item_label, hit_desc=hit_mod, roll_desc=roll_mod, hit=total_hit, roll=total_roll, breakdown=roll_breakdown)
 
 def create_folder(dir_path):
     isExist = os.path.exists(dir_path)

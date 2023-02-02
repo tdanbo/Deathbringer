@@ -50,7 +50,7 @@ class MainWindow(QWidget):
         self.main_layout.addWidget(character_sheet_gui)
 
         self.setLayout(self.main_layout)
-        self.setStyleSheet(style.DARK_STYLE)
+        self.setStyleSheet(style.BASE_STYLE)
 
         CharacterSheet(character_sheet_gui).update_dictionary()
 

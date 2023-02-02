@@ -24,6 +24,7 @@ class Section:
         scroll=(False, "bottom"),
         title="",
         icon="",
+        content_margin="",
     ):
 
         self.section_layout = QVBoxLayout()
@@ -38,6 +39,10 @@ class Section:
 
         self.inner_layouts = self.inner_layout_list()
         self.outer_layout_type.setSpacing(spacing)
+
+        if content_margin != "":
+            self.outer_layout_type.setContentsMargins(*content_margin)
+
         self.section_layout.setSpacing(0)
         if self.group[0] == True:
             if title != "":
@@ -96,6 +101,10 @@ class Section:
                 self.scroll_area_widget.setHorizontalScrollBarPolicy(
                     Qt.ScrollBarAlwaysOff
                 )
+
+                self.scroll_widget.setStyleSheet(style.QGROUPBOX)
+                self.scroll_area_widget.setStyleSheet(style.QGROUPBOX)
+
                 self.outer_layout_type.addWidget(self.scroll_area_widget)
         else:
             for layout in self.inner_layouts:

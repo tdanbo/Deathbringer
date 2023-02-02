@@ -19,6 +19,7 @@ class CombatLogGUI(QWidget):
         self.log_layout = Section(
             outer_layout = QVBoxLayout(),
             inner_layout = ("VBox", 1),
+            spacing = 10, 
 
         )
 
@@ -30,7 +31,6 @@ class CombatLogGUI(QWidget):
             title="COMBAT LOG",
             group = (True,None,None),   
             icon = ("combatlog.png",cons.WSIZE/2,cons.ICON_COLOR),	 	
-            spacing = 10,   
         )
 
         self.log_latest = Section(
@@ -48,7 +48,8 @@ class CombatLogGUI(QWidget):
             parent_layout = self.log_layout.inner_layout(0),
             title="DICE",  
             group = (True,None,cons.WSIZE*2),
-            icon = ("dice.png",cons.WSIZE/2,cons.ICON_COLOR)	
+            icon = ("dice.png",cons.WSIZE/2,cons.ICON_COLOR),
+            spacing = 3,	
         )
 
         #DICE
@@ -57,7 +58,7 @@ class CombatLogGUI(QWidget):
         for die_type in dice:
             Widget(
                 widget_type=QPushButton(),
-                stylesheet=style.QPUSHBUTTON,
+                stylesheet=style.BUTTONS,
                 parent_layout=self.log_dice.inner_layout(0),
                 text=die_type[0],
                 size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
@@ -79,9 +80,9 @@ class CombatLogGUI(QWidget):
         self.log_dictionary = {}
         for entry in range(20):
             entry_ui = self.create_log_entry(self.log_scroll.inner_layout(0))
-            self.log_dictionary[entry] = {"character":entry_ui[0],"icon":entry_ui[1],"type":entry_ui[2],"name":entry_ui[3],"hit desc":entry_ui[4],"roll desc":entry_ui[5],"hit":entry_ui[6],"roll":entry_ui[7],"time":entry_ui[8],"breakdown":entry_ui[9]}
+            self.log_dictionary[entry] = {"character":entry_ui[0],"icon":entry_ui[1],"type":entry_ui[2],"name":entry_ui[3],"hit desc":entry_ui[4],"roll desc":entry_ui[5],"hit":entry_ui[6],"roll":entry_ui[7],"time":entry_ui[8]}#,"breakdown":entry_ui[9]
         l_entry_ui = self.create_log_entry(self.log_latest.inner_layout(0))
-        self.log_dictionary[20] = {"character":l_entry_ui[0],"icon":l_entry_ui[1],"type":l_entry_ui[2],"name":l_entry_ui[3],"hit desc":l_entry_ui[4],"roll desc":l_entry_ui[5],"hit":l_entry_ui[6],"roll":l_entry_ui[7],"time":l_entry_ui[8],"breakdown":l_entry_ui[9]}
+        self.log_dictionary[20] = {"character":l_entry_ui[0],"icon":l_entry_ui[1],"type":l_entry_ui[2],"name":l_entry_ui[3],"hit desc":l_entry_ui[4],"roll desc":l_entry_ui[5],"hit":l_entry_ui[6],"roll":l_entry_ui[7],"time":l_entry_ui[8]}#,"breakdown":l_entry_ui[9]
         return self.log_dictionary
 
 
@@ -94,6 +95,7 @@ class CombatLogGUI(QWidget):
             inner_layout = ("HBox", 3),
             parent_layout = layout,
             spacing = 3,
+            content_margin=(0,0,15,0)
         )    
 
         self.main_roll_layout = Section (
@@ -195,18 +197,18 @@ class CombatLogGUI(QWidget):
         self.log_entry_date = Widget(
             widget_type = QLabel(),
             parent_layout = self.single_log_layout.inner_layout(3),
-            align="left",
+            align="right",
             stylesheet = style.COMBAT_LOG,
             objectname = "date"
         )
 
-        self.log_roll_breakdown = Widget(
-            widget_type = QLabel(),
-            parent_layout = self.single_log_layout.inner_layout(3),
-            stylesheet = style.COMBAT_LOG,
-            align="right",
-            objectname = "breakdown"
-        )
+        # self.log_roll_breakdown = Widget(
+        #     widget_type = QLabel(),
+        #     parent_layout = self.single_log_layout.inner_layout(3),
+        #     stylesheet = style.COMBAT_LOG,
+        #     align="right",
+        #     objectname = "breakdown"
+        # )
 
     
         self.log_action_type.get_widget().setAlignment(Qt.AlignVCenter | Qt.AlignLeft)
@@ -227,7 +229,7 @@ class CombatLogGUI(QWidget):
             self.hit_roll.get_widget(), 
             self.action_roll.get_widget(),
             self.log_entry_date.get_widget(),
-            self.log_roll_breakdown.get_widget()
+            # self.log_roll_breakdown.get_widget()
         )
         
 

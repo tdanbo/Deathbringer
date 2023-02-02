@@ -409,7 +409,7 @@ class CharacterSheet():
     def adjust_hp(self, state, value):
         print(state, value)
         current_hp = int(self.current_hp.text())
-        self.current_hp.setStyleSheet(style.QPUSHBUTTON)
+        self.current_hp.setStyleSheet(style.BUTTONS)
         for point in range(1,int(value)+1):
             if state == "minus":
                 current_hp -= 1
@@ -429,9 +429,9 @@ class CharacterSheet():
             self.current_hp.setText(str(current_hp))   
 
         if current_hp >= 0:
-            self.current_hp.setStyleSheet(style.QPUSHBUTTON)
+            self.current_hp.setStyleSheet(style.BIG_BUTTONS)
         else:
-            self.current_hp.setStyleSheet(style.QPUSHBUTTON_INJURY)
+            self.current_hp.setStyleSheet(style.BUTTONS_INJURY)
 
         self.update_dictionary()
         self.update_inventory()
