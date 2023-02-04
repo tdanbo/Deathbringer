@@ -162,6 +162,7 @@ class CharacterSheetGUI(QWidget):
             stylesheet=style.PORTRAIT,
             objectname="portrait",
             size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
+            icon = ("beasttoe.png","",""),
         )
 
         self.character_name = Widget(
