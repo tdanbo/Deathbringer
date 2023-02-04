@@ -87,26 +87,39 @@ class CombatLog:
             hit = self.log_widget_dictionary[count]["hit"]
             roll = self.log_widget_dictionary[count]["roll"]
             time = self.log_widget_dictionary[count]["time"]
-            #breakdown = self.log_widget_dictionary[count]["breakdown"]
 
             character.setText(entry["character"].capitalize())
             IconImage = QIcon()
             pixmap = QPixmap(os.path.join(cons.ICONS,entry["character"]+".png"))
             icon.setPixmap(pixmap)
             icon.setScaledContents(True)
-            type.setText(entry["type"].upper())
-            name.setText(entry["name"].upper())
+            type.setText(str(entry["type"]).upper())
+            name.setText(entry["name"])
             hit_desc.setText(entry["hit desc"].upper())
             roll_desc.setText(entry["roll desc"].upper())
             hit.setText(str(entry["hit"]))
             roll.setText(str(entry["roll"]))
+
+            print("BREAKDOWN BELOW")
+            print(entry["breakdown"])
+
+            hit.setProperty("hit_dice", entry["breakdown"]["hit_dice"])
+            roll.setProperty("roll_dice", entry["breakdown"]["roll_dice"])
+
+            hit.setToolTip(entry["breakdown"]["hit_results"])
+            roll.setToolTip(entry["breakdown"]["roll_results"])
+
             time.setText(entry["time"])
 
             if entry["roll desc"].upper() == "DAMAGE":
                 get_updater().call_latest(roll_desc.setStyleSheet, style.COMBAT_LABEL_DAMAGE)
             elif entry["roll desc"].upper() == "HEALING":
                 get_updater().call_latest(roll_desc.setStyleSheet, style.COMBAT_LABEL_HEALING)
-            elif entry["roll desc"].upper() == "EVOKE":
+            elif entry["roll desc"].upper() == "CUSTOM":
+                get_updater().call_latest(roll_desc.setStyleSheet, style.COMBAT_LABEL_CUSTOM)
+            elif entry["roll desc"].upper() == "CHECK":
+                get_updater().call_latest(roll_desc.setStyleSheet, style.COMBAT_LABEL_CHECK)
+            elif "EVOKE" in entry["roll desc"].upper():
                 get_updater().call_latest(roll_desc.setStyleSheet, style.COMBAT_LABEL_EVOKE)
             else:
                 get_updater().call_latest(roll_desc.setStyleSheet, style.COMBAT_LABEL)

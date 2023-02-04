@@ -14,7 +14,9 @@ DARK_COLOR = f"hsl(0, {SATURATION}, 10%)"
 MID_COLOR = "hsl(0, 0%, 25%)"
 
 
+
 DIM_WHITE_LIGHT = "hsl(0, 0%, 70%)"
+DIM_WHITE_LIGHT2 = "hsl(0, 0%, 50%)"
 WHITE_LIGHT = f"hsl(0, {SATURATION}, 75%)"
 
 
@@ -22,6 +24,8 @@ FONT_COLOR = f"hsl(0, {SATURATION}, 80%)"
 
 #WIDGET COLOR SATURATION
 
+#COLOR
+GUI_COLOR = "#3d1f1f"
 
 #BORDER COLOR
 BORDER_SIZE = "1px"
@@ -38,9 +42,10 @@ BUTTONS_BACKGROUND = f"hsl(0, {SATURATION}, 10%)"
 DISABLED_COLOR = f"hsl(0, {SATURATION}, 14%);"
 
 QTITLE = f"QToolButton {{background-color: {GROUP_HEADER}}}"\
-         f"QLabel {{background-color: {GROUP_HEADER}; border-top-right-radius: {RADIUS}}}"
+         f"QLabel {{background-color: {GROUP_HEADER}; border-top-right-radius: {RADIUS}}}"\
+         f"QPushButton {{background-color: {GUI_COLOR}; border-top-right-radius: {RADIUS}; border-top-left-radius: {RADIUS}; border-right: 2px solid {BORDER_COLOR};border-left: 2px solid {BORDER_COLOR};border-top: 2px solid {BORDER_COLOR};}}"
 
-QSTATS = f"QLabel {{background-color: {DARK_COLOR}; border: 1px solid {BORDER_COLOR_LIGHT}; border-top-right-radius: {RADIUS};border-top-left-radius: {RADIUS}; padding-top:4px}}"\
+QSTATS = f"QPushButton {{background-color: {DARK_COLOR}; border: 1px solid {BORDER_COLOR_LIGHT}; border-top-right-radius: {RADIUS};border-top-left-radius: {RADIUS}; padding-top:4px}}"\
 
 BIG_BUTTONS = f"QPushButton {{font: 18px; color: {FONT_COLOR}; background-color: {BUTTONS_BACKGROUND}; border: 1px solid {BORDER_COLOR_LIGHT}; border-radius: {RADIUS}}}"\
               f"QPushButton:disabled {{color: {FONT_COLOR}; background-color: {DISABLED_COLOR}}}"\
@@ -75,6 +80,10 @@ QGROUPBOX = f"QGroupBox {{background-color: {GROUP_BACKGROUND}; border: 2px soli
             f"QScrollArea {{background-color: {GROUP_BACKGROUND}; }}"\
             f"QScrollBar {{background-color: {WHITE_LIGHT}; width: 6px;}}"\
             f"QScrollBar::handle:vertical {{background-color: {DARK_COLOR}; width: 6px; min-height: 20px; border: none; outline: none;}}"\
+            
+DICE_TRAY1 = f"QPushButton {{color: {FONT_COLOR};background-color: {DARK_COLOR}; border: 1px solid {BORDER_COLOR_LIGHT}; border-top-right-radius: {RADIUS}; border-bottom-right-radius: {RADIUS};}}"
+DICE_TRAY2 = f"QPushButton {{color: {FONT_COLOR};background-color: {DARK_COLOR}; border: 1px solid {BORDER_COLOR_LIGHT}; border-top-left-radius: {RADIUS}; border-bottom-left-radius: {RADIUS};}}"
+DICE_TRAY = f"QPushButton {{color: {MID_COLOR}; background-color: {DISABLED_COLOR}; border: 1px solid {BORDER_COLOR_LIGHT}; border-radius: {RADIUS}}}"
 
 TEST_COMBO = '''
 QComboBox {
@@ -120,17 +129,20 @@ INVENTORY_INJURY_LABELS = f"QToolButton {{background-color: {INJURY_RED}; border
 COMBAT_LOG = f"QLabel#character {{font-size: 12px; color: {FONT_COLOR}; font-weight: bold; background-color: {GROUP_BACKGROUND};}}"\
              f"QLabel#date {{font-size: 10px; color: {TEXT_MID_COLOR}; background-color: {GROUP_BACKGROUND}; padding-right: 5px;}}"\
              f"QLabel#breakdown {{font-size: 10px; color: {TEXT_MID_COLOR}; background-color: {GROUP_BACKGROUND};}}"\
-             f"QLabel#hit {{font-size: 16px; font-weight: bold; color: {TEXT_BLACK_COLOR}; background-color: {WHITE_LIGHT}; border-top-right-radius: {RADIUS}; border-bottom: 1px solid {DIM_WHITE_LIGHT};}}"\
-             f"QLabel#roll {{font-size: 16px; font-weight: bold; color: {TEXT_BLACK_COLOR}; background-color: {WHITE_LIGHT}; border-bottom-right-radius: {RADIUS}; border-top: 1px solid {DIM_WHITE_LIGHT};}}"\
              f"QLabel#hit_desc {{font-size: 10px; font-weight: bold; color: {TEXT_BLACK_COLOR}; background-color: {WHITE_LIGHT}; border-bottom: 1px solid {DIM_WHITE_LIGHT};}}"\
              f"QLabel#roll_desc {{font-size: 10px; font-weight: bold; color: {TEXT_BLACK_COLOR}; background-color: {WHITE_LIGHT}; border-top: 1px solid {DIM_WHITE_LIGHT};}}"\
-             f"QLabel#label {{font-size: 15px; font-weight: bold; color: {TEXT_BLACK_COLOR}; background-color: {WHITE_LIGHT}; padding-left:10px; padding-top:10px;}}"\
+             f"QLabel#label {{font-size: 14px; font-weight: bold; color: {TEXT_BLACK_COLOR}; background-color: {WHITE_LIGHT}; padding-left:10px; padding-top:10px;}}"\
              f"QLabel#icon {{border: 2px solid {WHITE_LIGHT};}}"\
-             f"QLabel#label_sub {{font-size: 10px; font-weight: bold; color: {TEXT_BLACK_COLOR}; background-color: {WHITE_LIGHT}; padding-left:11px; padding-bottom:10px;}}"
+             f"QLabel#label_sub {{font-size: 10px; font-weight: bold; color: {DIM_WHITE_LIGHT2}; background-color: {WHITE_LIGHT}; padding-left:11px;}}"
+
+COMBAT_BUTTON_1 = f"QPushButton {{font-size: 16px; font-weight: bold; color: {TEXT_BLACK_COLOR}; background-color: {WHITE_LIGHT}; border-top-right-radius: {RADIUS}; border-bottom: 1px solid {DIM_WHITE_LIGHT};}}"
+COMBAT_BUTTON_2 = f"QPushButton {{font-size: 16px; font-weight: bold; color: {TEXT_BLACK_COLOR}; background-color: {WHITE_LIGHT}; border-bottom-right-radius: {RADIUS}; border-top: 1px solid {DIM_WHITE_LIGHT};}}"
 
 COMBAT_LABEL = f"QLabel#roll_desc {{font-size: 10px; font-weight: bold; color: {TEXT_BLACK_COLOR}; background-color: {WHITE_LIGHT}; border-top: 1px solid {DIM_WHITE_LIGHT};}}"
 COMBAT_LABEL_DAMAGE = f"QLabel#roll_desc {{font-size: 10px; font-weight: bold; color: #870000; background-color: {WHITE_LIGHT}; border-top: 1px solid {DIM_WHITE_LIGHT};}}"
 COMBAT_LABEL_HEALING= f"QLabel#roll_desc {{font-size: 10px; font-weight: bold; color: #00872d; background-color: {WHITE_LIGHT}; border-top: 1px solid {DIM_WHITE_LIGHT};}}"
 COMBAT_LABEL_EVOKE= f"QLabel#roll_desc {{font-size: 10px; font-weight: bold; color: #004887; background-color: {WHITE_LIGHT}; border-top: 1px solid {DIM_WHITE_LIGHT};}}"
+COMBAT_LABEL_CUSTOM= f"QLabel#roll_desc {{font-size: 10px; font-weight: bold; color: #874d00; background-color: {WHITE_LIGHT}; border-top: 1px solid {DIM_WHITE_LIGHT};}}"
+COMBAT_LABEL_CHECK= f"QLabel#roll_desc {{font-size: 10px; font-weight: bold; color: #008768; background-color: {WHITE_LIGHT}; border-top: 1px solid {DIM_WHITE_LIGHT};}}"
 
 BASE_STYLE = f"QWidget {{border-style: outset; background-color: {GUI_BACKGROUND}; color: {FONT_COLOR};}}"\

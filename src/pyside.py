@@ -132,12 +132,11 @@ class Section:
         if self.parent_layout != None:
             self.parent_layout.addLayout(self.section_layout)
 
-    def get_label(self):
-        return self.title_label
-
     def get_group(self):
         return self.groupbox
 
+    def get_title(self):
+        return (self.title_icon,self.title_label,self.title_layout)
 
 class Widget:
     all_widgets = []

@@ -20,6 +20,7 @@ from gui_add_sub import AddSubGUI
 from gui_functions import character_xp
 from gui_functions import character_stats
 from gui_functions import character_morale
+from gui_functions import custom_rolls
 
 class CharacterSheetGUI(QWidget):
     def __init__(self):
@@ -129,7 +130,7 @@ class CharacterSheetGUI(QWidget):
             parent_layout = self.character_lower_basic.inner_layout(1),
             title = "FEATS",
             spacing = 3,
-            group = (True,None,cons.WSIZE*2),
+            group = (True,None,cons.WSIZE*2.2),
             icon = ("feats.png",cons.WSIZE/2,cons.ICON_COLOR)	 
         )
 
@@ -139,7 +140,7 @@ class CharacterSheetGUI(QWidget):
             parent_layout = self.character_lower_basic.inner_layout(1),
             title = "FOCUS",
             spacing = 3,
-            group = (True,None,cons.WSIZE*2),
+            group = (True,None,cons.WSIZE*2.2),
             icon = ("focus.png",cons.WSIZE/2,cons.ICON_COLOR)	 
         )
 
@@ -147,7 +148,7 @@ class CharacterSheetGUI(QWidget):
             outer_layout = QVBoxLayout(),
             inner_layout = ("HBox", 1),
             parent_layout = self.character_lower_basic.inner_layout(1),
-            group = (True,None,cons.WSIZE*2),
+            group = (True,None,cons.WSIZE*2.2),
             spacing = 3,
             title = "SPELL SLOTS",
             icon = ("spell.png",cons.WSIZE/2,cons.ICON_COLOR),
@@ -211,14 +212,19 @@ class CharacterSheetGUI(QWidget):
         for number,stat in enumerate(["STR", "DEX", "INT", "CON", "WIS", "CHA"]):
             number = number + 2
             self.stat_label = Widget(
-                widget_type=QLabel(),
+                widget_type=QPushButton(),
                 stylesheet=style.QSTATS,
                 text=stat,
                 parent_layout = self.stat_layout.inner_layout(number),
                 size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
                 height=cons.WSIZE,
                 objectname="label",
-                align="center",
+                signal=functools.partial(
+                    custom_rolls.roll_check,
+                    self,
+                    CombatLogGUI().get_widget_directory(),
+                    stat,
+                ),
             )
             self.stat_button = Widget(
                 widget_type=QPushButton(),

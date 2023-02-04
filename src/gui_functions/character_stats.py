@@ -29,15 +29,17 @@ def adjust_stat(self, stat, adjust="add"):
 
     stats = available_stats(self, current_level)
 
+    label = self.stat_layout.get_title()[1]
+
     if stats == 0:
         stat_message = ""
-        self.stat_layout.get_label().setText(stat_message)
+        label.setText(stat_message)
     elif stats < 0:
         stat_message = f"Remove {stats} stat points."
-        self.stat_layout.get_label().setText(stat_message)
+        label.setText(stat_message)
     elif stats > 0:
         stat_message = f"{stats} remaining stat points."
-        self.stat_layout.get_label().setText(stat_message)
+        label.setText(stat_message)
 
     CharacterSheet(self).update_dictionary()
 
