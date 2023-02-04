@@ -17,6 +17,10 @@ import stylesheet as style
 from gui_feats import FeatsGUI
 from gui_add_sub import AddSubGUI
 
+from gui_functions import character_xp
+from gui_functions import character_stats
+from gui_functions import character_morale
+
 class CharacterSheetGUI(QWidget):
     def __init__(self):
         super().__init__()
@@ -168,23 +172,13 @@ class CharacterSheetGUI(QWidget):
             size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
         )
 
-        self.character_race = Widget(
-            widget_type=QLineEdit(),
-            parent_layout=self.portrait_layout.inner_layout(2),
-            stylesheet=style.QLINEEDIT,
-            objectname="race",
-            align="center",
-            text="Human",
-            size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
-        )
-
         self.character_level= Widget(
-            widget_type=QLineEdit(),
+            widget_type=QPushButton(),
             parent_layout=self.portrait_layout.inner_layout(2),
-            stylesheet=style.QLINEEDIT,
+            stylesheet=style.BIG_BUTTONS,
             objectname="level",
-            text="Level 1",
-            align="center",
+            text="1",
+            signal = lambda: character_xp.adjust_xp(self,adjust="add"),
             size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
         )
 
@@ -198,6 +192,7 @@ class CharacterSheetGUI(QWidget):
                 #height=cons.WSIZE*1.25,
                 width=cons.WSIZE*1.25,
                 objectname=f"feat{number}",
+                enabled=False,
             )
 
         for number in range(1,11):
@@ -231,10 +226,10 @@ class CharacterSheetGUI(QWidget):
                 text="0",
                 parent_layout = self.stat_layout.inner_layout(number),
                 signal=functools.partial(
-                    func.adjust_stat_widget,
+                    character_stats.adjust_stat,
                     self,
                     stat,
-                    "add"
+                    adjust="add"
                 ),
                 objectname=stat,
                 size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
@@ -283,7 +278,7 @@ class CharacterSheetGUI(QWidget):
             widget_type=QPushButton(),
             stylesheet=style.BIG_BUTTONS,
             parent_layout=self.morale_layout.inner_layout(1),
-            signal=lambda: func.adjust_stat_widget(self, "current_morale", "add"),
+            signal=lambda: character_morale.adjust_morale(self, adjust="add"),
             text = "0",
             objectname = "current_morale",
             size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
@@ -444,9 +439,14 @@ class CharacterSheetGUI(QWidget):
     def mousePressEvent(self, event): #this is a very specific event used to subtract values when right clicking on a widget
         if event.button() == Qt.RightButton:
             widget = self.childAt(event.pos())
-            if widget.objectName() in ["STR", "DEX", "CON", "INT", "WIS", "CHA","current_morale"]:
+            if widget.objectName() in ["STR", "DEX", "CON", "INT", "WIS", "CHA"]:
                 print("Right button was clicked on a stat widget")
-                func.adjust_stat_widget(self, widget.objectName(), "subtract")
+                character_stats.adjust_stat(self, widget.objectName(), adjust="subtract")
+            elif widget.objectName() == "level":
+                character_xp.adjust_xp(self,adjust="subtract")
+            elif widget.objectName() == "current_morale":
+                character_morale.adjust_morale(self, adjust="subtract")
+
             print("Right button was clicked") 
 
     def select_item(self):

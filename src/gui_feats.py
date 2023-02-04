@@ -28,6 +28,7 @@ class FeatsGUI(QWidget):
             inner_layout = ("VBox", 1),
             parent_layout = self.feat_main_layout.inner_layout(1),
             scroll=(True,"top"),
+            spacing = 10, 
         )
 
         for feat_dict in os.listdir(cons.FEATURES):
@@ -43,7 +44,7 @@ class FeatsGUI(QWidget):
 
                 self.feat_label = Widget(
                     widget_type=QPlainTextEdit(),
-                    stylesheet=style.QPUSHBUTTON,
+                    stylesheet=style.BUTTONS,
                     parent_layout=self.single_feat_layout.inner_layout(2),
                     text = feat["description"],
                     size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
@@ -51,7 +52,7 @@ class FeatsGUI(QWidget):
                 
                 self.select_feat = Widget(
                     widget_type=QPushButton(),
-                    stylesheet=style.QPUSHBUTTON,
+                    stylesheet=style.BUTTONS,
                     parent_layout=self.single_feat_layout.inner_layout(3),
                     text = "Select",
                     size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
@@ -68,7 +69,7 @@ class FeatsGUI(QWidget):
         self.setWindowTitle("Select Feat")
         self.setLayout(self.feat_main_layout.outer_layout())
 
-        self.setStyleSheet(style.DARK_STYLE)
+        self.setStyleSheet(style.BASE_STYLE)
 
     def confirm_feat(self):
         for feat_dict in os.listdir(cons.FEATURES):

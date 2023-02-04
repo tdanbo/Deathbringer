@@ -30,6 +30,7 @@ BASE_AC = 9
 HIT_DICE = 6
 BASE_MORALE = 3
 BASE_SAVE = 11
+STATS_PER_LEVEL = 3
 
 abjuration = ["abjuration 1","abjuration 2","abjuration 3","abjuration 4","abjuration 5"]
 conjuration = ["conjuration 1","conjuration 2","conjuration 3","conjuration 4","conjuration 5"]

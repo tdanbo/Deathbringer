@@ -23,7 +23,7 @@ class CharacterSheet():
         self.stat_button = None
 
         self.character = ""
-        self.level = ""
+        self.level = csheet.findChild(QPushButton, "level")
         self.coins = ""
 
         self.ac = csheet.findChild(QPushButton, "ac")
@@ -38,7 +38,10 @@ class CharacterSheet():
         self.current_hp = csheet.findChild(QPushButton, "current_hp")
         self.hp_adjuster = csheet.findChild(QLineEdit, "hp_adjuster")
 
-
+        #feats
+        self.feat1 = csheet.findChild(QToolButton, "feat1")
+        self.feat2 = csheet.findChild(QToolButton, "feat2")
+        self.feat3 = csheet.findChild(QToolButton, "feat3")
 
         #stats
         self.STR = int(csheet.findChild(QPushButton, "STR").text())
@@ -198,7 +201,7 @@ class CharacterSheet():
         self.wisdom()
         self.charisma()
         
-        self.set_level()
+
         self.update_inventory()
 
     # ITERATE OVER ITEM JSON TO FIND ITEM
@@ -240,6 +243,8 @@ class CharacterSheet():
 
         self.set_ac()
         self.set_morale()
+        self.set_hp()
+        self.set_feats()
 
     def update_item(self, slot, item, inventory_type, inventory_item):
         self.inventory_icon = self.csheet.findChild(QToolButton, f"icon{slot}")
@@ -364,7 +369,7 @@ class CharacterSheet():
 
     def set_morale(self):
         self.max_morale.setText(f"{cons.BASE_MORALE+int(self.CHA)}")
-        if self.current_level == 0:
+        if self.level == 0:
             self.current_morale.setText(f"{cons.BASE_MORALE+int(self.CHA)}")
 
     def set_ac(self):
@@ -372,37 +377,13 @@ class CharacterSheet():
         ac += len(self.armor_items)
         self.ac.setText(str(ac))
 
-    def set_level(self):
-        widget =  self.csheet.stat_layout.get_label()
-        ranks = {
-            0: "Soul",
-            1: "Squire",
-            2: "Page",
-            3: "Adventurer",
-            4: "Explorer",
-            5: "Soldier",
-            6: "Warrior",
-            7: "Vanquisher",
-            8: "Champion",
-            9: "Guardian",
-            10: "Legend",
-            11: "Legend",
-            }
-
-        stats_per_level = 3
-        all_stats = self.STR + self.DEX + self.CON + self.INT + self.WIS + self.CHA
-        level = math.floor(all_stats//stats_per_level)
-        widget.setText(f"{ranks[level]} - Level {level}".upper())
-        self.current_level = level
-        # THIS WILL HAPPEN WHEN A CHARACTER LEVELS UP
-        self.set_hp()
-
     def set_hp(self):
-        if self.current_level == 0:
+        level = math.floor(float(self.level.text()))
+        if level == 0:
             hp_formula = cons.HIT_DICE
             self.current_hp.setText(str(hp_formula))
         else:
-            hp_formula = (cons.HIT_DICE*self.current_level) + self.CON
+            hp_formula = (cons.HIT_DICE*level) + self.CON
         self.max_hp.setText(str(hp_formula))
         
 
@@ -496,6 +477,21 @@ class CharacterSheet():
                     widget.setEnabled(True)
                 else:
                     widget.setEnabled(False)
+
+    def set_feats(self):
+        current_level = math.floor(float(self.level.text()))
+        if current_level == 3:
+            self.feat1.setEnabled(True)
+            self.feat2.setEnabled(False)
+            self.feat3.setEnabled(False)
+        elif current_level == 6:
+            self.feat1.setEnabled(True)
+            self.feat2.setEnabled(True)
+            self.feat3.setEnabled(False)
+        elif current_level == 9:
+            self.feat1.setEnabled(True)
+            self.feat2.setEnabled(True)
+            self.feat3.setEnabled(True)
 
 
     def charisma(self):
