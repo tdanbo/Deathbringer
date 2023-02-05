@@ -35,7 +35,7 @@ def inventory_roll(self,dictionary,character,slot):
         evoke_result = evoke_roll+int(evoke)
         evoke_dc = int(evoke_mod.replace("Evoke ",""))
 
-        breakdown_roll_dice = f"d20 + {evoke}" 
+        breakdown_roll_dice = f"1d20+{evoke}" 
         breakdown_roll_result = f"{evoke_roll}+{evoke}"
 
 

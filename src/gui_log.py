@@ -217,7 +217,7 @@ class CombatLogGUI(QWidget):
             width = cons.WSIZE*2, 
             stylesheet = style.COMBAT_BUTTON_1,
             objectname=f"hit{slot}",
-            signal=lambda: custom_rolls.dice_reroll(self, self.get_widget_directory(), slot)
+            signal=lambda: custom_rolls.dice_reroll(self, self.get_widget_directory(), f"hit{slot}")
         )
 
         self.action_roll = Widget(
@@ -227,7 +227,7 @@ class CombatLogGUI(QWidget):
             width = cons.WSIZE*2, 
             stylesheet = style.COMBAT_BUTTON_2,
             objectname=f"roll{slot}",
-            signal=lambda: custom_rolls.dice_reroll(self, self.get_widget_directory(), slot)
+            signal=lambda: custom_rolls.dice_reroll(self, self.get_widget_directory(), f"roll{slot}")
         )
 
         self.log_entry_date = Widget(

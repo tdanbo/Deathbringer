@@ -135,8 +135,13 @@ COMBAT_LOG = f"QLabel#character {{font-size: 12px; color: {FONT_COLOR}; font-wei
              f"QLabel#icon {{border: 2px solid {WHITE_LIGHT};}}"\
              f"QLabel#label_sub {{font-size: 10px; font-weight: bold; color: {DIM_WHITE_LIGHT2}; background-color: {WHITE_LIGHT}; padding-left:11px;}}"
 
+
+
 COMBAT_BUTTON_1 = f"QPushButton {{font-size: 16px; font-weight: bold; color: {TEXT_BLACK_COLOR}; background-color: {WHITE_LIGHT}; border-top-right-radius: {RADIUS}; border-bottom: 1px solid {DIM_WHITE_LIGHT};}}"
 COMBAT_BUTTON_2 = f"QPushButton {{font-size: 16px; font-weight: bold; color: {TEXT_BLACK_COLOR}; background-color: {WHITE_LIGHT}; border-bottom-right-radius: {RADIUS}; border-top: 1px solid {DIM_WHITE_LIGHT};}}"
+
+COMBAT_BUTTON_1_REROLL = f"QPushButton {{font-size: 12px; font-weight: bold; color: {TEXT_BLACK_COLOR}; background-color: {WHITE_LIGHT}; border-top-right-radius: {RADIUS}; border-bottom: 1px solid {DIM_WHITE_LIGHT};}}"
+COMBAT_BUTTON_2_REROLL = f"QPushButton {{font-size: 12px; font-weight: bold; color: {TEXT_BLACK_COLOR}; background-color: {WHITE_LIGHT}; border-bottom-right-radius: {RADIUS}; border-top: 1px solid {DIM_WHITE_LIGHT};}}"
 
 COMBAT_LABEL = f"QLabel#roll_desc {{font-size: 10px; font-weight: bold; color: {TEXT_BLACK_COLOR}; background-color: {WHITE_LIGHT}; border-top: 1px solid {DIM_WHITE_LIGHT};}}"
 COMBAT_LABEL_DAMAGE = f"QLabel#roll_desc {{font-size: 10px; font-weight: bold; color: #870000; background-color: {WHITE_LIGHT}; border-top: 1px solid {DIM_WHITE_LIGHT};}}"

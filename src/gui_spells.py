@@ -51,7 +51,7 @@ class SpellsGUI(QWidget):
 
                 self.spell_label = Widget(
                     widget_type=QPlainTextEdit(),
-                    stylesheet=style.QPUSHBUTTON,
+                    stylesheet=style.BUTTONS,
                     parent_layout=self.single_spell_layout.inner_layout(2),
                     text = spell_values["description"],
                     size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
@@ -59,7 +59,7 @@ class SpellsGUI(QWidget):
                 
                 self.select_spell = Widget(
                     widget_type=QPushButton(),
-                    stylesheet=style.QPUSHBUTTON,
+                    stylesheet=style.BUTTONS,
                     parent_layout=self.single_spell_layout.inner_layout(3),
                     text = "Select",
                     size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),

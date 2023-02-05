@@ -480,6 +480,10 @@ class CharacterSheet():
 
     def set_feats(self):
         current_level = math.floor(float(self.level.text()))
+        if current_level < 3:
+            self.feat1.setEnabled(False)
+            self.feat2.setEnabled(False)
+            self.feat3.setEnabled(False)
         if current_level == 3:
             self.feat1.setEnabled(True)
             self.feat2.setEnabled(False)

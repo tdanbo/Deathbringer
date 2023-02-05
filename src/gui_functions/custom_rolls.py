@@ -92,7 +92,7 @@ def roll_dice(self, dictionary):
         breakdown_rolls.append(modifier)
     result = sum(custom_dice)
 
-    breakdown_roll_dice = " + ".join(breakdown_dice)
+    breakdown_roll_dice = "+".join(breakdown_dice)
     breakdown_roll_result = "+".join(breakdown_rolls)   
 
     breakdown_dict = {"hit_dice":"","hit_results":"", "roll_dice":breakdown_roll_dice, "roll_results": breakdown_roll_result,}
@@ -109,9 +109,27 @@ def clear_rolls(self):
         widget.setStyleSheet(style.DICE_TRAY)
     roll_button(self, shown=False)
 
-def dice_reroll(self, dictionary, slot):
-    hit_widget = self.findChild(QPushButton, f"hit{slot}")
-    roll_widget = self.findChild(QPushButton, f"roll{slot}")
+def dice_reroll(self, dictionary, objectname):
+    roll_widget = self.findChild(QPushButton, objectname)
+    if "hit" in objectname:
+        rerolls = roll_widget.property("hit_dice").split("+")
+    else:
+        rerolls = roll_widget.property("roll_dice").split("+")	
+    new_rolls = []
+    print(new_rolls)
+    if rerolls != [""]:
+        for r in rerolls:
+            if "d" in r:
+                dice = r.split("d")
+                for modifier in range(int(dice[0])):
+                    new_rolls.append(random.randint(1,int(dice[1])))
+            else:
+                print(r)
+                new_rolls.append(int(r))
 
-    print(hit_widget.property("hit"))
-    print(roll_widget.property("roll"))
+        print(sum(new_rolls))
+        roll_widget.setText(f"{roll_widget.text().split(' ')[0]} {sum(new_rolls)}")
+        if "hit" in objectname:
+            roll_widget.setStyleSheet(style.COMBAT_BUTTON_1_REROLL)
+        else:
+            roll_widget.setStyleSheet(style.COMBAT_BUTTON_2_REROLL)
