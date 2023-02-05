@@ -28,9 +28,9 @@ class CombatLog:
     def get_log(self):
         doc = self.collection.find().sort([("_id", -1)]).limit(21)
         json_doc = json.loads(json_util.dumps(doc))
-        return list(reversed(json_doc))
+        return list(json_doc)
 
-    def set_entry(self, character, action_type="", action_name="", hit_desc="", roll_desc="", hit="", roll="", breakdown=""):
+    def set_entry(self, character, action_type="", action_name="", hit_desc="", roll_desc="", show_reroll_hit=False, show_reroll_roll=False, reroll_hit="", reroll_roll="", hit="", roll="", breakdown=""):
         print(f"Adding entry to combat log: {character} rolled {roll}")
         
         self.character = character
@@ -38,6 +38,10 @@ class CombatLog:
         self.action_name = action_name
         self.hit_desc = hit_desc
         self.roll_desc = roll_desc
+        self.reroll_hit = reroll_hit
+        self.reroll_roll = reroll_roll
+        self.show_reroll_hit = show_reroll_hit 
+        self.show_reroll_roll = show_reroll_roll
         self.hit = hit
         self.roll = roll
         self.breakdown = breakdown
@@ -51,11 +55,18 @@ class CombatLog:
             "roll desc": self.roll_desc,
             "hit": self.hit,
             "roll": self.roll,
+            "reroll hit": self.reroll_hit,
+            "reroll roll": self.reroll_roll,
+            "show reroll hit": self.show_reroll_hit,
+            "show reroll roll": self.show_reroll_roll,
             "breakdown": self.breakdown,
             "time": self.time.strftime("%H:%M:%S")
         }
 
         self.collection.insert_one(entry)
+
+    def get_collection(self):
+        return self.collection
 
     def start_watching(self):
         self.running = True
@@ -84,6 +95,8 @@ class CombatLog:
             name = self.log_widget_dictionary[count]["name"]
             hit_desc = self.log_widget_dictionary[count]["hit desc"]
             roll_desc = self.log_widget_dictionary[count]["roll desc"]
+            reroll_hit = self.log_widget_dictionary[count]["reroll hit"]
+            reroll_roll = self.log_widget_dictionary[count]["reroll roll"]
             hit = self.log_widget_dictionary[count]["hit"]
             roll = self.log_widget_dictionary[count]["roll"]
             time = self.log_widget_dictionary[count]["time"]
@@ -100,11 +113,20 @@ class CombatLog:
             hit.setText(str(entry["hit"]))
             roll.setText(str(entry["roll"]))
 
-            print("BREAKDOWN BELOW")
-            print(entry["breakdown"])
+            # SET THE REROLL TEXT IF REROLL IS TRUE!
+            if entry["show reroll hit"] == True:
+                reroll_hit.setText(str(entry["reroll hit"]))
+                reroll_hit.setToolTip(entry["breakdown"]["hit_reroll_results"])
+            else:
+                reroll_hit.setText("")
+                reroll_hit.setToolTip("")
 
-            hit.setProperty("hit_dice", entry["breakdown"]["hit_dice"])
-            roll.setProperty("roll_dice", entry["breakdown"]["roll_dice"])
+            if entry["show reroll roll"] == True:
+                reroll_roll.setText(str(entry["reroll roll"]))
+                reroll_roll.setToolTip(entry["breakdown"]["roll_reroll_results"])
+            else:
+                reroll_roll.setText("")
+                reroll_roll.setToolTip("")
 
             hit.setToolTip(entry["breakdown"]["hit_results"])
             roll.setToolTip(entry["breakdown"]["roll_results"])

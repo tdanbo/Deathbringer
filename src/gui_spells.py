@@ -76,7 +76,7 @@ class SpellsGUI(QWidget):
         self.setWindowTitle("Select Spell")
         self.setLayout(self.spell_main_layout.outer_layout())
 
-        self.setStyleSheet(style.DARK_STYLE)
+        self.setStyleSheet(style.BASE_STYLE)
         self.show()
 
     def confirm_spell(self):

@@ -15,55 +15,117 @@ import re
 import time
  
 
-def inventory_roll(self,dictionary,character,slot):
-    print(f"Rolling for {character} {slot}")
-    print("--------------------")
+def single_roll(self,dictionary,character,roll_type,slot):
     item = self.findChild(QLineEdit, f"inventory{slot}").text()
-    item_label = self.findChild(QPushButton, f"inventory_label{slot}").text()
 
-    evoke = self.findChild(QPushButton, f"evoke{slot}").text().replace("+","")
+    roll = self.findChild(QPushButton, f"{roll_type}{slot}").text()
+    roll_type_label = self.findChild(QLabel, f"{roll_type}_label{slot}").text()
+    rolle_type_label_check = roll_type_label.split(" ")[0]
+
+    breakdown_dict = {
+        "hit_dice":"",
+        "hit_reroll_dice":"", 
+
+        "roll_dice":"",
+        "roll_reroll_dice":"",  
+
+        "hit_results":"",
+        "hit_reroll_results":"", 
+
+        "roll_results":"",
+        "roll_reroll_results":"", 
+    }
+
+    if roll_type_label == "":
+        return
+
+    if "Save" in roll_type_label:
+        return
+
+    elif rolle_type_label_check in ["Hit","Evoke"]:
+        hit = roll.replace("+","")
+
+        hit_reroll = random.randint(1, 20)
+        hit_roll = random.randint(1, 20)
+
+        roll_reroll_result = hit_reroll+int(hit)
+        roll_result = hit_roll+int(hit)
+
+        breakdown_dict["roll_dice"] = f"1d20+{hit}"
+        breakdown_dict["roll_reroll_results"] = f"{hit_reroll}+{hit}" 
+        breakdown_dict["roll_results"] = f"{hit_roll}+{hit}"
+
+    elif rolle_type_label_check in ["Damage","Healing"]:
+        rolls = []
+        for r in range(2):
+            result = [0, 0, 0]
+            numbers = re.findall(r'\d+', roll)
+            for i, number in enumerate(numbers):
+                result[i % 3] += int(number)
+
+            roll_multiplier = result[0]
+            roll_die = result[1]
+            roll_modifier = result[2]
+
+            all_roll = []
+            for i in range(roll_multiplier):
+                all_roll.append(random.randint(1, roll_die))
+
+            total_roll = sum(all_roll)+roll_modifier
+
+            breakdown_roll_dice = f"{roll_multiplier}d{roll_die}+{roll_modifier}"
+            breakdown_roll_result = "+".join(str(x) for x in all_roll)+"+"+str(roll_modifier)
+
+            rolls.append((total_roll,breakdown_roll_dice,breakdown_roll_result))
+
+        roll_result=rolls[0][0] 
+        roll_reroll_result = rolls[1][0]
+
+        breakdown_dict["roll_dice"] = rolls[0][1]
+        breakdown_dict["roll_reroll_results"] = rolls[1][2]
+        breakdown_dict["roll_results"] = rolls[0][2]  
+
+    CombatLog(dictionary).set_entry(character, action_type=item, action_name=breakdown_dict["roll_dice"], hit_desc="", roll_desc=roll_type_label, reroll_hit="", reroll_roll=roll_reroll_result, hit="", roll=roll_result, breakdown=breakdown_dict)
+
+def double_roll(self,dictionary,character,slot):
+    item = self.findChild(QLineEdit, f"inventory{slot}").text()
+
     hit = self.findChild(QPushButton, f"hit_dc{slot}").text().replace("+","")
     roll = self.findChild(QPushButton, f"roll{slot}").text()
 
-    evoke_mod = self.findChild(QPushButton, f"evoke_label{slot}").text()
-    hit_mod = self.findChild(QPushButton, f"hit_dc_label{slot}").text()
-    roll_mod = self.findChild(QPushButton, f"roll_label{slot}").text()
+    hit_mod = self.findChild(QLabel, f"hit_dc_label{slot}").text()
+    roll_mod = self.findChild(QLabel, f"roll_label{slot}").text()
 
-    if evoke != "":
+    if roll_mod == "":
+        return
 
-        evoke_roll = random.randint(1, 20)
-        evoke_result = evoke_roll+int(evoke)
-        evoke_dc = int(evoke_mod.replace("Evoke ",""))
-
-        breakdown_roll_dice = f"1d20+{evoke}" 
-        breakdown_roll_result = f"{evoke_roll}+{evoke}"
-
-
-        if evoke_result >= evoke_dc:
-            double_roll(dictionary,character,item,item_label,hit,hit_mod,roll,roll_mod)
-        else:
-            print(f"Evoke Failed: {evoke_result}")
-            breakdown_dict = {"hit_dice":"","hit_results":"", "roll_dice":breakdown_roll_dice, "roll_results": breakdown_roll_result,}
-            CombatLog(dictionary).set_entry(character, action_type=item, action_name=breakdown_dict["roll_dice"], hit_desc="", roll_desc=evoke_mod, hit="", roll=evoke_result, breakdown=breakdown_dict)
-    else:
-        double_roll(dictionary,character,item,item_label,hit,hit_mod,roll,roll_mod)
-
-def double_roll(dictionary,character,item,item_label,hit,hit_mod,roll,roll_mod):
     if hit != "":
         if "Save" in hit_mod:
-            total_hit = hit
-            hit_result_breakdown = ""
-            print(f"{hit_mod}: {total_hit}")
-        else:
-            hit_roll = random.randint(1, 20)
-            total_hit = hit_roll+int(hit)
-            hit_result_breakdown = f"{hit_roll}+{hit}"
-            print(f"Hit Roll: {total_hit}")
-    else:
-        hit_result_breakdown = ""
-        total_hit=""
+            hit_reroll_result = ""
+            hit_result = hit
 
-    if roll != "":
+            breakdown_hit_reroll_result = ""
+            breakdown_hit_result = ""
+        else:
+            hit_reroll = random.randint(1, 20)
+            hit_roll = random.randint(1, 20)
+
+            hit_reroll_result = hit_reroll+int(hit)
+            hit_result = hit_roll+int(hit)
+
+            breakdown_hit_reroll_result = f"{hit_reroll_result}+{hit}" 
+            breakdown_hit_result = f"{hit_result}+{hit}"
+    else:
+        breakdown_hit_reroll_result = ""
+        breakdown_hit_result = ""
+
+        hit_reroll_result = ""
+        hit_result=""
+
+    breakdown_hit_dice = f"1d20+{hit}"
+
+    rolls = []
+    for r in range(2):
         result = [0, 0, 0]
         numbers = re.findall(r'\d+', roll)
         for i, number in enumerate(numbers):
@@ -81,13 +143,36 @@ def double_roll(dictionary,character,item,item_label,hit,hit_mod,roll,roll_mod):
         total_roll = sum(all_roll)+roll_modifier
         print(f"{roll_mod} Roll: {total_roll}")
 
-    breakdown_hit_dice = f"1d20+{hit}"
-    breakdown_hit_result = hit_result_breakdown
-    breakdown_roll_dice = f"{roll_multiplier}d{roll_die}+{roll_modifier}"
-    breakdown_roll_result = "+".join(str(x) for x in all_roll)+"+"+str(roll_modifier)
+        breakdown_roll_dice = f"{roll_multiplier}d{roll_die}+{roll_modifier}"
+        breakdown_roll_result = "+".join(str(x) for x in all_roll)+"+"+str(roll_modifier)
+
+        rolls.append((total_roll,breakdown_roll_dice,breakdown_roll_result))
+
+    breakdown_roll_dice = rolls[0][1]
+    breakdown_roll_reroll_dice = rolls[1][1]
+
+    breakdown_roll_result = rolls[0][2]
+    breakdown_roll_reroll_result = rolls[1][2]
+
+    roll_result=rolls[0][0] 
+    roll_reroll_result = rolls[1][0]
+
  
-    breakdown_dict = {"hit_dice":breakdown_hit_dice,"hit_results":breakdown_hit_result, "roll_dice":breakdown_roll_dice, "roll_results": breakdown_roll_result,}
-    CombatLog(dictionary).set_entry(character, action_type=item, action_name=breakdown_dict["roll_dice"], hit_desc=hit_mod, roll_desc=roll_mod, hit=total_hit, roll=total_roll, breakdown=breakdown_dict)
+    breakdown_dict = {
+        "hit_dice":breakdown_hit_dice,
+        "hit_reroll_dice":breakdown_hit_dice, 
+
+        "roll_dice":breakdown_roll_dice,
+        "roll_reroll_dice":breakdown_roll_reroll_dice,  
+
+        "hit_results":breakdown_hit_result,
+        "hit_reroll_results":breakdown_hit_reroll_result, 
+
+        "roll_results":breakdown_roll_result,
+        "roll_reroll_results":breakdown_roll_reroll_result, 
+    }
+
+    CombatLog(dictionary).set_entry(character, action_type=item, action_name=breakdown_dict["roll_dice"], hit_desc=hit_mod, roll_desc=roll_mod, reroll_hit=hit_reroll_result, reroll_roll=roll_reroll_result, hit=hit_result, roll=roll_result, breakdown=breakdown_dict)
 
 def create_folder(dir_path):
     isExist = os.path.exists(dir_path)

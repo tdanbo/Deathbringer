@@ -330,12 +330,12 @@ class CharacterSheetGUI(QWidget):
                 height = cons.WSIZE,
                 enabled=False,
                 objectname=f"icon{count}",
-                signal=functools.partial(func.inventory_roll,self,CombatLogGUI().get_widget_directory(),"Beasttoe",count),
+                signal=functools.partial(func.double_roll,self,CombatLogGUI().get_widget_directory(),"Beasttoe",count),
             )
 
             self.backpack_label = Widget(
                 widget_type=QLabel(),
-                stylesheet=style.INVENTORY_LABEL,
+                stylesheet=style.INVENTORY,
                 parent_layout=self.slot_layot.inner_layout(1),
                 height = cons.WSIZE/1.5,
                 objectname=f"icon_label{count}",
@@ -356,13 +356,14 @@ class CharacterSheetGUI(QWidget):
             )
 
             self.backpack_item_label = Widget(
-                widget_type=QPushButton(),
-                stylesheet=style.INVENTORY_LABEL,
+                widget_type=QLabel(),
+                stylesheet=style.INVENTORY,
                 text="",
                 parent_layout=self.slot_layot.inner_layout(2),
                 enabled=False,
                 height = cons.WSIZE/1.5,
-                objectname=f"inventory_label{count}"
+                objectname=f"inventory_label{count}",
+                align="center",
             )
 
             self.backpack_action= Widget(
@@ -374,16 +375,18 @@ class CharacterSheetGUI(QWidget):
                 height = cons.WSIZE,
                 enabled=False,
                 objectname=f"evoke{count}",
+                signal=functools.partial(func.single_roll,self,CombatLogGUI().get_widget_directory(),"Beasttoe","evoke",count),
             )
 
             self.backpack_action_label = Widget(
-                widget_type=QPushButton(),
-                stylesheet=style.INVENTORY_LABEL,
+                widget_type=QLabel(),
+                stylesheet=style.INVENTORY,
                 text="",
                 parent_layout=self.slot_layot.inner_layout(3),
                 enabled=False,
                 height = cons.WSIZE/1.5,  
-                objectname=f"evoke_label{count}"
+                objectname=f"evoke_label{count}",
+                align="center",
             )
 
             self.backpack= Widget(
@@ -395,16 +398,18 @@ class CharacterSheetGUI(QWidget):
                 height = cons.WSIZE,
                 enabled=False,
                 objectname=f"hit_dc{count}",
+                signal=functools.partial(func.single_roll,self,CombatLogGUI().get_widget_directory(),"Beasttoe","hit_dc",count),
             )
 
             self.backpack_hit_label = Widget(
-                widget_type=QPushButton(),
-                stylesheet=style.INVENTORY_LABEL,
+                widget_type=QLabel(),
+                stylesheet=style.INVENTORY,
                 text="",
                 parent_layout=self.slot_layot.inner_layout(4),
                 enabled=False,
                 height = cons.WSIZE/1.5,
-                objectname=f"hit_dc_label{count}"
+                objectname=f"hit_dc_label{count}",
+                align="center",
             )
 
             self.weapon_modifier = Widget(
@@ -415,16 +420,18 @@ class CharacterSheetGUI(QWidget):
                 height = cons.WSIZE,
                 objectname=f"roll{count}",
                 enabled=False,
+                signal = functools.partial(func.single_roll,self,CombatLogGUI().get_widget_directory(),"Beasttoe","roll",count)
             )
 
             self.backpack_damage_label = Widget(
-                widget_type=QPushButton(),
-                stylesheet=style.INVENTORY_LABEL,
+                widget_type=QLabel(),
+                stylesheet=style.INVENTORY,
                 text="",
                 parent_layout=self.slot_layot.inner_layout(5),
                 enabled=False,
                 height = cons.WSIZE/1.5,
                 objectname=f"roll_label{count}",
+                align="center",
             )
 
         for count in range(1,11):

@@ -254,10 +254,10 @@ class CharacterSheet():
         self.inventory_slot = self.csheet.findChild(QLineEdit, f"inventory{slot}")
 
         self.inventory_icon_label = self.csheet.findChild(QLabel, f"icon_label{slot}")
-        self.inventory_evoke_label = self.csheet.findChild(QPushButton, f"evoke_label{slot}")
-        self.inventory_hit_label = self.csheet.findChild(QPushButton, f"hit_dc_label{slot}")
-        self.inventory_roll_label = self.csheet.findChild(QPushButton, f"roll_label{slot}")
-        self.inventory_slot_label = self.csheet.findChild(QPushButton, f"inventory_label{slot}")
+        self.inventory_evoke_label = self.csheet.findChild(QLabel, f"evoke_label{slot}")
+        self.inventory_hit_label = self.csheet.findChild(QLabel, f"hit_dc_label{slot}")
+        self.inventory_roll_label = self.csheet.findChild(QLabel, f"roll_label{slot}")
+        self.inventory_slot_label = self.csheet.findChild(QLabel, f"inventory_label{slot}")
 
         inventory_widgets = [self.inventory_icon,self.inventory_evoke,self.inventory_hit,self.inventory_roll,self.inventory_slot]
         inventory_labels = [self.inventory_icon_label,self.inventory_evoke_label,self.inventory_hit_label,self.inventory_roll_label,self.inventory_slot_label]
@@ -298,18 +298,20 @@ class CharacterSheet():
             [widget.setStyleSheet(style.INVENTORY_INJURY_LABELS) for widget in inventory_labels]
             func.set_icon(self.inventory_icon,f"{inventory_type}.png",style.INJURY_RED_BRIGHT)
         elif inventory_type != "":
+
             label_style = f"QLabel {{font: 10px; color:{style.TEXT_DARK_COLOR}; background-color: {cons.COLOR_LABEL[inventory_type]}; border: 0px; border-bottom: 1px solid {cons.COLOR_LABEL[inventory_type]};}}"
-            label_style2 = f"QPushButton {{font: 10px; color:{style.TEXT_DARK_COLOR}; background-color: {style.DARK_COLOR}; border: 0px; border-bottom: 1px solid {cons.COLOR_LABEL[inventory_type]};}}"
+            label_style2 = f"QLabel {{font: 10px; color:{style.TEXT_DARK_COLOR}; background-color: {style.DARK_COLOR}; border: 0px; border-bottom: 1px solid {cons.COLOR_LABEL[inventory_type]};}}"\
+                           f"QPushButton {{font: 10px; color:{style.TEXT_DARK_COLOR}; background-color: {style.DARK_COLOR}; border: 0px; border-bottom: 1px solid {cons.COLOR_LABEL[inventory_type]};}}"\
 
             self.inventory_icon_label.setStyleSheet(label_style)
-
             self.inventory_slot_label.setStyleSheet(label_style2)
             self.inventory_evoke_label.setStyleSheet(label_style2)
             self.inventory_hit_label.setStyleSheet(label_style2)
             self.inventory_roll_label.setStyleSheet(label_style2)
+
         else:
             [widget.setStyleSheet(style.INVENTORY) for widget in inventory_widgets]
-            [widget.setStyleSheet(style.INVENTORY_LABEL) for widget in inventory_labels]
+            [widget.setStyleSheet(style.INVENTORY) for widget in inventory_labels]
 
         self.inventory_slot.clearFocus()        
 
@@ -450,14 +452,16 @@ class CharacterSheet():
         #ac_calculation = str(cons.BASE_AC+math.floor(int(self.DEX)/2))
         ac_calculation = str(cons.BASE_AC+math.floor(int(self.DEX)))
         self.ac.setText(ac_calculation)
+
     def constitution(self):
         for count in range(1,cons.MAX_SLOTS+1):
-            for w in [(QToolButton,"icon"),(QPushButton,"evoke"),(QPushButton,"hit_dc"),(QPushButton,"roll"),(QLineEdit,"inventory"),(QLabel,"icon_label"),(QPushButton,"inventory_label"),(QPushButton,"evoke_label"),(QPushButton,"hit_dc_label"),(QPushButton,"roll_label")]:
+            for w in [(QToolButton,"icon"),(QPushButton,"evoke"),(QPushButton,"hit_dc"),(QPushButton,"roll"),(QLineEdit,"inventory"),(QLabel,"icon_label"),(QLabel,"inventory_label"),(QLabel,"evoke_label"),(QLabel,"hit_dc_label"),(QLabel,"roll_label")]:
                 widget =  self.csheet.findChild(w[0], w[1]+str(count))
                 if count <= self.CON+cons.START_SLOTS:
                     widget.setEnabled(True)
                 else:
-                    widget.setText("")
+                    if w[1] != "icon_label":
+                        widget.setText("")
                     widget.setEnabled(False)
 
     def intelligence(self):

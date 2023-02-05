@@ -13,6 +13,7 @@ import functools
 import stylesheet as style
 
 from gui_functions import custom_rolls
+from gui_functions import custom_log
 
 class CombatLogGUI(QWidget):
     def __init__(self):
@@ -116,14 +117,12 @@ class CombatLogGUI(QWidget):
     def get_widget_directory(self):
         # we create 20 blank entries in the log, and update the different widget. This is to reduce the interface popping and too many entries to be added to the interface.
         self.log_dictionary = {}
-        for entry in range(20):
+        for entry in range(20,0,-1):
             entry_ui = self.create_log_entry(self.log_scroll.inner_layout(0),entry)
-            self.log_dictionary[entry] = {"character":entry_ui[0],"icon":entry_ui[1],"type":entry_ui[2],"name":entry_ui[3],"hit desc":entry_ui[4],"roll desc":entry_ui[5],"hit":entry_ui[6],"roll":entry_ui[7],"time":entry_ui[8]}#,"breakdown":entry_ui[9]
-        l_entry_ui = self.create_log_entry(self.log_latest.inner_layout(0),20)
-        self.log_dictionary[20] = {"character":l_entry_ui[0],"icon":l_entry_ui[1],"type":l_entry_ui[2],"name":l_entry_ui[3],"hit desc":l_entry_ui[4],"roll desc":l_entry_ui[5],"hit":l_entry_ui[6],"roll":l_entry_ui[7],"time":l_entry_ui[8]}#,"breakdown":l_entry_ui[9]
+            self.log_dictionary[entry] = {"character":entry_ui[0],"icon":entry_ui[1],"type":entry_ui[2],"name":entry_ui[3],"hit desc":entry_ui[4],"roll desc":entry_ui[5],"reroll hit":entry_ui[6], "reroll roll":entry_ui[7],"hit":entry_ui[8], "roll":entry_ui[9],"time":entry_ui[10]}#,"breakdown":entry_ui[9]
+        l_entry_ui = self.create_log_entry(self.log_latest.inner_layout(0),0)
+        self.log_dictionary[0] = {"character":l_entry_ui[0],"icon":l_entry_ui[1],"type":l_entry_ui[2],"name":l_entry_ui[3],"hit desc":l_entry_ui[4],"roll desc":l_entry_ui[5],"reroll hit":l_entry_ui[6], "reroll roll":l_entry_ui[7],"hit":l_entry_ui[8], "roll":l_entry_ui[9],"time":l_entry_ui[10]}#,"breakdown":l_entry_ui[9]
         return self.log_dictionary
-
-
 
     def create_log_entry(self, layout, slot):
    
@@ -190,44 +189,64 @@ class CombatLogGUI(QWidget):
             objectname = "label_sub"
         )
 
-        self.description_hit_roll = Widget(
+        self.hit_reroll_roll = Widget(
             widget_type = QLabel(),
             parent_layout = self.result_roll_layout.inner_layout(1),
+            height = cons.WSIZE*1.10,
+            width = cons.WSIZE*1.75, 
+            stylesheet = style.COMBAT_BUTTON_1_REROLL,
+            size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
+            objectname=f"reroll_hit{slot}",
+        )
+
+        self.action_reroll_roll = Widget(
+            widget_type = QLabel(),
+            parent_layout = self.result_roll_layout.inner_layout(2),
+            height = cons.WSIZE*1.10,
+            width = cons.WSIZE*1.75, 
+            stylesheet = style.COMBAT_BUTTON_2_REROLL,
+            size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
+            objectname=f"reroll_roll{slot}",
+        )
+
+        self.description_hit_roll = Widget(
+            widget_type = QPushButton(),
+            parent_layout = self.result_roll_layout.inner_layout(1),
             stylesheet = style.COMBAT_LOG,
-            width = cons.WSIZE*3,
+            width = cons.WSIZE*2.5,
             height = cons.WSIZE*1.10,
             size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
-            objectname = "hit_desc"
+            objectname = "hit_desc",
+            signal=lambda: custom_log.show_reroll(self, self.get_widget_directory(), "hit", slot)
         )
 
         self.description_action_roll = Widget(
-            widget_type = QLabel(),
+            widget_type = QPushButton(),
             parent_layout = self.result_roll_layout.inner_layout(2),
             stylesheet = style.COMBAT_LOG,
-            width = cons.WSIZE*3,
+            width = cons.WSIZE*2.5,
             height = cons.WSIZE*1.10,
             size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
-            objectname = "roll_desc"
+            objectname = "roll_desc",
+            signal=lambda: custom_log.show_reroll(self, self.get_widget_directory(), "action", slot)
         )
 
         self.hit_roll = Widget(
-            widget_type = QPushButton(),
+            widget_type = QLabel(),
             parent_layout = self.result_roll_layout.inner_layout(1),
             height = cons.WSIZE*1.10,
-            width = cons.WSIZE*2, 
+            width = cons.WSIZE*1.75, 
             stylesheet = style.COMBAT_BUTTON_1,
             objectname=f"hit{slot}",
-            signal=lambda: custom_rolls.dice_reroll(self, self.get_widget_directory(), f"hit{slot}")
         )
 
         self.action_roll = Widget(
-            widget_type = QPushButton(),
+            widget_type = QLabel(),
             parent_layout = self.result_roll_layout.inner_layout(2),
             height = cons.WSIZE*1.10,
-            width = cons.WSIZE*2, 
+            width = cons.WSIZE*1.75, 
             stylesheet = style.COMBAT_BUTTON_2,
             objectname=f"roll{slot}",
-            signal=lambda: custom_rolls.dice_reroll(self, self.get_widget_directory(), f"roll{slot}")
         )
 
         self.log_entry_date = Widget(
@@ -249,8 +268,11 @@ class CombatLogGUI(QWidget):
     
         self.log_action_type.get_widget().setAlignment(Qt.AlignVCenter | Qt.AlignLeft)
         self.log_action_name.get_widget().setAlignment(Qt.AlignVCenter | Qt.AlignLeft)
-        self.description_hit_roll.get_widget().setAlignment(Qt.AlignVCenter | Qt.AlignCenter)
-        self.description_action_roll.get_widget().setAlignment(Qt.AlignVCenter | Qt.AlignCenter)
+
+        self.hit_reroll_roll.get_widget().setAlignment(Qt.AlignVCenter | Qt.AlignCenter)
+        self.action_reroll_roll.get_widget().setAlignment(Qt.AlignVCenter | Qt.AlignCenter)
+        self.hit_roll.get_widget().setAlignment(Qt.AlignVCenter | Qt.AlignCenter)
+        self.action_roll.get_widget().setAlignment(Qt.AlignVCenter | Qt.AlignCenter)
 
         return (
             self.log_character_name.get_widget(), 
@@ -259,6 +281,8 @@ class CombatLogGUI(QWidget):
             self.log_action_name.get_widget(),
             self.description_hit_roll.get_widget(), 
             self.description_action_roll.get_widget(), 
+            self.hit_reroll_roll.get_widget(), 
+            self.action_reroll_roll.get_widget(),
             self.hit_roll.get_widget(), 
             self.action_roll.get_widget(),
             self.log_entry_date.get_widget(),
