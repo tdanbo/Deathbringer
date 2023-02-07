@@ -1,10 +1,8 @@
-import constants as cons
-
 from PySide2.QtWidgets import *
 from PySide2.QtGui import *
 from PySide2.QtCore import *
 
-import stylesheet as style
+import constants as cons
 
 from character_sheet import CharacterSheet
 
@@ -41,7 +39,7 @@ def adjust_stat(self, stat, adjust="add"):
         stat_message = f"{stats} remaining stat points."
         label.setText(stat_message)
 
-    CharacterSheet(self).update_dictionary()
+    CharacterSheet(self).update_sheet()
 
 def available_stats(self, current_level):
     #Sum the total stats the character have.

@@ -325,6 +325,10 @@ class Widget:
 
         if self.signal != "":
             try:
+                self.widget.currentIndexChanged.connect(self.signal)
+            except:
+                pass
+            try:
                 self.widget.editingFinished.connect(self.signal)
             except:
                 pass

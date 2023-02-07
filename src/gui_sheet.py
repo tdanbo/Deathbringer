@@ -15,6 +15,7 @@ import functools
 import stylesheet as style
 from gui_feats import FeatsGUI
 from gui_add_sub import AddSubGUI
+from gui_new_char import NewCharacter
 
 from gui_functions import character_xp
 from gui_functions import character_stats
@@ -44,10 +45,13 @@ class CharacterSheetGUI(QWidget):
             parent_layout = self.character_basic.inner_layout(1),
             group = (True,None,cons.WSIZE*4),
             title = "CHARACTER",
-            icon = ("character.png",cons.WSIZE/2,cons.ICON_COLOR),
+            icon = ("plus.png",cons.WSIZE/2,cons.ICON_COLOR),
             spacing = 3,	
 
         )
+
+        portrait_title = self.portrait_layout.get_title()[0]
+        portrait_title.clicked.connect(self.open_new_character)
 
         self.stat_layout = Section(
             outer_layout = QHBoxLayout(),
@@ -134,7 +138,7 @@ class CharacterSheetGUI(QWidget):
             icon = ("feats.png",cons.WSIZE/2,cons.ICON_COLOR)	 
         )
 
-        self.herodice_layout = Section(
+        self.focus_layout = Section(
             outer_layout = QVBoxLayout(),
             inner_layout = ("HBox", 1),
             parent_layout = self.character_lower_basic.inner_layout(1),
@@ -144,7 +148,7 @@ class CharacterSheetGUI(QWidget):
             icon = ("focus.png",cons.WSIZE/2,cons.ICON_COLOR)	 
         )
 
-        self.corruption_layout = Section(
+        self.spell_slot_layout = Section(
             outer_layout = QVBoxLayout(),
             inner_layout = ("HBox", 1),
             parent_layout = self.character_lower_basic.inner_layout(1),
@@ -162,7 +166,6 @@ class CharacterSheetGUI(QWidget):
             stylesheet=style.PORTRAIT,
             objectname="portrait",
             size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
-            icon = ("beasttoe.png","",""),
         )
 
         self.character_name = Widget(
@@ -170,8 +173,9 @@ class CharacterSheetGUI(QWidget):
             parent_layout=self.portrait_layout.inner_layout(2),
             stylesheet=style.TEST_COMBO,
             objectname="name",
-            text=["Beastoe","Decipio","Chakademus","Wolf"],
+            text=[""],
             size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
+            signal=lambda: CharacterSheet(self).load_character()
         )
 
         self.character_level= Widget(
@@ -179,7 +183,6 @@ class CharacterSheetGUI(QWidget):
             parent_layout=self.portrait_layout.inner_layout(2),
             stylesheet=style.BIG_BUTTONS,
             objectname="level",
-            text="1",
             signal = lambda: character_xp.adjust_xp(self,adjust="add"),
             size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
         )
@@ -198,15 +201,15 @@ class CharacterSheetGUI(QWidget):
             )
 
         for number in range(1,11):
-            self.hero_dice = Widget(
+            self.focus_dice = Widget(
                 widget_type=QToolButton(),
                 stylesheet=style.BUTTONS,
                 checkable=True,
-                parent_layout = self.herodice_layout.inner_layout(1),
+                parent_layout = self.focus_layout.inner_layout(1),
                 size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
                 #height=cons.WSIZE/1.25,
-                signal=lambda: CharacterSheet(self).update_dictionary(),
-                objectname=f"herodice{number}",
+                signal=lambda: CharacterSheet(self).update_sheet(),
+                objectname=f"focusdice{number}",
                 enabled=False,
             )
 
@@ -225,8 +228,8 @@ class CharacterSheetGUI(QWidget):
             self.stat_button = Widget(
                 widget_type=QPushButton(),
                 stylesheet=style.BIG_BUTTONS,
-                text="0",
                 parent_layout = self.stat_layout.inner_layout(number),
+                text=" ",
                 signal=functools.partial(
                     character_stats.adjust_stat,
                     self,
@@ -240,9 +243,8 @@ class CharacterSheetGUI(QWidget):
         #INITIATIVE AND AC AND HP FEATS
         self.initiative_stat_label = Widget(
             widget_type=QPushButton(),
-            text="0 Init",
             parent_layout = self.initiative_layout.inner_layout(1),
-            signal=lambda: CharacterSheet(self).update_dictionary(),
+            signal=lambda: CharacterSheet(self).update_sheet(),
             objectname="initiative",
             size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
             stylesheet=style.BUTTONS,
@@ -250,9 +252,8 @@ class CharacterSheetGUI(QWidget):
 
         self.speed_stat_label = Widget(
             widget_type=QPushButton(),
-            text="0 ft.",
             parent_layout = self.initiative_layout.inner_layout(1),
-            signal=lambda: CharacterSheet(self).update_dictionary(),
+            signal=lambda: CharacterSheet(self).update_sheet(),
             objectname="movement",
             size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
             stylesheet=style.BUTTONS,
@@ -262,7 +263,7 @@ class CharacterSheetGUI(QWidget):
             widget_type=QPushButton(),
             stylesheet=style.BIG_BUTTONS,
             parent_layout=self.defense_layout.inner_layout(1),
-            signal=lambda: CharacterSheet(self).update_dictionary(),
+            signal=lambda: CharacterSheet(self).update_sheet(),
             objectname = "ac",
             size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
         )
@@ -271,7 +272,6 @@ class CharacterSheetGUI(QWidget):
             widget_type=QPushButton(),
             stylesheet=style.BIG_BUTTONS,
             parent_layout=self.morale_layout.inner_layout(1),
-            text = "0",
             objectname = "max_morale",
             size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
         )
@@ -281,7 +281,6 @@ class CharacterSheetGUI(QWidget):
             stylesheet=style.BIG_BUTTONS,
             parent_layout=self.morale_layout.inner_layout(1),
             signal=lambda: character_morale.adjust_morale(self, adjust="add"),
-            text = "0",
             objectname = "current_morale",
             size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
         )
@@ -290,9 +289,8 @@ class CharacterSheetGUI(QWidget):
             widget_type=QPushButton(),
             stylesheet=style.BIG_BUTTONS,
             parent_layout=self.hp_layout.inner_layout(1),
-            signal=lambda: CharacterSheet(self).update_dictionary(),
+            signal=lambda: CharacterSheet(self).update_sheet(),
             objectname = "max_hp",
-            text = cons.HIT_DICE,
             size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
             #height=cons.WSIZE*1.5,
         )
@@ -303,7 +301,6 @@ class CharacterSheetGUI(QWidget):
             parent_layout=self.hp_layout.inner_layout(1),
             signal=self.open_addsub,
             objectname = "current_hp",
-            text = "0",
             size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
             #height=cons.WSIZE*1.5,
         )
@@ -325,6 +322,7 @@ class CharacterSheetGUI(QWidget):
                 height = cons.WSIZE,
                 enabled=False,
                 objectname=f"icon{count}",
+                signal=functools.partial(roll.inventory_prepare_double_roll, self,count)
             )
 
             self.backpack_label = Widget(
@@ -335,6 +333,7 @@ class CharacterSheetGUI(QWidget):
                 objectname=f"icon_label{count}",
                 text=f"{count}.",
                 align="center",
+                enabled=False,
             )
                 
             self.backpack_item = Widget(
@@ -429,16 +428,16 @@ class CharacterSheetGUI(QWidget):
             )
 
         for count in range(1,11):
-            self.corruption_icon = Widget(
+            self.spell_slot_icon = Widget(
                 widget_type=QToolButton(),
                 stylesheet=style.BUTTONS,
-                parent_layout=self.corruption_layout.inner_layout(1),
+                parent_layout=self.spell_slot_layout.inner_layout(1),
                 size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
                 #height=cons.WSIZE/1.25,
                 checkable=True,
                 checked=False,	
-                signal=lambda: CharacterSheet(self).update_dictionary(),
-                objectname=f"corruption{count}",
+                signal=lambda: CharacterSheet(self).update_sheet(),
+                objectname=f"spellslot{count}",
                 enabled=False,	
             )
 
@@ -457,10 +456,9 @@ class CharacterSheetGUI(QWidget):
     def select_item(self):
         sender = self.sender()
         if sender.text().lower() in cons.SPELL_LISTS:
-            print("found in list")
             self.spells = SpellsGUI(self, sender)
         else:
-            CharacterSheet(self).update_dictionary()
+            CharacterSheet(self).update_sheet()
 
     def open_features(self):
         sender = self.sender()
@@ -471,3 +469,7 @@ class CharacterSheetGUI(QWidget):
         sender = self.sender()
         self.addsub = AddSubGUI(self, sender)
         self.addsub.show()
+
+    def open_new_character(self):
+        self.new_character = NewCharacter(self)
+        self.new_character.show()

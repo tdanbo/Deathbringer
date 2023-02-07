@@ -1,8 +1,8 @@
-import constants as cons
-
 from PySide2.QtWidgets import *
 from PySide2.QtGui import *
 from PySide2.QtCore import *
+
+import constants as cons
 
 from character_sheet import CharacterSheet
 
@@ -38,7 +38,7 @@ def adjust_xp(self, adjust="add", increment=1):
         stat_message = f"{stats} remaining stat points."
         label.setText(stat_message)
 
-    CharacterSheet(self).update_dictionary()
+    CharacterSheet(self).update_sheet()
 
 
 def total_stats(self, current_level):

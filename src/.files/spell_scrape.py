@@ -3,9 +3,12 @@ import json
 
 import constants as cons
 import os
-import time
 import re
 from bs4 import BeautifulSoup
+
+'''
+This file is not used in the program, but as a seperate scraper. For the spell list
+'''
 
 def run_scrape():
     url = 'https://www.aidedd.org/dnd-filters/spells-5e.php'

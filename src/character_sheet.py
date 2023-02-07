@@ -17,14 +17,15 @@ import copy
 
 class CharacterSheet():
     def __init__(self, csheet):
+        print("---------------------------") 
         print("Character Sheet Created")
 
         self.csheet = csheet
         self.stat_button = None
 
-        self.character = ""
+        self.character_icon = csheet.findChild(QLabel, "portrait")
+        self.character = csheet.findChild(QComboBox, "name")
         self.level = csheet.findChild(QPushButton, "level")
-        self.coins = ""
 
         self.ac = csheet.findChild(QPushButton, "ac")
         self.initiative = csheet.findChild(QPushButton, "initiative")
@@ -44,18 +45,13 @@ class CharacterSheet():
         self.feat3 = csheet.findChild(QToolButton, "feat3")
 
         #stats
-        self.STR = int(csheet.findChild(QPushButton, "STR").text())
-        self.DEX = int(csheet.findChild(QPushButton, "DEX").text())
-        self.CON = int(csheet.findChild(QPushButton, "CON").text())
-        self.INT = int(csheet.findChild(QPushButton, "INT").text())
-        self.WIS = int(csheet.findChild(QPushButton, "WIS").text())
-        self.CHA = int(csheet.findChild(QPushButton, "CHA").text())
+        self.STR = csheet.findChild(QPushButton, "STR")
+        self.DEX = csheet.findChild(QPushButton, "DEX")
+        self.CON = csheet.findChild(QPushButton, "CON")
+        self.INT = csheet.findChild(QPushButton, "INT")
+        self.WIS = csheet.findChild(QPushButton, "WIS")
+        self.CHA = csheet.findChild(QPushButton, "CHA")
         
-        self.max_slots = int(self.CON)+cons.START_SLOTS
-
-        #stats dictionary
-        self.stats_dict = {"":"","AC":1,"STR": self.STR, "DEX": self.DEX, "CON": self.CON, "INT": self.INT, "WIS": self.WIS, "CHA": self.CHA}
-
         #all inventory slots
         self.inventory1 = csheet.findChild(QLineEdit, "inventory1")
         self.inventory2 = csheet.findChild(QLineEdit, "inventory2")
@@ -79,52 +75,52 @@ class CharacterSheet():
         self.inventory20 = csheet.findChild(QLineEdit, "inventory20")
 
         #all hero dice slots
-        self.herodice1 = csheet.findChild(QToolButton, "herodice1")
-        self.herodice2 = csheet.findChild(QToolButton, "herodice2")
-        self.herodice3 = csheet.findChild(QToolButton, "herodice3")
-        self.herodice4 = csheet.findChild(QToolButton, "herodice4")
-        self.herodice5 = csheet.findChild(QToolButton, "herodice5")
-        self.herodice6 = csheet.findChild(QToolButton, "herodice6")
-        self.herodice7 = csheet.findChild(QToolButton, "herodice7")
-        self.herodice8 = csheet.findChild(QToolButton, "herodice8")
-        self.herodice9 = csheet.findChild(QToolButton, "herodice9")
-        self.herodice10 = csheet.findChild(QToolButton, "herodice10")
+        self.focusdice1 = csheet.findChild(QToolButton, "focusdice1")
+        self.focusdice2 = csheet.findChild(QToolButton, "focusdice2")
+        self.focusdice3 = csheet.findChild(QToolButton, "focusdice3")
+        self.focusdice4 = csheet.findChild(QToolButton, "focusdice4")
+        self.focusdice5 = csheet.findChild(QToolButton, "focusdice5")
+        self.focusdice6 = csheet.findChild(QToolButton, "focusdice6")
+        self.focusdice7 = csheet.findChild(QToolButton, "focusdice7")
+        self.focusdice8 = csheet.findChild(QToolButton, "focusdice8")
+        self.focusdice9 = csheet.findChild(QToolButton, "focusdice9")
+        self.focusdice10 = csheet.findChild(QToolButton, "focusdice10")
 
-        #all corruption slots
-        self.corruption1 = csheet.findChild(QToolButton, "corruption1")
-        self.corruption2 = csheet.findChild(QToolButton, "corruption2")
-        self.corruption3 = csheet.findChild(QToolButton, "corruption3")
-        self.corruption4 = csheet.findChild(QToolButton, "corruption4")
-        self.corruption5 = csheet.findChild(QToolButton, "corruption5")
-        self.corruption6 = csheet.findChild(QToolButton, "corruption6")
-        self.corruption7 = csheet.findChild(QToolButton, "corruption7")
-        self.corruption8 = csheet.findChild(QToolButton, "corruption8")
-        self.corruption9 = csheet.findChild(QToolButton, "corruption9")
-        self.corruption10 = csheet.findChild(QToolButton, "corruption10")
+        #all spellslot slots
+        self.spellslot1 = csheet.findChild(QToolButton, "spellslot1")
+        self.spellslot2 = csheet.findChild(QToolButton, "spellslot2")
+        self.spellslot3 = csheet.findChild(QToolButton, "spellslot3")
+        self.spellslot4 = csheet.findChild(QToolButton, "spellslot4")
+        self.spellslot5 = csheet.findChild(QToolButton, "spellslot5")
+        self.spellslot6 = csheet.findChild(QToolButton, "spellslot6")
+        self.spellslot7 = csheet.findChild(QToolButton, "spellslot7")
+        self.spellslot8 = csheet.findChild(QToolButton, "spellslot8")
+        self.spellslot9 = csheet.findChild(QToolButton, "spellslot9")
+        self.spellslot10 = csheet.findChild(QToolButton, "spellslot10")
 
-
-        self.update_sheet()
-        #updated_character_sheet = self.update_dictionary()
-        #self.update_database(updated_character_sheet)
+    def update_character_dropdown(self):
+        print("Updating Character Dropdown")
+        self.character.clear()
+        self.client = pymongo.MongoClient(cons.CONNECT)
+        self.db = self.client ["dnd"]
+        self.collection = self.db["characters"]
+        character_list = self.collection.distinct("character")
+        self.character.addItems(character_list)
 
     def update_dictionary(self):
-        print("---------------------------") 
         print("Updating Character Sheet Dictionary")    
         character_sheet_dictionary = {
-            "character": self.character,
-            "level": self.level,
-            "coins": self.coins,
-            "max hp": self.max_hp.text(),
+            "character": self.character.currentText(),
+            "level": self.level.text(),
             "current hp": self.current_hp.text(),
-            "ac": self.ac.text(),
-            "initiative": self.initiative.text(),
+            "current morale": self.current_morale.text(),
             "stats": {
-                "str": self.STR,
-                "dex": self.DEX,
-                "con": self.CON,
-                "int": self.INT,
-                "wis": self.WIS,
-                "cha": self.CHA,
+                "str": int(self.STR.text()),
+                "dex": int(self.DEX.text()),
+                "con": int(self.CON.text()),
+                "int": int(self.INT.text()),
+                "wis": int(self.WIS.text()),
+                "cha": int(self.CHA.text())
             },
             "inventory": {
                 "inventory1": self.inventory1.text(),
@@ -137,41 +133,36 @@ class CharacterSheet():
                 "inventory8": self.inventory8.text(),
                 "inventory9": self.inventory9.text(),
                 "inventory10": self.inventory10.text(),
-                "inventory11": self.inventory1.text(),
-                "inventory12": self.inventory2.text(),
-                "inventory13": self.inventory3.text(),
-                "inventory14": self.inventory4.text(),
-                "inventory15": self.inventory5.text(),
-                "inventory16": self.inventory6.text(),
-                "inventory17": self.inventory7.text(),
-                "inventory18": self.inventory8.text(),
-                "inventory19": self.inventory9.text(),
-                "inventory20": self.inventory10.text(),
+                "inventory11": self.inventory11.text(),
+                "inventory12": self.inventory12.text(),
+                "inventory13": self.inventory13.text(),
+                "inventory14": self.inventory14.text(),
+                "inventory15": self.inventory15.text(),
+                "inventory16": self.inventory16.text(),
             },            
-            "corruption": { 
-                "corruption1": self.corruption1.isChecked(),
-                "corruption2": self.corruption2.isChecked(),
-                "corruption3": self.corruption3.isChecked(),
-                "corruption4": self.corruption4.isChecked(),
-                "corruption5": self.corruption5.isChecked(),
-                "corruption6": self.corruption6.isChecked(),
-                "corruption7": self.corruption7.isChecked(),
-                "corruption8": self.corruption8.isChecked(),
-                "corruption9": self.corruption9.isChecked(),
-                "corruption10": self.corruption10.isChecked(),
-
+            "spell slots": { 
+                "spell1": self.spellslot1.isChecked(),
+                "spell2": self.spellslot2.isChecked(),
+                "spell3": self.spellslot3.isChecked(),
+                "spell4": self.spellslot4.isChecked(),
+                "spell5": self.spellslot5.isChecked(),
+                "spell6": self.spellslot6.isChecked(),
+                "spell7": self.spellslot7.isChecked(),
+                "spell8": self.spellslot8.isChecked(),
+                "spell9": self.spellslot9.isChecked(),
+                "spell10": self.spellslot10.isChecked(),
             },
-            "herodice": {
-                "herodice1": self.herodice1.isChecked(),
-                "herodice2": self.herodice2.isChecked(),
-                "herodice3": self.herodice3.isChecked(),
-                "herodice4": self.herodice4.isChecked(),
-                "herodice5": self.herodice5.isChecked(),
-                "herodice6": self.herodice6.isChecked(),
-                "herodice7": self.herodice7.isChecked(),
-                "herodice8": self.herodice8.isChecked(),
-                "herodice9": self.herodice9.isChecked(),
-                "herodice10": self.herodice10.isChecked(),
+            "focus": {
+                "focus1": self.focusdice1.isChecked(),
+                "focus2": self.focusdice2.isChecked(),
+                "focus3": self.focusdice3.isChecked(),
+                "focus4": self.focusdice4.isChecked(),
+                "focus5": self.focusdice5.isChecked(),
+                "focus6": self.focusdice6.isChecked(),
+                "focus7": self.focusdice7.isChecked(),
+                "focus8": self.focusdice8.isChecked(),
+                "focus9": self.focusdice9.isChecked(),
+                "focus10": self.focusdice10.isChecked(),
             },
         }        
         return character_sheet_dictionary
@@ -181,7 +172,9 @@ class CharacterSheet():
         self.db = self.client ["dnd"]
         self.collection = self.db["characters"]
 
-        query = {"character": self.character.text()}
+        #print(self.character.currentText())
+
+        query = {"character": self.character.currentText()}
         document = self.collection.find_one(query)
 
         if document is not None:
@@ -191,6 +184,8 @@ class CharacterSheet():
             self.collection.insert_one(directory)
 
     def update_sheet(self):
+        self.set_icon()
+
         #INVENTORY RULES
         self.strenght()
         self.dexterity()
@@ -201,6 +196,9 @@ class CharacterSheet():
         
 
         self.update_inventory()
+
+        updated_character_sheet = self.update_dictionary()
+        self.update_database(updated_character_sheet)
 
     # ITERATE OVER ITEM JSON TO FIND ITEM
     def update_inventory(self):
@@ -313,6 +311,8 @@ class CharacterSheet():
 
 
     def get_roll(self, roll, type):
+        #stats dictionary
+        self.stats_dict = {"":"","AC":1,"STR": int(self.STR.text()), "DEX": int(self.DEX.text()), "CON": int(self.CON.text()), "INT": int(self.INT.text()), "WIS": int(self.WIS.text()), "CHA": int(self.CHA.text())}
         if roll != ["","",""]:
             make_roll = []
             if roll[0] in self.stats_dict:
@@ -344,6 +344,8 @@ class CharacterSheet():
 
 
     def get_action_modifier(self, hit_type, hit_mod):
+        #stats dictionary
+        self.stats_dict = {"":"","AC":1,"STR": int(self.STR.text()), "DEX": int(self.DEX.text()), "CON": int(self.CON.text()), "INT": int(self.INT.text()), "WIS": int(self.WIS.text()), "CHA": int(self.CHA.text())}
         if hit_mod != []:
             if hit_type == "Hit":
                 mod_list = []
@@ -365,10 +367,15 @@ class CharacterSheet():
         else:
             return ""
 
+    def set_icon(self):
+        character_name = self.character.currentText().lower()
+        PORTRAIT = f"QLabel {{background-image: url(.icons/{character_name}.png); background-position: center; background-repeat: no-repeat; background-color: {style.DARK_COLOR}; border: 1px solid {style.BORDER_COLOR_LIGHT}; border-radius: {style.RADIUS}}}"	
+        self.character_icon.setStyleSheet(PORTRAIT)
+
     def set_morale(self):
-        self.max_morale.setText(f"{cons.BASE_MORALE+int(self.CHA)}")
+        self.max_morale.setText(f"{cons.BASE_MORALE+int(self.CHA.text())}")
         if self.level == 0:
-            self.current_morale.setText(f"{cons.BASE_MORALE+int(self.CHA)}")
+            self.current_morale.setText(f"{cons.BASE_MORALE+int(self.CHA.text())}")
 
     def set_ac(self):
         ac = int(self.ac.text())
@@ -381,12 +388,14 @@ class CharacterSheet():
             hp_formula = cons.HIT_DICE
             self.current_hp.setText(str(hp_formula))
         else:
-            hp_formula = (cons.HIT_DICE*level) + self.CON
+            hp_formula = (cons.HIT_DICE*level) + int(self.CON.text())
         self.max_hp.setText(str(hp_formula))
         
 
     def adjust_hp(self, state, value):
         current_hp = int(self.current_hp.text())
+        self.max_slots = int(self.CON.text())+cons.START_SLOTS
+
         self.current_hp.setStyleSheet(style.BUTTONS)
         for point in range(1,int(value)+1):
             if state == "minus":
@@ -416,6 +425,8 @@ class CharacterSheet():
 
     def remove_injury(self):
         print("remove injury")
+        self.empty_slot_dict = {"Hit":"","Evoke":"","Evoke Mod":["","",""],"Hit Mod":["","",""],"Roll":"","Roll Mod":["","",""]}
+        self.max_slots = int(self.CON)+cons.START_SLOTS
         for slot in range(1,self.max_slots+1):
             widget_slot = self.csheet.findChild(QLineEdit, f"inventory{slot}")
             if widget_slot.text() == "Injury":
@@ -425,7 +436,8 @@ class CharacterSheet():
                 pass
 
     def add_injury(self):
-        current_slots = int(self.CON)+cons.START_SLOTS
+        self.empty_slot_dict = {"Hit":"","Evoke":"","Evoke Mod":["","",""],"Hit Mod":["","",""],"Roll":"","Roll Mod":["","",""]}
+        current_slots = int(self.CON.text())+cons.START_SLOTS
         free_slots = []
         for slot in range(1,current_slots+1):
             widget_slot = self.csheet.findChild(QLineEdit, f"inventory{slot}")
@@ -441,17 +453,19 @@ class CharacterSheet():
 
 
     def strenght(self):
+        print("strenght")
+        print(int(self.STR.text()))
         pass 
     def dexterity(self):
         #ac_calculation = str(cons.BASE_AC+math.floor(int(self.DEX)/2))
-        ac_calculation = str(cons.BASE_AC+math.floor(int(self.DEX)))
+        ac_calculation = str(cons.BASE_AC+math.floor(int(self.DEX.text())))
         self.ac.setText(ac_calculation)
 
     def constitution(self):
         for count in range(1,cons.MAX_SLOTS+1):
             for w in [(QToolButton,"icon"),(QPushButton,"evoke"),(QPushButton,"hit_dc"),(QPushButton,"roll"),(QLineEdit,"inventory"),(QLabel,"icon_label"),(QLabel,"inventory_label"),(QLabel,"evoke_label"),(QLabel,"hit_dc_label"),(QLabel,"roll_label")]:
                 widget =  self.csheet.findChild(w[0], w[1]+str(count))
-                if count <= self.CON+cons.START_SLOTS:
+                if count <= int(self.CON.text())+cons.START_SLOTS:
                     widget.setEnabled(True)
                 else:
                     if w[1] != "icon_label":
@@ -460,18 +474,18 @@ class CharacterSheet():
 
     def intelligence(self):
         for count in range(1,11):
-            for w in [(QToolButton,"herodice")]:
+            for w in [(QToolButton,"focusdice")]:
                 widget =  self.csheet.findChild(w[0], w[1]+str(count))
-                if count <= self.INT:
+                if count <= int(self.INT.text()):
                     widget.setEnabled(True)
                 else:
                     widget.setEnabled(False)
 
     def wisdom(self):
         for count in range(1,11):
-            for w in [(QToolButton,"corruption")]:
+            for w in [(QToolButton,"spellslot")]:
                 widget =  self.csheet.findChild(w[0], w[1]+str(count))
-                if count <= self.WIS:
+                if count <= int(self.WIS.text()):
                     widget.setEnabled(True)
                 else:
                     widget.setEnabled(False)
@@ -499,7 +513,72 @@ class CharacterSheet():
     def charisma(self):
         initiative_widget = self.csheet.findChild(QPushButton, "initiative")
         movement_widget = self.csheet.findChild(QPushButton, "movement")
-        initiative_widget.setText(f"{self.CHA+10} init.")
-        movement_widget.setText(f"{20+(self.CHA*5)} ft.")
+        initiative_widget.setText(f"{int(self.CHA.text())+10} init.")
+        movement_widget.setText(f"{20+(int(self.CHA.text())*5)} ft.")
+
+    def load_character(self):
+        print(f"Loading {self.character.currentText()}")
+        if self.character.currentText() == "":
+            return
+        self.client = pymongo.MongoClient(cons.CONNECT)
+        self.db = self.client ["dnd"]
+        self.collection = self.db["characters"]
+
+        query = {"character": self.character.currentText()}
+        document = self.collection.find_one(query)
+
+        print(document)
+
+        self.level.setText(str(document["level"]))
+        self.current_hp.setText(str(document["current hp"]))
+        self.current_morale.setText(str(document["current morale"]))
+
+        self.STR.setText(str(document["stats"]["str"]))
+        self.DEX.setText(str(document["stats"]["dex"]))
+        self.CON.setText(str(document["stats"]["con"]))
+        self.INT.setText(str(document["stats"]["int"]))
+        self.WIS.setText(str(document["stats"]["wis"]))
+        self.CHA.setText(str(document["stats"]["cha"]))
+
+        self.inventory1.setText(str(document["inventory"]["inventory1"]))
+        self.inventory2.setText(str(document["inventory"]["inventory2"]))
+        self.inventory3.setText(str(document["inventory"]["inventory3"]))
+        self.inventory4.setText(str(document["inventory"]["inventory4"]))
+        self.inventory5.setText(str(document["inventory"]["inventory5"]))
+        self.inventory6.setText(str(document["inventory"]["inventory6"]))
+        self.inventory7.setText(str(document["inventory"]["inventory7"]))
+        self.inventory8.setText(str(document["inventory"]["inventory8"]))
+        self.inventory9.setText(str(document["inventory"]["inventory9"]))
+        self.inventory10.setText(str(document["inventory"]["inventory10"]))
+        self.inventory11.setText(str(document["inventory"]["inventory11"]))
+        self.inventory12.setText(str(document["inventory"]["inventory12"]))
+        self.inventory13.setText(str(document["inventory"]["inventory13"]))
+        self.inventory14.setText(str(document["inventory"]["inventory14"]))
+        self.inventory15.setText(str(document["inventory"]["inventory15"]))
+        self.inventory16.setText(str(document["inventory"]["inventory16"]))
+
+        self.spellslot1.setChecked(document["spell slots"]["spell1"])
+        self.spellslot2.setChecked(document["spell slots"]["spell2"])
+        self.spellslot3.setChecked(document["spell slots"]["spell3"])
+        self.spellslot4.setChecked(document["spell slots"]["spell4"])
+        self.spellslot5.setChecked(document["spell slots"]["spell5"])
+        self.spellslot6.setChecked(document["spell slots"]["spell6"])
+        self.spellslot7.setChecked(document["spell slots"]["spell7"])
+        self.spellslot8.setChecked(document["spell slots"]["spell8"])
+        self.spellslot9.setChecked(document["spell slots"]["spell9"])
+        self.spellslot10.setChecked(document["spell slots"]["spell10"])
+
+        self.focusdice1.setChecked(document["focus"]["focus1"])
+        self.focusdice2.setChecked(document["focus"]["focus2"])
+        self.focusdice3.setChecked(document["focus"]["focus3"])
+        self.focusdice4.setChecked(document["focus"]["focus4"])
+        self.focusdice5.setChecked(document["focus"]["focus5"])
+        self.focusdice6.setChecked(document["focus"]["focus6"])
+        self.focusdice7.setChecked(document["focus"]["focus7"])
+        self.focusdice8.setChecked(document["focus"]["focus8"])
+        self.focusdice9.setChecked(document["focus"]["focus9"])
+        self.focusdice10.setChecked(document["focus"]["focus10"])
+
+        self.update_sheet()
 
     

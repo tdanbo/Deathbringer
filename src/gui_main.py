@@ -49,10 +49,10 @@ class MainWindow(QWidget):
         self.setLayout(self.main_layout)
         self.setStyleSheet(style.BASE_STYLE)
 
+        CharacterSheet(character_sheet_gui).update_character_dropdown()
+
         self.combat_log.update_combat_log()
         self.combat_log.start_watching() 
-
-        CharacterSheet(character_sheet_gui).update_dictionary()
 
     def closeEvent(self, event: QCloseEvent):
         self.combat_log.stop_watching()

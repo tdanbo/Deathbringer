@@ -7,6 +7,10 @@ import json
 
 import constants as cons
 
+'''
+This secion of the code handles general functions that are used often.
+'''
+
 def create_folder(dir_path):
     isExist = os.path.exists(dir_path)
     if not isExist:

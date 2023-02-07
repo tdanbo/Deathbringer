@@ -4,19 +4,15 @@ from PySide2.QtWidgets import *
 from PySide2.QtGui import *
 from PySide2.QtCore import *
 
-import stylesheet as style
-import random
 
-from character_sheet import CharacterSheet
 from combat_log import CombatLog
 
-from pymongo import MongoClient
 from bson.objectid import ObjectId
 
-def show_reroll(self,dictionary,slot_type,slot):
+def show_reroll(CombatLogGui,slot_type,slot):
     print("Rerolling")
 
-    combat_log = CombatLog(dictionary)
+    combat_log = CombatLog(CombatLogGui)
 
     entry = combat_log.get_log()[slot]
     collection = combat_log.get_collection()

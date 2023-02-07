@@ -205,6 +205,7 @@ class CombatLogGUI(QWidget):
             height = cons.WSIZE*1.10,
             size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
             objectname = f"desc hit{slot}",
+            signal= functools.partial(custom_log.show_reroll, self, "hit", slot)
         )
 
         self.first_hit = Widget(
@@ -234,6 +235,7 @@ class CombatLogGUI(QWidget):
             height = cons.WSIZE*1.10,
             size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
             objectname = f"desc roll{slot}",
+            signal= functools.partial(custom_log.show_reroll, self, "roll", slot)
         )
 
         self.first_roll = Widget(

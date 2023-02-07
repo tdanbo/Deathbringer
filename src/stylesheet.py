@@ -45,7 +45,7 @@ QTITLE = f"QToolButton {{background-color: {GROUP_HEADER}}}"\
          f"QLabel {{background-color: {GROUP_HEADER}; border-top-right-radius: {RADIUS}}}"\
          f"QPushButton {{background-color: {GUI_COLOR}; border-top-right-radius: {RADIUS}; border-top-left-radius: {RADIUS}; border-right: 2px solid {BORDER_COLOR};border-left: 2px solid {BORDER_COLOR};border-top: 2px solid {BORDER_COLOR};}}"
 
-QSTATS = f"QPushButton {{background-color: {DARK_COLOR}; border: 1px solid {BORDER_COLOR_LIGHT}; border-top-right-radius: {RADIUS};border-top-left-radius: {RADIUS}; padding-top:4px}}"\
+QSTATS = f"QPushButton {{background-color: {DARK_COLOR}; border: 1px solid {BORDER_COLOR_LIGHT}; border-top-right-radius: {RADIUS};border-top-left-radius: {RADIUS};}}"\
 
 BIG_BUTTONS = f"QPushButton {{font: 18px; color: {FONT_COLOR}; background-color: {BUTTONS_BACKGROUND}; border: 1px solid {BORDER_COLOR_LIGHT}; border-radius: {RADIUS}}}"\
               f"QPushButton:disabled {{color: {FONT_COLOR}; background-color: {DISABLED_COLOR}}}"\
@@ -101,7 +101,9 @@ QComboBox::drop-down {
 '''
 
 
-PORTRAIT = f"QLabel {{background-image: url(.icons/beasttoe.png); background-position: center; background-repeat: no-repeat; background-color: {DARK_COLOR}; border: 1px solid {BORDER_COLOR_LIGHT}; border-radius: {RADIUS}}}"	
+#PORTRAIT = f"QLabel {{background-image: url(.icons/beasttoe.png); background-position: center; background-repeat: no-repeat; background-color: {DARK_COLOR}; border: 1px solid {BORDER_COLOR_LIGHT}; border-radius: {RADIUS}}}"	
+PORTRAIT = f"QLabel {{background-position: center; background-repeat: no-repeat; background-color: {DARK_COLOR}; border: 1px solid {BORDER_COLOR_LIGHT}; border-radius: {RADIUS}}}"	
+
 
 INVENTORY = f"QToolButton {{background-color: {DARK_COLOR}; border: 0px solid {MID_COLOR};}}"\
              f"QLineEdit {{background-color: {DARK_COLOR}; border: 0px solid {MID_COLOR};}}"\

@@ -1,14 +1,12 @@
-import constants as cons
-
 from PySide2.QtWidgets import *
 from PySide2.QtGui import *
 from PySide2.QtCore import *
 
 import stylesheet as style
-import random
 
-from character_sheet import CharacterSheet
-from combat_log import CombatLog
+'''
+This area of code handles the functions of the dice roller.
+'''
 
 def add_dice(self, dice, adjust="add"):
     print(dice)

@@ -6,7 +6,6 @@ import stylesheet as style
 import constants as cons
 
 import json
-import functions as func
 import os
 
 from character_sheet import CharacterSheet

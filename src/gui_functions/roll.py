@@ -34,6 +34,17 @@ def custom_prepare_roll(self,action):
     make_roll("Roll", single = {"type":action,"roll":roll})
     custom_rolls.clear_rolls(self)
 
+def inventory_prepare_double_roll(self,slot):
+    name = self.findChild(QLineEdit, f"inventory{slot}").text()
+    
+    first_type = self.findChild(QLabel, f"roll_label{slot}").text()
+    first_roll = self.findChild(QPushButton, f"roll{slot}").text()
+
+    second_type = self.findChild(QLabel, f"hit_dc_label{slot}").text()
+    second_roll = self.findChild(QPushButton, f"hit_dc{slot}").text()
+
+    make_roll(name, single = {"type":first_type,"roll":first_roll}, double = {"type":second_type,"roll":second_roll})
+
 def inventory_prepare_roll(self,action,slot):
     name = self.findChild(QLineEdit, f"inventory{slot}").text()
     type = self.findChild(QLabel, f"{action}_label{slot}").text()
