@@ -24,6 +24,7 @@ ITEMS = os.path.join(ROOT, ".items")
 WSIZE = 22
 ICON_COLOR = "#CCCCCC"
 
+CHARACTER = "Beasttoe"
 START_SLOTS = 6
 MAX_SLOTS = 16
 BASE_AC = 9

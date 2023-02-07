@@ -5,8 +5,6 @@ from PySide2.QtCore import *
 from pyside import Section
 from pyside import Widget
 
-from combat_log import CombatLog
-
 import constants as cons
 import functions as func
 import functools
@@ -14,6 +12,7 @@ import stylesheet as style
 
 from gui_functions import custom_rolls
 from gui_functions import custom_log
+from gui_functions import roll
 
 class CombatLogGUI(QWidget):
     def __init__(self):
@@ -63,7 +62,7 @@ class CombatLogGUI(QWidget):
             height=cons.WSIZE,
             objectname="roll",
             size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
-            signal = lambda: custom_rolls.roll_dice(self, self.get_widget_directory())
+            signal= lambda: roll.custom_prepare_roll(self,"Custom")
         )   
 
         self.roll_button.get_widget().setHidden(True)
@@ -111,21 +110,20 @@ class CombatLogGUI(QWidget):
             self.dice_count.get_widget().setMinimumWidth(cons.WSIZE*1.5)
             self.dice_w.get_widget().setMinimumWidth(cons.WSIZE*1.5)
             self.dice_count.get_widget().setHidden(True)
-                
+
+        #Setting up all slots for the combat log
+        for slot in range(20, -1, -1):
+            print(slot)
+            self.create_log_entry(slot)
+
         self.setLayout(self.log_layout.outer_layout())        
 
-    def get_widget_directory(self):
-        # we create 20 blank entries in the log, and update the different widget. This is to reduce the interface popping and too many entries to be added to the interface.
-        self.log_dictionary = {}
-        for entry in range(20,0,-1):
-            entry_ui = self.create_log_entry(self.log_scroll.inner_layout(0),entry)
-            self.log_dictionary[entry] = {"character":entry_ui[0],"icon":entry_ui[1],"type":entry_ui[2],"name":entry_ui[3],"hit desc":entry_ui[4],"roll desc":entry_ui[5],"reroll hit":entry_ui[6], "reroll roll":entry_ui[7],"hit":entry_ui[8], "roll":entry_ui[9],"time":entry_ui[10]}#,"breakdown":entry_ui[9]
-        l_entry_ui = self.create_log_entry(self.log_latest.inner_layout(0),0)
-        self.log_dictionary[0] = {"character":l_entry_ui[0],"icon":l_entry_ui[1],"type":l_entry_ui[2],"name":l_entry_ui[3],"hit desc":l_entry_ui[4],"roll desc":l_entry_ui[5],"reroll hit":l_entry_ui[6], "reroll roll":l_entry_ui[7],"hit":l_entry_ui[8], "roll":l_entry_ui[9],"time":l_entry_ui[10]}#,"breakdown":l_entry_ui[9]
-        return self.log_dictionary
+    def create_log_entry(self, slot):
+        if slot == 0:
+            layout = self.log_latest.inner_layout(0)
+        else:
+            layout = self.log_scroll.inner_layout(0)
 
-    def create_log_entry(self, layout, slot):
-   
         # MAIN LOG LAYOUT
         self.single_log_layout = Section (
             outer_layout = QVBoxLayout(),
@@ -154,140 +152,114 @@ class CombatLogGUI(QWidget):
         )  
 
         # LOG CONTENT
-        self.log_character_name = Widget(
+        self.log_character = Widget(
             widget_type = QLabel(),
             parent_layout = self.single_log_layout.inner_layout(1),
             stylesheet = style.COMBAT_LOG,
-            objectname = "character"
+            objectname = f"character{slot}"
         )
 
-        self.log_character_icon = Widget(
+        self.log_icon = Widget(
             widget_type = QLabel(),
             parent_layout = self.main_roll_layout.inner_layout(1),
             size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
             stylesheet = style.COMBAT_LOG,
             width = cons.WSIZE*2.20,
             height = cons.WSIZE*2.20,
-            objectname = "icon"
+            objectname = f"icon{slot}"
         )
 
-        self.log_action_type = Widget(
+        self.log_action_name = Widget(
             widget_type = QLabel(),
             parent_layout = self.label_roll_layout.inner_layout(1),
             stylesheet = style.COMBAT_LOG,
             height = cons.WSIZE*1.10,
             size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
-            objectname = "label"
+            objectname = f"action name{slot}"
         )
 
-        self.log_action_name = Widget(
+        self.log_action_dice = Widget(
             widget_type = QLabel(),
             parent_layout = self.label_roll_layout.inner_layout(2),
             stylesheet = style.COMBAT_LOG,
             height = cons.WSIZE*1.10,
             size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
-            objectname = "label_sub"
+            objectname = f"action dice{slot}"
         )
 
-        self.hit_reroll_roll = Widget(
+        self.second_hit = Widget(
             widget_type = QLabel(),
             parent_layout = self.result_roll_layout.inner_layout(1),
             height = cons.WSIZE*1.10,
             width = cons.WSIZE*1.75, 
             stylesheet = style.COMBAT_BUTTON_1_REROLL,
             size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
-            objectname=f"reroll_hit{slot}",
+            objectname=f"second hit{slot}",
         )
 
-        self.action_reroll_roll = Widget(
+        self.desc_hit = Widget(
+            widget_type = QPushButton(),
+            parent_layout = self.result_roll_layout.inner_layout(1),
+            stylesheet = style.COMBAT_LOG,
+            width = cons.WSIZE*2.5,
+            height = cons.WSIZE*1.10,
+            size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
+            objectname = f"desc hit{slot}",
+        )
+
+        self.first_hit = Widget(
+            widget_type = QLabel(),
+            parent_layout = self.result_roll_layout.inner_layout(1),
+            height = cons.WSIZE*1.10,
+            width = cons.WSIZE*1.75, 
+            stylesheet = style.COMBAT_BUTTON_1,
+            objectname=f"first hit{slot}",
+        )
+
+        self.second_roll = Widget(
             widget_type = QLabel(),
             parent_layout = self.result_roll_layout.inner_layout(2),
             height = cons.WSIZE*1.10,
             width = cons.WSIZE*1.75, 
             stylesheet = style.COMBAT_BUTTON_2_REROLL,
             size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
-            objectname=f"reroll_roll{slot}",
+            objectname=f"second roll{slot}",
         )
 
-        self.description_hit_roll = Widget(
-            widget_type = QPushButton(),
-            parent_layout = self.result_roll_layout.inner_layout(1),
-            stylesheet = style.COMBAT_LOG,
-            width = cons.WSIZE*2.5,
-            height = cons.WSIZE*1.10,
-            size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
-            objectname = "hit_desc",
-            signal=lambda: custom_log.show_reroll(self, self.get_widget_directory(), "hit", slot)
-        )
-
-        self.description_action_roll = Widget(
+        self.desc_roll = Widget(
             widget_type = QPushButton(),
             parent_layout = self.result_roll_layout.inner_layout(2),
             stylesheet = style.COMBAT_LOG,
             width = cons.WSIZE*2.5,
             height = cons.WSIZE*1.10,
             size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
-            objectname = "roll_desc",
-            signal=lambda: custom_log.show_reroll(self, self.get_widget_directory(), "action", slot)
+            objectname = f"desc roll{slot}",
         )
 
-        self.hit_roll = Widget(
-            widget_type = QLabel(),
-            parent_layout = self.result_roll_layout.inner_layout(1),
-            height = cons.WSIZE*1.10,
-            width = cons.WSIZE*1.75, 
-            stylesheet = style.COMBAT_BUTTON_1,
-            objectname=f"hit{slot}",
-        )
-
-        self.action_roll = Widget(
+        self.first_roll = Widget(
             widget_type = QLabel(),
             parent_layout = self.result_roll_layout.inner_layout(2),
             height = cons.WSIZE*1.10,
             width = cons.WSIZE*1.75, 
             stylesheet = style.COMBAT_BUTTON_2,
-            objectname=f"roll{slot}",
+            objectname=f"first roll{slot}",
         )
 
-        self.log_entry_date = Widget(
+        self.time = Widget(
             widget_type = QLabel(),
             parent_layout = self.single_log_layout.inner_layout(3),
             align="right",
             stylesheet = style.COMBAT_LOG,
-            objectname = "date"
+            objectname = f"time{slot}"
         )
-
-        # self.log_roll_breakdown = Widget(
-        #     widget_type = QLabel(),
-        #     parent_layout = self.single_log_layout.inner_layout(3),
-        #     stylesheet = style.COMBAT_LOG,
-        #     align="right",
-        #     objectname = "breakdown"
-        # )
-
     
-        self.log_action_type.get_widget().setAlignment(Qt.AlignVCenter | Qt.AlignLeft)
         self.log_action_name.get_widget().setAlignment(Qt.AlignVCenter | Qt.AlignLeft)
+        self.log_action_dice.get_widget().setAlignment(Qt.AlignVCenter | Qt.AlignLeft)
 
-        self.hit_reroll_roll.get_widget().setAlignment(Qt.AlignVCenter | Qt.AlignCenter)
-        self.action_reroll_roll.get_widget().setAlignment(Qt.AlignVCenter | Qt.AlignCenter)
-        self.hit_roll.get_widget().setAlignment(Qt.AlignVCenter | Qt.AlignCenter)
-        self.action_roll.get_widget().setAlignment(Qt.AlignVCenter | Qt.AlignCenter)
-
-        return (
-            self.log_character_name.get_widget(), 
-            self.log_character_icon.get_widget(), 
-            self.log_action_type.get_widget(), 
-            self.log_action_name.get_widget(),
-            self.description_hit_roll.get_widget(), 
-            self.description_action_roll.get_widget(), 
-            self.hit_reroll_roll.get_widget(), 
-            self.action_reroll_roll.get_widget(),
-            self.hit_roll.get_widget(), 
-            self.action_roll.get_widget(),
-            self.log_entry_date.get_widget(),
-            # self.log_roll_breakdown.get_widget()
-        )
+        self.second_hit.get_widget().setAlignment(Qt.AlignVCenter | Qt.AlignCenter)
+        self.second_roll.get_widget().setAlignment(Qt.AlignVCenter | Qt.AlignCenter)
+        self.first_hit.get_widget().setAlignment(Qt.AlignVCenter | Qt.AlignCenter)
+        self.first_roll.get_widget().setAlignment(Qt.AlignVCenter | Qt.AlignCenter)
         
     def mousePressEvent(self, event): #this is a very specific event used to subtract values when right clicking on a widget
         if event.button() == Qt.RightButton:

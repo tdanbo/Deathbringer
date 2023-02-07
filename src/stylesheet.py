@@ -123,16 +123,14 @@ INVENTORY_INJURY_LABELS = f"QToolButton {{background-color: {INJURY_RED}; border
                    f"QPushButton {{font: 10px; color: {TEXT_MID_COLOR}; background-color: {INJURY_RED}; border: 0px; border-bottom: 1px solid {INJURY_RED_DARK};}}"\
                    f"QLabel {{font: 10px; color: {TEXT_MID_COLOR}; background-color: {INJURY_RED_DARK}; border: 0px; border-bottom: 1px solid {INJURY_RED_DARK};}}"\
 
-COMBAT_LOG = f"QLabel#character {{font-size: 12px; color: {FONT_COLOR}; font-weight: bold; background-color: {GROUP_BACKGROUND};}}"\
-             f"QLabel#date {{font-size: 10px; color: {TEXT_MID_COLOR}; background-color: {GROUP_BACKGROUND}; padding-right: 5px;}}"\
-             f"QLabel#breakdown {{font-size: 10px; color: {TEXT_MID_COLOR}; background-color: {GROUP_BACKGROUND};}}"\
-             f"QPushButton#hit_desc {{font-size: 10px; font-weight: bold; color: {TEXT_BLACK_COLOR}; background-color: {WHITE_LIGHT}; border-bottom: 1px solid {DIM_WHITE_LIGHT};}}"\
-             f"QPushButton#roll_desc {{font-size: 10px; font-weight: bold; color: {TEXT_BLACK_COLOR}; background-color: {WHITE_LIGHT}; border-top: 1px solid {DIM_WHITE_LIGHT};}}"\
-             f"QLabel#label {{font-size: 14px; font-weight: bold; color: {TEXT_BLACK_COLOR}; background-color: {WHITE_LIGHT}; padding-left:10px; padding-top:10px;}}"\
-             f"QLabel#icon {{border: 2px solid {WHITE_LIGHT};}}"\
-             f"QLabel#label_sub {{font-size: 10px; font-weight: bold; color: {DIM_WHITE_LIGHT2}; background-color: {WHITE_LIGHT}; padding-left:11px;}}"
-
-
+COMBAT_LOG = f"QLabel[objectName^='character'] {{font-size: 12px; color: {FONT_COLOR}; font-weight: bold; background-color: {GROUP_BACKGROUND};}}"\
+             f"QLabel[objectName^='time'] {{font-size: 10px; color: {TEXT_MID_COLOR}; background-color: {GROUP_BACKGROUND}; padding-right: 5px;}}"\
+             f"QLabel[objectName^='breakdown'] {{font-size: 10px; color: {TEXT_MID_COLOR}; background-color: {GROUP_BACKGROUND};}}"\
+             f"QPushButton[objectName^='desc hit'] {{font-size: 10px; font-weight: bold; color: {TEXT_BLACK_COLOR}; background-color: {WHITE_LIGHT}; border-bottom: 1px solid {DIM_WHITE_LIGHT};}}"\
+             f"QPushButton[objectName^='desc roll'] {{font-size: 10px; font-weight: bold; color: {TEXT_BLACK_COLOR}; background-color: {WHITE_LIGHT}; border-top: 1px solid {DIM_WHITE_LIGHT};}}"\
+             f"QLabel[objectName^='action name'] {{font-size: 14px; font-weight: bold; color: {TEXT_BLACK_COLOR}; background-color: {WHITE_LIGHT}; padding-left:10px; padding-top:10px;}}"\
+             f"QLabel[objectName^='icon'] {{border: 2px solid {WHITE_LIGHT}; background-color: {WHITE_LIGHT};}}"\
+             f"QLabel[objectName^='action dice'] {{font-size: 10px; font-weight: bold; color: {DIM_WHITE_LIGHT2}; background-color: {WHITE_LIGHT}; padding-left:11px;}}"
 
 COMBAT_BUTTON_1 = f"QLabel {{font-size: 16px; font-weight: bold; color: {TEXT_BLACK_COLOR}; background-color: {WHITE_LIGHT}; border-top-right-radius: {RADIUS}; border-bottom: 1px solid {DIM_WHITE_LIGHT};}}"
 COMBAT_BUTTON_2 = f"QLabel {{font-size: 16px; font-weight: bold; color: {TEXT_BLACK_COLOR}; background-color: {WHITE_LIGHT}; border-bottom-right-radius: {RADIUS}; border-top: 1px solid {DIM_WHITE_LIGHT};}}"
@@ -140,12 +138,12 @@ COMBAT_BUTTON_2 = f"QLabel {{font-size: 16px; font-weight: bold; color: {TEXT_BL
 COMBAT_BUTTON_1_REROLL = f"QLabel {{font-size: 16px; font-weight: bold; color: {TEXT_BLACK_COLOR}; background-color: {WHITE_LIGHT}; border-bottom: 1px solid {DIM_WHITE_LIGHT};}}"
 COMBAT_BUTTON_2_REROLL = f"QLabel {{font-size: 16px; font-weight: bold; color: {TEXT_BLACK_COLOR}; background-color: {WHITE_LIGHT}; border-top: 1px solid {DIM_WHITE_LIGHT};}}"
 
-COMBAT_LABEL = f"QPushButton#roll_desc {{font-size: 10px; font-weight: bold; color: {TEXT_BLACK_COLOR}; background-color: {WHITE_LIGHT}; border-top: 1px solid {DIM_WHITE_LIGHT};}}"
-COMBAT_LABEL_DAMAGE = f"QPushButton#roll_desc {{font-size: 10px; font-weight: bold; color: #870000; background-color: {WHITE_LIGHT}; border-top: 1px solid {DIM_WHITE_LIGHT};}}"
-COMBAT_LABEL_HEALING= f"QPushButton#roll_desc {{font-size: 10px; font-weight: bold; color: #00872d; background-color: {WHITE_LIGHT}; border-top: 1px solid {DIM_WHITE_LIGHT};}}"
-COMBAT_LABEL_EVOKE= f"QPushButton#roll_desc {{font-size: 10px; font-weight: bold; color: #004887; background-color: {WHITE_LIGHT}; border-top: 1px solid {DIM_WHITE_LIGHT};}}"
-COMBAT_LABEL_CUSTOM= f"QPushButton#roll_desc {{font-size: 10px; font-weight: bold; color: #874d00; background-color: {WHITE_LIGHT}; border-top: 1px solid {DIM_WHITE_LIGHT};}}"
-COMBAT_LABEL_CHECK= f"QPushButton#roll_desc {{font-size: 10px; font-weight: bold; color: #008768; background-color: {WHITE_LIGHT}; border-top: 1px solid {DIM_WHITE_LIGHT};}}"
-COMBAT_LABEL_HIT= f"QPushButton#roll_desc {{font-size: 10px; font-weight: bold; color: #000bab; background-color: {WHITE_LIGHT}; border-top: 1px solid {DIM_WHITE_LIGHT};}}"
+COMBAT_LABEL = f"QPushButton[objectName^='desc roll'] {{font-size: 10px; font-weight: bold; color: {TEXT_BLACK_COLOR}; background-color: {WHITE_LIGHT}; border-top: 1px solid {DIM_WHITE_LIGHT};}}"
+COMBAT_LABEL_DAMAGE = f"QPushButton[objectName^='desc roll'] {{font-size: 10px; font-weight: bold; color: #870000; background-color: {WHITE_LIGHT}; border-top: 1px solid {DIM_WHITE_LIGHT};}}"
+COMBAT_LABEL_HEALING= f"QPushButton[objectName^='desc roll'] {{font-size: 10px; font-weight: bold; color: #00872d; background-color: {WHITE_LIGHT}; border-top: 1px solid {DIM_WHITE_LIGHT};}}"
+COMBAT_LABEL_EVOKE= f"QPushButton[objectName^='desc roll'] {{font-size: 10px; font-weight: bold; color: #004887; background-color: {WHITE_LIGHT}; border-top: 1px solid {DIM_WHITE_LIGHT};}}"
+COMBAT_LABEL_CUSTOM= f"QPushButton[objectName^='desc roll'] {{font-size: 10px; font-weight: bold; color: #874d00; background-color: {WHITE_LIGHT}; border-top: 1px solid {DIM_WHITE_LIGHT};}}"
+COMBAT_LABEL_CHECK= f"QPushButton[objectName^='desc roll'] {{font-size: 10px; font-weight: bold; color: #008768; background-color: {WHITE_LIGHT}; border-top: 1px solid {DIM_WHITE_LIGHT};}}"
+COMBAT_LABEL_HIT= f"QPushButton[objectName^='desc roll'] {{font-size: 10px; font-weight: bold; color: #000bab; background-color: {WHITE_LIGHT}; border-top: 1px solid {DIM_WHITE_LIGHT};}}"
 
 BASE_STYLE = f"QWidget {{border-style: outset; background-color: {GUI_BACKGROUND}; color: {FONT_COLOR};}}"\

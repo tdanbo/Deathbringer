@@ -185,11 +185,9 @@ class CharacterSheet():
         document = self.collection.find_one(query)
 
         if document is not None:
-            print("updating existing character")
             new_values = {"$set": directory}
             self.collection.update_one(query, new_values)
         else:
-            print("inserting new character")
             self.collection.insert_one(directory)
 
     def update_sheet(self):
@@ -207,7 +205,6 @@ class CharacterSheet():
     # ITERATE OVER ITEM JSON TO FIND ITEM
     def update_inventory(self):
         all_items = []
-        print("updating inventory")
 
         self.empty_slot_dict = {"Hit":"","Evoke":"","Evoke Mod":["","",""],"Hit Mod":["","",""],"Roll":"","Roll Mod":["","",""]}
         for slot in range(1,cons.MAX_SLOTS+1):
@@ -220,7 +217,6 @@ class CharacterSheet():
         for slot in range(1,cons.MAX_SLOTS+1):
             self.update_item(slot, "", "", self.empty_slot_dict)
 
-        print(all_items)
         misc_items = copy.deepcopy(all_items)
         self.armor_items = []
         slot = 1
@@ -390,7 +386,6 @@ class CharacterSheet():
         
 
     def adjust_hp(self, state, value):
-        print(state, value)
         current_hp = int(self.current_hp.text())
         self.current_hp.setStyleSheet(style.BUTTONS)
         for point in range(1,int(value)+1):
@@ -439,7 +434,6 @@ class CharacterSheet():
             else:
                 free_slots.append(slot)
         if free_slots == []:
-            print("DEAD")
             return
         else:
             injury_slot = random.choice(free_slots)

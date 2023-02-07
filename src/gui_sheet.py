@@ -9,7 +9,6 @@ import functions as func
 import constants as cons
 
 from gui_spells import SpellsGUI
-from gui_log import CombatLogGUI
 from character_sheet import CharacterSheet
 
 import functools
@@ -21,6 +20,7 @@ from gui_functions import character_xp
 from gui_functions import character_stats
 from gui_functions import character_morale
 from gui_functions import custom_rolls
+from gui_functions import roll
 
 class CharacterSheetGUI(QWidget):
     def __init__(self):
@@ -220,12 +220,7 @@ class CharacterSheetGUI(QWidget):
                 size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
                 height=cons.WSIZE,
                 objectname="label",
-                signal=functools.partial(
-                    custom_rolls.roll_check,
-                    self,
-                    CombatLogGUI().get_widget_directory(),
-                    stat,
-                ),
+                signal = functools.partial(roll.check_prepare_roll, self, stat)
             )
             self.stat_button = Widget(
                 widget_type=QPushButton(),
@@ -330,7 +325,6 @@ class CharacterSheetGUI(QWidget):
                 height = cons.WSIZE,
                 enabled=False,
                 objectname=f"icon{count}",
-                signal=functools.partial(func.double_roll,self,CombatLogGUI().get_widget_directory(),"Beasttoe",count),
             )
 
             self.backpack_label = Widget(
@@ -375,7 +369,7 @@ class CharacterSheetGUI(QWidget):
                 height = cons.WSIZE,
                 enabled=False,
                 objectname=f"evoke{count}",
-                signal=functools.partial(func.single_roll,self,CombatLogGUI().get_widget_directory(),"Beasttoe","evoke",count),
+                signal = functools.partial(roll.inventory_prepare_roll, self, "evoke", count)
             )
 
             self.backpack_action_label = Widget(
@@ -398,7 +392,7 @@ class CharacterSheetGUI(QWidget):
                 height = cons.WSIZE,
                 enabled=False,
                 objectname=f"hit_dc{count}",
-                signal=functools.partial(func.single_roll,self,CombatLogGUI().get_widget_directory(),"Beasttoe","hit_dc",count),
+                signal = functools.partial(roll.inventory_prepare_roll, self, "hit_dc", count)
             )
 
             self.backpack_hit_label = Widget(
@@ -420,7 +414,7 @@ class CharacterSheetGUI(QWidget):
                 height = cons.WSIZE,
                 objectname=f"roll{count}",
                 enabled=False,
-                signal = functools.partial(func.single_roll,self,CombatLogGUI().get_widget_directory(),"Beasttoe","roll",count)
+                signal = functools.partial(roll.inventory_prepare_roll, self, "roll", count)
             )
 
             self.backpack_damage_label = Widget(
@@ -454,14 +448,11 @@ class CharacterSheetGUI(QWidget):
         if event.button() == Qt.RightButton:
             widget = self.childAt(event.pos())
             if widget.objectName() in ["STR", "DEX", "CON", "INT", "WIS", "CHA"]:
-                print("Right button was clicked on a stat widget")
                 character_stats.adjust_stat(self, widget.objectName(), adjust="subtract")
             elif widget.objectName() == "level":
                 character_xp.adjust_xp(self,adjust="subtract")
             elif widget.objectName() == "current_morale":
                 character_morale.adjust_morale(self, adjust="subtract")
-
-            print("Right button was clicked") 
 
     def select_item(self):
         sender = self.sender()

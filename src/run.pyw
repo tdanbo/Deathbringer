@@ -20,6 +20,5 @@ import functions as func
 def run():
     gui_main.run_gui(cons.SCRIPT_NAME, cons.VERSION)
 
-
 if __name__ == "__main__":
     run()

@@ -7,8 +7,6 @@ from PySide2.QtCore import *
 from character_sheet import CharacterSheet
 
 def adjust_xp(self, adjust="add", increment=1):
-    print(self)
-    print("working")
     level_w = self.character_level.get_widget()
     current_level = float(level_w.text())
 
@@ -22,7 +20,6 @@ def adjust_xp(self, adjust="add", increment=1):
     current_level = round(current_level, 1)
 
     if current_level.is_integer():
-        print("is integer")
         level_w.setText(str(int(current_level)))
     else:
         level_w.setText(str(float(current_level)))

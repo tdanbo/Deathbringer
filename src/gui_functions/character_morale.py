@@ -9,7 +9,6 @@ import stylesheet as style
 from character_sheet import CharacterSheet
 
 def adjust_morale(self, adjust = "add"):
-    print("Adjusting morale")
     current_morale = self.findChild(QPushButton, "current_morale")
     max_morale = self.findChild(QPushButton, "max_morale")
     current_value = int(current_morale.text())

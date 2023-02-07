@@ -161,6 +161,7 @@ class Widget:
         stylesheet="",
         size_policy=None,
         checked=False,
+        property=("",""),
     ):
         self.text = text
         self.widget = widget_type
@@ -174,6 +175,7 @@ class Widget:
         self.widget.setToolTip(tooltip)
         self.widget.setObjectName(self.object)
         self.widget.setStyleSheet(stylesheet)
+        self.widget.setProperty(property[0],property[1])
         self.widget_key = f"{self.object}_{self.setting}"
         self.signal = signal
         self.set_enabled(enabled)

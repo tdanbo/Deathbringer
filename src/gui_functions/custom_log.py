@@ -15,7 +15,6 @@ from bson.objectid import ObjectId
 
 def show_reroll(self,dictionary,slot_type,slot):
     print("Rerolling")
-    print(slot)
 
     combat_log = CombatLog(dictionary)
 
