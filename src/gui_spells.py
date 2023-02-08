@@ -83,4 +83,4 @@ class SpellsGUI(QWidget):
         self.sender_widget.setText(self.sender().objectName())
         self.sender_widget.clearFocus()
         self.hide()
-        CharacterSheet(self.csheet).update_dictionary()
+        CharacterSheet(self.csheet).update_sheet()

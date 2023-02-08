@@ -10,11 +10,13 @@ import functions as func
 import os
 
 from pyside import Section, Widget
+from character_sheet import CharacterSheet
 
 class FeatsGUI(QWidget):
-    def __init__(self, feature_slot = ""):
+    def __init__(self, csheet, feature_slot = ""):
         super().__init__(None, Qt.WindowStaysOnTopHint)
 
+        self.csheet = csheet
         self.feature_slot = feature_slot
 
         self.feat_main_layout = Section(
@@ -78,5 +80,7 @@ class FeatsGUI(QWidget):
                     selected_feat = feat
                     func.set_icon(self.feature_slot, selected_feat["icon"],cons.ICON_COLOR)
                     self.feature_slot.setToolTip(selected_feat["description"])
+                    self.feature_slot.setProperty("feat", selected_feat["name"])
                     self.hide()
+                    CharacterSheet(self.csheet).update_sheet()
                     return

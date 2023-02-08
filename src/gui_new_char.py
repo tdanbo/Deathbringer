@@ -76,11 +76,14 @@ class NewCharacter(QWidget):
         self.setMinimumWidth(250)
 
     def create_character(self):
-        character_name = self.integer_line.get_widget().text()
+        cname = self.integer_line.get_widget().text()
+        for i in range(self.csheet.character_name.get_widget().count()):
+            if self.csheet.character_name.get_widget().itemText(i).lower() == cname.lower():
+                self.integer_line.get_widget().setText("Character already exists")
+                return
+
         state = self.sender().objectName()
         if state == "accept":
-            self.csheet.character_name.get_widget().addItem(character_name)
-            self.csheet.character_name.get_widget().setCurrentText(character_name)
             
             #Setting default values
             self.csheet.character_level.get_widget().setText("1")
@@ -100,7 +103,11 @@ class NewCharacter(QWidget):
 
             print("Needs to check if char exists")
 
-            CharacterSheet(self.csheet).update_dictionary()
+            self.csheet.character_name.get_widget().addItem(cname)
+            self.csheet.character_name.get_widget().setCurrentText(cname)
+
+            CharacterSheet(self.csheet).update_sheet()
+
             self.hide()
         else:
             self.hide()

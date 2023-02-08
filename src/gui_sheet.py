@@ -22,6 +22,7 @@ from gui_functions import character_stats
 from gui_functions import character_morale
 from gui_functions import custom_rolls
 from gui_functions import roll
+from gui_functions import character_reset
 
 class CharacterSheetGUI(QWidget):
     def __init__(self):
@@ -80,6 +81,8 @@ class CharacterSheetGUI(QWidget):
             icon = ("hp.png",cons.WSIZE/2,cons.ICON_COLOR), 
             spacing = 3,
         )
+
+
 
         self.morale_layout = Section(
             outer_layout = QVBoxLayout(),
@@ -289,7 +292,6 @@ class CharacterSheetGUI(QWidget):
             widget_type=QPushButton(),
             stylesheet=style.BIG_BUTTONS,
             parent_layout=self.hp_layout.inner_layout(1),
-            signal=lambda: CharacterSheet(self).update_sheet(),
             objectname = "max_hp",
             size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
             #height=cons.WSIZE*1.5,
@@ -441,8 +443,23 @@ class CharacterSheetGUI(QWidget):
                 enabled=False,	
             )
 
-        self.setLayout(self.character_sheet_layout.outer_layout())
-    
+        hp_title = self.hp_layout.get_title()[0]
+        hp_title.clicked.connect(lambda: character_reset.reset_hp(self))
+
+        morale_title = self.morale_layout.get_title()[0]
+        morale_title.clicked.connect(lambda: character_reset.reset_morale(self))
+
+        morale_title = self.morale_layout.get_title()[0]
+        morale_title.clicked.connect(lambda: character_reset.reset_morale(self))
+
+        spell_title = self.spell_slot_layout.get_title()[0]
+        spell_title.clicked.connect(lambda: character_reset.reset_spell_slots(self))
+
+        focus_title = self.focus_layout.get_title()[0]
+        focus_title.clicked.connect(lambda: character_reset.reset_focus(self))
+
+        self.setLayout(self.character_sheet_layout.outer_layout())       
+
     def mousePressEvent(self, event): #this is a very specific event used to subtract values when right clicking on a widget
         if event.button() == Qt.RightButton:
             widget = self.childAt(event.pos())
@@ -462,7 +479,7 @@ class CharacterSheetGUI(QWidget):
 
     def open_features(self):
         sender = self.sender()
-        self.features = FeatsGUI(sender)
+        self.features = FeatsGUI(self, sender)
         self.features.show()
 
     def open_addsub(self):

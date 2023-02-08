@@ -24,4 +24,4 @@ def adjust_morale(self, adjust = "add"):
 
     current_morale.setText(str(current_value))
     
-    CharacterSheet(self).update_dictionary()   
+    CharacterSheet(self).update_sheet()   

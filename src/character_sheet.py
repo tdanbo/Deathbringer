@@ -13,6 +13,7 @@ import functions as func
 import random
 import stylesheet as style
 
+import json
 import copy
 
 class CharacterSheet():
@@ -164,6 +165,11 @@ class CharacterSheet():
                 "focus9": self.focusdice9.isChecked(),
                 "focus10": self.focusdice10.isChecked(),
             },
+            "feats": {
+                "feat1": self.feat1.property("feat"),
+                "feat2": self.feat2.property("feat"),
+                "feat3": self.feat3.property("feat"),
+            }
         }        
         return character_sheet_dictionary
     
@@ -186,6 +192,7 @@ class CharacterSheet():
     def update_sheet(self):
         self.set_icon()
 
+        self.check_stats()
         #INVENTORY RULES
         self.strenght()
         self.dexterity()
@@ -201,6 +208,26 @@ class CharacterSheet():
         self.update_database(updated_character_sheet)
 
     # ITERATE OVER ITEM JSON TO FIND ITEM
+    def check_stats(self):
+        #Sum the total stats the character have.
+        current_level = self.level.text()
+        available_stats = int(current_level) * cons.STATS_PER_LEVEL
+        total_stats = int(self.STR.text()) + int(self.DEX.text()) + int(self.CON.text()) + int(self.INT.text()) + int(self.WIS.text()) + int(self.CHA.text())
+
+        stats = available_stats - total_stats
+
+        label = self.csheet.stat_layout.get_title()[1]    
+
+        if stats == 0:
+            stat_message = ""
+            label.setText(stat_message)
+        elif stats < 0:
+            stat_message = f"Remove {stats} stat points."
+            label.setText(stat_message)
+        elif stats > 0:
+            stat_message = f"{stats} remaining stat points."
+            label.setText(stat_message)
+
     def update_inventory(self):
         all_items = []
 
@@ -420,13 +447,12 @@ class CharacterSheet():
         else:
             self.current_hp.setStyleSheet(style.BUTTONS_INJURY)
 
-        self.update_dictionary()
-        self.update_inventory()
+        self.update_sheet()
 
     def remove_injury(self):
         print("remove injury")
         self.empty_slot_dict = {"Hit":"","Evoke":"","Evoke Mod":["","",""],"Hit Mod":["","",""],"Roll":"","Roll Mod":["","",""]}
-        self.max_slots = int(self.CON)+cons.START_SLOTS
+        self.max_slots = int(self.CON.text())+cons.START_SLOTS
         for slot in range(1,self.max_slots+1):
             widget_slot = self.csheet.findChild(QLineEdit, f"inventory{slot}")
             if widget_slot.text() == "Injury":
@@ -526,59 +552,92 @@ class CharacterSheet():
 
         query = {"character": self.character.currentText()}
         document = self.collection.find_one(query)
+        if document != None:
+            print(document)
+            self.level.setText(str(document["level"]))
+            self.current_hp.setText(str(document["current hp"]))
+            self.current_morale.setText(str(document["current morale"]))
 
-        print(document)
+            self.STR.setText(str(document["stats"]["str"]))
+            self.DEX.setText(str(document["stats"]["dex"]))
+            self.CON.setText(str(document["stats"]["con"]))
+            self.INT.setText(str(document["stats"]["int"]))
+            self.WIS.setText(str(document["stats"]["wis"]))
+            self.CHA.setText(str(document["stats"]["cha"]))
 
-        self.level.setText(str(document["level"]))
-        self.current_hp.setText(str(document["current hp"]))
-        self.current_morale.setText(str(document["current morale"]))
+            self.inventory1.setText(str(document["inventory"]["inventory1"]))
+            self.inventory2.setText(str(document["inventory"]["inventory2"]))
+            self.inventory3.setText(str(document["inventory"]["inventory3"]))
+            self.inventory4.setText(str(document["inventory"]["inventory4"]))
+            self.inventory5.setText(str(document["inventory"]["inventory5"]))
+            self.inventory6.setText(str(document["inventory"]["inventory6"]))
+            self.inventory7.setText(str(document["inventory"]["inventory7"]))
+            self.inventory8.setText(str(document["inventory"]["inventory8"]))
+            self.inventory9.setText(str(document["inventory"]["inventory9"]))
+            self.inventory10.setText(str(document["inventory"]["inventory10"]))
+            self.inventory11.setText(str(document["inventory"]["inventory11"]))
+            self.inventory12.setText(str(document["inventory"]["inventory12"]))
+            self.inventory13.setText(str(document["inventory"]["inventory13"]))
+            self.inventory14.setText(str(document["inventory"]["inventory14"]))
+            self.inventory15.setText(str(document["inventory"]["inventory15"]))
+            self.inventory16.setText(str(document["inventory"]["inventory16"]))
 
-        self.STR.setText(str(document["stats"]["str"]))
-        self.DEX.setText(str(document["stats"]["dex"]))
-        self.CON.setText(str(document["stats"]["con"]))
-        self.INT.setText(str(document["stats"]["int"]))
-        self.WIS.setText(str(document["stats"]["wis"]))
-        self.CHA.setText(str(document["stats"]["cha"]))
+            self.spellslot1.setChecked(document["spell slots"]["spell1"])
+            self.spellslot2.setChecked(document["spell slots"]["spell2"])
+            self.spellslot3.setChecked(document["spell slots"]["spell3"])
+            self.spellslot4.setChecked(document["spell slots"]["spell4"])
+            self.spellslot5.setChecked(document["spell slots"]["spell5"])
+            self.spellslot6.setChecked(document["spell slots"]["spell6"])
+            self.spellslot7.setChecked(document["spell slots"]["spell7"])
+            self.spellslot8.setChecked(document["spell slots"]["spell8"])
+            self.spellslot9.setChecked(document["spell slots"]["spell9"])
+            self.spellslot10.setChecked(document["spell slots"]["spell10"])
 
-        self.inventory1.setText(str(document["inventory"]["inventory1"]))
-        self.inventory2.setText(str(document["inventory"]["inventory2"]))
-        self.inventory3.setText(str(document["inventory"]["inventory3"]))
-        self.inventory4.setText(str(document["inventory"]["inventory4"]))
-        self.inventory5.setText(str(document["inventory"]["inventory5"]))
-        self.inventory6.setText(str(document["inventory"]["inventory6"]))
-        self.inventory7.setText(str(document["inventory"]["inventory7"]))
-        self.inventory8.setText(str(document["inventory"]["inventory8"]))
-        self.inventory9.setText(str(document["inventory"]["inventory9"]))
-        self.inventory10.setText(str(document["inventory"]["inventory10"]))
-        self.inventory11.setText(str(document["inventory"]["inventory11"]))
-        self.inventory12.setText(str(document["inventory"]["inventory12"]))
-        self.inventory13.setText(str(document["inventory"]["inventory13"]))
-        self.inventory14.setText(str(document["inventory"]["inventory14"]))
-        self.inventory15.setText(str(document["inventory"]["inventory15"]))
-        self.inventory16.setText(str(document["inventory"]["inventory16"]))
+            self.focusdice1.setChecked(document["focus"]["focus1"])
+            self.focusdice2.setChecked(document["focus"]["focus2"])
+            self.focusdice3.setChecked(document["focus"]["focus3"])
+            self.focusdice4.setChecked(document["focus"]["focus4"])
+            self.focusdice5.setChecked(document["focus"]["focus5"])
+            self.focusdice6.setChecked(document["focus"]["focus6"])
+            self.focusdice7.setChecked(document["focus"]["focus7"])
+            self.focusdice8.setChecked(document["focus"]["focus8"])
+            self.focusdice9.setChecked(document["focus"]["focus9"])
+            self.focusdice10.setChecked(document["focus"]["focus10"])
 
-        self.spellslot1.setChecked(document["spell slots"]["spell1"])
-        self.spellslot2.setChecked(document["spell slots"]["spell2"])
-        self.spellslot3.setChecked(document["spell slots"]["spell3"])
-        self.spellslot4.setChecked(document["spell slots"]["spell4"])
-        self.spellslot5.setChecked(document["spell slots"]["spell5"])
-        self.spellslot6.setChecked(document["spell slots"]["spell6"])
-        self.spellslot7.setChecked(document["spell slots"]["spell7"])
-        self.spellslot8.setChecked(document["spell slots"]["spell8"])
-        self.spellslot9.setChecked(document["spell slots"]["spell9"])
-        self.spellslot10.setChecked(document["spell slots"]["spell10"])
+            self.update_feat(document["feats"]["feat1"], self.feat1)
+            self.update_feat(document["feats"]["feat2"], self.feat2)
+            self.update_feat(document["feats"]["feat3"], self.feat3)
 
-        self.focusdice1.setChecked(document["focus"]["focus1"])
-        self.focusdice2.setChecked(document["focus"]["focus2"])
-        self.focusdice3.setChecked(document["focus"]["focus3"])
-        self.focusdice4.setChecked(document["focus"]["focus4"])
-        self.focusdice5.setChecked(document["focus"]["focus5"])
-        self.focusdice6.setChecked(document["focus"]["focus6"])
-        self.focusdice7.setChecked(document["focus"]["focus7"])
-        self.focusdice8.setChecked(document["focus"]["focus8"])
-        self.focusdice9.setChecked(document["focus"]["focus9"])
-        self.focusdice10.setChecked(document["focus"]["focus10"])
+            if int(document["current hp"]) >= 0:
+                self.current_hp.setStyleSheet(style.BIG_BUTTONS)
+            else:
+                self.current_hp.setStyleSheet(style.BUTTONS_INJURY)
 
-        self.update_sheet()
+            if int(document["current morale"]) >= 0:
+                self.current_morale.setStyleSheet(style.BIG_BUTTONS)
+            else:
+                self.current_morale.setStyleSheet(style.BUTTONS_INJURY)
+
+            self.update_sheet()
+
+    def update_feat(self, selected_feat, widget):
+        print(f"Updating {selected_feat} in {widget}")
+        if selected_feat == "":
+            func.set_icon(widget, "",cons.ICON_COLOR)
+            widget.setToolTip("")
+            widget.setText("")
+            widget.setProperty("feat", "")
+            return
+        
+        for feat_dict in os.listdir(cons.FEATURES):
+            for feat in json.load(open(os.path.join(cons.FEATURES,feat_dict), "r")):
+                if feat["name"] == selected_feat:
+                    func.set_icon(widget, feat["icon"],cons.ICON_COLOR)
+                    widget.setToolTip(feat["description"])
+                    widget.setProperty("feat", feat["name"])
+                    return
+
+
+
 
     

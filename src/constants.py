@@ -9,9 +9,9 @@ try:
 except:
     ROOT = os.path.dirname(__file__)
 
-SCRIPT_NAME = "Deathbringer App"
+SCRIPT_NAME = "Vanguard 5e"
 LOCAL_DIRECTORY = os.path.join(os.getenv("APPDATA"), SCRIPT_NAME)
-VERSION = "0.0.1"
+VERSION = "1.0"
 USER = "test-user"
 PASSWORD = "7kHYdt9kna9d9w3t" 
 CONNECT = f"mongodb+srv://{USER}:{PASSWORD}@cluster0.2oqhlud.mongodb.net/?retryWrites=true&w=majority"
