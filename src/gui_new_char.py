@@ -101,6 +101,18 @@ class NewCharacter(QWidget):
 
             self.csheet.stat_layout.get_title()[1].setText("3 remaining stat points.")
 
+            for slot in range(1, cons.MAX_SLOTS):
+                self.csheet.findChild(QLineEdit, "inventory" + str(slot)).setText("")
+
+            for focus in range(1, 11):
+                self.csheet.findChild(QToolButton, "focusdice" + str(focus)).setChecked(False)
+
+            for spell in range(1, 11):
+                self.csheet.findChild(QToolButton, "spellslot" + str(spell)).setChecked(False)
+
+            for feat in range(1,4):
+                self.csheet.findChild(QToolButton, "feat" + str(feat)).setChecked(False)
+
             print("Needs to check if char exists")
 
             self.csheet.character_name.get_widget().addItem(cname)

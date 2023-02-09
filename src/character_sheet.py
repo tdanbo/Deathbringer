@@ -636,6 +636,9 @@ class CharacterSheet():
                     widget.setToolTip(feat["description"])
                     widget.setProperty("feat", feat["name"])
                     return
+                
+    def get_character(self):
+        return self.character_name.get_widget().currentText()
 
 
 

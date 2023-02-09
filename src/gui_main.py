@@ -27,9 +27,9 @@ class MainWindow(QWidget):
         # Layouts
         self.main_layout = QHBoxLayout()
 
-        combat_log_gui = CombatLogGUI()
-        
         character_sheet_gui = CharacterSheetGUI()
+
+        combat_log_gui = CombatLogGUI(character_sheet_gui)
         
         #initializing the two main classes
         self.combat_log = CombatLog(combat_log_gui)    

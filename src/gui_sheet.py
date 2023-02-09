@@ -489,4 +489,4 @@ class CharacterSheetGUI(QWidget):
 
     def open_new_character(self):
         self.new_character = NewCharacter(self)
-        self.new_character.show()
+        self.new_character.show()        

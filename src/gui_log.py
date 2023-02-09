@@ -15,8 +15,11 @@ from gui_functions import custom_log
 from gui_functions import roll
 
 class CombatLogGUI(QWidget):
-    def __init__(self):
+    def __init__(self, csheet):
         super().__init__()
+        
+        self.csheet = csheet
+
         #Setting up layouts/sections
         self.log_layout = Section(
             outer_layout = QVBoxLayout(),
@@ -62,7 +65,7 @@ class CombatLogGUI(QWidget):
             height=cons.WSIZE,
             objectname="roll",
             size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
-            signal= lambda: roll.custom_prepare_roll(self,"Custom")
+            signal= lambda: roll.custom_prepare_roll(self,self.get_charater(),"Custom")
         )   
 
         self.roll_button.get_widget().setHidden(True)
@@ -272,4 +275,6 @@ class CombatLogGUI(QWidget):
             elif widget.objectName() == "roll":
                 custom_rolls.clear_rolls(self)
 
-
+    def get_charater(self):
+        character = self.csheet.findChild(QComboBox, "name").currentText()
+        return character
