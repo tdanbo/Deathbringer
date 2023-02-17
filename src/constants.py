@@ -2,6 +2,7 @@
 import functions as func
 import os
 import sys
+import json
 
 ROOT = os.path.abspath(os.path.dirname(__file__))
 try:
@@ -32,6 +33,8 @@ HIT_DICE = 6
 BASE_MORALE = 3
 BASE_SAVE = 11
 STATS_PER_LEVEL = 3
+
+ELEMENTS = json.load(open(os.path.join(ROOT, ".creatures", "elements.json"), "r"))
 
 abjuration = ["abjuration 1","abjuration 2","abjuration 3","abjuration 4","abjuration 5"]
 conjuration = ["conjuration 1","conjuration 2","conjuration 3","conjuration 4","conjuration 5"]

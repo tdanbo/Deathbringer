@@ -1,0 +1,27 @@
+{
+    "stats": {
+        "STR": -1,
+        "DEX": 1,
+        "CON": -2,
+        "INT": 0,
+        "WIS": 0,
+        "CHA": 2
+    },
+    "Passives": {
+        "Assassinate": "During its first turn, the assassin has advantage on attack rolls against any creature that hasn't taken a turn.",
+        "Evasion": "DEX Throw are half damage on fail and no damage on success",
+        "Improved Critial": "The rogue crits on 19 and 20"
+    },
+    "Basic Mod": [
+        "Physical",
+        "Hybrid"
+    ],
+    "Elemental Mod": [
+        "Condition",
+        "Focus",
+        "Blink Strike"
+    ],
+    "leader mod": [
+        "Rush"
+    ]
+}

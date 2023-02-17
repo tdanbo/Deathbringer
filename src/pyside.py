@@ -6,7 +6,6 @@ import os
 import json
 
 import constants as cons
-import re
 
 import stylesheet as style
 import functions as func

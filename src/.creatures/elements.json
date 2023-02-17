@@ -1,0 +1,67 @@
+{
+    "Bludgeoning": {
+        "Prone": "Strength",
+        "Grappled": "Strength",
+        "Restrained": "Strength"
+    },
+    "Piercing": {
+        "Poisoned": "Constitution",
+        "Restrained": "Dexterity",
+        "Paralyzed": "Dexterity"
+    },
+    "Slashing": {
+        "Frightened": "Wisdom",
+        "Prone": "Dexterity",
+        "Charmed": "Wisdom"
+    },
+    "Acid": {
+        "Blinded": "Dexterity",
+        "Restrained": "Dexterity",
+        "Poisoned": "Constitution"
+    },
+    "Cold": {
+        "Restrained": "Dexterity",
+        "Prone": "Dexterity",
+        "Paralyzed": "Constitution"
+    },
+    "Fire": {
+        "Incapacitated": "Dexterity",
+        "Stunned": "Constitution",
+        "Charmed": "Wisdom"
+    },
+    "Force": {
+        "Paralyzed": "Strength",
+        "Unconscious": "Constitution",
+        "Stunned": "Constitution"
+    },
+    "Lightning": {
+        "Paralyzed": "Dexterity",
+        "Stunned": "Constitution",
+        "Unconscious": "Constitution"
+    },
+    "Necrotic": {
+        "Poisoned": "Constitution",
+        "Paralyzed": "Constitution",
+        "Incapacitated": "Wisdom"
+    },
+    "Poison": {
+        "Poisoned": "Constitution",
+        "Unconscious": "Constitution",
+        "Incapacitated": "Wisdom"
+    },
+    "Psychic": {
+        "Charmed": "Wisdom",
+        "Stunned": "Wisdom",
+        "Incapacitated": "Wisdom"
+    },
+    "Radiant": {
+        "Blinded": "Constitution",
+        "Charmed": "Wisdom",
+        "Paralyzed": "Constitution"
+    },
+    "Thunder": {
+        "Deafened": "Constitution",
+        "Stunned": "Constitution",
+        "Incapacitated": "Wisdom"
+    }
+}
