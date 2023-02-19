@@ -12,32 +12,29 @@ class MyWidget(QWidget):
         # create a QVBoxLayout layout
         layout = QVBoxLayout()
 
-        section_layout = QVBoxLayout()
-        section_widget = QWidget()
-        outer_layout = QVBoxLayout()
-        inner_layout = QHBoxLayout()
+        for i in range(1, 4):
+            section_widget = QWidget()
+            section_layout = QVBoxLayout()
+            section_widget.setLayout(section_layout)
+            outer_layout = QVBoxLayout()
+            section_layout.addLayout(outer_layout)
+            inner_layout = QHBoxLayout()
+            outer_layout.addLayout(inner_layout)
 
-        # TEST 1
-        section_layout.addWidget(section_widget)
-        section_widget.setLayout(outer_layout)
-        outer_layout.addLayout(inner_layout)
 
-        layout2 = QVBoxLayout()
+
+            button = QPushButton(f"TEST BUTTON{i}")
+            inner_layout.addWidget(button)
+            #inner_layout.setAlignment(Qt.AlignTop)  # align the button to the top
+            layout.addWidget(section_widget)
+            outer_layout.setContentsMargins(0,0,0,0)
+            section_widget.setStyleSheet("background-color: red;")
+            inner_layout.setAlignment(Qt.AlignTop)    
+
+        #section_layout.setAlignment(Qt.AlignTop)  # remove this line
+        layout.setAlignment(Qt.AlignTop)    
 
         # add a label to the layout
-        button1 = QPushButton("TEST BUTTON1")
-        button2 = QPushButton("TEST BUTTON2")
-
-        button1.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
-        button2.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
-
-        inner_layout.addWidget(button1)
-        layout2.addWidget(button2)
-
-        
-
-        layout.addLayout(section_layout)
-        layout.addLayout(layout2)
 
         self.setLayout(layout)
         self.show()

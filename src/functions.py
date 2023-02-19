@@ -20,7 +20,7 @@ def read_json(file_path):
     file_json = json.load(open(file_path, "r"))
     return file_json
 
-def set_icon(widget, icon, color):
+def set_icon(widget, icon, color, width=0):
     qicon = QIcon()
     if icon in [".png",""]:
         pixmap = QPixmap()
@@ -36,5 +36,17 @@ def set_icon(widget, icon, color):
     try:
         widget.setIcon(qicon)
     except:
-        widget.setPixmap(pixmap)
-        widget.setScaledContents(True)
+        if width == 0:
+            widget.setPixmap(pixmap)
+            widget.setScaledContents(False)
+        else:
+            print(f"Scaled icon: {icon} {width}")
+            try:
+                pix_width = width  # set the desired width for the scaled icon
+                height = int(pixmap.height() * (pix_width / pixmap.width()))  # calculate the corresponding height
+                scaled_pixmap = pixmap.scaled(pix_width, height)  # create a new scaled pixmap
+
+                widget.setPixmap(scaled_pixmap)
+            except:
+                widget.setPixmap(pixmap)
+                print(f"Error: {icon} {width}")

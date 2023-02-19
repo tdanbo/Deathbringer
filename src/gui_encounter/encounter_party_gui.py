@@ -100,6 +100,7 @@ class PartySelectGUI(QWidget):
             self.encounter_gui.encounter_list.append((member,"Player","Slashing"))
             creature_count = len(self.encounter_gui.encounter_list)-1
             self.encounter_gui.add_gui_creatures(member,creature_count)
+            print(self.encounter_gui.encounter_list)
             
         self.hide()
 

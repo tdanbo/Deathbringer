@@ -39,6 +39,7 @@ class Encounter:
         self.divide_hit()
         self.divide_damage()
         self.divide_stats()
+        self.divide_movement()
 
         self.create_attack()
 
@@ -56,6 +57,8 @@ class Encounter:
             character_dict = self.collection.find_one(query)
             print(character_dict)
             p["init"] = int(character_dict["init"])
+            p["speed"] = character_dict["speed"]
+            p["max hp"] = character_dict["max hp"]
             p["hp"] = character_dict["current hp"]
             p["ac"] = character_dict["ac"]
             p["stats"] = character_dict["stats"]
@@ -97,32 +100,53 @@ class Encounter:
 
             for attack,multiplier in enumerate(attack_distribution):
                 print(attack)
-                actions_dict = c["actions"]
-                actions_dict[attack+1] = {}
 
                 single_attack_damage = round(creature_damage*multiplier)
 
                 if attack == 0:
                     attack_modifier = random.sample(creature_json["Basic Mod"], k=1)  
+                    single_action = {}
                     apply_static = True
                     if attack_modifier == ["Hybrid"]:
                         physical_damage = single_attack_damage*0.25
                         elemental_damage = single_attack_damage*0.75
-                        actions_dict[attack+1]["Damage"] = self.damage_convert(physical_damage, static=True)
-                        actions_dict[attack+1][creature_damage_type] = self.damage_convert(elemental_damage, static=False)
-                        actions_dict[attack+1]["Modifiers"] = []
+                        single_action["Primary Type"] = "Physical"
+                        single_action["Primary Damage"] = self.damage_convert(physical_damage, static=True)
+                        single_action["Secondary Type"] = creature_damage_type
+                        single_action["Secondary Damage"] = self.damage_convert(elemental_damage, static=False)
+                        single_action["Modifiers"] = attack_modifier
                     else:
-                        actions_dict[attack+1]["Damage"] = self.damage_convert(single_attack_damage, static=True)
-                        actions_dict[attack+1]["Modifiers"] = []
+                        single_action["Primary Type"] = "Physical"
+                        single_action["Primary Damage"] = self.damage_convert(single_attack_damage, static=True)
+                        single_action["Secondary Type"] = ""
+                        single_action["Secondary Damage"] = ""
+                        single_action["Modifiers"] = []
+
+                    c["actions"].append(single_action)
+
                 if attack == 1:
+                    single_action = {}
                     attack_modifier = random.sample(creature_json["Elemental Mod"], k=1)
-                    actions_dict[attack+1][creature_damage_type] = self.damage_convert(single_attack_damage, static=False)
-                    actions_dict[attack+1]["Modifiers"] = attack_modifier
+
+                    single_action["Primary Type"] = creature_damage_type
+                    single_action["Primary Damage"] = self.damage_convert(single_attack_damage, static=False)
+                    single_action["Secondary Type"] = ""
+                    single_action["Secondary Damage"] = ""
+                    single_action["Modifiers"] = attack_modifier
+
+                    c["actions"].append(single_action)
 
                 if attack == 2:
+                    single_action = {}
                     attack_modifier = random.sample(creature_json["Elemental Mod"], k=2)
-                    actions_dict[attack+1][creature_damage_type] = self.damage_convert(single_attack_damage, static=False)
-                    actions_dict[attack+1]["Modifiers"] = attack_modifier
+
+                    single_action["Primary Type"] = creature_damage_type
+                    single_action["Primary Damage"] = self.damage_convert(single_attack_damage, static=False)
+                    single_action["Secondary Type"] = ""
+                    single_action["Secondary Damage"] = ""
+                    single_action["Modifiers"] = attack_modifier
+
+                    c["actions"].append(single_action)
                 
                 c["hit"] = creature_hit
 
@@ -189,7 +213,7 @@ class Encounter:
             creature_json = json.load(open(f".creatures/{creature_type.lower()}.json", "r"))
             if random.choice([True, False]):
                 creature_passives = random.sample(list(creature_json["Passives"].keys()), k=1)
-                c["passives"] = creature_passives
+                c["passive"] = creature_passives[0]
             else:
                 pass
 
@@ -231,6 +255,9 @@ class Encounter:
                 c["hp"] -= 1
                 random_c['hp'] += 1
                 random_pool -= 1
+
+        for c in self.creature_stats:
+            c["max hp"] = c["hp"]
 
     def divide_damage(self):
         random_pool = self.damage_pool*0.1
@@ -284,6 +311,27 @@ class Encounter:
                 modifier = random.randint(dist_stat, 0)
 
             c["ac"] += self.ac_pool+modifier
+
+    def divide_movement(self):
+        distribution = {
+            "Leader": 40,
+            "Rogue": 40,
+            "Ranger": 35,
+            "Caster": 30,
+            "Fighter": 30,
+            "Specialist": 25,  
+            "Brute": 25   
+        }
+
+        base_speed = 30
+
+        for c in self.creature_stats:
+            if c["rank"] == "Leader":
+                stat = distribution["Leader"]
+            else:
+                stat = distribution[c["type"]]
+
+            c["speed"] = f"{stat} ft."      
 
     def divide_spell_save(self):
         distribution = {
@@ -343,10 +391,10 @@ class Encounter:
         
     def update_dict(self):
         for creature in self.creatures:
-            self.creature_stats.append({"init":0, "type":creature[0], "rank":creature[1], "damage type":creature[2] , "passives":[], "stats": {}, "spell save":0, "hp":0, "ac":0, "damage":0, "hit":0, "attacks":0, "actions": {}})
+            self.creature_stats.append({"icon":creature[0], "init":0, "speed":0, "type":creature[0], "rank":creature[1], "damage type":creature[2] , "passive":"", "stats": {}, "spell save":0, "max hp":0, "hp":0, "ac":0, "damage":0, "hit":0, "attacks":0, "actions": []})
 
         for player in self.players:
-            self.player_stats.append({"init":0, "type":player[0], "hp":0, "ac":0, "stats": {}})
+            self.player_stats.append({"icon":player[0], "init":0, "speed":0, "type":player[0], "max hp": 0, "hp":0, "ac":0, "stats": {}, "actions": []})
 
     '''
     These are all the important scales to adjust the balance of the game. They are all based on a 1-10 scale based on the encounter level.

@@ -5,8 +5,10 @@ from PySide2.QtCore import *
 # import functools
 from pyside import Section
 from pyside import Widget
+from pyside import SimpleSection
 
 import constants as cons
+import functions as func
 import stylesheet as style
 import functools
 
@@ -92,7 +94,7 @@ class EncounterGUI(QWidget):
             icon = ("encounter.png",cons.WSIZE*1.5,cons.ICON_COLOR),
             scroll=(True,"top"),
             group=True,
-            spacing=5,
+            spacing=10,
             class_group=self.section_group
         )
 
@@ -122,7 +124,7 @@ class EncounterGUI(QWidget):
         self.adventure_level_button = Widget(
             widget_type=QPushButton(),
             stylesheet=style.BIG_BUTTONS,
-            text="3",
+            text="7",
             objectname = "adventure_level",
             parent_layout=self.adventure_layout.inner_layout(1),
             class_group=self.widget_group,
@@ -239,75 +241,439 @@ class EncounterGUI(QWidget):
     def add_gui_creatures(self,creature_type,creature_count):
         print("adding creature")
         print(creature_count)
-        self.creature_main_layout = Section(
-            outer_layout = QHBoxLayout(),
-            inner_layout = ("VBox", 1),
-            parent_layout = self.creature_layout.inner_layout(1),
-            spacing=3,
-            group=True
-        )
 
-        self.base_stats_layout = Section(
-            outer_layout = QVBoxLayout(),
-            inner_layout = ("HBox", 1),
-            parent_layout = self.creature_main_layout.inner_layout(1),
-        )
+        self.section_creatures_group = []
+        self.widget_creatures_group = []
+
+        self.single_creature_layout = Section(
+            outer_layout = QHBoxLayout(),
+            inner_layout = ("VBox", 5),
+            parent_layout=self.creature_layout.inner_layout(1),
+            class_group=self.section_creatures_group
+        )   
+
+        self.slot_layot = Section(
+            outer_layout = QHBoxLayout(),
+            inner_layout = ("VBox", 11),
+            parent_layout=self.single_creature_layout.inner_layout(1),
+            class_group=self.section_creatures_group,
+            content_margin=(0,0,8,1)
+        ) 
 
         self.action_layout = Section(
-            outer_layout = QVBoxLayout(),
+            outer_layout = QHBoxLayout(),
             inner_layout = ("VBox", 1),
-            parent_layout = self.creature_main_layout.inner_layout(1),
+            parent_layout=self.single_creature_layout.inner_layout(1),
             class_group=self.action_group
-        )
+        )   
 
-        self.initiative_label = Widget(
-            widget_type=QLabel(),
-            text="",
-            parent_layout = self.base_stats_layout.inner_layout(1),
-            width=cons.WSIZE*1.5,
-            objectname=f"init{creature_count}",
-            stylesheet=style.INVENTORY,
-            size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
+        self.hp = Widget(
+            widget_type=QPushButton(),
+            stylesheet=style.BIG_BUTTONS,
+            parent_layout=self.slot_layot.inner_layout(1),
+            width = cons.WSIZE*2,
+            height = cons.WSIZE*2,
+            objectname=f"hp{creature_count}",
+            signal=functools.partial(roll.inventory_prepare_double_roll, self,creature_count),
+            class_group=self.widget_creatures_group,
         )
 
         self.hp_label = Widget(
-            widget_type=QPushButton(),
-            text="",
-            parent_layout = self.base_stats_layout.inner_layout(1),
-            width=cons.WSIZE*1.5,
-            objectname=f"hp{creature_count}",
+            widget_type=QLabel(),
             stylesheet=style.INVENTORY,
-            size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
+            parent_layout=self.slot_layot.inner_layout(1),
+            height = cons.WSIZE/1.5,
+            objectname=f"max hp{creature_count}",
+            text="HP",
+            align="center",
+            class_group=self.widget_creatures_group,
+            width = cons.WSIZE*2
+        )
+
+        self.ac = Widget(
+            widget_type=QPushButton(),
+            stylesheet=style.BIG_BUTTONS,
+            parent_layout=self.slot_layot.inner_layout(2),
+            width = cons.WSIZE*2,
+            height = cons.WSIZE*2,
+            objectname=f"ac{creature_count}",
+            signal=functools.partial(roll.inventory_prepare_double_roll, self,creature_count),
+            class_group=self.widget_creatures_group,
         )
 
         self.ac_label = Widget(
-            widget_type=QPushButton(),
+            widget_type=QLabel(),
+            stylesheet=style.INVENTORY,
+            parent_layout=self.slot_layot.inner_layout(2),
+            height = cons.WSIZE/1.5,
+            objectname=f"icon_label{creature_count}",
+            text="AC",
+            align="center",
+            class_group=self.widget_creatures_group,
+            width = cons.WSIZE*2
+        )
+
+        self.passive = Widget(
+            widget_type=QToolButton(),
+            stylesheet=style.INVENTORY,
+            parent_layout=self.slot_layot.inner_layout(3),
+            width = cons.WSIZE*2,
+            height = cons.WSIZE*2,
+            objectname=f"passive{creature_count}",
+            signal=functools.partial(roll.inventory_prepare_double_roll, self,creature_count),
+            class_group=self.widget_creatures_group,
+        )
+
+        self.passive_label = Widget(
+            widget_type=QLabel(),
+            stylesheet=style.INVENTORY,
+            parent_layout=self.slot_layot.inner_layout(3),
+            height = cons.WSIZE/1.5,
+            objectname=f"passive_label{creature_count}",
+            text="MOD",
+            align="center",
+            class_group=self.widget_creatures_group,
+            width = cons.WSIZE*2
+        )
+
+        self.icon = Widget(
+            widget_type=QLabel(),
+            stylesheet=style.INVENTORY,
+            parent_layout=self.slot_layot.inner_layout(4),
+            width = cons.WSIZE*5,
+            height = cons.WSIZE*2,
+            objectname=f"icon{creature_count}",
+            class_group=self.widget_creatures_group,
+            icon=(f"{creature_type}.png","","",100),
+        )
+
+        self.icon_label = Widget(
+            widget_type=QLabel(),
+            stylesheet=style.INVENTORY,
+            parent_layout=self.slot_layot.inner_layout(4),
+            height = cons.WSIZE/1.5,
+            objectname=f"speed{creature_count}",
             text="",
-            parent_layout = self.base_stats_layout.inner_layout(1),
-            width=cons.WSIZE*1.5,
-            objectname=f"ac{creature_count}",
-            stylesheet=style.INVENTORY,
-            size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
+            align="center",
+            class_group=self.widget_creatures_group,
+            width = cons.WSIZE*5,
         )
 
-        self.creature_type_label = Widget(
+        self.backpack_item = Widget(
+            widget_type=QLineEdit(),
+            stylesheet=style.INVENTORY,
+            parent_layout=self.slot_layot.inner_layout(5),
+            height = cons.WSIZE*2,
+            #signal= self.select_item,
+            objectname=f"type{creature_count}",
+            align="center",
+            class_group=self.widget_creatures_group,
+            text=f"{creature_type}"
+
+        )
+
+        self.initiative = Widget(
+            widget_type=QLabel(),
+            stylesheet=style.INVENTORY,
+            text="",
+            parent_layout=self.slot_layot.inner_layout(5),
+            height = cons.WSIZE/1.5,
+            objectname=f"init{creature_count}",
+            align="center",
+            class_group=self.widget_creatures_group
+        )
+
+        for number, stat in enumerate(["STR", "DEX", "CON", "INT", "WIS", "CHA"]):
+            self.stat = Widget(
+                widget_type=QPushButton(),
+                stylesheet=style.INVENTORY,
+                parent_layout=self.slot_layot.inner_layout(number+6),
+                width = cons.WSIZE*1.40,
+                height = cons.WSIZE*2,
+                objectname=f"{stat}{creature_count}",
+                #signal = functools.partial(roll.inventory_prepare_roll, self, "roll", creature_count),
+                class_group=self.widget_creatures_group,
+                text="",
+
+            )
+
+            self.stat_label = Widget(
+                widget_type=QLabel(),
+                stylesheet=style.INVENTORY,
+                text=stat,
+                parent_layout=self.slot_layot.inner_layout(number+6),
+                height = cons.WSIZE/1.5,
+                objectname=f"stat_label{creature_count}",
+                align="center",
+                class_group=self.widget_creatures_group
+            )
+
+        for s in self.section_creatures_group:
+            s.connect_to_parent()
+
+        for s in self.action_group:
+            s.connect_to_parent()
+
+        for w in self.widget_creatures_group:
+            w.connect_to_parent()
+            w.set_signal()
+
+    # 
+    # Below is the sections that generates the actions bars for each creature
+    #
+
+    def create_gui_action(self, action, attack, position):
+
+        if len(action["Modifiers"]) == 0:
+            modifier1icon = ""
+            modifier2icon = ""
+        if len(action["Modifiers"]) == 1:
+            modifier1icon = f'{action["Modifiers"][0]}.png'
+            modifier2icon = ""
+        if len(action["Modifiers"]) == 2:
+            modifier1icon = f'{action["Modifiers"][0]}.png'
+            modifier2icon = f'{action["Modifiers"][1]}.png'
+
+
+        self.slot_layot = Section(
+            outer_layout = QHBoxLayout(),
+            inner_layout = ("VBox", 8),
+            parent_layout=self.action_group[position].inner_layout(1),
+            content_margin=(0,0,8,0),
+            class_group=self.section_group
+        )
+
+        self.backpack= Widget(
+            widget_type=QToolButton(),
+            stylesheet=style.INVENTORY,
+            parent_layout=self.slot_layot.inner_layout(1),
+            width = cons.WSIZE*2,
+            height = cons.WSIZE,
+            objectname=f"icon{position}",
+            signal=functools.partial(roll.inventory_prepare_double_roll, self,position),
+            class_group=self.widget_group,
+            icon=("weapon.png",cons.WSIZE*1.5,cons.ICON_COLOR),
+        )
+
+        self.backpack_label = Widget(
+            widget_type=QLabel(),
+            stylesheet=style.INVENTORY,
+            parent_layout=self.slot_layot.inner_layout(1),
+            height = cons.WSIZE/1.5,
+            objectname=f"icon_label{position}",
+            text=f"{attack+1}.",
+            align="center",
+            class_group=self.widget_group,
+            width = cons.WSIZE*2
+        )
+
+        self.first_mod= Widget(
+            widget_type=QToolButton(),
+            stylesheet=style.INVENTORY,
+            parent_layout=self.slot_layot.inner_layout(2),
+            width = cons.WSIZE*2,
+            height = cons.WSIZE,
+            objectname=f"first_mod{position}",
+            signal=functools.partial(roll.inventory_prepare_double_roll, self,position),
+            class_group=self.widget_group,
+            icon=(modifier1icon,cons.WSIZE*1.5,cons.ICON_COLOR),
+        )
+
+        self.first_mod_label = Widget(
+            widget_type=QLabel(),
+            stylesheet=style.INVENTORY,
+            parent_layout=self.slot_layot.inner_layout(2),
+            height = cons.WSIZE/1.5,
+            objectname=f"first_mod_label{position}",
+            text="",
+            align="center",
+            class_group=self.widget_group,
+            width = cons.WSIZE*2
+        )
+
+        self.second_mod= Widget(
+            widget_type=QToolButton(),
+            stylesheet=style.INVENTORY,
+            parent_layout=self.slot_layot.inner_layout(3),
+            width = cons.WSIZE*2,
+            height = cons.WSIZE,
+            objectname=f"icon{position}",
+            signal=functools.partial(roll.inventory_prepare_double_roll, self,position),
+            class_group=self.widget_group,
+            icon=(modifier2icon,cons.WSIZE*1.5,cons.ICON_COLOR),
+        )
+
+        self.second_mod_label = Widget(
+            widget_type=QLabel(),
+            stylesheet=style.INVENTORY,
+            parent_layout=self.slot_layot.inner_layout(3),
+            height = cons.WSIZE/1.5,
+            objectname=f"icon_label{position}",
+            text="",
+            align="center",
+            class_group=self.widget_group,
+            width = cons.WSIZE*2
+        )
+
+        self.spacer = Widget(
             widget_type=QPushButton(),
             stylesheet=style.INVENTORY,
-            text=creature_type,
-            parent_layout = self.base_stats_layout.inner_layout(1),
-            size_policy = (QSizePolicy.Expanding , QSizePolicy.Expanding),
-            objectname=f"type{creature_count}",
+            parent_layout=self.slot_layot.inner_layout(4),
+            width = 130,
+            height = cons.WSIZE,
+            objectname=f"spacer{position}",
+            class_group=self.widget_group,	
         )
 
-        self.hp_label.connect_to_parent()
-        self.ac_label.connect_to_parent()
-        self.creature_type_label.connect_to_parent()
-        self.initiative_label.connect_to_parent()
+        self.spacer_label = Widget(
+            widget_type=QPushButton(),
+            stylesheet=style.INVENTORY,
+            parent_layout=self.slot_layot.inner_layout(4),
+            height = cons.WSIZE/1.5,
+            objectname=f"spacer_label{position}",
+            class_group=self.widget_group,
+            width = 130,
+        )
 
-        self.base_stats_layout.connect_to_parent()
-        self.action_layout.connect_to_parent()
-        self.creature_main_layout.connect_to_parent()
- 
+        self.backpack_item = Widget(
+            widget_type=QLineEdit(),
+            stylesheet=style.INVENTORY,
+            parent_layout=self.slot_layot.inner_layout(5),
+            height = cons.WSIZE,
+            #signal= self.select_item,
+            objectname=f"inventory{position}",
+            align="center",
+            class_group=self.widget_group,
+            text="Claw"
+
+        )
+
+        self.backpack_item_label = Widget(
+            widget_type=QLabel(),
+            stylesheet=style.INVENTORY,
+            text="Creature Attack",
+            parent_layout=self.slot_layot.inner_layout(5),
+            height = cons.WSIZE/1.5,
+            objectname=f"inventory_label{position}",
+            align="center",
+            class_group=self.widget_group
+        )
+
+        self.backpack_action= Widget(
+            widget_type=QPushButton(),
+            stylesheet=style.INVENTORY,
+            text="21",
+            parent_layout=self.slot_layot.inner_layout(6),
+            width = cons.WSIZE*3,
+            height = cons.WSIZE,
+            objectname=f"evoke{position}",
+            signal = functools.partial(roll.inventory_prepare_roll, self, "evoke", position),
+            class_group=self.widget_group
+        )
+
+        self.defense_label = Widget(
+            widget_type=QLabel(),
+            stylesheet=style.INVENTORY,
+            text="Defense",
+            parent_layout=self.slot_layot.inner_layout(6),
+            height = cons.WSIZE/1.5,  
+            objectname=f"evoke_label{position}",
+            align="center",
+            class_group=self.widget_group
+        )
+
+        self.secondary_damage= Widget(
+            widget_type=QPushButton(),
+            stylesheet=style.INVENTORY,
+            text=f'{action["Secondary Damage"]}',
+            parent_layout=self.slot_layot.inner_layout(7),
+            width = cons.WSIZE*3,
+            height = cons.WSIZE,
+            objectname=f"hit_dc{position}",
+            signal = functools.partial(roll.inventory_prepare_roll, self, "hit_dc", position),
+            class_group=self.widget_group
+        )
+
+        self.secondary_type = Widget(
+            widget_type=QLabel(),
+            stylesheet=style.INVENTORY,
+            text=f'{action["Secondary Type"]}',
+            parent_layout=self.slot_layot.inner_layout(7),
+            height = cons.WSIZE/1.5,
+            objectname=f"hit_dc_label{position}",
+            align="center",
+            class_group=self.widget_group
+        )
+
+        self.primary_damage = Widget(
+            widget_type=QPushButton(),
+            stylesheet=style.INVENTORY,
+            parent_layout=self.slot_layot.inner_layout(8),
+            width = cons.WSIZE*3,
+            height = cons.WSIZE,
+            objectname=f"roll{position}",
+            signal = functools.partial(roll.inventory_prepare_roll, self, "roll", position),
+            class_group=self.widget_group,
+            text=f'{action["Primary Damage"]}',
+
+        )
+
+        self.primary_type = Widget(
+            widget_type=QLabel(),
+            stylesheet=style.INVENTORY,
+            text=f'{action["Primary Type"]}',
+            parent_layout=self.slot_layot.inner_layout(8),
+            height = cons.WSIZE/1.5,
+            objectname=f"roll_label{position}",
+            align="center",
+            class_group=self.widget_group
+        )
+
+        for s in self.section_group:
+            s.connect_to_parent()
+
+        for w in self.widget_group:
+            w.connect_to_parent()
+            w.set_signal()
+
+    def update_creature_gui(self,position,creature):
+        print(creature)
+        for stat in creature:
+            print(stat)
+            widget = stat+str(position)
+            value = str(creature[stat])
+            if stat in ["passive","icon"]:
+                try:
+                    selected_widget = self.findChild(QWidget, widget)
+                    icon_name = f"{value.lower()}.png"
+                    if stat == "icon":      
+                        func.set_icon(selected_widget,icon_name,"",100)
+                    else:
+                        func.set_icon(selected_widget,icon_name,cons.ICON_COLOR)
+                except:
+                    print(f"Could not find {stat}{position}")
+            elif stat == "init":
+                try:          
+                    self.findChild(QWidget, widget).setText(f"Initiative {value}") 
+                except:
+                    print(f"Could not find {stat}{position}")
+            else:
+                try:          
+                    self.findChild(QWidget, widget).setText(value) 
+                except:
+                    print(f"Could not find {stat}{position}")
+
+        # set all stats
+        for stat in creature["stats"]:
+            widget = stat+str(position)
+            value = str(creature["stats"][stat])
+            try:          
+                self.findChild(QWidget, widget).setText(value) 
+            except:
+                print(f"Could not find {stat}{position}")
+        
+        for attack, action in enumerate(creature["actions"]):
+            self.create_gui_action(action,attack,position)
 
     def run_encounter(self):
         print(self.sender().objectName())
@@ -325,48 +691,6 @@ class EncounterGUI(QWidget):
             encounter = Encounter(level,self.encounter_list).get_encounter()
             for position, creature in enumerate(encounter):
                 self.update_creature_gui(position,creature)
-
-    def update_creature_gui(self,position,creature):
-        print(position)
-        for stat in creature:
-            widget = stat+str(position)
-            value = str(creature[stat])
-            try:          
-                self.findChild(QWidget, widget).setText(value) 
-            except:
-                print(f"Could not find {stat}{position}")
-
-        for action in creature["actions"]:
-            action_dict = creature["actions"][action]
-            for key,value in action_dict.items():
-                print(creature["actions"])
-
-                self.single_action_layout = Section(
-                    outer_layout = QHBoxLayout(),
-                    inner_layout = ("HBox", 1),
-                    parent_layout = self.action_group[position].inner_layout(1),
-                )
-
-                self.action_button1 = Widget(
-                    widget_type=QPushButton(),
-                    stylesheet=style.INVENTORY,
-                    text=key,
-                    parent_layout = self.single_action_layout.inner_layout(1),
-                    objectname=f"action1{position}",
-                )
-
-                self.action_button2 = Widget(
-                    widget_type=QPushButton(),
-                    stylesheet=style.INVENTORY,
-                    text=value,
-                    parent_layout = self.single_action_layout.inner_layout(1),
-                    objectname=f"action2{position}",
-                )
-
-                self.single_action_layout.connect_to_parent()
-                self.action_button1.connect_to_parent()
-                self.action_button2.connect_to_parent()
-                
 
     def open_partyselect(self):
         self.party_select_gui = PartySelectGUI(self)

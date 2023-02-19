@@ -10,6 +10,57 @@ import constants as cons
 import stylesheet as style
 import functions as func
 
+class SimpleSection(QWidget):
+    def __init__(self,
+        section_layout = QVBoxLayout(),
+        inner_layout=(QHBoxLayout(), 1),
+        parent_layout=None,
+        class_group=None,
+        margins=(0,0,0,0),
+        spacing=0,
+        width=None,
+        height=None,
+    ):
+        super().__init__()
+
+
+
+        self.section_layout = section_layout
+        self.parent_layout = parent_layout
+        self.section_inner_layout = self.inner_layout_list(inner_layout)
+        self.inner_layouts = self.inner_layout_list(inner_layout)
+
+        for layout in self.inner_layouts:
+            section_layout.addLayout(layout)
+
+        # styling
+        self.section_layout.setContentsMargins(*margins)
+        self.section_layout.setSpacing(spacing)
+
+        self.setLayout(self.section_layout)
+
+        if width != None:
+            self.setFixedWidth(width)
+        
+        if height != None:
+            self.setFixedHeight(height)
+
+        if class_group != None:
+            class_group.append(self)
+
+    def inner_layout_list(self, inner_layout):
+        self.all_inner_layouts = []
+        for layout in range(inner_layout[1]):
+            self.all_inner_layouts.append(inner_layout[0])
+        return self.all_inner_layouts
+    
+    def inner_layout(self, count):
+        return self.all_inner_layouts[count - 1]
+    
+    def connect_to_parent(self):
+        if self.parent_layout != None:
+            self.parent_layout.addWidget(self)
+    
 class Section(QWidget):
     all_sections = []
 
@@ -163,7 +214,7 @@ class Widget:
         tooltip="",
         objectname="",
         signal="",
-        icon=("", 30),
+        icon=("", 30, 0, 0),
         width="",
         height="",
         align="",
@@ -203,7 +254,11 @@ class Widget:
         self.set_placeholder(self.widget, placeholder)
         self.load_setting(self.setting)
         if icon[0] != "":
-            func.set_icon(self.widget, icon[0], icon[2])
+            if len(icon) == 4:
+                pix_width = icon[3]
+            else:
+                pix_width = 0
+            func.set_icon(self.widget, icon[0], icon[2], width=pix_width)
         if size_policy != None:
             self.widget.setSizePolicy(size_policy[0], size_policy[1])
 

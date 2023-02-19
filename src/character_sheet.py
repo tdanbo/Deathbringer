@@ -30,6 +30,7 @@ class CharacterSheet():
 
         self.ac = csheet.findChild(QPushButton, "ac")
         self.initiative = csheet.findChild(QPushButton, "initiative")
+        self.speed = csheet.findChild(QPushButton, "movement")
 
         #morale
         self.max_morale = csheet.findChild(QPushButton, "max_morale")
@@ -115,6 +116,8 @@ class CharacterSheet():
             "level": self.level.text(),
             "ac": self.ac.text(),
             "init": str(10+int(self.CHA.text())),
+            "speed": self.speed.text(),
+            "max hp": self.max_hp.text(),
             "current hp": self.current_hp.text(),
             "current morale": self.current_morale.text(),
             "stats": {
@@ -539,10 +542,8 @@ class CharacterSheet():
 
 
     def charisma(self):
-        initiative_widget = self.csheet.findChild(QPushButton, "initiative")
-        movement_widget = self.csheet.findChild(QPushButton, "movement")
-        initiative_widget.setText(f"{int(self.CHA.text())+10} init.")
-        movement_widget.setText(f"{20+(int(self.CHA.text())*5)} ft.")
+        self.initiative.setText(f"{int(self.CHA.text())+10} init.")
+        self.speed.setText(f"{20+(int(self.CHA.text())*5)} ft.")
 
     def load_character(self):
         print(f"Loading {self.character.currentText()}")
