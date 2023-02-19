@@ -2,14 +2,25 @@ import numpy as np
 import math
 import random
 import json 
+import pymongo
+import constants as cons
 
 class Encounter:
     def __init__(self, level=1, creatures=[]):
-        self.creatures = creatures
+        
+        #If no creatures are passed, return
+        if creatures == []:
+            print("No creatures to fight")
+            return
+
+        self.creatures = [creature for creature in creatures if creature[1] != "Player"]
+        self.players = [creature for creature in creatures if creature[1] == "Player"]
         self.level = level
         self.level_adjustment()
         
-        self.creature_stats = {}
+        self.creature_stats = []
+        self.player_stats = []
+
         self.update_dict()
 
         self.hp_pool = self.get_hp_pool()
@@ -32,6 +43,22 @@ class Encounter:
         self.create_attack()
 
         self.round_stats()
+
+        self.set_player_stats()
+
+    def set_player_stats(self):
+        self.client = pymongo.MongoClient(cons.CONNECT)
+        self.db = self.client ["dnd"]
+        self.collection = self.db["characters"]
+
+        for p in self.player_stats:
+            query = {"character": p["type"]}
+            character_dict = self.collection.find_one(query)
+            print(character_dict)
+            p["init"] = int(character_dict["init"])
+            p["hp"] = character_dict["current hp"]
+            p["ac"] = character_dict["ac"]
+            p["stats"] = character_dict["stats"]
 
     def level_adjustment(self):
         self.start_level = self.level
@@ -57,12 +84,12 @@ class Encounter:
         }
 
         for c in self.creature_stats:
-            creature_type = self.creature_stats[c]["type"]
+            creature_type = c["type"]
             creature_json = json.load(open(f".creatures/{creature_type.lower()}.json", "r"))
-            creature_attacks = self.creature_stats[c]["attacks"]
-            creature_damage = self.creature_stats[c]["damage"]
-            creature_hit = self.creature_stats[c]["hit"]
-            creature_damage_type = self.creature_stats[c]["type"]
+            creature_attacks = c["attacks"]
+            creature_damage = c["damage"]
+            creature_hit = c["hit"]
+            creature_damage_type = c["damage type"]
 
             attack_distribution = attack_system[creature_attacks]
 
@@ -70,7 +97,7 @@ class Encounter:
 
             for attack,multiplier in enumerate(attack_distribution):
                 print(attack)
-                actions_dict = self.creature_stats[c]["actions"]
+                actions_dict = c["actions"]
                 actions_dict[attack+1] = {}
 
                 single_attack_damage = round(creature_damage*multiplier)
@@ -97,7 +124,7 @@ class Encounter:
                     actions_dict[attack+1][creature_damage_type] = self.damage_convert(single_attack_damage, static=False)
                     actions_dict[attack+1]["Modifiers"] = attack_modifier
                 
-                self.creature_stats[c]["hit"] = creature_hit
+                c["hit"] = creature_hit
 
     # This function convers average damage numbers in to dice notations. And add their static damage value.
     # Static can be set to False. This will make the attack completely based on dice.
@@ -138,7 +165,7 @@ class Encounter:
                 "CHA":0,
             }
 
-            creature_type = self.creature_stats[c]["type"]
+            creature_type = c["type"]
             creature_json = json.load(open(f".creatures/{creature_type.lower()}.json", "r"))
             stat_pool = self.level*2
             stat_ceil = math.ceil(self.level / 3)
@@ -152,17 +179,17 @@ class Encounter:
             for weight in creature_json["stats"]:
                 stats[weight] += creature_json["stats"][weight]
 
-            self.creature_stats[c]["stats"] = stats
-            self.creature_stats[c]["init"] = 10+stats["CHA"]
+            c["stats"] = stats
+            c["init"] = 10+stats["CHA"]
 
 
     def divide_passives(self):
         for c in self.creature_stats:
-            creature_type = self.creature_stats[c]["type"]
+            creature_type = c["type"]
             creature_json = json.load(open(f".creatures/{creature_type.lower()}.json", "r"))
             if random.choice([True, False]):
                 creature_passives = random.sample(list(creature_json["Passives"].keys()), k=1)
-                self.creature_stats[c]["passives"] = creature_passives
+                c["passives"] = creature_passives
             else:
                 pass
 
@@ -173,7 +200,7 @@ class Encounter:
                 attacks = 1
             elif attacks > 3:
                 attacks = 3
-            self.creature_stats[c]["attacks"] = attacks
+            c["attacks"] = attacks
 
     def divide_hp(self):
         random_pool = self.hp_pool*0.1
@@ -190,19 +217,19 @@ class Encounter:
 
         while self.hp_pool > 0:
             for c in self.creature_stats:
-                if self.creature_stats[c]["rank"] == "Leader":
+                if c["rank"] == "Leader":
                     self.hp_pool -= distribution["Leader"]
-                    self.creature_stats[c]["hp"] += distribution["Leader"]
+                    c["hp"] += distribution["Leader"]
                 else:
-                    self.hp_pool -= distribution[self.creature_stats[c]["type"]]
-                    self.creature_stats[c]["hp"] += distribution[self.creature_stats[c]["type"]]
+                    self.hp_pool -= distribution[c["type"]]
+                    c["hp"] += distribution[c["type"]]
 
         while random_pool > 0:
             # Select two random keys
             for c in self.creature_stats:
-                random_creature = random.choice(list(self.creature_stats.keys()))
-                self.creature_stats[c]["hp"] -= 1
-                self.creature_stats[random_creature]['hp'] += 1
+                random_c = random.choice(self.creature_stats)
+                c["hp"] -= 1
+                random_c['hp'] += 1
                 random_pool -= 1
 
     def divide_damage(self):
@@ -219,19 +246,19 @@ class Encounter:
 
         while self.damage_pool > 0:
             for c in self.creature_stats:
-                if self.creature_stats[c]["rank"] == "Leader":
+                if c["rank"] == "Leader":
                     self.damage_pool -= distribution["Leader"]
-                    self.creature_stats[c]["damage"] += distribution["Leader"]
+                    c["damage"] += distribution["Leader"]
                 else:
-                    self.damage_pool -= distribution[self.creature_stats[c]["type"]]
-                    self.creature_stats[c]["damage"] += distribution[self.creature_stats[c]["type"]]
+                    self.damage_pool -= distribution[c["type"]]
+                    c["damage"] += distribution[c["type"]]
 
         while random_pool > 0:
             # Select two random keys
             for c in self.creature_stats:
-                random_creature = random.choice(list(self.creature_stats.keys()))
-                self.creature_stats[c]["damage"] -= 1
-                self.creature_stats[random_creature]['damage'] += 1
+                random_c = random.choice(self.creature_stats)
+                c["damage"] -= 1
+                random_c['damage'] += 1
                 random_pool -= 1
 
     def divide_ac(self):
@@ -246,17 +273,17 @@ class Encounter:
         }
 
         for c in self.creature_stats:
-            if self.creature_stats[c]["rank"] == "Leader":
+            if c["rank"] == "Leader":
                 dist_stat = distribution["Leader"]
             else:
-                dist_stat = distribution[self.creature_stats[c]["type"]]
+                dist_stat = distribution[c["type"]]
 
             if dist_stat > 0:
                 modifier = random.randint(0, dist_stat)
             else:
                 modifier = random.randint(dist_stat, 0)
 
-            self.creature_stats[c]["ac"] += self.ac_pool+modifier
+            c["ac"] += self.ac_pool+modifier
 
     def divide_spell_save(self):
         distribution = {
@@ -271,17 +298,17 @@ class Encounter:
         }
 
         for c in self.creature_stats:
-            if self.creature_stats[c]["rank"] == "Leader":
+            if c["rank"] == "Leader":
                 dist_stat = distribution["Leader"]
             else:
-                dist_stat = distribution[self.creature_stats[c]["type"]]
+                dist_stat = distribution[c["type"]]
 
             if dist_stat > 0:
                 modifier = random.randint(0, dist_stat)
             else:
                 modifier = random.randint(dist_stat, 0)
 
-            self.creature_stats[c]["spell save"] += self.spell_save_pool+modifier      
+            c["spell save"] += self.spell_save_pool+modifier      
 
     def divide_hit(self):
         distribution = {
@@ -295,28 +322,31 @@ class Encounter:
         }
 
         for c in self.creature_stats:
-            if self.creature_stats[c]["rank"] == "Leader":
+            if c["rank"] == "Leader":
                 dist_stat = distribution["Leader"]
             else:
-                dist_stat = distribution[self.creature_stats[c]["type"]]
+                dist_stat = distribution[c["type"]]
 
             if dist_stat > 0:
                 modifier = random.randint(0, dist_stat)
             else:
                 modifier = random.randint(dist_stat, 0)
 
-            self.creature_stats[c]["hit"] += self.hit_pool+modifier    
+            c["hit"] += self.hit_pool+modifier    
 
 
     def round_stats(self):
-        for key, value in self.creature_stats.items():
-            for inner_key, inner_value in value.items():
-                if isinstance(inner_value, float):
-                    value[inner_key] = round(inner_value)
+        for c in self.creature_stats:
+            for key, value in c.items():
+                if isinstance(value, float):
+                    c[key] = round(value)
         
     def update_dict(self):
-        for index, creature in enumerate(self.creatures):
-            self.creature_stats[index] = {"type":creature[0], "rank":creature[1], "damage":creature[2] , "passives":[], "stats": {}, "init":0, "spell save":0, "hp":0, "ac":0, "damage":0, "hit":0, "attacks":0, "actions": {}}
+        for creature in self.creatures:
+            self.creature_stats.append({"init":0, "type":creature[0], "rank":creature[1], "damage type":creature[2] , "passives":[], "stats": {}, "spell save":0, "hp":0, "ac":0, "damage":0, "hit":0, "attacks":0, "actions": {}})
+
+        for player in self.players:
+            self.player_stats.append({"init":0, "type":player[0], "hp":0, "ac":0, "stats": {}})
 
     '''
     These are all the important scales to adjust the balance of the game. They are all based on a 1-10 scale based on the encounter level.
@@ -352,5 +382,7 @@ class Encounter:
         pool = y_values[self.level]
         return round(pool)
     
-    def get_stats(self):
-        return self.creature_stats
+    def get_encounter(self):
+        combined_stats = self.creature_stats + self.player_stats
+        sorted_by_init = sorted(combined_stats, key=lambda x: x['init'], reverse=True)
+        return sorted_by_init

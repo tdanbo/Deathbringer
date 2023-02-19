@@ -34,12 +34,12 @@ class MainWindow(QWidget):
         #initializing the two main classes
         self.combat_log = CombatLog(combat_log_gui)    
         
-        for widget in Widget.all_widgets:
-            widget.connect_to_parent()
-            widget.set_signal()
+        # for widget in Widget.all_widgets:
+        #     widget.connect_to_parent()
+        #     widget.set_signal()
 
-        for section in Section.all_sections:
-            section.connect_to_parent()
+        # for section in Section.all_sections:
+        #     section.connect_to_parent()
 
         character_sheet_gui.setFixedWidth(500)
 

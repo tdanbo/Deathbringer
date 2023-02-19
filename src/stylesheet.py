@@ -59,6 +59,11 @@ BUTTONS = f"QPushButton {{color: {FONT_COLOR}; background-color: {BUTTONS_BACKGR
           f"QToolButton:checked {{color: {FONT_COLOR}; background-color: {WHITE_LIGHT}}}"\
           f"QPushButton:checked {{color: {FONT_COLOR}; background-color: {WHITE_LIGHT}}}"\
 
+LABELS = f"QLabel {{color: {FONT_COLOR}; background-color: {BUTTONS_BACKGROUND}; border: 1px solid {BORDER_COLOR_LIGHT}; border-radius: {RADIUS}}}"\
+
+PARTY_BUTTONS = f"QPushButton {{color: {DISABLED_COLOR}; background-color: {BUTTONS_BACKGROUND}; border: 1px solid {BORDER_COLOR_LIGHT}; border-radius: {RADIUS}}}"\
+          f"QPushButton:checked {{color: {FONT_COLOR}; background-color: {BUTTONS_BACKGROUND}}}"\
+
 CREATURE_BUTTONS = f"QPushButton {{color: {DISABLED_COLOR}; background-color: {BUTTONS_BACKGROUND}; border: 1px solid {BORDER_COLOR_LIGHT}; border-radius: {RADIUS}}}"\
           f"QPushButton:checked {{color: {FONT_COLOR}; background-color: {BUTTONS_BACKGROUND}}}"\
 

@@ -113,6 +113,8 @@ class CharacterSheet():
         character_sheet_dictionary = {
             "character": self.character.currentText(),
             "level": self.level.text(),
+            "ac": self.ac.text(),
+            "init": str(10+int(self.CHA.text())),
             "current hp": self.current_hp.text(),
             "current morale": self.current_morale.text(),
             "stats": {

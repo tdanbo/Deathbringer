@@ -10,7 +10,7 @@ import constants as cons
 import stylesheet as style
 import functions as func
 
-class Section:
+class Section(QWidget):
     all_sections = []
 
     def __init__(
@@ -19,22 +19,36 @@ class Section:
         inner_layout=(QHBoxLayout(), 1),
         parent_layout=None,
         spacing=0,
-        group=(False, None, None),
+        group=False,
         scroll=(False, "bottom"),
         title="",
         icon="",
         content_margin="",
+        class_group=[],
+        width = "",
+        height = ""
     ):
+        super().__init__()
 
-        self.section_layout = QVBoxLayout()
         self.outer_layout_type = outer_layout
-        self.group_layout_type = outer_layout
         self.inner_layout_type = inner_layout[0]
         self.inner_layout_count = inner_layout[1]
         self.parent_layout = parent_layout
         self.group = group
         self.scroll = scroll
         self.spacing = spacing
+        self.class_group = class_group
+        self.width = width
+        self.height = height
+
+        if self.width != "":
+            self.setFixedWidth(self.width)
+        if self.height != "":
+            self.setFixedHeight(self.height)
+
+
+        self.section_layout = QVBoxLayout()
+        self.section_layout.setContentsMargins(0, 0, 0, 0)
 
         self.inner_layouts = self.inner_layout_list()
         self.outer_layout_type.setSpacing(spacing)
@@ -43,7 +57,7 @@ class Section:
             self.outer_layout_type.setContentsMargins(*content_margin)
 
         self.section_layout.setSpacing(0)
-        if self.group[0] == True:
+        if self.group == True:
             if title != "":
                 self.title_layout = QHBoxLayout()
                 self.title_label = QLabel(title)
@@ -66,10 +80,6 @@ class Section:
 
             self.groupbox = QGroupBox()
             self.groupbox.setStyleSheet(style.QGROUPBOX)
-            if self.group[1] != None:
-                self.groupbox.setFixedWidth(self.group[1])
-            if self.group[2] != None:
-                self.groupbox.setFixedHeight(self.group[2])
 
             self.groupbox.setLayout(self.outer_layout_type)
             self.section_layout.addWidget(self.groupbox)
@@ -110,6 +120,9 @@ class Section:
                 self.outer_layout_type.addLayout(layout)
 
         self.all_sections.append(self)
+        self.class_group.append(self)
+
+        self.setLayout(self.section_layout)
 
     def inner_layout_list(self):
         self.all_inner_layouts = []
@@ -119,6 +132,7 @@ class Section:
             else:
                 i_layout = QHBoxLayout()
             self.all_inner_layouts.append(i_layout)
+
         return self.all_inner_layouts
 
     def inner_layout(self, count):
@@ -129,7 +143,8 @@ class Section:
 
     def connect_to_parent(self):
         if self.parent_layout != None:
-            self.parent_layout.addLayout(self.section_layout)
+            print(self)
+            self.parent_layout.addWidget(self)
 
     def get_group(self):
         return self.groupbox
@@ -161,7 +176,9 @@ class Widget:
         size_policy=None,
         checked=False,
         property=("",""),
+        class_group=[]
     ):
+        self.class_group = class_group
         self.text = text
         self.widget = widget_type
         if isinstance(self.widget, QComboBox):
@@ -191,6 +208,7 @@ class Widget:
             self.widget.setSizePolicy(size_policy[0], size_policy[1])
 
         self.all_widgets.append(self)
+        self.class_group.append(self)
 
     def setup_combobox(self, widget, text):
         widget.setSizeAdjustPolicy(QComboBox.AdjustToMinimumContentsLength)
