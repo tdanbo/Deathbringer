@@ -665,7 +665,7 @@ class EncounterGUI(QWidget):
 
         # set all stats
         for stat in creature["stats"]:
-            widget = stat+str(position)
+            widget = stat.upper()+str(position)
             value = str(creature["stats"][stat])
             try:          
                 self.findChild(QWidget, widget).setText(value) 
