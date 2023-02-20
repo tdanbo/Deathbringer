@@ -6,20 +6,17 @@ import pymongo
 import constants as cons
 
 class Encounter:
-    def __init__(self, level=1, creatures=[]):
+    def __init__(self, level=1, creatures=[], players=[]):
+        
+        self.creatures = [creature for creature in creatures if creature[1] != "Player"]
+        self.players = players
         
         #If no creatures are passed, return
-        if creatures == []:
-            print("No creatures to fight")
-            return
-
-        self.creatures = [creature for creature in creatures if creature[1] != "Player"]
-        self.players = [creature for creature in creatures if creature[1] == "Player"]
+        
         self.level = level
         self.level_adjustment()
         
         self.creature_stats = []
-        self.player_stats = []
 
         self.update_dict()
 
@@ -44,24 +41,6 @@ class Encounter:
         self.create_attack()
 
         self.round_stats()
-
-        self.set_player_stats()
-
-    def set_player_stats(self):
-        self.client = pymongo.MongoClient(cons.CONNECT)
-        self.db = self.client ["dnd"]
-        self.collection = self.db["characters"]
-
-        for p in self.player_stats:
-            query = {"character": p["type"]}
-            character_dict = self.collection.find_one(query)
-            print(character_dict)
-            p["init"] = int(character_dict["init"])
-            p["speed"] = character_dict["speed"]
-            p["max hp"] = character_dict["max hp"]
-            p["hp"] = character_dict["current hp"]
-            p["ac"] = character_dict["ac"]
-            p["stats"] = character_dict["stats"]
 
     def level_adjustment(self):
         self.start_level = self.level
@@ -243,21 +222,21 @@ class Encounter:
             for c in self.creature_stats:
                 if c["rank"] == "Leader":
                     self.hp_pool -= distribution["Leader"]
-                    c["hp"] += distribution["Leader"]
+                    c["current hp"] += distribution["Leader"]
                 else:
                     self.hp_pool -= distribution[c["type"]]
-                    c["hp"] += distribution[c["type"]]
+                    c["current hp"] += distribution[c["type"]]
 
         while random_pool > 0:
             # Select two random keys
             for c in self.creature_stats:
                 random_c = random.choice(self.creature_stats)
-                c["hp"] -= 1
-                random_c['hp'] += 1
+                c["current hp"] -= 1
+                random_c['current hp'] += 1
                 random_pool -= 1
 
         for c in self.creature_stats:
-            c["max hp"] = c["hp"]
+            c["max hp"] = c["current hp"]
 
     def divide_damage(self):
         random_pool = self.damage_pool*0.1
@@ -391,10 +370,7 @@ class Encounter:
         
     def update_dict(self):
         for creature in self.creatures:
-            self.creature_stats.append({"icon":creature[0], "init":0, "speed":0, "type":creature[0], "rank":creature[1], "damage type":creature[2] , "passive":"", "stats": {}, "spell save":0, "max hp":0, "hp":0, "ac":0, "damage":0, "hit":0, "attacks":0, "actions": []})
-
-        for player in self.players:
-            self.player_stats.append({"icon":player[0], "init":0, "speed":0, "type":player[0], "max hp": 0, "hp":0, "ac":0, "stats": {}, "actions": []})
+            self.creature_stats.append({"type":creature[0], "icon":creature[0], "init":0, "speed":0, "rank":creature[1], "damage type":creature[2] , "passive":"", "stats": {}, "spell save":0, "max hp":0, "current hp":0, "ac":0, "damage":0, "hit":0, "attacks":0, "actions": []})
 
     '''
     These are all the important scales to adjust the balance of the game. They are all based on a 1-10 scale based on the encounter level.
@@ -431,6 +407,6 @@ class Encounter:
         return round(pool)
     
     def get_encounter(self):
-        combined_stats = self.creature_stats + self.player_stats
+        combined_stats = self.creature_stats + self.players
         sorted_by_init = sorted(combined_stats, key=lambda x: x['init'], reverse=True)
         return sorted_by_init

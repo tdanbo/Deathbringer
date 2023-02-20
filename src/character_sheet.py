@@ -121,12 +121,12 @@ class CharacterSheet():
             "current hp": self.current_hp.text(),
             "current morale": self.current_morale.text(),
             "stats": {
-                "str": int(self.STR.text()),
-                "dex": int(self.DEX.text()),
-                "con": int(self.CON.text()),
-                "int": int(self.INT.text()),
-                "wis": int(self.WIS.text()),
-                "cha": int(self.CHA.text())
+                "STR": int(self.STR.text()),
+                "DEX": int(self.DEX.text()),
+                "CON": int(self.CON.text()),
+                "INT": int(self.INT.text()),
+                "WIS": int(self.WIS.text()),
+                "CHA": int(self.CHA.text())
             },
             "inventory": {
                 "inventory1": self.inventory1.text(),
@@ -561,12 +561,12 @@ class CharacterSheet():
             self.current_hp.setText(str(document["current hp"]))
             self.current_morale.setText(str(document["current morale"]))
 
-            self.STR.setText(str(document["stats"]["str"]))
-            self.DEX.setText(str(document["stats"]["dex"]))
-            self.CON.setText(str(document["stats"]["con"]))
-            self.INT.setText(str(document["stats"]["int"]))
-            self.WIS.setText(str(document["stats"]["wis"]))
-            self.CHA.setText(str(document["stats"]["cha"]))
+            self.STR.setText(str(document["stats"]["STR"]))
+            self.DEX.setText(str(document["stats"]["DEX"]))
+            self.CON.setText(str(document["stats"]["CON"]))
+            self.INT.setText(str(document["stats"]["INT"]))
+            self.WIS.setText(str(document["stats"]["WIS"]))
+            self.CHA.setText(str(document["stats"]["CHA"]))
 
             self.inventory1.setText(str(document["inventory"]["inventory1"]))
             self.inventory2.setText(str(document["inventory"]["inventory2"]))

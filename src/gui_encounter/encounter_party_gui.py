@@ -14,6 +14,8 @@ import pymongo
 from pyside import Section, Widget
 from character_sheet import CharacterSheet
 
+from gui_encounter import encounter_func as efunc
+
 class PartySelectGUI(QWidget):
     def __init__(self,encounter_gui):
         super().__init__(None, Qt.WindowStaysOnTopHint)
@@ -38,7 +40,10 @@ class PartySelectGUI(QWidget):
             class_group = self.section_group
         )
 
-        for character in self.connect_to_database():
+        character_list = self.connect_to_database()
+        
+        for character in character_list[0]:
+            level = character_list[1].find_one({"character":character})["level"]
 
             self.character_button = Widget(
                 widget_type=QPushButton(),
@@ -49,7 +54,8 @@ class PartySelectGUI(QWidget):
                 height=cons.WSIZE*1.5,
                 checkable=True,
                 signal=self.add_party_member,
-                class_group=self.widget_group
+                class_group=self.widget_group,
+                objectname = level
             )
 
         self.party_confirm = Widget(
@@ -81,26 +87,29 @@ class PartySelectGUI(QWidget):
         self.client = pymongo.MongoClient(cons.CONNECT)
         self.db = self.client ["dnd"]
         self.collection = self.db["characters"]
-        character_list = self.collection.distinct("character")
-        return character_list
+        name_list = self.collection.distinct("character")
+        return (name_list,self.collection)
 
     def add_party_member(self):
         if self.sender().isChecked():
-            self.party_members.append(self.sender().text())
+            self.party_members.append((self.sender().text(),self.sender().objectName()))
         else:
-            self.party_members.remove(self.sender().text())
+            self.party_members.remove((self.sender().text(),self.sender().objectName()))
         print(self.party_members)
 
     def confirm(self):
+        efunc.clear_layout(self.encounter_gui.creature_layout.inner_layout(1))
+        self.encounter_gui.player_list.clear()
+
         self.encounter_gui.party_size_button.get_widget().setText(str(len(self.party_members)))
-        self.encounter_gui.party_size_button.get_widget().setToolTip("\n".join(self.party_members))
-        self.encounter_gui.party_icon.get_widget().setToolTip("\n".join(self.party_members))
         
-        for member in self.party_members:
-            self.encounter_gui.encounter_list.append((member,"Player","Slashing"))
-            creature_count = len(self.encounter_gui.encounter_list)-1
-            self.encounter_gui.add_gui_creatures(member,creature_count)
-            print(self.encounter_gui.encounter_list)
-            
+        avg_level = 0
+        for player in self.party_members:
+            self.encounter_gui.player_list.append((player[0],"Player",""))
+            self.encounter_gui.add_player(player[0])
+            avg_level += int(player[1])
+
+        avg_level = avg_level / len(self.party_members)
+        self.encounter_gui.world_level_button.get_widget().setText(str(round(avg_level)))
         self.hide()
 

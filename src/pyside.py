@@ -194,7 +194,6 @@ class Section(QWidget):
 
     def connect_to_parent(self):
         if self.parent_layout != None:
-            print(self)
             self.parent_layout.addWidget(self)
 
     def get_group(self):
