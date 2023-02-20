@@ -11,6 +11,8 @@ import constants as cons
 import functions as func
 import stylesheet as style
 import functools
+import math
+import random
 
 from gui_functions import custom_rolls
 from gui_functions import custom_log
@@ -285,8 +287,6 @@ class EncounterGUI(QWidget):
         else:
             level = int(self.world_level_button.get_widget().text())
 
-
-
         if self.creature_list == []:
             print("No creatures to add")
             return
@@ -295,8 +295,9 @@ class EncounterGUI(QWidget):
             print("No players to add")
             return
 
-        print(f"Running encounter at level {level} for {self.sender().objectName()}")
-        encounter = Encounter(level,self.creature_list,self.player_encounter_list).get_encounter()
+        adjusted_level = self.adjust_encounter_level(level,self.sender().objectName())
+
+        encounter = Encounter(adjusted_level,self.creature_list,self.player_encounter_list).get_encounter()
         efunc.clear_layout(self.creature_layout.inner_layout(1))  
         for creature in encounter:
             if creature["rank"] == "Player":
@@ -311,6 +312,23 @@ class EncounterGUI(QWidget):
                 creature_base.set_creature_stats(creature) # Setting the create stats using the encounter class
                 self.creature_layout.inner_layout(1).addWidget(creature_base)
 
+    def adjust_encounter_level(self, level, stage):
+        self.level = level
+        self.start_level = level
+        self.level_max = math.ceil(self.level*0.5)
+        print(self.creature_list)
+        if "Leader" in [creature[1] for creature in self.creature_list]:
+            self.level += self.level_max
+            level_string = f"{stage.capitalize()} Encounter {self.start_level} with a +{self.level_max} difficulty"
+        else:
+            self.level_adjuster = random.randint(0, self.level_max)
+            self.level += self.level_adjuster
+            level_string = f"{stage.capitalize()} Encounter {self.start_level} with a +{self.level_adjuster} difficulty"
+
+        title_label = self.creature_layout.get_title()[1]
+        title_label.setText(level_string)
+        print(level_string)
+        return self.level
 
     def open_partyselect(self):
         self.party_select_gui = PartySelectGUI(self)

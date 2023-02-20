@@ -8,6 +8,7 @@ from pyside import SimpleSection
 
 import stylesheet as style
 import constants as cons
+import functions as func
 
 class CreatureBase(QWidget):
     def __init__(self, creature_type):
@@ -199,6 +200,11 @@ class CreatureBase(QWidget):
         self.ac.get_widget().setText(str(dict["ac"]))
         self.speed_label.get_widget().setText(str(dict["speed"]))
         self.initiative.get_widget().setText(str(dict["init"]))
+
+        if "passive" in dict:
+            print(f'{dict["passive"]}.png')
+            func.set_icon(self.passive.get_widget(),f'{dict["passive"]}.png',cons.ICON_COLOR)
+
         for stat in ["STR", "DEX", "CON", "INT", "WIS", "CHA"]:
             stat_button = self.findChild(QPushButton, stat)
             stat_value = dict["stats"][stat]

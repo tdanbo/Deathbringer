@@ -14,7 +14,6 @@ class Encounter:
         #If no creatures are passed, return
         
         self.level = level
-        self.level_adjustment()
         
         self.creature_stats = []
 
@@ -41,17 +40,6 @@ class Encounter:
         self.create_attack()
 
         self.round_stats()
-
-    def level_adjustment(self):
-        self.start_level = self.level
-        self.level_max = math.ceil(self.level*0.5)
-        if "Leader" in self.creatures:
-            self.level += self.level_max
-            print(f"This level {self.start_level} fight is adjusted +{self.level_max} ({self.start_level+self.level_max})")    
-        else:
-            self.level_adjuster = random.randint(0, self.level_max)
-            self.level += self.level_adjuster
-            print(f"This level {self.start_level} fight is adjusted +{self.level_adjuster} ({self.start_level+self.level_adjuster})")  
 
     def create_attack(self):
 
