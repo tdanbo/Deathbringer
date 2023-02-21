@@ -13,14 +13,16 @@ INJURY_RED_DARK = "#2b0000"
 DARK_COLOR = f"hsl(0, {SATURATION}, 10%)"
 MID_COLOR = "hsl(0, 0%, 25%)"
 
-
-
 DIM_WHITE_LIGHT = "hsl(0, 0%, 70%)"
 DIM_WHITE_LIGHT2 = "hsl(0, 0%, 50%)"
 WHITE_LIGHT = f"hsl(0, {SATURATION}, 75%)"
 
 
+PLAYER_COLOR = "hsl(214, 30%, 15%)"
+CREATURE_COLOR = "hsl(0, 30%, 15%)"
+
 FONT_COLOR = f"hsl(0, {SATURATION}, 80%)"
+
 
 #WIDGET COLOR SATURATION
 
@@ -40,6 +42,7 @@ GUI_BACKGROUND = f"hsl(0, {SATURATION}, 12%)"
 #WIDGETS
 BUTTONS_BACKGROUND = f"hsl(0, {SATURATION}, 10%)"
 DISABLED_COLOR = f"hsl(0, {SATURATION}, 14%);"
+DISABLED_COLOR2 = f"hsl(0, {SATURATION}, 30%);"
 
 QTITLE = f"QToolButton {{background-color: {GROUP_HEADER}}}"\
          f"QLabel {{background-color: {GROUP_HEADER}; border-top-right-radius: {RADIUS}}}"\

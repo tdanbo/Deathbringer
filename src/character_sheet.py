@@ -113,6 +113,7 @@ class CharacterSheet():
         print("Updating Character Sheet Dictionary")    
         character_sheet_dictionary = {
             "character": self.character.currentText(),
+            "rank": "Player",
             "level": self.level.text(),
             "ac": self.ac.text(),
             "init": str(10+int(self.CHA.text())),

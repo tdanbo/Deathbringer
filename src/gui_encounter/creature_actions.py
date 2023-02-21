@@ -32,7 +32,6 @@ class CreatureAction(QWidget):
             outer_layout = QHBoxLayout(),
             inner_layout = ("VBox", 8),
             parent_layout=self.master_layout,
-            content_margin=(0,0,8,0),
             class_group=self.action_sections
         )
 
@@ -112,7 +111,7 @@ class CreatureAction(QWidget):
             widget_type=QPushButton(),
             stylesheet=style.INVENTORY,
             parent_layout=self.slot_layot.inner_layout(4),
-            width = 130,
+            width = 60,
             height = cons.WSIZE,
             objectname=f"spacer",
             class_group=self.action_widgets,	
@@ -125,7 +124,7 @@ class CreatureAction(QWidget):
             height = cons.WSIZE/1.5,
             objectname=f"spacer_label",
             class_group=self.action_widgets,
-            width = 130,
+            width = 60,
         )
 
         self.backpack_item = Widget(

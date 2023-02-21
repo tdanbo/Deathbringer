@@ -47,12 +47,12 @@ class Encounter:
         The functions below divide all the different attack modifiers on all the creatures. Remember to iterrate over them for the attacks, hit and damage.
         '''
 
-        attack_system = {
-            1: {1.0},
-            2: {0.75, 0.25},
-            3: {0.25, 0.25, 0.50}
-        }
-
+        attack_system = [
+            "1": [1.0],
+            "2": [0.75, 0.25],
+            "3": [0.25, 0.25, 0.50]
+        ]
+        
         for c in self.creature_stats:
             creature_type = c["type"]
             creature_json = json.load(open(f".creatures/{creature_type.lower()}.json", "r"))
@@ -61,8 +61,9 @@ class Encounter:
             creature_hit = c["hit"]
             creature_damage_type = c["damage type"]
 
-            attack_distribution = attack_system[creature_attacks]
+            attack_distribution = attack_system[str(creature_attacks)]
 
+            print(f"Creature: attacks {creature_attacks}")
             print(attack_distribution)
 
             for attack,multiplier in enumerate(attack_distribution):

@@ -100,6 +100,10 @@ class PartySelectGUI(QWidget):
     def confirm(self):
         efunc.clear_layout(self.encounter_gui.creature_layout.inner_layout(1))
         self.encounter_gui.player_list.clear()
+        self.encounter_gui.player_encounter_list.clear()
+        
+        self.encounter_gui.creature_list.clear()
+        self.encounter_gui.action_group.clear()
 
         self.encounter_gui.party_size_button.get_widget().setText(str(len(self.party_members)))
         

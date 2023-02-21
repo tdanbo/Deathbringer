@@ -260,7 +260,7 @@ class EncounterGUI(QWidget):
         print(f"Encounter List: {self.creature_list}")
 
         for player in self.player_list:
-            player_base = CreatureBase(player[0])
+            player_base = CreatureBase(player[0],"Player")
             ebase.character_gui_update(player_base)
             self.creature_layout.inner_layout(1).addWidget(player_base)
 
@@ -272,11 +272,11 @@ class EncounterGUI(QWidget):
 
         damage_type = self.creature_damage_combobox.get_widget().currentText()
         self.creature_list.append((creature_type, rank, damage_type))
-        creature_base = CreatureBase(creature_type)
+        creature_base = CreatureBase(creature_type, rank)
         self.creature_layout.inner_layout(1).addWidget(creature_base)
 
     def add_player(self, player_name):
-        player_base = CreatureBase(player_name)
+        player_base = CreatureBase(player_name,"Player")
         ebase.character_gui_update(player_base)
         self.player_encounter_list.append({"type":player_name, "rank":"Player", "init":player_base.get_init()})
         self.creature_layout.inner_layout(1).addWidget(player_base)
@@ -297,15 +297,17 @@ class EncounterGUI(QWidget):
 
         adjusted_level = self.adjust_encounter_level(level,self.sender().objectName())
 
+        print(self.player_encounter_list)
+
         encounter = Encounter(adjusted_level,self.creature_list,self.player_encounter_list).get_encounter()
         efunc.clear_layout(self.creature_layout.inner_layout(1))  
         for creature in encounter:
             if creature["rank"] == "Player":
-                creature_base = CreatureBase(creature["type"])
+                creature_base = CreatureBase(creature["type"],"Player")
                 ebase.character_gui_update(creature_base) # Setting the player stats using the database
                 self.creature_layout.inner_layout(1).addWidget(creature_base)
             else:
-                creature_base = CreatureBase(creature["type"])
+                creature_base = CreatureBase(creature["type"],creature["rank"])
                 for attack,action in enumerate(creature["actions"]):
                     creature_action = CreatureAction(attack,action)
                     creature_base.get_action_layout().addWidget(creature_action)
