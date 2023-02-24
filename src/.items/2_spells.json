@@ -1,0 +1,6582 @@
+{
+    "Blade Ward": {
+        "level": 0,
+        "description": "Until the end of my next turn, Bludgeoning, Piercing, and Slashing dmg resist. vs. weaponpons",
+        "save": "\u2014",
+        "school": " Abjur",
+        "casting": "1 a",
+        "range": "Self",
+        "duration": "1 rnd",
+        "Evoke": "Evoke 10",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Booming Blade": {
+        "level": 0,
+        "description": "Melee weapon attack with cast; hit: 0d8 Thunder dmg, if it moves next round ",
+        "save": "\u2014",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "S:5-ft rad",
+        "duration": "1 round",
+        "Evoke": "Evoke 10",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Chill Touch": {
+        "level": 0,
+        "description": "Spell attack for 1d8 Necrotic dmg; can't regain HP; undead dis. attacks vs. me",
+        "save": "\u2014",
+        "school": " Necro",
+        "casting": "1 a",
+        "range": "120 ft",
+        "duration": "1 rnd",
+        "Evoke": "Evoke 10",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Control Flames": {
+        "level": 0,
+        "description": "Nonmagical flame up to 5 cu ft; instant: expand/extinguish, 1h: brighten/dim/color/creaturete shapes",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Instant. or 1 h",
+        "Evoke": "Evoke 10",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Create Bonfire": {
+        "level": 0,
+        "description": "5-ft cube all creature now/enter/end turn save or 1d8 Fire dmg; ignites flammable",
+        "save": "Dex",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 10",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Dancing Lights": {
+        "level": 0,
+        "description": "4 torch-sized lights or 1 humanoid-sized light; 10-ft rad dim light; bonus action to move 60 ft",
+        "save": "\u2014",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "120 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 10",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Druidcraft": {
+        "level": 0,
+        "description": "Small nature effect; predict weaponther, expedite small plant growth, snuff light, harmless sensory effect",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "30 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 10",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Eldritch Blast": {
+        "level": 0,
+        "description": "Spell attack beam 1d10 Force damage; beams can be combined or split",
+        "save": "\u2014",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "120 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 10",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Friends": {
+        "level": 0,
+        "description": "Adv. on Cha checks vs. 1 creature currently not hostile; when spell ends, creature knows and becomes hostile",
+        "save": "\u2014",
+        "school": " Ench",
+        "casting": "1 a",
+        "range": "Self",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 10",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Frostbite": {
+        "level": 0,
+        "description": "1 creature save or 1d6 Cold dmg and dis. on next weaponpon attack roll",
+        "save": "Con",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 10",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Green-Flame Blade": {
+        "level": 0,
+        "description": "Melee weapon attack with cast; hit: 0d8 Fire dmg, 1 creature in 5 ft 0d8 mod Fire dmg",
+        "save": "\u2014",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "S:5-ft rad",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 10",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Guidance": {
+        "level": 0,
+        "description": "1 willing creature adds 1d4 to ability check of its choice, after rolling, once during the duration",
+        "save": "\u2014",
+        "school": " Div",
+        "casting": "1 a",
+        "range": "Touch",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 10",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Gust": {
+        "level": 0,
+        "description": "Med. or smaller creature save or push 5 ft; or push unattended 5 lb obj 10 ft; or harmless sensory effect",
+        "save": "Str",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "30 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 10",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Infestation": {
+        "level": 0,
+        "description": "1 creature save or 1d6 Poison dmg and moved 5 ft in random direction",
+        "save": "Con",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "30 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 10",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Light": {
+        "level": 0,
+        "description": "1 obj up to 10-ft cube sheds bright light 20-ft rad and dim light 20-ft; cannot have multiple instances",
+        "save": "\u2014",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "Touch",
+        "duration": "1 h (D)",
+        "Evoke": "Evoke 10",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Lightning Lure": {
+        "level": 0,
+        "description": "1 creature in 15 ft save or pulled 10 ft to me; if it ends in 5 ft, 1d8 Lightning dmg",
+        "save": "Str",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "S:15-ft rad",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 10",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Mage Hand": {
+        "level": 0,
+        "description": "Create spectral hand for simple tasks or carry up to 10 lb; 1 a to control; can't have multiple instances",
+        "save": "\u2014",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "30 ft",
+        "duration": "1 min (D)",
+        "Evoke": "Evoke 10",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Magic Stone": {
+        "level": 0,
+        "description": "Imbue 3 pebbles for spell attacks, thrown 60 ft or with sling, do 1d6 mod Bludg. dmg",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 bns",
+        "range": "Touch",
+        "duration": "1 min",
+        "Evoke": "Evoke 10",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Mending": {
+        "level": 0,
+        "description": "Repair a single broken object no larger than 1 cu ft; can't restore magic to broken magic item",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 min",
+        "range": "Touch",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 10",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Message": {
+        "level": 0,
+        "description": "1 creature I point to hears whispered message and can reply with a whisper; nobody can overhear",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "120 ft",
+        "duration": "1 rnd",
+        "Evoke": "Evoke 10",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Mind Sliver": {
+        "level": 0,
+        "description": "1 creature save or 1d6 Psychic dmg, -1d4 on 1st save before my next turn end",
+        "save": "Int",
+        "school": " Ench",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "1 rnd",
+        "Evoke": "Evoke 10",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Minor Illusion": {
+        "level": 0,
+        "description": "5-ft cube illusion includes visible or audible; Int(Investigation) check vs. Spell DC; see book",
+        "save": "\u2014",
+        "school": " Illus",
+        "casting": "1 a",
+        "range": "30 ft",
+        "duration": "1 min (D)",
+        "Evoke": "Evoke 10",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Mold Earth": {
+        "level": 0,
+        "description": "5 cu ft earth; instant.: excavate; 1h: change to difficult or normal terrain, or change shape and color",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "30 ft",
+        "duration": "Instant. or 1 h",
+        "Evoke": "Evoke 10",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Poison Spray": {
+        "level": 0,
+        "description": "1 creature save or 1d12 Poison dmg",
+        "save": "Con",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "10 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 10",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Prestidigitation": {
+        "level": 0,
+        "description": "Minor trick; harmless sensory effect, illusory image, snuff light, clean/soil/chill/warm/flavor etc.",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "10 ft",
+        "duration": "1 h (D)",
+        "Evoke": "Evoke 10",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Primal Savagery": {
+        "level": 0,
+        "description": "Melee spell attack, 5 ft range, for 1d10 Acid dmg",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "Self",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 10",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Produce Flame": {
+        "level": 0,
+        "description": "Flame 10 ft bright light; once 30 ft ranged spell attack for 1d8 Fire dmg",
+        "save": "\u2014",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "Self",
+        "duration": "10 min (D)",
+        "Evoke": "Evoke 10",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Ray of Frost": {
+        "level": 0,
+        "description": "Spell attack for 1d8 Cold dmg and -10 ft speed until start of my next turn",
+        "save": "\u2014",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 10",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Resistance": {
+        "level": 0,
+        "description": "1 willing creature can add 1d4 to one saving throw after rolling, once during the duration",
+        "save": "\u2014",
+        "school": " Abjur",
+        "casting": "1 a",
+        "range": "Touch",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 10",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Sacred Flame": {
+        "level": 0,
+        "description": "1 creature that I can see save or 1d8 Radiant dmg; no bonus for cover on save",
+        "save": "Dex",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 10",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Sapping Sting": {
+        "level": 0,
+        "description": "1 creature that I can see save or 1d4 Necrotic dmg and fall prone",
+        "save": "Con",
+        "school": " Necro",
+        "casting": "1 a",
+        "range": "30 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 10",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Shape Water": {
+        "level": 0,
+        "description": "5 cu ft water; instant: move/change flow; 1h: simple shapes/change color or opacity/freeze",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "30 ft",
+        "duration": "Instant. or 1 h",
+        "Evoke": "Evoke 10",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Shillelagh": {
+        "level": 0,
+        "description": "Club/quarterstaff I hold does 1d8 Bludg. dmg and uses my spellcasting ability modifier instead of Str",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 bns",
+        "range": "Touch",
+        "duration": "1 min",
+        "Evoke": "Evoke 10",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Shocking Grasp": {
+        "level": 0,
+        "description": "Spell attack, adv. if metal armor, 1d8 Lightning dmg, no rea 1 turn",
+        "save": "\u2014",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "Touch",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 10",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Spare the Dying": {
+        "level": 0,
+        "description": "1 living creature with 0 current HP becomes stable",
+        "save": "\u2014",
+        "school": " Necro",
+        "casting": "1 a",
+        "range": "Touch",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 10",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Sword Burst": {
+        "level": 0,
+        "description": "All creature in range save or 1d6 Force damage",
+        "save": "Dex",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "S:5-ft rad",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 10",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Thaumaturgy": {
+        "level": 0,
+        "description": "Minor wonder; my voice booms, flames flicker, tremors in the ground, ominous sounds, etc.",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "30 ft",
+        "duration": "1 min (D)",
+        "Evoke": "Evoke 10",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Thorn Whip": {
+        "level": 0,
+        "description": "Melee spell attack for 1d6 Piercing dmg and pull creature 10 ft towards me",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "30 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 10",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Thunderclap": {
+        "level": 0,
+        "description": "100-ft rad audible; all creature but me in area save or 1d6 Thunder dmg",
+        "save": "Con",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "5 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 10",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Toll the Dead": {
+        "level": 0,
+        "description": "1 creature save or 1d12 Necrotic dmg (d8 instead of d12 if at full HP)",
+        "save": "Wis",
+        "school": " Necro",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 10",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "True Strike": {
+        "level": 0,
+        "description": "1 creature against whom I gain advantage on my next attack roll",
+        "save": "\u2014",
+        "school": " Div",
+        "casting": "1 a",
+        "range": "30 ft",
+        "duration": "Conc, 1 rnd",
+        "Evoke": "Evoke 10",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Vicious Mockery": {
+        "level": 0,
+        "description": "1 creature save or 1d4 Psychic dmg and dis. on next attack roll",
+        "save": "Wis",
+        "school": " Ench",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 10",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Word of Radiance": {
+        "level": 0,
+        "description": "Any creature within range save or 1d6 Radiant damage",
+        "save": "Con",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "5 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 10",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Absorb Elements": {
+        "level": 1,
+        "description": "Acid, Cold, Fire, Lightning, or Thunder resistance vs. 1 attack; first melee hit next rnd 1d6 dmg",
+        "save": "\u2014",
+        "school": " Abjur",
+        "casting": "1 rea",
+        "range": "Self",
+        "duration": "1 rnd",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Alarm (R)": {
+        "level": 1,
+        "description": "Door, window, or 20-ft cube area; audible (60 ft) or mental alarm (1 mile) if undesignated creature enters",
+        "save": "\u2014",
+        "school": " Abjur",
+        "casting": "1 min",
+        "range": "30 ft",
+        "duration": "8 h",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Animal Friendship": {
+        "level": 1,
+        "description": "1 beasts Int<4 save or charmed for the duration",
+        "save": "Wis",
+        "school": " Ench",
+        "casting": "1 a",
+        "range": "30 ft",
+        "duration": "24 h",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Armor of Agathys": {
+        "level": 1,
+        "description": "5 temp HP; as long as temp HP last any creature that hits in melee takes 5 Cold dmg",
+        "save": "\u2014",
+        "school": " Abjur",
+        "casting": "1 a",
+        "range": "Self",
+        "duration": "1 h",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Arms of Hadar": {
+        "level": 1,
+        "description": "2d6 Necrotic dmg; save halves; on failed save no reactions until next turn",
+        "save": "Str",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "S:10-ft rad",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Bane": {
+        "level": 1,
+        "description": "3 creatures save or have to subtract 1d4 on every attack or save for the duration",
+        "save": "Cha",
+        "school": " Ench",
+        "casting": "1 a",
+        "range": "30 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Beast Bond": {
+        "level": 1,
+        "description": "Telepathic link with 1 beast Int<4 while in line of sight; beast has adv. on attacks vs. creature I can see",
+        "save": "\u2014",
+        "school": " Div",
+        "casting": "1 a",
+        "range": "Touch",
+        "duration": "Conc, 10 min",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Bless": {
+        "level": 1,
+        "description": "3 creatures can add 1d4 on every attack roll or saving throw during the duration",
+        "save": "\u2014",
+        "school": " Ench",
+        "casting": "1 a",
+        "range": "30 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Burning Hands": {
+        "level": 1,
+        "description": "All in area 3d6 Fire dmg; save halves; unattended flammable objects ignite",
+        "save": "Dex",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "S:15-ft cone",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Catapult": {
+        "level": 1,
+        "description": "Send 5 lb unattended object in 90 ft straight line; if creature hit, save or 3d8 Bludg. dmg",
+        "save": "Dex",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Cause Fear": {
+        "level": 1,
+        "description": "1 creature (not construct/undead), each max 30 ft apart, save or frightened; save end of each turn",
+        "save": "Wis",
+        "school": " Necro",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Ceremony (R)": {
+        "level": 1,
+        "description": "Perform religious ceremony on target(s) within 10 ft throughout the casting; see book (25gp cons.)",
+        "save": "\u2014",
+        "school": " Abjur",
+        "casting": "1 h",
+        "range": "Touch",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Chaos Bolt": {
+        "level": 1,
+        "description": "Spell attack 2d81d6 dmg, d8s set dmg type, see B; double on d8s: new attack vs. creature in 30 ft",
+        "save": "\u2014",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "120 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Charm Person": {
+        "level": 1,
+        "description": "1 humanoids, each max 30 ft apart, save or charmed; adv. on save if me/ally is fighting it",
+        "save": "Wis",
+        "school": " Ench",
+        "casting": "1 a",
+        "range": "30 ft",
+        "duration": "1 h",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Chromatic Orb": {
+        "level": 1,
+        "description": "Spell attack for 3d8 Acid, Cold, Fire, Lightning, Poison or Thunder dmg (50gp)",
+        "save": "\u2014",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "90 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Color Spray": {
+        "level": 1,
+        "description": "6d10 HP of creature blinded, starting with the lowest current HP creature",
+        "save": "\u2014",
+        "school": " Illus",
+        "casting": "1 a",
+        "range": "S:15-ft cone",
+        "duration": "1 rnd",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Command": {
+        "level": 1,
+        "description": "1 creature, each max 30 ft apart, save or follow one word command, e.g. approach, drop, flee, halt",
+        "save": "Wis",
+        "school": " Ench",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "1 rnd",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Compelled Duel": {
+        "level": 1,
+        "description": "1 creature save or dis. on attacks vs. not-me and save if moving more than 30 ft away",
+        "save": "Wis",
+        "school": " Ench",
+        "casting": "1 bns",
+        "range": "30 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Comp. Languages (R)": {
+        "level": 1,
+        "description": "Understand all spoken language or written language when touched; does not help vs. cyphers",
+        "save": "\u2014",
+        "school": " Div",
+        "casting": "1 a",
+        "range": "Self",
+        "duration": "1 h",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Create or Destroy Water": {
+        "level": 1,
+        "description": "Create/destroy 10 gal of water in open container or creaturete rain/destroy fog in 30 cu",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "30 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Cure Wounds": {
+        "level": 1,
+        "description": "1 living creature heals 1d81d8 ability modifier HP",
+        "save": "\u2014",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "Touch",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Detect Evil and Good": {
+        "level": 1,
+        "description": "Know if aberration, celestial, elemental, fey, fiend, undead, and des-/consecrated area within 30 ft",
+        "save": "\u2014",
+        "school": " Div",
+        "casting": "1 a",
+        "range": "Self",
+        "duration": "Conc, 10 min",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Detect Magic (R)": {
+        "level": 1,
+        "description": "Know presence of magic within 30 ft; 1 a to see auras and determine school",
+        "save": "\u2014",
+        "school": " Div",
+        "casting": "1 a",
+        "range": "Self",
+        "duration": "Conc, 10 min",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Detect Poison/Disease (R)": {
+        "level": 1,
+        "description": "Know presence, location, and type of poisons, poisonous creatures, and diseases within 30 ft",
+        "save": "\u2014",
+        "school": " Div",
+        "casting": "1 a",
+        "range": "Self",
+        "duration": "Conc, 10 min",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Disguise Self": {
+        "level": 1,
+        "description": "Alter appearance; Int(Investigation) check vs. spell DC to determine disguise",
+        "save": "\u2014",
+        "school": " Illus",
+        "casting": "1 a",
+        "range": "Self",
+        "duration": "1 h (D)",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Dissonant Whispers": {
+        "level": 1,
+        "description": "1 creature 3d6 Psychic dmg and flee; save halves and no fleeing; deaf creature are immune",
+        "save": "Wis",
+        "school": " Ench",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Divine Favor": {
+        "level": 1,
+        "description": "My weaponpon attacks deal an  Radiant damage for the duration",
+        "save": "\u2014",
+        "school": " Evoc",
+        "casting": "1 bns",
+        "range": "Self",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Earth Tremor": {
+        "level": 1,
+        "description": "All creature in range except me save or 1d6 Bludgeoning dmg and prone; loose ground is dif. ter.",
+        "save": "Dex",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "10 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Ensnaring Strike": {
+        "level": 1,
+        "description": "Next creature hit save (Large adv.) or restrained, 1d6 Piercing dmg/rnd; Str check to escape",
+        "save": "Str",
+        "school": " Conj",
+        "casting": "1 bns",
+        "range": "Self",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Entangle": {
+        "level": 1,
+        "description": "20-ft square save or restrained; Str check vs. Spell DC to escape; for duration area is difficult terrain",
+        "save": "Str",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "90 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Expeditious Retreat": {
+        "level": 1,
+        "description": "I can take Dash action now, and as a bonus action for the duration",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 bns",
+        "range": "Self",
+        "duration": "Conc, 10 min",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Faerie Fire": {
+        "level": 1,
+        "description": "20-ft cube all obj/creature save or outlined in 10 ft dim light and attacks have adv.; see invisible creature",
+        "save": "Dex",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "False Life": {
+        "level": 1,
+        "description": "I gain 1d44 temporary hit points for the duration",
+        "save": "\u2014",
+        "school": " Necro",
+        "casting": "1 a",
+        "range": "Self",
+        "duration": "1 h",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Feather Fall": {
+        "level": 1,
+        "description": "5 creatures descent only 60 ft/rnd for duration or until landed, taking no falling damage",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 rea",
+        "range": "60 ft",
+        "duration": "1 min",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Find Familiar (R)": {
+        "level": 1,
+        "description": "Gain the services of a familiar; can see through its eyes; it can deliver touch spells; see B (10gp cons.)",
+        "save": "\u2014",
+        "school": " Conj",
+        "casting": "1 h",
+        "range": "10 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Fog Cloud": {
+        "level": 1,
+        "description": "20-ft rad fog that spreads around corners; heavily obscures; 10 mph wind disperses it",
+        "save": "\u2014",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "120 ft",
+        "duration": "Conc, 1 h",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Gift of Alacrity": {
+        "level": 1,
+        "description": "1 willing creature can add 1d8 to its initiative rolls for the duration",
+        "save": "\u2014",
+        "school": " Div",
+        "casting": "1 min",
+        "range": "Touch",
+        "duration": "8 h",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Goodberry": {
+        "level": 1,
+        "description": "Create 10 berries; 1 a to eat 1 berry: heal 1 HP, nourishment for 1 day; berries lose potency after 24h",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "Touch",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Grease": {
+        "level": 1,
+        "description": "10-ft square difficult terrain; all entering, in area at casting or at end of turn save or fall prone",
+        "save": "Dex",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "1 min",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Guiding Bolt": {
+        "level": 1,
+        "description": "Spell attack for 4d6 Radiant dmg and next attack against target has advantage",
+        "save": "\u2014",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "120 ft",
+        "duration": "1 rnd",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Hail of Thorns": {
+        "level": 1,
+        "description": "Next ranged weaponpon hit, all within 5 ft of target 1d10 Piercing dmg; save halves",
+        "save": "Dex",
+        "school": " Conj",
+        "casting": "1 bns",
+        "range": "Self",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Healing Word": {
+        "level": 1,
+        "description": "1 living creature heals 1d41d4 ability modifier HP",
+        "save": "\u2014",
+        "school": " Evoc",
+        "casting": "1 bns",
+        "range": "60 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Hellish Rebuke": {
+        "level": 1,
+        "description": "Cast when taking dmg, creature that dealt dmg 2d10 Fire dmg; save halves",
+        "save": "Dex",
+        "school": " Evoc",
+        "casting": "1 rea",
+        "range": "60 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Heroism": {
+        "level": 1,
+        "description": "1 creature immune to fear, gain spellcasting ability modifier temp. HP start of each turn as spell lasts",
+        "save": "\u2014",
+        "school": " Ench",
+        "casting": "1 a",
+        "range": "Touch",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Hex": {
+        "level": 1,
+        "description": "1 creature  Necrotic dmg from my attacks; dis. on chosen ability checks; SL3: conc, 8h; SL5: conc, 24h",
+        "save": "\u2014",
+        "school": " Ench",
+        "casting": "1 bns",
+        "range": "90 ft",
+        "duration": "Conc, 1 h",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Hunter's Mark": {
+        "level": 1,
+        "description": "1 creature  dmg from my weaponpon attacks; adv. Wis (Perception/Survival) vs. target; SL3: 8h; SL5: 24h",
+        "save": "\u2014",
+        "school": " Div",
+        "casting": "1 bns",
+        "range": "90 ft",
+        "duration": "Conc, 1 h",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Ice Knife": {
+        "level": 1,
+        "description": "Ranged attack for 1d10 Piercing dmg; hit/miss 5-ft rad on target all creature save or 2d6 Cold dmg",
+        "save": "Dex",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Identify (R)": {
+        "level": 1,
+        "description": "1 magical item or magic-imbued creature/obj; learn properties, how to use, and spells affecting it (100gp)",
+        "save": "\u2014",
+        "school": " Div",
+        "casting": "1 min",
+        "range": "Touch",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Illusory Script (R)": {
+        "level": 1,
+        "description": "Write a message that only I, designated creature, and any with truesight can understand (10gp cons.)",
+        "save": "\u2014",
+        "school": " Illus",
+        "casting": "1 min",
+        "range": "Touch",
+        "duration": "10 days",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Inflict Wounds": {
+        "level": 1,
+        "description": "Spell attack for 3d10 Necrotic dmg",
+        "save": "\u2014",
+        "school": " Necro",
+        "casting": "1 a",
+        "range": "Touch",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Longstrider": {
+        "level": 1,
+        "description": "1 creature's speed increatureses by 10 ft for the duration",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "Touch",
+        "duration": "1 h",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Mage Armor": {
+        "level": 1,
+        "description": "1 creature that isn't weaponring armor has AC 13  Dex modifier for the duration; spell ends if it dons armor",
+        "save": "\u2014",
+        "school": " Abjur",
+        "casting": "1 a",
+        "range": "Touch",
+        "duration": "8 h (D)",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Magic Missile": {
+        "level": 1,
+        "description": "3 darts hit creature(s) I can see for 1d4 Force dmg per dart",
+        "save": "\u2014",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "120 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Magnify Gravity": {
+        "level": 1,
+        "description": "10-ft rad all creature 2d8 Force dmg, half spd; Save halves & no spd reduce; Str check to move obj",
+        "save": "Con",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "1 rnd",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Prot. from Evil/Good": {
+        "level": 1,
+        "description": "1 creature immune fear/charm/possess by abber./celest./elem./fey/fiends/undead, they also dis. on attacks",
+        "save": "\u2014",
+        "school": " Abjur",
+        "casting": "1 a",
+        "range": "Touch",
+        "duration": "Conc, 10 min",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Purify Food and Drink (R)": {
+        "level": 1,
+        "description": "5-ft rad of food and drink is rendered free of all poison and disease",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "10 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Ray of Sickness": {
+        "level": 1,
+        "description": "Spell attack for 2d8 Poison dmg; save or also poisoned until end of my next turn",
+        "save": "Con",
+        "school": " Necro",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Sanctuary": {
+        "level": 1,
+        "description": "1 creature warded; any who want to attack/target must first make save; doesn't protect vs. area spells",
+        "save": "Wis",
+        "school": " Abjur",
+        "casting": "1 bns",
+        "range": "30 ft",
+        "duration": "1 min",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Searing Smite": {
+        "level": 1,
+        "description": "Next melee weaponpon hit 1d6 Fire dmg and target ignites: start of turn save to end or 1d6 dmg",
+        "save": "Con",
+        "school": " Evoc",
+        "casting": "1 bns",
+        "range": "Self",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Shield": {
+        "level": 1,
+        "description": "If hit by attack  AC until start of next turn; or stop Magic Missile spell from doing any dmg to me",
+        "save": "\u2014",
+        "school": " Abjur",
+        "casting": "1 rea",
+        "range": "Self",
+        "duration": "1 rnd",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Shield of Faith": {
+        "level": 1,
+        "description": "1 creature gains  AC for the duration",
+        "save": "\u2014",
+        "school": " Abjur",
+        "casting": "1 bns",
+        "range": "60 ft",
+        "duration": "Conc, 10 min",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Silent Image": {
+        "level": 1,
+        "description": "15-ft cube illusion includes visible; 1 a move it; Int(Investigation) check vs. spell DC; see book",
+        "save": "\u2014",
+        "school": " Illus",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Conc, 10 min",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Sleep": {
+        "level": 1,
+        "description": "20-ft rad 5d8 HP of conscious creatures fall asleep, starting with the lowest current HP creature",
+        "save": "\u2014",
+        "school": " Ench",
+        "casting": "1 a",
+        "range": "90 ft",
+        "duration": "1 min",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Snare": {
+        "level": 1,
+        "description": "5-ft rad trap; Investigation vs spell DC to see; save or restrained 3 ft in the air; save each rnd (5sp)",
+        "save": "Dex",
+        "school": " Abjur",
+        "casting": "1 min",
+        "range": "Touch",
+        "duration": "8 h, till trigger",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Speak with Animals (R)": {
+        "level": 1,
+        "description": "Speak verbally with and understand beasts for duration; interaction limited by intelligence of beasts",
+        "save": "\u2014",
+        "school": " Div",
+        "casting": "1 a",
+        "range": "Self",
+        "duration": "10 min",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Tasha's Caustic Brew": {
+        "level": 1,
+        "description": "30-ft long 5-ft wide all save or 2d4 Acid dmg at start of turn; action to clean self or adjacent",
+        "save": "Dex",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "S:30-ft line",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Tasha's Hideous Laughter": {
+        "level": 1,
+        "description": "1 creature with Int>4 save or fall prone, incapacitated, can't stand; save end of each turn or if taking dmg",
+        "save": "Wis",
+        "school": " Ench",
+        "casting": "1 a",
+        "range": "30 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Tenser's Floating Disk (R)": {
+        "level": 1,
+        "description": "Create a 3 ft diameter disk that carries 500 lb and follows me if I move more than 20 ft away",
+        "save": "\u2014",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "30 ft",
+        "duration": "1 h",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Thunderous Smite": {
+        "level": 1,
+        "description": "Next melee weaponpon hit  Thunder dmg and save or 10 ft push and prone; audible in 300 ft",
+        "save": "Str",
+        "school": " Evoc",
+        "casting": "1 bns",
+        "range": "Self",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Thunderwave": {
+        "level": 1,
+        "description": "All creature/obj in area 2d8 Thunder dmg, pushed 10 ft away; save halves and not pushed",
+        "save": "Con",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "S:15ft cube",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Unseen Servant (R)": {
+        "level": 1,
+        "description": "Create a mindless, invisible, shapeless, Medium servant for simple tasks; bonus action to mentally command it",
+        "save": "\u2014",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "1 h",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Witch Bolt": {
+        "level": 1,
+        "description": "Rngd spell attack 1d12 Lightn. dmg; 1 a 1d12 Lightn. dmg; ends if out of range or I do other a",
+        "save": "\u2014",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "30 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Wrathful Smite": {
+        "level": 1,
+        "description": "Next melee weaponpon hit  Psychic dmg and save or frightened; it can take 1 a for extra save",
+        "save": "Wis",
+        "school": " Evoc",
+        "casting": "1 bns",
+        "range": "Self",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Zephyr Strike": {
+        "level": 1,
+        "description": "Moving doesn't provoke opportunity attacks; once: adv. on weapon attack,  Force dmg,  ft spd for turn",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 bns",
+        "range": "Self",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Aganazzar's Scorcher": {
+        "level": 2,
+        "description": "30-ft long 5-ft wide line all creatures 3d8 Fire dmg; save halves",
+        "save": "Dex",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "30-ft line",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Aid": {
+        "level": 2,
+        "description": "3 creatures gain 5 current HP and HP max for the duration",
+        "save": "\u2014",
+        "school": " Abjur",
+        "casting": "1 a",
+        "range": "30 ft",
+        "duration": "8 h",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Alter Self": {
+        "level": 2,
+        "description": "Change appearance, gain  magical 1d6 natural weaponpons, or water breathing and swim spd",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "Self",
+        "duration": "Conc, 1 h",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Animal Messenger (R)": {
+        "level": 2,
+        "description": "Tiny beast delivers 25 word message up to 25 miles (50 miles if flyer);  duration",
+        "save": "\u2014",
+        "school": " Ench",
+        "casting": "1 a",
+        "range": "30 ft",
+        "duration": "24 h",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Arcane Lock": {
+        "level": 2,
+        "description": "Entryway locked; password or designated creature opens;  DC break/pick lock (25gp cons.)",
+        "save": "\u2014",
+        "school": " Abjur",
+        "casting": "1 a",
+        "range": "Touch",
+        "duration": "Till dispelled",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Augury (R)": {
+        "level": 2,
+        "description": "Omen about specific course of action I plan to take in the next 30 min (25gp)",
+        "save": "\u2014",
+        "school": " Div",
+        "casting": "1 min",
+        "range": "Self",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Barkskin": {
+        "level": 2,
+        "description": "1 willing creature AC cannot be reduced below 16, regardless of armor it is weaponring",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "Touch",
+        "duration": "Conc, 1 h",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Beast Sense (R)": {
+        "level": 2,
+        "description": "Use 1 willing beast's senses; I'm blinded and deafened while doing so",
+        "save": "\u2014",
+        "school": " Div",
+        "casting": "1 a",
+        "range": "Touch",
+        "duration": "Conc, 1 h",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Blindness/Deafness": {
+        "level": 2,
+        "description": "1 creature save or blinded or deafened; extra save at end of every turn",
+        "save": "Con",
+        "school": " Necro",
+        "casting": "1 a",
+        "range": "30 ft",
+        "duration": "1 min",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Blur": {
+        "level": 2,
+        "description": "Enemies have dis. on attacks vs. me; no effect against creature without vision or immune to illus.",
+        "save": "\u2014",
+        "school": " Illus",
+        "casting": "1 a",
+        "range": "Self",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Calm Emotions": {
+        "level": 2,
+        "description": "20-ft rad all humanoids save or I suppress either charm/fear effects or hostility",
+        "save": "Cha",
+        "school": " Ench",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Cloud of Daggers": {
+        "level": 2,
+        "description": "5-ft cube 4d4 Slashing dmg to all that enter or start turn in area",
+        "save": "\u2014",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Continual Flame": {
+        "level": 2,
+        "description": "Create a permanent flame (50gp cons.)",
+        "save": "\u2014",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "Touch",
+        "duration": "Till dispelled",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Cordon of Arrows": {
+        "level": 2,
+        "description": "4 arrows/bolts attack first creature in 30 ft one at a time for 1d6 Piercing dmg; save halves",
+        "save": "Dex",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "5 ft",
+        "duration": "8 h",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Crown of Madness": {
+        "level": 2,
+        "description": "1 humanoid save or charmed and must melee attack against creature chosen by me; extra save/rnd",
+        "save": "Wis",
+        "school": " Ench",
+        "casting": "1 a",
+        "range": "120 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Darkness": {
+        "level": 2,
+        "description": "15-ft rad darkness on point or object; darkvision doesn't work; only magical light of SL 3 works in it",
+        "save": "\u2014",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Conc, 10 min",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Darkvision": {
+        "level": 2,
+        "description": "1 willing creature has darkvision 60 ft for the duration",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "Touch",
+        "duration": "8 h",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Detect Thoughts": {
+        "level": 2,
+        "description": "1 a read thoughts of visible Int>3 creature or detect presence of invisible within 30 ft; save for probing",
+        "save": "Wis",
+        "school": " Div",
+        "casting": "1 a",
+        "range": "Self",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Dust Devil": {
+        "level": 2,
+        "description": "5-ft cube; all in 5-ft 1d8 Bludg. dmg and pushed 10 ft away; save halves, no push; see book",
+        "save": "Str",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Earthbind": {
+        "level": 2,
+        "description": "1 creatures save or fly speed is reduced to 0; airborne creatures safely descend at 60 ft per round",
+        "save": "Str",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "300 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Enhance Ability": {
+        "level": 2,
+        "description": "1 creature adv. on checks with 1 stat; choosing Str, Dex, Con gives secondary benefits",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "Touch",
+        "duration": "Conc, 1 h",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Enlarge/Reduce": {
+        "level": 2,
+        "description": "1 creature/object save or enlarged (Str adv.  weaponpon dmg), reduced (Str dis. -1d4 weaponpon dmg)",
+        "save": "Con",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "30 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Enthrall": {
+        "level": 2,
+        "description": "While I speak, any creature save (adv. if fighting) or dis. on Wis(Perception) for any other than me",
+        "save": "Wis",
+        "school": " Ench",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "1 min",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Find Steed": {
+        "level": 2,
+        "description": "Gain the services of a steed; communicate with each other telepathically; share spells with it; see book",
+        "save": "\u2014",
+        "school": " Conj",
+        "casting": "10 min",
+        "range": "30 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Find Traps": {
+        "level": 2,
+        "description": "Sense presence of any trap within line of sight; not exact location, but general nature of trap",
+        "save": "\u2014",
+        "school": " Div",
+        "casting": "1 a",
+        "range": "120 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Flame Blade": {
+        "level": 2,
+        "description": "Summon fiery blade; 1 a to make a melee spell attack for 3d6 Fire dmg; 10 ft bright light",
+        "save": "\u2014",
+        "school": " Evoc",
+        "casting": "1 bns",
+        "range": "Self",
+        "duration": "Conc, 10 min",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Flaming Sphere": {
+        "level": 2,
+        "description": "2.5-ft rad flaming sphere; bonus action move 30 ft; all within 5-ft rad 2d6 Fire dmg; save halves",
+        "save": "Dex",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Fortune's Favor": {
+        "level": 2,
+        "description": "1 creature once roll extra d20 and select which to use for attack, check, save, or attack vs. it (100gp cons.)",
+        "save": "\u2014",
+        "school": " Div",
+        "casting": "1 min",
+        "range": "Touch",
+        "duration": "1 h",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Gentle Repose (R)": {
+        "level": 2,
+        "description": "1 corpse protected from decay and prevent it from becoming undead; add duration to raising dead",
+        "save": "\u2014",
+        "school": " Necro",
+        "casting": "1 a",
+        "range": "Touch",
+        "duration": "10 days",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Gust of Wind": {
+        "level": 2,
+        "description": "60-ft long 10-ft wide line of wind; creature starting turn in wind save or pushed 15 ft; see book",
+        "save": "Str",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "S:60-ft line",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Healing Spirit": {
+        "level": 2,
+        "description": "5-ft cube; any living creature I see start/enter heals 1d6 HP; 1 mod uses; bonus action move it 30 ft",
+        "save": "\u2014",
+        "school": " Conj",
+        "casting": "1 bns",
+        "range": "60 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Heat Metal": {
+        "level": 2,
+        "description": "1 metal obj on touch 2d8 Fire dmg; save or drop obj; if held: dis. attack/chk; bonus action reheat obj",
+        "save": "Con",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Hold Person": {
+        "level": 2,
+        "description": "1 humanoids, within 30 ft of each other, save or paralyzed; extra save at end of each turn",
+        "save": "Wis",
+        "school": " Ench",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Immovable Object": {
+        "level": 2,
+        "description": "1 obj <10 lb fixed in place; holds 4k lb; Str check move, except chosen/password; See B (25gp cons.)",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "Touch",
+        "duration": "1 h",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Invisibility": {
+        "level": 2,
+        "description": "1 creature invisible; attacking/casting makes the creature visible; anything worn/carried also invisible",
+        "save": "\u2014",
+        "school": " Illus",
+        "casting": "1 a",
+        "range": "Touch",
+        "duration": "Conc, 1 h",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Lesser Restoration": {
+        "level": 2,
+        "description": "1 creature cured of 1 disease, or 1 condition: blinded, deafened, paralyzed, or poisoned",
+        "save": "\u2014",
+        "school": " Abjur",
+        "casting": "1 a",
+        "range": "Touch",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Levitate": {
+        "level": 2,
+        "description": "1 creature/obj up to 500 lb save or rise vertically, up to 20 ft; 1 a (move a if self) move up/down 20 ft",
+        "save": "Con",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Conc, 10 min",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Locate Animal/Plants (R)": {
+        "level": 2,
+        "description": "Learn direction and distance to closest named or described kind of beast or plant within 5 miles",
+        "save": "\u2014",
+        "school": " Div",
+        "casting": "1 a",
+        "range": "Self",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Locate Object": {
+        "level": 2,
+        "description": "Learn direction to closest named or described kind or specific object within 1000 ft; see book",
+        "save": "\u2014",
+        "school": " Div",
+        "casting": "1 a",
+        "range": "Self",
+        "duration": "Conc, 10 min",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Magic Mouth (R)": {
+        "level": 2,
+        "description": "Implant a 25 word message in an object that is uttered on chosen trigger condition (10gp cons.)",
+        "save": "\u2014",
+        "school": " Illus",
+        "casting": "1 min",
+        "range": "30 ft",
+        "duration": "Till dispelled",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Magic Weapon": {
+        "level": 2,
+        "description": "1 nonmagical weaponpon becomes magical with  bonus to attack and damage; SL4:  SL6: ",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 bns",
+        "range": "Touch",
+        "duration": "Conc, 1 h",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Max's Earthen Grasp": {
+        "level": 2,
+        "description": "Medium hand attacks 1 creature: save or 2d6 Bludg. dmg & restrained; 1 a hand moves/attacks, releases; see B",
+        "save": "Str",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "30 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Melf's Acid Arrow": {
+        "level": 2,
+        "description": "Spell attack for 4d4 Acid dmg and 2d4 next turn; on miss half dmg, no next turn",
+        "save": "\u2014",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "90 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Mind Spike": {
+        "level": 2,
+        "description": "1 creature 3d8 Psychic dmg, know its location, can't be invis for me; save half, no other benefits",
+        "save": "Wis",
+        "school": " Div",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Conc, 1 h",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Mirror Image": {
+        "level": 2,
+        "description": "Create three illusionary duplicates of me; destroyed if hit; randomize attacks; AC 10  my Dex mod",
+        "save": "\u2014",
+        "school": " Illus",
+        "casting": "1 a",
+        "range": "Self",
+        "duration": "1 min (D)",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Misty Step": {
+        "level": 2,
+        "description": "I teleport 30 feet to a unoccupied space I can see",
+        "save": "\u2014",
+        "school": " Conj",
+        "casting": "1 bns",
+        "range": "Self",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Moonbeam": {
+        "level": 2,
+        "description": "5-ft rad 40-ft high all enter/start turn 2d10 Radiant dmg; save half; 1 a move it 60 ft; see B",
+        "save": "Con",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "120 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Nystul's Magic Aura": {
+        "level": 2,
+        "description": "Create a false magic item with chosen properties or shroud a magical item from detection",
+        "save": "\u2014",
+        "school": " Illus",
+        "casting": "1 a",
+        "range": "Touch",
+        "duration": "24 h",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Pass Without Trace": {
+        "level": 2,
+        "description": "Any within 30-ft rad  Dex(Stealth) checks, leave no tracks, can't be tracked by nonmagical means",
+        "save": "\u2014",
+        "school": " Abjur",
+        "casting": "1 a",
+        "range": "Self",
+        "duration": "Conc, 1 h",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Phantasmal Force": {
+        "level": 2,
+        "description": "1 creature save or sees 10 ft cube illusion that does 1d6 Psychic dmg/rnd; Int(Investigation) vs. spell DC",
+        "save": "Int",
+        "school": " Illus",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Prayer of Healing": {
+        "level": 2,
+        "description": "6 living creatures heal 2d81d8 ability modifier HP",
+        "save": "\u2014",
+        "school": " Evoc",
+        "casting": "10 min",
+        "range": "30 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Protection from Poison": {
+        "level": 2,
+        "description": "1 creature cured from 1 poison, gains resistance to Poison damage, and adv. on saves vs. being poisoned",
+        "save": "\u2014",
+        "school": " Abjur",
+        "casting": "1 a",
+        "range": "Touch",
+        "duration": "1 h",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Pyrotechnics": {
+        "level": 2,
+        "description": "5 cu ft nonma. flame extinguish, or 10-ft rad all creature save or blind 1 rnd, or 20-ft rad hvy obsc. 1 min",
+        "save": "Con",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Ray of Enfeeblement": {
+        "level": 2,
+        "description": "Spell attack; creature does half dmg with weaponpon attacks that use Str; save at end of each turn to end",
+        "save": "Con",
+        "school": " Necro",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Scorching Ray": {
+        "level": 2,
+        "description": "3 rays hit creature(s) on spell attack with each ray for 2d6 Fire dmg per ray",
+        "save": "\u2014",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "120 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "See Invisibility": {
+        "level": 2,
+        "description": "See invisible/ethereal creatures and objects as if they were visible; ethereals are ghostly, translucent",
+        "save": "\u2014",
+        "school": " Div",
+        "casting": "1 a",
+        "range": "Self",
+        "duration": "1 h",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Shadow Blade": {
+        "level": 2,
+        "description": "Sword 2d8 Psychic dmg, finesse, light, thrown (20/60 ft), adv. if target in dim/dark;  at SL3/5/7",
+        "save": "\u2014",
+        "school": " Illus",
+        "casting": "1 bns",
+        "range": "Self",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Shatter": {
+        "level": 2,
+        "description": "10-ft rad all 3d8 Thunder dmg; save halves; nonmagical unattended objects also take dmg",
+        "save": "Con",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Silence (R)": {
+        "level": 2,
+        "description": "20-ft rad no sound propagates; all within deafened, immune to Thunder dmg, can't use verbal comp.",
+        "save": "\u2014",
+        "school": " Illus",
+        "casting": "1 a",
+        "range": "120 ft",
+        "duration": "Conc, 10 min",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Skywrite (R)": {
+        "level": 2,
+        "description": "Write up to 10 words with clouds in a part of the sky I can see; strong wind can diperse the clouds",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "Sight",
+        "duration": "Conc, 1 h",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Snilloc's Snowball Swarm": {
+        "level": 2,
+        "description": "5-ft radius all creatures 3d6 Cold damage; save halves",
+        "save": "Dex",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "90 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Spider Climb": {
+        "level": 2,
+        "description": "1 gains climbing speed equal to walking speed; can go on walls and ceilings with hands free",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "Touch",
+        "duration": "Conc, 1 h",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Spike Growth": {
+        "level": 2,
+        "description": "20-ft rad difficult terrain; all 2d4 Piercing dmg per 5 ft moved; Wis(Perc) vs. Spell DC to recognize",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "150 ft",
+        "duration": "Conc, 10 min",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Spiritual Weapon": {
+        "level": 2,
+        "description": "Create weaponpon; spell attack 1d81d8/2SL modifier Force dmg; bonus action to move 20 ft and/or attack",
+        "save": "\u2014",
+        "school": " Evoc",
+        "casting": "1 bns",
+        "range": "60 ft",
+        "duration": "1 min",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Suggestion": {
+        "level": 2,
+        "description": "1 creature save or follow understood reasonable stated course of action; ends if I or allies harm target",
+        "save": "Wis",
+        "school": " Ench",
+        "casting": "1 a",
+        "range": "30 ft",
+        "duration": "Conc, 8 h",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Summon Beast": {
+        "level": 2,
+        "description": "Summon choice of Bestial Spirit; obeys commands; takes turn after mine; disappears at 0 hp (200gp)",
+        "save": "\u2014",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "90 ft",
+        "duration": "Conc, 1 h",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Tasha's Mind Whip": {
+        "level": 2,
+        "description": "1 creature, max 30 ft apart; 3d6 Psychic dmg; no rea; only move, act, or bns; save half, no act limit",
+        "save": "Int",
+        "school": " Ench",
+        "casting": "1 a",
+        "range": "90 ft",
+        "duration": "1 rnd",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Warding Bond": {
+        "level": 2,
+        "description": "1 creature  AC,  saves, resistance all dmg; if takes dmg I take same dmg; ends if >60 ft away (100gp)",
+        "save": "\u2014",
+        "school": " Abjur",
+        "casting": "1 a",
+        "range": "Touch",
+        "duration": "1 h (D)",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Warding Wind": {
+        "level": 2,
+        "description": "Strong (20 mph) wind around me deafens/extinguishes unprotected flames/dif. ter./ranged weapon dis.",
+        "save": "\u2014",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "S:10-ft rad",
+        "duration": "Conc, 10 min",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Web": {
+        "level": 2,
+        "description": "20-ft cube, anchored, all save or restrained; dif. ter.; lightly obscures; Str check vs. Spell DC to free",
+        "save": "Dex",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Conc, 1 h",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Wristpocket (R)": {
+        "level": 2,
+        "description": "Store 1 held obj <5 lb in extradim. space; 1 a to summon obj in free hand or return; reappears at end",
+        "save": "\u2014",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "Self",
+        "duration": "Conc, 1 h",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Zone of Truth": {
+        "level": 2,
+        "description": "15-ft rad all in or enter save or unable to lie; I'm aware if saved or not; creature aware it cannot lie",
+        "save": "Cha",
+        "school": " Ench",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "10 min",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Animate Dead": {
+        "level": 3,
+        "description": "Turn corpses into 1 Skeletons or Zombies; control for 24h; bonus action command within 60 ft",
+        "save": "\u2014",
+        "school": " Necro",
+        "casting": "1 min",
+        "range": "10 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Aura of Vitality": {
+        "level": 3,
+        "description": "As a bonus action for the duration, I can heal 2d6 HP to 1 creature in range (can be me)",
+        "save": "\u2014",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "S:30-ft rad",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Beacon of Hope": {
+        "level": 3,
+        "description": "Any creature in range adv. on Wis/Death saves and gains max HP from any healing",
+        "save": "\u2014",
+        "school": " Abjur",
+        "casting": "1 a",
+        "range": "30 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Bestow Curse": {
+        "level": 3,
+        "description": "1 creature save or cursed, see book; duration SL4:conc, 10 min; SL5:8h; SL7:24h; SL9:until dispelled",
+        "save": "Wis",
+        "school": " Necro",
+        "casting": "1 a",
+        "range": "Touch",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Blinding Smite": {
+        "level": 3,
+        "description": "Next melee weaponpon hit  Radiant dmg; save or blinded; extra save at end of every turn",
+        "save": "Con",
+        "school": " Evoc",
+        "casting": "1 bns",
+        "range": "Self",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Blink": {
+        "level": 3,
+        "description": "50% chance every turn to travel to Ethereal Plane and return to an empty space within 10 ft next turn",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "Self",
+        "duration": "1 min (D)",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Call Lightning": {
+        "level": 3,
+        "description": "60-ft rad 10-ft high cloud; 1 a all in 5-ft rad under cloud 3d10 Lightning dmg; save half",
+        "save": "Dex",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "120 ft",
+        "duration": "Conc, 10 min",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Catnap": {
+        "level": 3,
+        "description": "3 willing creature unconscious for 10 min to gain benefits of short rest; Ends if dmg or 1 a to wake",
+        "save": "\u2014",
+        "school": " Ench",
+        "casting": "1 a",
+        "range": "30 ft",
+        "duration": "10 min",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Clairvoyance": {
+        "level": 3,
+        "description": "See or hear a familiar place; 1 a to switch between seeing and hearing (100gp)",
+        "save": "\u2014",
+        "school": " Div",
+        "casting": "10 min",
+        "range": "1 mile",
+        "duration": "Conc, 10 min",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Conjure Animals": {
+        "level": 3,
+        "description": "Summon 2 CR of beasts; obey my verbal commands",
+        "save": "\u2014",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Conc, 1 h",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Conjure Barrage": {
+        "level": 3,
+        "description": "Throw weaponpon or ammo; copies rain down for 3d8 dmg; dmg type as weaponpon; save halves",
+        "save": "Dex",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "S:60-ft cone",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Counterspell": {
+        "level": 3,
+        "description": "Stop a spell being cast; if above SL of this spell, make DC 10 spellcasting ability check",
+        "save": "\u2014",
+        "school": " Abjur",
+        "casting": "1 rea",
+        "range": "60 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Create Food and Water": {
+        "level": 3,
+        "description": "Create 45 pounds of food and 30 gallons of water; enough for 15 humanoids or 5 steeds for 24h",
+        "save": "\u2014",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "30 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Crusader's Mantle": {
+        "level": 3,
+        "description": "Me and allies in range deal extra 1d4 Radiant dmg with weaponpon attacks",
+        "save": "\u2014",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "S:30-ft rad",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Daylight": {
+        "level": 3,
+        "description": "60-ft rad bright light  60-ft dim light on point or object; only magical darkness of SL 4 works in it",
+        "save": "\u2014",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "1 h",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Dispel Magic": {
+        "level": 3,
+        "description": "Dispel all magical effects on creature or object; if above this SL, DC 10 spellcasting ability check",
+        "save": "\u2014",
+        "school": " Abjur",
+        "casting": "1 a",
+        "range": "120 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Elemental Weapon": {
+        "level": 3,
+        "description": " magical weaponpon;  Acid, Cold, Fire, Lightning, or Thunder dmg; SL5: 2/ SL7: 3/",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "Touch",
+        "duration": "Conc, 1 h",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Enemies Abound": {
+        "level": 3,
+        "description": "1 creature save or regard all creatures it can see as enemies, random targeting; save when damaged to end",
+        "save": "Int",
+        "school": " Ench",
+        "casting": "1 a",
+        "range": "120 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Erupting Earth": {
+        "level": 3,
+        "description": "20-ft cube all creature 3d12 Bludgeoning dmg; save halves; area becomes difficult terrain",
+        "save": "Dex",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "120 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Feign Death (R)": {
+        "level": 3,
+        "description": "Willing creature appears dead; it is blinded, incapacitated, has dmg resist. all but Psychic, and speed 0",
+        "save": "\u2014",
+        "school": " Necro",
+        "casting": "1 a",
+        "range": "Touch",
+        "duration": "1 h (D)",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Fireball": {
+        "level": 3,
+        "description": "20-ft rad all creature 8d6 Fire dmg; save halves; unattended flammable objects ignite",
+        "save": "Dex",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "150 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Fly": {
+        "level": 3,
+        "description": "1 willing creatures gain fly 60 ft speed",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "Touch",
+        "duration": "Conc, 10 min",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Gaseous Form": {
+        "level": 3,
+        "description": "1 willing creature into a misty cloud with fly 10 ft, resist. to nonmagical dmg, adv. on Str/Dex/saves",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "Touch",
+        "duration": "Conc, 1 h",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Glyph of Warding": {
+        "level": 3,
+        "description": "Create a glyph that triggers on set condition; Int(Investigation) vs. Spell DC; see book (200gp cons.)",
+        "save": "\u2014",
+        "school": " Abjur",
+        "casting": "1 h",
+        "range": "Touch",
+        "duration": "Till triggered",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Haste": {
+        "level": 3,
+        "description": "1 willing creature  AC, speed doubled, adv. on Dex saves, extra action (1 attack, dash, disengage, hide)",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "30 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Hunger of Hadar": {
+        "level": 3,
+        "description": "20-ft rad all: blind while in, start turn in 2d6 Cold dmg, end turn in save or 2d6 Acid dmg",
+        "save": "Dex",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "150 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Hypnotic Pattern": {
+        "level": 3,
+        "description": "30-ft cube all creature save or charmed, incapacitated, speed 0 for duration; ends if creature takes dmg",
+        "save": "Wis",
+        "school": " Illus",
+        "casting": "1 a",
+        "range": "120 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Intellect Fortress": {
+        "level": 3,
+        "description": "1 creature, each max 30 ft apart, has Psychic damage resistance and adv. on Int, Wis, and Cha saves",
+        "save": "\u2014",
+        "school": " Abjur",
+        "casting": "1 a",
+        "range": "30 ft",
+        "duration": "Conc, 1 h",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Leomund's Tiny Hut (R)": {
+        "level": 3,
+        "description": "10-ft rad immobile dome of force holds 9 Medium creature; blocks magic; ends if I leave; see book",
+        "save": "\u2014",
+        "school": " Evoc",
+        "casting": "1 min",
+        "range": "S:10-ft rad",
+        "duration": "8 h",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Life Transference": {
+        "level": 3,
+        "description": "I take 4d8 Necrotic dmg (in full) and 1 creature in range I can see heals twice that in HP",
+        "save": "\u2014",
+        "school": " Necro",
+        "casting": "1 a",
+        "range": "30 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Lightning Arrow": {
+        "level": 3,
+        "description": "Next rngd weapon attack 4d8 Lightn. dmg, miss half; 10 ft all 2d8 Lightn. dmg, save half",
+        "save": "Dex",
+        "school": " Trans",
+        "casting": "1 bns",
+        "range": "Self",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Lightning Bolt": {
+        "level": 3,
+        "description": "100-ft long 5-ft wide all 8d6 Lightn. dmg; save halves; unattended flammable obj ignite",
+        "save": "Dex",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "S:100-ft line",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Magic Circle": {
+        "level": 3,
+        "description": "Celes., elem., fey, fiends, or undead can't enter/leave; dis. on attack;  dura.; see B (100gp cons.)",
+        "save": "\u2014",
+        "school": " Abjur",
+        "casting": "1 min",
+        "range": "10 ft",
+        "duration": "1 h",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Major Image": {
+        "level": 3,
+        "description": "20-ft cube illusion includes visible, audible, olfactory, temperature; 1 a move it; SL6: no conc.; see B",
+        "save": "\u2014",
+        "school": " Illus",
+        "casting": "1 a",
+        "range": "120 ft",
+        "duration": "Conc, 10 min",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Mass Healing Word": {
+        "level": 3,
+        "description": "6 living creatures heal 1d41d4 ability modifier HP",
+        "save": "\u2014",
+        "school": " Evoc",
+        "casting": "1 bns",
+        "range": "60 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Meld into Stone (R)": {
+        "level": 3,
+        "description": "I merge into a stone object large enough to contain me; can't see through the stone; see book",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "Touch",
+        "duration": "8 h",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Melf's Minute Meteors": {
+        "level": 3,
+        "description": "6 meteors; at casting/bonus action send up to two 120 ft for 5-ft rad all creature 2d6 Fire dmg; save half",
+        "save": "Dex",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "Self",
+        "duration": "Conc, 10 min",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Nondetection": {
+        "level": 3,
+        "description": "1 creature or object up to 10 cu ft hidden from all divination magic (25gp cons.)",
+        "save": "\u2014",
+        "school": " Abjur",
+        "casting": "1 a",
+        "range": "Touch",
+        "duration": "8 h",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Phantom Steed (R)": {
+        "level": 3,
+        "description": "Summon quasi-real steed with 100 ft speed (10 mph); I designate rider; spells ends if it takes dmg",
+        "save": "\u2014",
+        "school": " Illus",
+        "casting": "1 min",
+        "range": "30 ft",
+        "duration": "1 h (D)",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Plant Growth": {
+        "level": 3,
+        "description": "1 a: 100-ft rad plants overgrow for 1/4 speed; 8h: 1 mile diameter plants yield double food at harvest",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 a/8h",
+        "range": "150 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Protection from Energy": {
+        "level": 3,
+        "description": "1 creature gains resistance to either Acid, Cold, Fire, Lightning, or Thunder damage for duration",
+        "save": "\u2014",
+        "school": " Abjur",
+        "casting": "1 a",
+        "range": "Touch",
+        "duration": "Conc, 1 h",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Pulse Wave": {
+        "level": 3,
+        "description": "6d6 Force dmg, pulled/pushed 15 ft from me (also free obj); save halves, no move",
+        "save": "Con",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "S:30-ft cone",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Remove Curse": {
+        "level": 3,
+        "description": "1 creature or object is freed of all curses; cursed magic items break attunement with owner",
+        "save": "\u2014",
+        "school": " Abjur",
+        "casting": "1 a",
+        "range": "Touch",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Revivify": {
+        "level": 3,
+        "description": "Restores a creature's body that has died in the last min to life with 1 HP (300gp cons.)",
+        "save": "\u2014",
+        "school": " Necro",
+        "casting": "1 a",
+        "range": "Touch",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Sending": {
+        "level": 3,
+        "description": "Send a 25 word message to a familiar creature; it recognizes me and can respond with 25 words",
+        "save": "\u2014",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "Unlimited",
+        "duration": "1 rnd",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Sleet Storm": {
+        "level": 3,
+        "description": "40-ft rad 20-ft high; heavily obsc.; douses flames; difficult ter.; save or prone; Con save or lose conc.",
+        "save": "Dex",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "150 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Slow": {
+        "level": 3,
+        "description": "6 creature in 40-ft cube save or half spd, -2 AC, -2 Dex saves, no rea, only 1 a or bonus action, 1 attack; see book",
+        "save": "Wis",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "120 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Speak with Dead": {
+        "level": 3,
+        "description": "1 corpse with mouth answers 5 questions with what it knew in life; can cast on same every 10 days",
+        "save": "\u2014",
+        "school": " Necro",
+        "casting": "1 a",
+        "range": "10 ft",
+        "duration": "10 min",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Speak with Plants": {
+        "level": 3,
+        "description": "Speak with plants in range about last 24h events; turn difficult plant terrain to normal or vice versa",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "S:30-ft rad",
+        "duration": "10 min",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Spirit Guardians": {
+        "level": 3,
+        "description": "Undesignated creature start turn/enter in area half speed, 3d8 Radiant/Necrotic dmg; save half",
+        "save": "Wis",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "S:15-ft rad",
+        "duration": "Conc, 10 min",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Spirit Shroud": {
+        "level": 3,
+        "description": "My attacks 1d8 Cold/Necro/Radiant dmg, no heal until next turn; any creature I see -10 ft spd",
+        "save": "\u2014",
+        "school": " Necro",
+        "casting": "1 bns",
+        "range": "S:10-ft rad",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Stinking Cloud": {
+        "level": 3,
+        "description": "20-ft rad; ignores cover, heavily obscures; all in area at start of turn save against poison or can't act",
+        "save": "Con",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "90 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Summon Fey": {
+        "level": 3,
+        "description": "Summon choice of Fey Spirit; obeys commands; takes turn after mine; disappears at 0 hp (300gp)",
+        "save": "\u2014",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "90 ft",
+        "duration": "Conc, 1 h",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Summon Lesser Demons": {
+        "level": 3,
+        "description": "Summon up to 8 (16 at SL6, 24 at SL8) CR \u22641 1 demons, DM choice; attack nearest non-demons",
+        "save": "\u2014",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Conc, 1 h",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Summon Shadowspawn": {
+        "level": 3,
+        "description": "Summon choice of Shadow Spirit; obeys commands; takes turn after mine; disappears at 0 hp (300gp)",
+        "save": "\u2014",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "90 ft",
+        "duration": "Conc, 1 h",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Summon Undead": {
+        "level": 3,
+        "description": "Summon choice of Undead Spirit; obeys commands; takes turn after mine; disappears at 0 hp (300gp)",
+        "save": "\u2014",
+        "school": " Necro",
+        "casting": "1 a",
+        "range": "90 ft",
+        "duration": "Conc, 1 h",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Thunder Step": {
+        "level": 3,
+        "description": "Me  1 willing creature teleport 90 ft; all creature in 10 ft of origin 3d10 Thunder dmg; save half",
+        "save": "Con",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "90 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Tidal Wave": {
+        "level": 3,
+        "description": "30-ft x 10-ft, 10-ft high all creature 4d8 Bludg. dmg and prone; save halves not prone; extinguish flames",
+        "save": "Dex",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "120 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Tiny Servant": {
+        "level": 3,
+        "description": "Animate 1 Tiny, nonmagical, unattended obj as tiny servants; bonus action to command telepathically",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 min",
+        "range": "Touch",
+        "duration": "8 h",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Tongues": {
+        "level": 3,
+        "description": "1 creature understands all spoken languages, all with a language can understand what it means",
+        "save": "\u2014",
+        "school": " Div",
+        "casting": "1 a",
+        "range": "Touch",
+        "duration": "1 h",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Vampiric Touch": {
+        "level": 3,
+        "description": "Spell attack each turn as 1 a for 3d6 Necrotic dmg; I heal half the damage dealt",
+        "save": "\u2014",
+        "school": " Necro",
+        "casting": "1 a",
+        "range": "Self",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Wall of Sand": {
+        "level": 3,
+        "description": "30\u00d710\u00d710ft (l\u00d7w\u00d7h) wall on the ground; blocks line of sight; blinded while inside; 1/3 move",
+        "save": "\u2014",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "90 ft",
+        "duration": "Conc, 10 min",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Wall of Water": {
+        "level": 3,
+        "description": "30\u00d71\u00d710ft (l\u00d7w\u00d7h) or 20-ft rad 20-ft high; dif. ter.; range weapon dis.; Fire dmg half; Cold dmg freezes",
+        "save": "\u2014",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Conc, 10 min",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Water Breathing (R)": {
+        "level": 3,
+        "description": "10 willing creatures can breathe underwater for the duration",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "30 ft",
+        "duration": "24 h",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Water Walk (R)": {
+        "level": 3,
+        "description": "10 willing creatures can move across any liquid for the duration; rise to surface if underwater",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "30 ft",
+        "duration": "1 h",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Wind Wall": {
+        "level": 3,
+        "description": "50\u00d71\u00d715ft (l\u00d7w\u00d7h) wall, any line-shape, at cast all in 3d8 Bludg. dmg; save halves; blocks arrows",
+        "save": "Str",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "120 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Arcane Eye": {
+        "level": 4,
+        "description": "Create invisible, moving (unlimited range, 30 ft/rnd) 1\" magic eye with darkvision I see through",
+        "save": "\u2014",
+        "school": " Div",
+        "casting": "1 a",
+        "range": "30 ft",
+        "duration": "Conc, 1 h",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Aura of Life": {
+        "level": 4,
+        "description": "Me  any creature while in area Necrotic dmg resist.; at turn start, 0 HP living in area heal 1 HP",
+        "save": "\u2014",
+        "school": " Abjur",
+        "casting": "1 a",
+        "range": "S:30-ft rad",
+        "duration": "Conc, 10 min",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Aura of Purity": {
+        "level": 4,
+        "description": "Me  any creature while in area Poison dmg resist., immune to disease, adv. on saves vs. conditions",
+        "save": "\u2014",
+        "school": " Abjur",
+        "casting": "1 a",
+        "range": "S:30-ft rad",
+        "duration": "Conc, 10 min",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Banishment": {
+        "level": 4,
+        "description": "1 creature save or banished; creature return if spell lasts < 1 min",
+        "save": "Cha",
+        "school": " Abjur",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Blight": {
+        "level": 4,
+        "description": "1 creature takes 8d8 Necrotic dmg; save halves; plants have dis. on save",
+        "save": "Con",
+        "school": " Necro",
+        "casting": "1 a",
+        "range": "30 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Charm Monster": {
+        "level": 4,
+        "description": "1 creatures, each max 30 ft apart, save or charmed; adv. on save if me/ally is fighting it",
+        "save": "Wis",
+        "school": " Ench",
+        "casting": "1 a",
+        "range": "30 ft",
+        "duration": "1 h",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Compulsion": {
+        "level": 4,
+        "description": "Any creature that hear me save or I can, as bns, have it move fully in one direction; save again after move",
+        "save": "Wis",
+        "school": " Ench",
+        "casting": "1 a",
+        "range": "30 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Confusion": {
+        "level": 4,
+        "description": "10 rad all save or confused, see book; extra save at end of every turn",
+        "save": "Wis",
+        "school": " Ench",
+        "casting": "1 a",
+        "range": "90 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Conj. Minor Elementals": {
+        "level": 4,
+        "description": "Summon 2 CR of elementals; obey my verbal commands",
+        "save": "\u2014",
+        "school": " Conj",
+        "casting": "1 min",
+        "range": "90 ft",
+        "duration": "Conc, 1 h",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Conj. Woodland Beings": {
+        "level": 4,
+        "description": "Summon 2 CR of fey; obey my verbal commands",
+        "save": "\u2014",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Conc, 1 h",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Control Water": {
+        "level": 4,
+        "description": "Control an amount of water in a 100 ft cube as 1 a; flood, part, redirect, or whirlpool, see book",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "300 ft",
+        "duration": "Conc, 10 min",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Death Ward": {
+        "level": 4,
+        "description": "Once, when creature drops to 0 HP it drops to 1 HP instead; or negates first instantaneous kill effect",
+        "save": "\u2014",
+        "school": " Abjur",
+        "casting": "1 a",
+        "range": "Touch",
+        "duration": "8 h",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Dimension Door": {
+        "level": 4,
+        "description": "Teleport myself and 1 willing creature within 5 ft, up to 500 ft to a place I can see, specify, or describe",
+        "save": "\u2014",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "500 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Dominate Beast": {
+        "level": 4,
+        "description": "1 beast save or charmed, follows telepathic commands, 1 a for complete control;  for duration",
+        "save": "Wis",
+        "school": " Ench",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Elemental Bane": {
+        "level": 4,
+        "description": "1 creature, each max 30 ft apart, save or 1 energy: lose resist. to it &  to first dmg with it/turn",
+        "save": "Con",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "90 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Evard's Black Tentacles": {
+        "level": 4,
+        "description": "All that enter/start 20-ft rad save or restrained & 3d6 Bludgeoning dmg/rnd; Str/Dex check to escape",
+        "save": "Dex",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "90 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Fabricate": {
+        "level": 4,
+        "description": "Create simple object from raw materials; or complex object if proficient in the appropriate tools",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "10 min",
+        "range": "120 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Find Greater Steed": {
+        "level": 4,
+        "description": "Gain the services of a steed; can communicate with it telepathically; can share spells with it; see book",
+        "save": "\u2014",
+        "school": " Conj",
+        "casting": "10 min",
+        "range": "30 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Fire Shield": {
+        "level": 4,
+        "description": "Fiery shield gives either Fire or Cold dmg resist. and deals 2d8 of the other dmg type to melee attackers",
+        "save": "\u2014",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "Self",
+        "duration": "10 min (D)",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Freedom of Movement": {
+        "level": 4,
+        "description": "1 willing creature; magic cannot reduce speed, paralyze, restrain; use 5 ft to escape nonmagical restraints",
+        "save": "\u2014",
+        "school": " Abjur",
+        "casting": "1 a",
+        "range": "Touch",
+        "duration": "1 h",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Giant Insect": {
+        "level": 4,
+        "description": "Transform centipedes, spiders, wasps, or scorpions into giant versions; obey my verbal commands",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "30 ft",
+        "duration": "Conc, 10 min",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Grasping Vine": {
+        "level": 4,
+        "description": "Conjure vine with 30 ft reach; bonus action to direct to 1 creature save or pulled 20 ft to vine",
+        "save": "Dex",
+        "school": " Conj",
+        "casting": "1 bns",
+        "range": "30 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Gravity Sinkhole": {
+        "level": 4,
+        "description": "20-ft rad all creature 5d10 Force dmg, pulled to center of radius; save halves and not pulled",
+        "save": "Con",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "120 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Greater Invisibility": {
+        "level": 4,
+        "description": "1 creature invisible until end of the spell; anything the target is weaponring or carrying is also invisible",
+        "save": "\u2014",
+        "school": " Illus",
+        "casting": "1 a",
+        "range": "Touch",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Guardian of Faith": {
+        "level": 4,
+        "description": "Place spectre; hostiles coming in 10 ft of it 20 Radiant dmg; save half; vanishes after it deals 60 dmg",
+        "save": "Dex",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "30 ft",
+        "duration": "8 h",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Guardian of Nature": {
+        "level": 4,
+        "description": "I transform into a Primal Beast (offensive bonuses) or a Great Tree (defensive bonuses); see book",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 bns",
+        "range": "Self",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Hallucinatory Terrain": {
+        "level": 4,
+        "description": "150-ft cube of terrain resembles some other sort of terrain; Int (Investigation) vs. Spell DC; see book",
+        "save": "\u2014",
+        "school": " Illus",
+        "casting": "10 min",
+        "range": "300 ft",
+        "duration": "24 h",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Ice Storm": {
+        "level": 4,
+        "description": "20-ft rad 40-ft high all creature 2d8 Bludg. dmg & 4d6 Cold dmg; save half; 1 rnd difficult ter.",
+        "save": "Dex",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "300 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Leomund's Secret Chest": {
+        "level": 4,
+        "description": "Hide chest with content in Ethereal Plane for 60 days, after that chance of loss; 1 a reappear (5050gp)",
+        "save": "\u2014",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "Touch",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Locate Creature": {
+        "level": 4,
+        "description": "Learn direction to closest named or described kind or specific creature within 1000 ft; see book",
+        "save": "\u2014",
+        "school": " Div",
+        "casting": "1 a",
+        "range": "Self",
+        "duration": "Conc, 1 h",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Mor. Faithful Hound": {
+        "level": 4,
+        "description": "Invisible, immobile dog does melee spell attack for 4d8 Piercing dmg; sees invisible/ethereal; see book",
+        "save": "\u2014",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "30 ft",
+        "duration": "8 h (D)",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Mor. Private Sanctum": {
+        "level": 4,
+        "description": "Up to 100 ft cube is magically secured in chosen way; see book",
+        "save": "\u2014",
+        "school": " Abjur",
+        "casting": "10 min",
+        "range": "120 ft",
+        "duration": "24 h (D)",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Otiluke's Resilient Sphere": {
+        "level": 4,
+        "description": "1 creature/obj up to Large save or enclosed in impenetrable sphere; can be moved as hamsterball",
+        "save": "Dex",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "30 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Phantasmal Killer": {
+        "level": 4,
+        "description": "1 creature save or frightened; end of each turn save to end or 4d10 Psychic dmg",
+        "save": "Wis",
+        "school": " Illus",
+        "casting": "1 a",
+        "range": "120 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Polymorph": {
+        "level": 4,
+        "description": "1 creature with > 0 HP save or transformed into beast of choice of same CR or lower; see book",
+        "save": "Wis",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Conc, 1 h",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Shadow of Moil": {
+        "level": 4,
+        "description": "Me: heavy obsc., Radiant resistance; 10-ft rad: 1 step darker, hit vs. me get 2d8 Necrotic dmg (150gp)",
+        "save": "\u2014",
+        "school": " Necro",
+        "casting": "1 a",
+        "range": "Self",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Sickening Radiance": {
+        "level": 4,
+        "description": "30-ft rad all enter/start turn save or 4d10 Radiant dmg, 1 level of exhaustion, and emit 5-ft rad light",
+        "save": "Con",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "120 ft",
+        "duration": "Conc, 10 min",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Staggering Smite": {
+        "level": 4,
+        "description": "Next melee weaponpon hit  Psychic dmg and save or dis. on attacks/chks, no rea, until end next turn",
+        "save": "Wis",
+        "school": " Evoc",
+        "casting": "1 bns",
+        "range": "Self",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Stone Shape": {
+        "level": 4,
+        "description": "Form 5 cu ft of stone into any shape; can have up to two hinges and a latch, but no finer mechanisms",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "Touch",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Stoneskin": {
+        "level": 4,
+        "description": "1 willing creature resistance to nonmagical Bludgeoning, Piercing, and Slashing dmg (100gp cons.)",
+        "save": "\u2014",
+        "school": " Abjur",
+        "casting": "1 a",
+        "range": "Touch",
+        "duration": "Conc, 1 h",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Storm Sphere": {
+        "level": 4,
+        "description": "20-ft rad dif. ter., all now/end turn save or 2d6 Bludg. dmg; bonus action 60 ft attack 4d6 Lightn. dmg; ",
+        "save": "Str",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "150 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Summon Abberation": {
+        "level": 4,
+        "description": "Summon choice of Abberant Spirit; obeys commands; takes turn after mine; vanishes at 0 hp (300gp)",
+        "save": "\u2014",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "90 ft",
+        "duration": "Conc, 1 h",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Summon Construct": {
+        "level": 4,
+        "description": "Summon choice of Construct Spirit; obeys commands; takes turn after mine; vanishes at 0 hp (400gp)",
+        "save": "\u2014",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "90 ft",
+        "duration": "Conc, 1 h",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Summon Greater Demon": {
+        "level": 4,
+        "description": "Summon 1 demon of CR 5 that obeys me; end of each of its turn, save to break free; see book",
+        "save": "Cha",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Conc, 1 h",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Vitriolic Sphere": {
+        "level": 4,
+        "description": "20-ft rad all creature 10d4 Acid dmg,  dmg next turn end; save half & no dmg next turn",
+        "save": "Dex",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "150 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Watery Sphere": {
+        "level": 4,
+        "description": "5-ft rad all creature < Huge save or restrained; on save ejected; save each rnd; 1 a move sphere 30 ft",
+        "save": "Str",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "90 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Animate Objects": {
+        "level": 5,
+        "description": "10 nonmagical objects not worn or carried; bonus action command within 500 ft; see book",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "120 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Antilife Shell": {
+        "level": 5,
+        "description": "Only undead and constructs can come within 10 ft; if forced upon living creature the spell ends",
+        "save": "\u2014",
+        "school": " Abjur",
+        "casting": "1 a",
+        "range": "S:10-ft rad",
+        "duration": "Conc, 1 h",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Awaken": {
+        "level": 5,
+        "description": "Give beast or plant Int 10 and ability to move. Follows commands for 30 days (1000gp cons.)",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "8 h",
+        "range": "Touch",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Banishing Smite": {
+        "level": 5,
+        "description": "Next weaponpon hit  Force dmg; if this brings target HP<50, I banish it until spell ends",
+        "save": "\u2014",
+        "school": " Abjur",
+        "casting": "1 bns",
+        "range": "Self",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Bigby's Hand": {
+        "level": 5,
+        "description": "Large hand attacks, pushes, grapples or shields, see book; AC 20, my max HP; bonus action move 60 ft",
+        "save": "\u2014",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "120 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Circle of Power": {
+        "level": 5,
+        "description": "Any creature while in area adv. on saves vs. magical effects; if save would half dmg it takes no dmg",
+        "save": "\u2014",
+        "school": " Abjur",
+        "casting": "1 a",
+        "range": "S:30-ft rad",
+        "duration": "Conc, 10 min",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Cloudkill": {
+        "level": 5,
+        "description": "20-ft rad 5d8 Poison dmg; save halves; move 10 ft/rnd; heavily obscured, difficult terrain",
+        "save": "Con",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "120 ft",
+        "duration": "Conc, 10 min",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Commune (R)": {
+        "level": 5,
+        "description": "Ask up to three yes/no questions to my deity or a divine proxy (25gp)",
+        "save": "\u2014",
+        "school": " Div",
+        "casting": "1 min",
+        "range": "Self",
+        "duration": "1 min",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Commune w. Nature (R)": {
+        "level": 5,
+        "description": "Know 3 facts about natural features in 3 miles rad (300 ft rad underground)",
+        "save": "\u2014",
+        "school": " Div",
+        "casting": "1 min",
+        "range": "Self",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Cone of Cold": {
+        "level": 5,
+        "description": "8d8 Cold dmg; save halves; creature killed become frozen statues until thawed",
+        "save": "Con",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "S:60-ft cone",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Conjure Elemental": {
+        "level": 5,
+        "description": "CR 5 elemental; obeys my verbal commands; breaks free on broken conc.",
+        "save": "\u2014",
+        "school": " Conj",
+        "casting": "1 min",
+        "range": "90 ft",
+        "duration": "Conc, 1 h",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Conjure Volley": {
+        "level": 5,
+        "description": "Turn ammo/thrown weapon into volley; 40-ft rad 20-ft high 8d8 dmg; dmg type as weaponpon; save halves",
+        "save": "Dex",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "150 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Contact Other Plane (R)": {
+        "level": 5,
+        "description": "I make DC 15 save to ask extraplanar entity 5 questions with one word answers; insane on fail",
+        "save": "Int",
+        "school": " Div",
+        "casting": "1 min",
+        "range": "Self",
+        "duration": "1 min",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Contagion": {
+        "level": 5,
+        "description": "Melee spell attack for poisoned; save each rnd, 3 success: spell ends, 3 fail: poison ends, disease; see B",
+        "save": "Con",
+        "school": " Necro",
+        "casting": "1 a",
+        "range": "Touch",
+        "duration": "7 days",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Control Winds": {
+        "level": 5,
+        "description": "100-ft cube of air either gusts, downdraft, or updraft; affects flying/jump/ranged; 1 a change; see B",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "300 ft",
+        "duration": "Conc, 1 h",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Creation": {
+        "level": 5,
+        "description": "Create a nonliving object up to a 5 cube of vegetable matter, stone, metal, gems or rare metals",
+        "save": "\u2014",
+        "school": " Illus",
+        "casting": "1 min",
+        "range": "30 ft",
+        "duration": "Special",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Danse Macabre": {
+        "level": 5,
+        "description": "5 small/medium corpses as zombie/skeleton; spellc. mod to attack/dmg; bonus action command in 60 ft",
+        "save": "\u2014",
+        "school": " Necro",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Conc, 1 h",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Dawn": {
+        "level": 5,
+        "description": "30-ft rad 40-ft high all creature 4d10 Radiant dmg at cast/end turn; bonus action move it 60 ft (100gp)",
+        "save": "Con",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Destructive Wave": {
+        "level": 5,
+        "description": "Any creature 5d6 Thunder dmg & 5d6 Radiant or Necrotic dmg & knocked prone; save halves, not prone",
+        "save": "Con",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "S:30-ft rad",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Dispel Evil and Good": {
+        "level": 5,
+        "description": "Cele., elem., fey, fiends, and undead dis. on attacks vs. me; end early for dismissal/break enchantment",
+        "save": "\u2014",
+        "school": " Abjur",
+        "casting": "1 a",
+        "range": "Self",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Dominate Person": {
+        "level": 5,
+        "description": "1 humanoid save or charmed, follows telepathic commands, 1 a for complete control;  for dur.",
+        "save": "Wis",
+        "school": " Ench",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Dream": {
+        "level": 5,
+        "description": "Me or willing creature enters a creature's dreams, manifesting as a messenger with whom it can communicate",
+        "save": "\u2014",
+        "school": " Illus",
+        "casting": "1 min",
+        "range": "Special",
+        "duration": "8 h",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Enervation": {
+        "level": 5,
+        "description": "1 creature 4d8 Necrotic dmg, action to repeat, I heal half; on save 2d8 dmg once; see B",
+        "save": "Dex",
+        "school": " Necro",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Far Step": {
+        "level": 5,
+        "description": "At casting and as bonus action for duration, I can teleport 60 ft to a space I can see",
+        "save": "\u2014",
+        "school": " Conj",
+        "casting": "1 bns",
+        "range": "Self",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Flame Strike": {
+        "level": 5,
+        "description": "10-ft rad 40-ft high all creature 4d6 Fire dmg and 4d6 Radiant dmg; save halves;  Fire or Radiant",
+        "save": "Dex",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Geas": {
+        "level": 5,
+        "description": "1 creature save or charmed, it must obey commands or 5d10 Psychic dmg; SL7: 1 year, SL9: until disp.",
+        "save": "Wis",
+        "school": " Ench",
+        "casting": "1 min",
+        "range": "60 ft",
+        "duration": "30 days (D)",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Greater Restoration": {
+        "level": 5,
+        "description": "Reduce exhaustion or end charm, petrify, curse, stat or max HP reduction (100gp cons.)",
+        "save": "\u2014",
+        "school": " Abjur",
+        "casting": "1 a",
+        "range": "Touch",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Hallow": {
+        "level": 5,
+        "description": "30-ft rad protected against celestials, elementals, fey, fiend, and undead; add additional effects; see B",
+        "save": "\u2014",
+        "school": " Evoc",
+        "casting": "24 h",
+        "range": "Touch",
+        "duration": "Till dispelled",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Hold Monster": {
+        "level": 5,
+        "description": "1 creature (not undead), each max 30 ft apart, save or paralyzed; extra save at end of each turn",
+        "save": "Wis",
+        "school": " Ench",
+        "casting": "1 a",
+        "range": "90 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Holy Weapon": {
+        "level": 5,
+        "description": "Wea  Radiant dmg; bonus action end spell: 30-ft rad all creature 4d8 Radiant dmg, blind; save half, no blind",
+        "save": "Con",
+        "school": " Evoc",
+        "casting": "1 bns",
+        "range": "Touch",
+        "duration": "Conc, 1 h",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Immolation": {
+        "level": 5,
+        "description": "1 creature save or 8d6 Fire dmg & burns for 4d6 Fire dmg/rnd; save each rnd to end; save half, no burning",
+        "save": "Dex",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "90 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Insect Plague": {
+        "level": 5,
+        "description": "20-ft rad all now/enter/end turn 4d10 Piercing dmg; save half, no cover; light obsc.; dif. ter",
+        "save": "Con",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "300 ft",
+        "duration": "Conc, 10 min",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Legend Lore": {
+        "level": 5,
+        "description": "Learn summary of lore of named or described person, place, or object (200gp; 250gp cons.)",
+        "save": "\u2014",
+        "school": " Div",
+        "casting": "10 min",
+        "range": "Self",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Maelstrom": {
+        "level": 5,
+        "description": "5-ft deep 30-ft rad dif. ter.; all creature starting turn in save or 6d6 Bludg. dmg and pulled 10 ft to center",
+        "save": "Str",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "120 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Mass Cure Wounds": {
+        "level": 5,
+        "description": "6 living creatures within 30-ft rad heal 3d81d8 ability modifier HP",
+        "save": "\u2014",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Mislead": {
+        "level": 5,
+        "description": "I go invisible; creaturete illusionary duplicate of me, 1 a move it, bonus action switch between its senses and mine",
+        "save": "\u2014",
+        "school": " Illus",
+        "casting": "1 a",
+        "range": "Self",
+        "duration": "Conc, 1 h",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Modify Memory": {
+        "level": 5,
+        "description": "1 creature save or charmed, alter 1 memory of last (SL6: 7, SL7: 30, SL8: 365) day; SL:9 any memory",
+        "save": "Wis",
+        "school": " Ench",
+        "casting": "1 a",
+        "range": "30 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Passwall": {
+        "level": 5,
+        "description": "Create a passage (max. 5 ft wide, 8 ft tall, 20 ft deep) in a wooden, plaster or stone surface for 1 h",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "30 ft",
+        "duration": "1 h",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Planar Binding": {
+        "level": 5,
+        "description": "1 celestial/elem/fey/fiend save or bound; SL6: 10, SL7: 30, SL8: 180, SL9: 366 days (1000gp cons.)",
+        "save": "Cha",
+        "school": " Abjur",
+        "casting": "1 h",
+        "range": "60 ft",
+        "duration": "24 h",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Raise Dead": {
+        "level": 5,
+        "description": "Restores a creature's body that has died in the last 10 days to life with 1 HP; see book (500gp cons.)",
+        "save": "\u2014",
+        "school": " Necro",
+        "casting": "1 h",
+        "range": "Touch",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Rary's Telepath. Bond (R)": {
+        "level": 5,
+        "description": "8 willing creature with Int>2 gain a telepathic bond that works for any distance on the same plane",
+        "save": "\u2014",
+        "school": " Div",
+        "casting": "1 a",
+        "range": "30 ft",
+        "duration": "1 h",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Reincarnate": {
+        "level": 5,
+        "description": "Brings humanoid that died in last 10 days to life in a new random adult body, see book (1000gp cons.)",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 h",
+        "range": "Touch",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Scrying": {
+        "level": 5,
+        "description": "1 creature save or sensor follows it around; or creaturete sensor in familiar location; see book (1000gp)",
+        "save": "Wis",
+        "school": " Div",
+        "casting": "10 min",
+        "range": "Self",
+        "duration": "Conc, 10 min",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Seeming": {
+        "level": 5,
+        "description": "Any creature save or disguised by changing physical appearance; Int(Investigation) check vs. spell DC",
+        "save": "Cha",
+        "school": " Illus",
+        "casting": "1 a",
+        "range": "30 ft",
+        "duration": "8 h (D)",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Skill Empowerment": {
+        "level": 5,
+        "description": "1 willing creature gains expertise in one skill of my choice that it is proficient with for the duration",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "Touch",
+        "duration": "Conc, 1 h",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Steel Wind Strike": {
+        "level": 5,
+        "description": "Melee spell attack vs. 5 creature in range; 6d10 Force dmg on hit; after, I teleport next to one target",
+        "save": "\u2014",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "30 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Summon Celestial": {
+        "level": 5,
+        "description": "Summon choice of Celestial Spirit; obeys commands; takes turn after mine; disappears at 0 hp (500gp)",
+        "save": "\u2014",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "90 ft",
+        "duration": "Conc, 1 h",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Swift Quiver": {
+        "level": 5,
+        "description": "Quiver gives nonmagical ammo; bonus action to make 2 attacks with weaponpon that uses ammo from that quiver",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 bns",
+        "range": "Touch",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Synaptic Static": {
+        "level": 5,
+        "description": "20-ft rad all creature Int>2 save or 8d6 Psychic dmg, -1d6 on attacks/check/conc. save; save half, no -1d6",
+        "save": "Int",
+        "school": " Ench",
+        "casting": "1 a",
+        "range": "120 ft",
+        "duration": "Instant, 1 min",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Telekinesis": {
+        "level": 5,
+        "description": "Move Huge creature or 1000 lb object 30 ft as 1 a; spellcasting ability check vs. Str check; see B",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Conc, 10 min",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Teleportation Circle": {
+        "level": 5,
+        "description": "Create a circle to teleport to another teleportation circle on same plane; see book (50gp cons.)",
+        "save": "\u2014",
+        "school": " Conj",
+        "casting": "1 min",
+        "range": "10 ft",
+        "duration": "1 rnd",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Temporal Shunt": {
+        "level": 5,
+        "description": "Cast if see attack/cast, 1 creature, each max 30 ft apart, save or vanish until next turn, attack/cast wasted",
+        "save": "Wis",
+        "school": " Trans",
+        "casting": "1 rea",
+        "range": "120 ft",
+        "duration": "1 rnd",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Transmute Rock": {
+        "level": 5,
+        "description": "40 cu ft stone to mud or mud to stone; mud and stone restrains; mud from ceiling falls; see book",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "120 ft",
+        "duration": "Until dispelled",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Tree Stride": {
+        "level": 5,
+        "description": "I can teleport 1/rnd for 5 ft move through a tree to another tree of the same kind within 500 ft",
+        "save": "\u2014",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "Self",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Wall of Force": {
+        "level": 5,
+        "description": "10 10\u00d710-ft panels or 10-ft rad (hemi)sphere invisible, impenetrable wall; can float in air; see book",
+        "save": "\u2014",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "120 ft",
+        "duration": "Conc, 10 min",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Wall of Light": {
+        "level": 5,
+        "description": "60\u00d75\u00d710ft (l\u00d7w\u00d7h) 4d8 Radiant dmg & blind; save half, not blind; 1 a rngd spell attack; see B",
+        "save": "Con",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "120 ft",
+        "duration": "Conc, 10 min",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Wall of Stone": {
+        "level": 5,
+        "description": "10 10\u00d710-ft panels 6\" thick wall connected with existing stone; half thickness, double surface; see B",
+        "save": "\u2014",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "120 ft",
+        "duration": "Conc, 10 min",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Wrath of Nature": {
+        "level": 5,
+        "description": "60-ft cu dif. ter.; rock: rngd attack 3d8 Bludg. dmg; tree: Dex or 4d6 Slash. dmg; root: Str or restr.; see B",
+        "save": "\u2014",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "120 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Arcane Gate": {
+        "level": 6,
+        "description": "Two portals, up to 500 ft apart, teleport any to other side; portals are filled with opaque mist",
+        "save": "\u2014",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "500 ft",
+        "duration": "Conc, 10 min",
+        "Evoke": "Evoke 22",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Blade Barrier": {
+        "level": 6,
+        "description": "100\u00d720\u00d75ft (l\u00d7w\u00d7h) wall or 30 rad 20\u00d75ft (w\u00d7h) ring; 6d10 Slashing dmg; save halves; 3/4 cover",
+        "save": "Dex",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "90 ft",
+        "duration": "Conc, 10 min",
+        "Evoke": "Evoke 22",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Bones of the Earth": {
+        "level": 6,
+        "description": "6 5-ft dia stone lift up 30 ft; \u2265Medium creature save or lifted, 6d6 Bludg. dmg if hit ceiling; see B",
+        "save": "Dex",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "120 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 22",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Chain Lightning": {
+        "level": 6,
+        "description": "Lightning bolt 1 creature and 3 creature within 30 ft; 10d8 Lightning dmg; save halves",
+        "save": "Dex",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "150 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 22",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Circle of Death": {
+        "level": 6,
+        "description": "60-ft rad all 8d6 Necrotic dmg; save halves (500gp)",
+        "save": "Con",
+        "school": " Necro",
+        "casting": "1 a",
+        "range": "150 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 22",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Conjure Fey": {
+        "level": 6,
+        "description": "CR 6 fey; obeys my verbal commands not against its align.; breaks free on broken conc.",
+        "save": "\u2014",
+        "school": " Conj",
+        "casting": "1 min",
+        "range": "90 ft",
+        "duration": "Conc, 1 h",
+        "Evoke": "Evoke 22",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Contingency": {
+        "level": 6,
+        "description": "Prepare another SL<6 spell I can cast to activate when some condition is met (1500gp)",
+        "save": "\u2014",
+        "school": " Evoc",
+        "casting": "10 min",
+        "range": "Self",
+        "duration": "10 days",
+        "Evoke": "Evoke 22",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Create Homunculus": {
+        "level": 6,
+        "description": "I take 2d4 piercing dmg to creaturete a homunculus as my faithful companion; see book (1000gp)",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 h",
+        "range": "Touch",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 22",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Create Undead": {
+        "level": 6,
+        "description": "Turn corpses into 3 ghouls i.a.; control 24h; bonus action command 120 ft; see B (150gp/corpse cons.)",
+        "save": "\u2014",
+        "school": " Necro",
+        "casting": "1 min",
+        "range": "10 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 22",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Disintegrate": {
+        "level": 6,
+        "description": "1 creature save or 4010d6 Force dmg; or up to 10-ft cube nonmagical object is destroyed",
+        "save": "Dex",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 22",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Draw. Instant Sum. (R)": {
+        "level": 6,
+        "description": "Link object to sapphire (1000gp); 1 a crush gem to summon the unattended object or learn of wielder",
+        "save": "\u2014",
+        "school": " Conj",
+        "casting": "1 min",
+        "range": "Touch",
+        "duration": "Till dispelled",
+        "Evoke": "Evoke 22",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Druid Grove": {
+        "level": 6,
+        "description": "Protect 30-ft to 90-ft cube outdoors or underground; see book for effects",
+        "save": "\u2014",
+        "school": " Abjur",
+        "casting": "10 min",
+        "range": "Touch",
+        "duration": "24 h",
+        "Evoke": "Evoke 22",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Eyebite": {
+        "level": 6,
+        "description": "1 creature/rnd within 60 ft save or either fall asleep, panicked, or sickened, my choice",
+        "save": "Wis",
+        "school": " Necro",
+        "casting": "1 a",
+        "range": "Self",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 22",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Find the Path": {
+        "level": 6,
+        "description": "Know the shortest route to a location I am familiar with and are on the same plane with (100gp)",
+        "save": "\u2014",
+        "school": " Div",
+        "casting": "1 min",
+        "range": "Self",
+        "duration": "Conc, 1 day",
+        "Evoke": "Evoke 22",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Flesh to Stone": {
+        "level": 6,
+        "description": "1 creature save or restrained; save at end of turn, 3 consecutive fail: petrified, 3 consecutive success: free",
+        "save": "Con",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 22",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Forbiddance (R)": {
+        "level": 6,
+        "description": "40k sq ft 30-ft high no extraplanar travel; 1 creature type 5d10 Radiant/Necrotic dmg per rnd (1000gp)",
+        "save": "\u2014",
+        "school": " Abjur",
+        "casting": "10 min",
+        "range": "Touch",
+        "duration": "1 day",
+        "Evoke": "Evoke 22",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Globe of Invulnerability": {
+        "level": 6,
+        "description": "SL<(6 cast outside area cannot effect inside area; casting with a higher spell slot does not help",
+        "save": "\u2014",
+        "school": " Abjur",
+        "casting": "1 a",
+        "range": "S:10-ft rad",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 22",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Guards and Wards": {
+        "level": 6,
+        "description": "Protect an area with an assortment of effects including fog, web, illusions and locks; see book (10gp)",
+        "save": "\u2014",
+        "school": " Abjur",
+        "casting": "10 min",
+        "range": "Touch",
+        "duration": "24 h",
+        "Evoke": "Evoke 22",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Harm": {
+        "level": 6,
+        "description": "1 creature 14d6 Necrotic dmg, reduce max HP by same; not <1 HP; save halves and no max HP reduce",
+        "save": "Con",
+        "school": " Necro",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 22",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Heal": {
+        "level": 6,
+        "description": "1 living creature heals 70 HP and is cured of blindness, deafness, and all diseases",
+        "save": "\u2014",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 22",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Heroes' Feast": {
+        "level": 6,
+        "description": "Up to 12 creature; 1h to consume; for 24h: disease/poison immune,  max HP, see B (1000gp cons.)",
+        "save": "\u2014",
+        "school": " Conj",
+        "casting": "10 min",
+        "range": "30 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 22",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Investiture of Flame": {
+        "level": 6,
+        "description": "Fire immune; Cold res.; 1d10 Fire dmg in 5 ft; 1 a 15-ft long 5-ft wide all creature 4d8 Fire dmg, save half",
+        "save": "Dex",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "Self",
+        "duration": "Conc, 10 min",
+        "Evoke": "Evoke 22",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Investiture of Ice": {
+        "level": 6,
+        "description": "Cold im.; Fire res.; 10-ft rad dif. ter.; 1 a 15-ft cone all creature 4d6 Cold dmg, half spd; save half, no spd",
+        "save": "Con",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "Self",
+        "duration": "Conc, 10 min",
+        "Evoke": "Evoke 22",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Investiture of Stone": {
+        "level": 6,
+        "description": "Nonmagical Bludg/Pierc/Slash resist.; 1 a 15-ft rad all creature save or prone; move through earth/stone",
+        "save": "Dex",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "Self",
+        "duration": "Conc, 10 min",
+        "Evoke": "Evoke 22",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Investiture of Wind": {
+        "level": 6,
+        "description": "Rngd weapon attacks dis. vs. me; fly 60 ft; 1 a 15-ft cube in 60 ft all 2d10 Bludg. dmg, push 10 ft, save half",
+        "save": "Con",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "Self",
+        "duration": "Conc, 10 min",
+        "Evoke": "Evoke 22",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Magic Jar": {
+        "level": 6,
+        "description": "Transport my soul into container from which I can attempt to possess humanoids; see B (500gp)",
+        "save": "\u2014",
+        "school": " Necro",
+        "casting": "1 min",
+        "range": "Self",
+        "duration": "Till dispelled",
+        "Evoke": "Evoke 22",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Mass Suggestion": {
+        "level": 6,
+        "description": "12 creature save or follow stated course of action; SL7: 10 day; SL8: 30 days; SL9: 366 days; see book",
+        "save": "Wis",
+        "school": " Ench",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "24 h",
+        "Evoke": "Evoke 22",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Mental Prison": {
+        "level": 6,
+        "description": "1 creature 5d10 Psychic dmg; save or restrained, blind, deaf, and if moved: 10d10 dmg, ends; charm effect",
+        "save": "Int",
+        "school": " Illus",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 22",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Otiluke's Freezing Sphere": {
+        "level": 6,
+        "description": "60-ft rad all 10d6 Cold dmg; save halves; freezes water; can save up to 1 min before using",
+        "save": "Con",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "300 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 22",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Otto's Irresistible Dance": {
+        "level": 6,
+        "description": "1 creature dances in place, can't move, dis. on attacks/Dex saves, adv. on attacks vs. target; 1 a Wis save to end",
+        "save": "\u2014",
+        "school": " Ench",
+        "casting": "1 a",
+        "range": "30 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 22",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Planar Ally": {
+        "level": 6,
+        "description": "Otherwordly entity sends celestial, elemental or fiend to a location near me; see book",
+        "save": "\u2014",
+        "school": " Conj",
+        "casting": "10 min",
+        "range": "60 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 22",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Primordial Ward": {
+        "level": 6,
+        "description": "Acid, Cold, Fire, Lightning, and Thunder resistance; use rea to gain 1 immunity for 1 rnd, spell ends",
+        "save": "\u2014",
+        "school": " Abjur",
+        "casting": "1 a",
+        "range": "Self",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 22",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Programmed Illusion": {
+        "level": 6,
+        "description": "30-ft cube illusion includes visible, audible; triggers on set condition; see book (25gp)",
+        "save": "\u2014",
+        "school": " Illus",
+        "casting": "1 a",
+        "range": "120 ft",
+        "duration": "Till dispelled",
+        "Evoke": "Evoke 22",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Scatter": {
+        "level": 6,
+        "description": "Up to 5 creatures in range, save or teleported 120 ft to a different space I can see on the ground",
+        "save": "Wis",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "30 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 22",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Soul Cage": {
+        "level": 6,
+        "description": "As a reaction when humanoid in range dies, I capture their soul in a tiny cage; see book (100gp)",
+        "save": "\u2014",
+        "school": " Necro",
+        "casting": "1 rea",
+        "range": "60 ft",
+        "duration": "8 h",
+        "Evoke": "Evoke 22",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Summon Fiend": {
+        "level": 6,
+        "description": "Summon choice of Fiendish Spirit; obeys commands; takes turn after mine; disappears at 0 hp (500gp)",
+        "save": "\u2014",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "90 ft",
+        "duration": "Conc, 1 h",
+        "Evoke": "Evoke 22",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Sunbeam": {
+        "level": 6,
+        "description": "60-ft long 5-ft wide all 6d8 Radiant dmg, 1 rnd blind; save halves and not blinded; 1 a for new line",
+        "save": "Con",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "S:60-ft line",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 22",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "T's Otherworldly Guise": {
+        "level": 6,
+        "description": "Fire/Poison or Radiant/Necrotic/Charm immune; 40 ft fly;  AC; 2 attacks; spellcast. abi attacks (500gp)",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 bns",
+        "range": "Self",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 22",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Tenser's Transformation": {
+        "level": 6,
+        "description": "50 temp HP; prof Str/Con save, all weapon/arm; extra attack; adv., weapon attacks  Force dmg; no spellc.",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "Self",
+        "duration": "Conc, 10 min",
+        "Evoke": "Evoke 22",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Transport via Plants": {
+        "level": 6,
+        "description": "For duration all can transport from a Large plant to a plant on the same plane that I have touched",
+        "save": "\u2014",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "10 ft",
+        "duration": "1 rnd",
+        "Evoke": "Evoke 22",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "True Seeing": {
+        "level": 6,
+        "description": "1 willing creature gains truesight 120 ft; see through illusions, hidden doors, ethereal plane (25gp cons.)",
+        "save": "\u2014",
+        "school": " Div",
+        "casting": "1 a",
+        "range": "Touch",
+        "duration": "1 h",
+        "Evoke": "Evoke 22",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Wall of Ice": {
+        "level": 6,
+        "description": "10 10\u00d710-ft panels 1-ft thick wall; at casting 10d6 Cold dmg; save halves; can cut through; see book",
+        "save": "Dex",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "120 ft",
+        "duration": "Conc, 10 min",
+        "Evoke": "Evoke 22",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Wall of Thorns": {
+        "level": 6,
+        "description": "60\u00d75\u00d720ft (l\u00d7w\u00d7h) or 10-ft rad all 7d8 Piercing dmg; save halves; 1/4 move; see book",
+        "save": "Dex",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "120 ft",
+        "duration": "Conc, 10 min",
+        "Evoke": "Evoke 22",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Wind Walk": {
+        "level": 6,
+        "description": "Me  10 willing creatures assume gaseous form with fly 300 ft, resist. to nonmagical dmg; see book",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 min",
+        "range": "30 ft",
+        "duration": "8 h",
+        "Evoke": "Evoke 22",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Conjure Celestial": {
+        "level": 7,
+        "description": "CR 4 celestial; obeys my verbal commands if they do not go against its alignment",
+        "save": "\u2014",
+        "school": " Conj",
+        "casting": "1 min",
+        "range": "90 ft",
+        "duration": "Conc, 1 h",
+        "Evoke": "Evoke 24",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Crown of Stars": {
+        "level": 7,
+        "description": "7 motes shed 30-ft light; bonus action to fire one as 120 ft ranged attack for 4d12 Radiant dmg",
+        "save": "\u2014",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "Self",
+        "duration": "1 h",
+        "Evoke": "Evoke 24",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Delayed Blast Fireball": {
+        "level": 7,
+        "description": "Create bead; at chosen moment, or if conc. is broken, 20-ft rad 12d6 Fire dmg; save halves",
+        "save": "Dex",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "150 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 24",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Divine Word": {
+        "level": 7,
+        "description": "Any creature save or deaf/blind/stunned/dead depending on current HP; banishes extraplanar creature",
+        "save": "Cha",
+        "school": " Evoc",
+        "casting": "1 bns",
+        "range": "30 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 24",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Dream of the Blue Veil": {
+        "level": 7,
+        "description": "9 willing creature unconscious for duration, after that travel to origin material plane of magic item or creature",
+        "save": "\u2014",
+        "school": " Conj",
+        "casting": "10 min",
+        "range": "20 ft",
+        "duration": "6 hours",
+        "Evoke": "Evoke 24",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Etherealness": {
+        "level": 7,
+        "description": "Me or 3 willing go to Ethereal Plane; move there, but able to perceive 60 ft into the normal plane",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "Self",
+        "duration": "8 h (D)",
+        "Evoke": "Evoke 24",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Finger of Death": {
+        "level": 7,
+        "description": "1 creature 7d8 Necrotic dmg; save halves; creature killed becomes zombie under my command",
+        "save": "Con",
+        "school": " Necro",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 24",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Fire Storm": {
+        "level": 7,
+        "description": "10 connected 10-ft cubes all creature 7d10 Fire dmg; save halves; unattended flammable objects ignite",
+        "save": "Dex",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "150 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 24",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Forcecage": {
+        "level": 7,
+        "description": "20-ft cube cage, or 10-ft cube solid; blocks all spells; extraplanar travel in/out on save (1500gp)",
+        "save": "Cha",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "100 ft",
+        "duration": "1 h",
+        "Evoke": "Evoke 24",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Mirage Arcane": {
+        "level": 7,
+        "description": "1 sq mile alter terrain illusion includes visible, audible, olfactory, tactile; can make difficult ter.; see B",
+        "save": "\u2014",
+        "school": " Illus",
+        "casting": "10 min",
+        "range": "Sight",
+        "duration": "10 days",
+        "Evoke": "Evoke 24",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Mor. Magni. Mansion": {
+        "level": 7,
+        "description": "Create extradimensional mansion with rooms, food and servants to serve 100 people; see book (15gp)",
+        "save": "\u2014",
+        "school": " Conj",
+        "casting": "1 min",
+        "range": "300 ft",
+        "duration": "24 h",
+        "Evoke": "Evoke 24",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Mordenkainen's Sword": {
+        "level": 7,
+        "description": "Hovering sword makes melee spell attacks for 3d10 Force dmg; bonus action to move 20 ft and/or attack",
+        "save": "\u2014",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 24",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Plane Shift": {
+        "level": 7,
+        "description": "Me  8 willing creature teleport to different plane; or spell attack  save or transported to random plane",
+        "save": "Cha",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "Touch",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 24",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Power Word Pain": {
+        "level": 7,
+        "description": "1 creature with 100 HP or less disadv. attack/check/save, conc. save to cast; save/rnd to end; charm effect",
+        "save": "\u2014",
+        "school": " Ench",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 24",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Prismatic Spray": {
+        "level": 7,
+        "description": "All random effect each, see book: either 10d6 dmg, restrained, or blinded; save halves/negates",
+        "save": "Dex",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "S:60-ft cone",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 24",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Project Image": {
+        "level": 7,
+        "description": "Project image of me to familiar place; 1 a manipulate; bonus action switch between its senses and mine (5gp)",
+        "save": "\u2014",
+        "school": " Illus",
+        "casting": "1 a",
+        "range": "500 miles",
+        "duration": "Conc, 1 day",
+        "Evoke": "Evoke 24",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Regenerate": {
+        "level": 7,
+        "description": "1 creature heals 4d8 HP now and 1 HP/rnd for rest of duration; restores lost body parts in 2 min",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 min",
+        "range": "Touch",
+        "duration": "1 h",
+        "Evoke": "Evoke 24",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Resurrection": {
+        "level": 7,
+        "description": "Resurrects a creature that died in the last century to life with whole body and full HP; see B (1000gp cons.)",
+        "save": "\u2014",
+        "school": " Necro",
+        "casting": "1 h",
+        "range": "Touch",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 24",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Reverse Gravity": {
+        "level": 7,
+        "description": "50-ft rad 100-ft high everything falls upward; save to grab hold onto something solid",
+        "save": "Dex",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "100 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 24",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Sequester": {
+        "level": 7,
+        "description": "1 willing creature/obj suspended, invisible, hidden from divination magic; see book (5000gp cons.)",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "Touch",
+        "duration": "Till dispelled",
+        "Evoke": "Evoke 24",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Symbol": {
+        "level": 7,
+        "description": "Inscribe a glyph to activate for chosen effect on set trigger; see book (1000gp cons.)",
+        "save": "\u2014",
+        "school": " Abjur",
+        "casting": "1 min",
+        "range": "Touch",
+        "duration": "Till triggered",
+        "Evoke": "Evoke 24",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Teleport": {
+        "level": 7,
+        "description": "I  8 willing creature, or an object teleport to a place I know, have seen, or can describe; see book",
+        "save": "\u2014",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "10 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 24",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Temple of the Gods": {
+        "level": 7,
+        "description": "Create a temple 120 ft on a side to the deity of a holy symbol used; see book for effects",
+        "save": "\u2014",
+        "school": " Conj",
+        "casting": "1 h",
+        "range": "120 ft",
+        "duration": "24 h",
+        "Evoke": "Evoke 24",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Tether Essence": {
+        "level": 7,
+        "description": "2 creature save (dis. if in 30 ft) or if both fail take same dmg and same healing; ends if 0 hp (250gp cons.)",
+        "save": "Con",
+        "school": " Necro",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Conc, 1 h",
+        "Evoke": "Evoke 24",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Whirlwind": {
+        "level": 7,
+        "description": "10-ft rad 30-ft high all creature 10d6 Bludg. dmg; save halves; restrains; 1 a move 30 ft; see book",
+        "save": "Dex",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "300 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 24",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Animal Shapes": {
+        "level": 8,
+        "description": "Any willing creatures transform into up to Large CR4 beasts; retain Wis, Int, Cha, but nothing else",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "30 ft",
+        "duration": "Conc, 24 h",
+        "Evoke": "Evoke 26",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Antimagic Field": {
+        "level": 8,
+        "description": "No magical effects functions in area except those creatureted by an artefact or a deity",
+        "save": "\u2014",
+        "school": " Abjur",
+        "casting": "1 a",
+        "range": "S:10-ft rad",
+        "duration": "Conc, 1 h",
+        "Evoke": "Evoke 26",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Antipathy/Sympathy": {
+        "level": 8,
+        "description": "Creature, object, or area up to 200-ft cube attracts or repels specific type of intelligent creature; see book",
+        "save": "Wis",
+        "school": " Ench",
+        "casting": "1 h",
+        "range": "60 ft",
+        "duration": "10 days",
+        "Evoke": "Evoke 26",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Clone": {
+        "level": 8,
+        "description": "Create a clone of a living creature; after death its soul can move to the clone (1K gp cons.; 2K gp)",
+        "save": "\u2014",
+        "school": " Necro",
+        "casting": "1 h",
+        "range": "Touch",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 26",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Control Weather": {
+        "level": 8,
+        "description": "Change current weaponther; changes take 1d4\u00d710 min; change precipitation, temperature, wind, see B",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "10 min",
+        "range": "S:5-mile rad",
+        "duration": "Conc, 8 h",
+        "Evoke": "Evoke 26",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Dark Star": {
+        "level": 8,
+        "description": "Up to 40-ft rad as Darkness spell, as Silence spell, dif. ter.; enter/start turn 8d10 Force dmg, save half",
+        "save": "Con",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "150 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 26",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Demiplane": {
+        "level": 8,
+        "description": "Create door to a demiplane of 30-ft cube; when spell ends, creatures inside remain trapped",
+        "save": "\u2014",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "1 h",
+        "Evoke": "Evoke 26",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Dominate Monster": {
+        "level": 8,
+        "description": "1 creature save or charmed, follows telepathic commands, 1 a for complete control; SL9: conc, 8h",
+        "save": "Wis",
+        "school": " Ench",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Conc, 1 h",
+        "Evoke": "Evoke 26",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Earthquake": {
+        "level": 8,
+        "description": "Cause an earthquake in a 100-ft rad, damaging structures and creatureting dangerous fissures, see book",
+        "save": "\u2014",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "500 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 26",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Feeblemind": {
+        "level": 8,
+        "description": "1 creature 4d6 Psychic dmg and save or Int and Cha become 1; extra save every 30 days to end spell",
+        "save": "Int",
+        "school": " Ench",
+        "casting": "1 a",
+        "range": "150 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 26",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Holy Aura": {
+        "level": 8,
+        "description": "Any in 30 ft of me adv. saves; dis. attacks vs. targets; fiend/undead attack a target save or blinded (1000gp)",
+        "save": "Con",
+        "school": " Abjur",
+        "casting": "1 a",
+        "range": "Self",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 26",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Illusory Dragon": {
+        "level": 8,
+        "description": "Huge shadowy dragon; see: Wis save or fright.; bonus action move 60 ft & breath weapon 7d6 dmg; Int save half",
+        "save": "W/I",
+        "school": " Illus",
+        "casting": "1 a",
+        "range": "120 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 26",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Incendiary Cloud": {
+        "level": 8,
+        "description": "20-ft rad all now/enter/end turn 10d8 Fire dmg; save half; heavily obscures; moves 10 ft/rnd away",
+        "save": "Dex",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "150 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 26",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Maddening Darkness": {
+        "level": 8,
+        "description": "60-ft rad darkness; darkvision, no light works; all creature starting turn in 8d8 Psychic dmg, save halves",
+        "save": "Wis",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "150 ft",
+        "duration": "Conc, 10 min",
+        "Evoke": "Evoke 26",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Maze": {
+        "level": 8,
+        "description": "1 creature banished to labyrinthine demiplane; DC 20 Int check each rnd to escape; appears in same spot",
+        "save": "\u2014",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Conc, 10 min",
+        "Evoke": "Evoke 26",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Mighty Fortress": {
+        "level": 8,
+        "description": "Create a stone fortress 120 ft on a side for 7 days; see book for effects (500gp cons.)",
+        "save": "\u2014",
+        "school": " Conj",
+        "casting": "1 min",
+        "range": "1 mile",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 26",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Mind Blank": {
+        "level": 8,
+        "description": "1 creature immune to charms, psychic damage, divination, mind reading, and any mind altering effects",
+        "save": "\u2014",
+        "school": " Abjur",
+        "casting": "1 a",
+        "range": "Touch",
+        "duration": "24 h",
+        "Evoke": "Evoke 26",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Power Word Stun": {
+        "level": 8,
+        "description": "1 creature with 150 current HP or less is stunned; save at end of each turn to end spell",
+        "save": "Con",
+        "school": " Ench",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 26",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Reality Break": {
+        "level": 8,
+        "description": "1 creature save or can't take reactions, random effect each turn, see book; extra save at end of every turn",
+        "save": "Wis",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 26",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Sunburst": {
+        "level": 8,
+        "description": "60-ft rad all 12d6 Radiant dmg, 1 min blind; save halves and not blinded; save at end of each turn",
+        "save": "Con",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "150 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 26",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Telepathy": {
+        "level": 8,
+        "description": "1 willing creature Int>0 and I telepathic link; share words, sensory information if on same plane",
+        "save": "\u2014",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "Unlimited",
+        "duration": "24 h",
+        "Evoke": "Evoke 26",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Tsunami": {
+        "level": 8,
+        "description": "300\u00d750\u00d7300ft (l\u00d7w\u00d7h) wall of water moves away at 50 ft/rnd; 6d10 Bludg. dmg; save halves; see B",
+        "save": "Str",
+        "school": " Conj",
+        "casting": "1 min",
+        "range": "Sight",
+        "duration": "Conc, 6 rnd",
+        "Evoke": "Evoke 26",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Blade of Disaster": {
+        "level": 9,
+        "description": "Create weaponpon; 2 spell attacks 4d12 Force dmg; crit on 18 triple dmg; bonus action to move 30 ft & do 2 attacks",
+        "save": "\u2014",
+        "school": " Conj",
+        "casting": "1 bns",
+        "range": "60 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 28",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Foresight": {
+        "level": 9,
+        "description": "1 willing creature can't be surprised; adv. on attacks, ability checks, and saves; dis. on attacks vs. target",
+        "save": "\u2014",
+        "school": " Div",
+        "casting": "1 min",
+        "range": "Touch",
+        "duration": "8 h",
+        "Evoke": "Evoke 28",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Gate": {
+        "level": 9,
+        "description": "Create a portal to a precise location on a different plane; can transport named creature to me (5000gp)",
+        "save": "\u2014",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 28",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Imprisonment": {
+        "level": 9,
+        "description": "1 creature save or trapped in chosen way with no means of escape; see book (500gp/HD cons.)",
+        "save": "Wis",
+        "school": " Abjur",
+        "casting": "1 min",
+        "range": "30 ft",
+        "duration": "Till dispelled",
+        "Evoke": "Evoke 28",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Invulnerability": {
+        "level": 9,
+        "description": "Immune to all damage until the spell ends (500gp cons.)",
+        "save": "\u2014",
+        "school": " Abjur",
+        "casting": "1 a",
+        "range": "Self",
+        "duration": "Conc, 10 min",
+        "Evoke": "Evoke 28",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Mass Heal": {
+        "level": 9,
+        "description": "Heal 700 HP split over any creature in range; each healed is cured of blindness, deafness, and all diseases",
+        "save": "\u2014",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 28",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Mass Polymorph": {
+        "level": 9,
+        "description": "10 creature save or take chosen beast form of CR \u2264 its CR or half its char. level; can only act as beast; see B",
+        "save": "Wis",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "120 ft",
+        "duration": "Conc, 1 h",
+        "Evoke": "Evoke 28",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Meteor Swarm": {
+        "level": 9,
+        "description": "4\u00d7 40-ft rad all 20d6 Bludgeoning dmg and 20d6 Fire dmg; save halves; areas do not stack",
+        "save": "Dex",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "1 mile",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 28",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Power Word Heal": {
+        "level": 9,
+        "description": "1 creature heals all HP and stops being charmed, frightened, paralyzed, stunned; it can use rea to stand up",
+        "save": "\u2014",
+        "school": " Evoc",
+        "casting": "1 a",
+        "range": "Touch",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 28",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Power Word Kill": {
+        "level": 9,
+        "description": "1 creature with 100 current HP or less dies",
+        "save": "\u2014",
+        "school": " Ench",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 28",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Prismatic Wall": {
+        "level": 9,
+        "description": "Up to 90 ft long 30 ft high 5 inch thick; all in 20 ft save or blinded; 7 layers with effects, see book",
+        "save": "Con",
+        "school": " Abjur",
+        "casting": "1 a",
+        "range": "60 ft",
+        "duration": "10 min",
+        "Evoke": "Evoke 28",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Psychic Scream": {
+        "level": 9,
+        "description": "10 creature Int>2 save or 14d6 Psychic dmg and stunned; save halves, no stun; end of turn save to stop",
+        "save": "Int",
+        "school": " Ench",
+        "casting": "1 a",
+        "range": "90 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 28",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Shapechange": {
+        "level": 9,
+        "description": "keep Int, Wis, Cha and alignment; see book (1500gp)",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "Self",
+        "duration": "Conc, 1 h",
+        "Evoke": "Evoke 28",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Storm of Vengeance": {
+        "level": 9,
+        "description": "360-ft rad all save or 2d6 Thunder dmg and deafened for 5 min; effect changes every round; see book",
+        "save": "Con",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "Sight",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 28",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Time Ravage": {
+        "level": 9,
+        "description": "1 creature 10d12 Necrotic dmg & aged: dis. attack/chk/save, die in 30 days; save half, not aged (5k gp cons.)",
+        "save": "Con",
+        "school": " Necro",
+        "casting": "1 a",
+        "range": "90 ft",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 28",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Time Stop": {
+        "level": 9,
+        "description": "I instantly take 1d4 turns; if affecting other creatures or worn or carried object the spell ends",
+        "save": "\u2014",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "Self",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 28",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "True Polymorph": {
+        "level": 9,
+        "description": "1 creature/obj > 0 HP save or transformed into another creature/obj with equal CR or lower; see book",
+        "save": "Wis",
+        "school": " Trans",
+        "casting": "1 a",
+        "range": "30 ft",
+        "duration": "Conc, 1 h",
+        "Evoke": "Evoke 28",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "True Resurrection": {
+        "level": 9,
+        "description": "Resurrects a creature that died in the last 200 years to life with new body and full HP; see B (25k gp cons.)",
+        "save": "\u2014",
+        "school": " Necro",
+        "casting": "1 h",
+        "range": "Touch",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 28",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Weird": {
+        "level": 9,
+        "description": "30-ft rad all creature save or frightened; extra save at end of each turn to stop, on fail 4d10 Psychic dmg",
+        "save": "Wis",
+        "school": " Illus",
+        "casting": "1 a",
+        "range": "120 ft",
+        "duration": "Conc, 1 min",
+        "Evoke": "Evoke 28",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    },
+    "Wish": {
+        "level": 9,
+        "description": "Duplicate any 8th lvl or lower spell, creaturete objects, heal, resurrect, alter time, etc.; see book",
+        "save": "\u2014",
+        "school": " Conj",
+        "casting": "1 a",
+        "range": "Self",
+        "duration": "Instantaneous",
+        "Evoke": "Evoke 28",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ]
+    }
+}

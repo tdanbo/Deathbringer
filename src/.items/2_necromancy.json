@@ -1,118 +1,6 @@
 {
-    "Animate Dead": {
-        "level": "3",
-        "school": "necromancy",
-        "casting": "Casting Time: 1 minute",
-        "duration": "Duration: Instantaneous",
-        "description": "This spell creates an undead servant. Choose a pile of bones or a corpse of a Medium or Small humanoid within range. Your spell imbues the target with a foul mimicry of life, raising it as an undead creature. The target becomes a skeleton if you chose bones or a zombie if you chose a corpse (the DM has the creature's game statistics).On each of your turns, you can use a bonus action to mentally command any creature you made with this spell if the creature is within 60 feet of you (if you control multiple creatures, you can command any or all of them at the same time, issuing the same command to each one). You decide what action the creature will take and where it will move during its next turn, or you can issue a general command, such as to guard a particular chamber or corridor. If you issue no commands, the creature only defends itself against hostile creatures. Once given an order, the creature continues to follow it until its task is complete.The creature is under your control for 24 hours, after which it stops obeying any command you've given it. To maintain control of the creature for another 24 hours, you must cast this spell on the creature again before the current 24-hour period ends. This use of the spell reasserts your control over up to four creatures you have animated with this spell, rather than animating a new one.",
-        "Evoke": "Evoke 16",
-        "Evoke Mod": [
-            "INT",
-            "WIS"
-        ],
-        "Hit": "",
-        "Hit Mod": [
-            "",
-            ""
-        ],
-        "Roll": "",
-        "Roll Mod": [
-            "",
-            "",
-            ""
-        ]
-    },
-    "Astral Projection": {
-        "level": "9",
-        "school": "necromancy",
-        "casting": "Casting Time: 1 hour",
-        "duration": "Duration: Special",
-        "description": "You and up to eight willing creatures within range project your astral bodies into the Astral Plane (the spell fails and the casting is wasted if you are already on that plane). The material body you leave behind is unconscious and in a state of suspended animation; it doesn't need food or air and doesn't age.Your astral body resembles your mortal form in almost every way, replicating your game statistics and possessions. The principal difference is the addition of a silvery cord that extends from between your shoulder blades and trails behind you, fading to invisibility after 1 foot. This cord is your tether to your material body. As long as the tether remains intact, you can find your way home. If the cord is cut\u2014something that can happen only when an effect specifically states that it does\u2014your soul and body are separated, killing you instantly.Your astral form can freely travel through the Astral Plane and can pass through portals there leading to any other plane. If you enter a new plane or return to the plane you were on when casting this spell, your body and possessions are transported along the silver cord, allowing you to re-enter your body as you enter the new plane. Your astral form is a separate incarnation. Any damage or other effects that apply to it have no effect on your physical body, nor do they persist when you return to it.The spell ends for you and your companions when you use your action to dismiss it. When the spell ends, the affected creature returns to its physical body, and it awakens.The spell might also end early for you or one of your companions. A successful dispel magic spell used against an astral or physical body ends the spell for that creature. If a creature's original body or its astral form drops to 0 hit points, the spell ends for that creature. If the spell ends and the silver cord is intact, the cord pulls the creature's astral form back to its body, ending its state of suspended animation.If you are returned to your body prematurely, your companions remain in their astral forms and must find their own way back to their bodies, usually by dropping to 0 hit points.",
-        "Evoke": "Evoke 28",
-        "Evoke Mod": [
-            "INT",
-            "WIS"
-        ],
-        "Hit": "",
-        "Hit Mod": [
-            "",
-            ""
-        ],
-        "Roll": "Damage",
-        "Roll Mod": [
-            "",
-            "",
-            ""
-        ]
-    },
-    "Bestow Curse": {
-        "level": "3",
-        "school": "necromancy",
-        "casting": "Casting Time: 1 action",
-        "duration": "Duration: Concentration, up to 1 minute",
-        "description": "You touch a creature, and that creature must succeed on a Wisdom saving throw or become cursed for the duration of the spell. When you cast this spell, choose the nature of the curse from the following options:\u2022 Choose one ability score. While cursed, the target has disadvantage on ability checks and saving throws made with that ability score.\u2022 While cursed, the target has disadvantage on attack rolls against you.\u2022 While cursed, the target must make a Wisdom saving throw at the start of each of its turns. If it fails, it wastes its action that turn doing nothing.\u2022 While the target is cursed, your attacks and spells deal an extra 1d8 necrotic damage to the target.A remove curse spell ends this effect. At the DM's option, you may choose an alternative curse effect, but it should be no more powerful than those described above. The DM has final say on such a curse's effect.",
-        "Evoke": "Evoke 16",
-        "Evoke Mod": [
-            "INT",
-            "WIS"
-        ],
-        "Hit": "WIS Save",
-        "Hit Mod": [
-            "INT"
-        ],
-        "Roll": "Damage",
-        "Roll Mod": [
-            "1",
-            "d8",
-            ""
-        ]
-    },
-    "Blight": {
-        "level": "4",
-        "school": "necromancy",
-        "casting": "Casting Time: 1 action",
-        "duration": "Duration: Instantaneous",
-        "description": "Necromantic energy washes over a creature of your choice that you can see within range, draining moisture and vitality from it. The target must make a Constitution saving throw. The target takes 8d8 necrotic damage on a failed save, or half as much damage on a successful one. This spell has no effect on undead or constructs. If you target a plant creature or a magical plant, it makes the saving throw with disadvantage, and the spell deals maximum damage to it.If you target a nonmagical plant that isn't a creature, such as a tree or shrub, it doesn't make a saving throw; it simply withers and dies.",
-        "Evoke": "Evoke 18",
-        "Evoke Mod": [
-            "INT",
-            "WIS"
-        ],
-        "Hit": "CON Save",
-        "Hit Mod": [
-            "INT"
-        ],
-        "Roll": "Damage",
-        "Roll Mod": [
-            "8",
-            "d8",
-            ""
-        ]
-    },
-    "Blindness/Deafness": {
-        "level": "2",
-        "school": "necromancy",
-        "casting": "Casting Time: 1 action",
-        "duration": "Duration: 1 minute",
-        "description": "You can blind or deafen a foe. Choose one creature that you can see within range to make a Constitution saving throw. If it fails, the target is either blinded or deafened (your choice) for the duration. At the end of each of its turns, the target can make a Constitution saving throw. On a success, the spell ends.",
-        "Evoke": "Evoke 14",
-        "Evoke Mod": [
-            "INT",
-            "WIS"
-        ],
-        "Hit": "CON Save",
-        "Hit Mod": [
-            "INT"
-        ],
-        "Roll": "",
-        "Roll Mod": [
-            "",
-            "",
-            ""
-        ]
-    },
     "Chill Touch": {
-        "level": "0",
+        "level": 0,
         "school": "necromancy",
         "casting": "Casting Time: 1 action",
         "duration": "Duration: 1 round",
@@ -133,390 +21,8 @@
             ""
         ]
     },
-    "Circle of Death": {
-        "level": "6",
-        "school": "necromancy",
-        "casting": "Casting Time: 1 action",
-        "duration": "Duration: Instantaneous",
-        "description": "A sphere of negative energy ripples out in a 60-foot-radius sphere from a point within range. Each creature in that area must make a Constitution saving throw. A target takes 8d6 necrotic damage on a failed save, or half as much damage on a successful one.",
-        "Evoke": "Evoke 22",
-        "Evoke Mod": [
-            "INT",
-            "WIS"
-        ],
-        "Hit": "CON Save",
-        "Hit Mod": [
-            "INT"
-        ],
-        "Roll": "Damage",
-        "Roll Mod": [
-            "8",
-            "d6",
-            ""
-        ]
-    },
-    "Clone": {
-        "level": "8",
-        "school": "necromancy",
-        "casting": "Casting Time: 1 hour",
-        "duration": "Duration: Instantaneous",
-        "description": "This spell grows an inert duplicate of a living creature as a safeguard against death. This clone forms inside the vessel used in the spell\u2019s casting and grows to full size and maturity after 120 days; you can also choose to have the clone be a younger version of the same creature. It remains inert and endures indefinitely, as long as its vessel remains undisturbed.At any time after the clone matures, if the original creature dies, its soul transfers to the clone, provided that the soul is free and willing to return.The clone is physically identical to the original and has the same personality, memories, and abilities, but none of the original's equipment. The original creature's physical remains, if they still exist, become inert and can't thereafter be restored to life, since the creature's soul is elsewhere.",
-        "Evoke": "Evoke 26",
-        "Evoke Mod": [
-            "INT",
-            "WIS"
-        ],
-        "Hit": "",
-        "Hit Mod": [
-            "",
-            ""
-        ],
-        "Roll": "",
-        "Roll Mod": [
-            "",
-            "",
-            ""
-        ]
-    },
-    "Contagion": {
-        "level": "5",
-        "school": "necromancy",
-        "casting": "Casting Time: 1 action",
-        "duration": "Duration: 7 days",
-        "description": "Your touch inflicts disease. Make a melee spell attack against a creature within your reach. On a hit, the target is poisoned.At the end of each of the poisoned target's turns, the target must make a Constitution saving throw. If the target succeeds on three of these saving throws, it is no longer poisoned, and the spell ends. If the target fails three of these saves, the target is no longer poisoned, but choose one of the diseases below. The target is subjected to the chosen disease for the spell's duration.Since this spell induces a natural disease in its target, any effect that removes a disease or otherwise ameliorates a disease's effects apply to it.Blinding Sickness. Pain grips the creature's mind, and its eyes turn milky white. The creature has disadvantage on Wisdom checks and Wisdom saving throws and is blinded.Filth Fever. A raging fever sweeps through the creature's body. The creature has disadvantage on Strength checks, Strength saving throws, and attack rolls that use Strength.Flesh Rot. The creature's flesh decays. The creature has disadvantage on Charisma checks and vulnerability to all damage.Mindfire. The creature's mind becomes feverish. The creature has disadvantage on Intelligence checks and Intelligence saving throws, and the creature behaves as if under the effects of the confusion spell during combat.Seizure. The creature is overcome with shaking. The creature has disadvantage on Dexterity checks, Dexterity saving throws, and attack rolls that use Dexterity.Slimy Doom. The creature begins to bleed uncontrollably. The creature has disadvantage on Constitution checks and Constitution saving throws. In addition, whenever the creature takes damage, it is stunned until the end of its next turn.",
-        "Evoke": "Evoke 20",
-        "Evoke Mod": [
-            "INT",
-            "WIS"
-        ],
-        "Hit": "STR Save",
-        "Hit Mod": [
-            "INT"
-        ],
-        "Roll": "Damage",
-        "Roll Mod": [
-            "",
-            "",
-            ""
-        ]
-    },
-    "Create Undead": {
-        "level": "6",
-        "school": "necromancy",
-        "casting": "Casting Time: 1 minute",
-        "duration": "Duration: Instantaneous",
-        "description": "You can cast this spell only at night. Choose up to three corpses of Medium or Small humanoids within range. Each corpse becomes a ghoul under your control. (The DM has game statistics for these creatures.)As a bonus action on each of your turns, you can mentally command any creature you animated with this spell if the creature is within 120 feet of you (if you control multiple creatures, you can command any or all of them at the same time, issuing the same command to each one). You decide what action the creature will take and where it will move during its next turn, or you can issue a general command, such as to guard a particular chamber or corridor. If you issue no commands, the creature only defends itself against hostile creatures. Once given an order, the creature continues to follow it until its task is complete.The creature is under your control for 24 hours, after which it stops obeying any command you have given it. To maintain control of the creature for another 24 hours, you must cast this spell on the creature before the current 24-hour period ends. This use of the spell reasserts your control over up to three creatures you have animated with this spell, rather than animating new ones.",
-        "Evoke": "Evoke 22",
-        "Evoke Mod": [
-            "INT",
-            "WIS"
-        ],
-        "Hit": "",
-        "Hit Mod": [
-            "",
-            ""
-        ],
-        "Roll": "",
-        "Roll Mod": [
-            "",
-            "",
-            ""
-        ]
-    },
-    "Eyebite": {
-        "level": "6",
-        "school": "necromancy",
-        "casting": "Casting Time: 1 action",
-        "duration": "Duration: Concentration, up to 1 minute",
-        "description": "For the spell's duration, your eyes become an inky void imbued with dread power. One creature of your choice within 60 feet of you that you can see must succeed on a Wisdom saving throw or be affected by one of the following effects of your choice for the duration. On each of your turns until the spell ends, you can use your action to target another creature but can't target a creature again if it has succeeded on a saving throw against this casting of eyebite.Asleep. The target falls unconscious. It wakes up if it takes any damage or if another creature uses its action to shake the sleeper awake.Panicked. The target is frightened of you. On each of its turns, the frightened creature must take the Dash action and move away from you by the safest and shortest available route, unless there is nowhere to move. If the target moves to a place at least 60 feet away from you where it can no longer see you, this effect ends.Sickened. The target has disadvantage on attack rolls and ability checks. At the end of each of its turns, it can make another Wisdom saving throw. If it succeeds, the effect ends.",
-        "Evoke": "Evoke 22",
-        "Evoke Mod": [
-            "INT",
-            "WIS"
-        ],
-        "Hit": "WIS Save",
-        "Hit Mod": [
-            "INT"
-        ],
-        "Roll": "Damage",
-        "Roll Mod": [
-            "",
-            "",
-            ""
-        ]
-    },
-    "False Life": {
-        "level": "1",
-        "school": "necromancy",
-        "casting": "Casting Time: 1 action",
-        "duration": "Duration: 1 hour",
-        "description": "Bolstering yourself with a necromantic facsimile of life, you gain 1d4 + 4 temporary hit points for the duration.",
-        "Evoke": "Evoke 12",
-        "Evoke Mod": [
-            "INT",
-            "WIS"
-        ],
-        "Hit": "",
-        "Hit Mod": [
-            "",
-            ""
-        ],
-        "Roll": "",
-        "Roll Mod": [
-            "1",
-            "d4",
-            ""
-        ]
-    },
-    "Feign Death": {
-        "level": "3",
-        "school": "necromancy",
-        "casting": "Casting Time: 1 action",
-        "duration": "Duration: 1 hour",
-        "description": "The willing target appears dead to all outward inspection.",
-        "Evoke": "Evoke 16",
-        "Evoke Mod": [
-            "INT",
-            "WIS"
-        ],
-        "Hit": "",
-        "Hit Mod": [
-            "",
-            ""
-        ],
-        "Roll": "",
-        "Roll Mod": [
-            "",
-            "",
-            ""
-        ]
-    },
-    "Finger of Death": {
-        "level": "7",
-        "school": "necromancy",
-        "casting": "Casting Time: 1 action",
-        "duration": "Duration: Instantaneous",
-        "description": "You send negative energy coursing through a creature that you can see within range, causing it searing pain. The target must make a Constitution saving throw. It takes 7d8 + 30 necrotic damage on a failed save, or half as much damage on a successful one.A humanoid killed by this spell rises at the start of your next turn as a zombie that is permanently under your command, following your verbal orders to the best of its ability.",
-        "Evoke": "Evoke 24",
-        "Evoke Mod": [
-            "INT",
-            "WIS"
-        ],
-        "Hit": "CON Save",
-        "Hit Mod": [
-            "INT"
-        ],
-        "Roll": "Damage",
-        "Roll Mod": [
-            "7",
-            "d8",
-            ""
-        ]
-    },
-    "Gentle Repose": {
-        "level": "2",
-        "school": "necromancy",
-        "casting": "Casting Time: 1 action",
-        "duration": "Duration: 10 days",
-        "description": "You touch a corpse or other remains. For the duration, the target is protected from decay and can't become undead.The spell also effectively extends the time limit on raising the target from the dead, since days spent under the influence of this spell don't count against the time limit of spells such as raise dead.",
-        "Evoke": "Evoke 14",
-        "Evoke Mod": [
-            "INT",
-            "WIS"
-        ],
-        "Hit": "",
-        "Hit Mod": [
-            "",
-            ""
-        ],
-        "Roll": "",
-        "Roll Mod": [
-            "",
-            "",
-            ""
-        ]
-    },
-    "Harm": {
-        "level": "6",
-        "school": "necromancy",
-        "casting": "Casting Time: 1 action",
-        "duration": "Duration: Instantaneous",
-        "description": "You unleash a virulent disease on a creature that you can see within range. The target must make a Constitution saving throw. On a failed save, it takes 14d6 necrotic damage, or half as much damage on a successful save. The damage can't reduce the target's hit points below 1. If the target fails the saving throw, its hit point maximum is reduced for 1 hour by an amount equal to the necrotic damage it took. Any effect that removes a disease allows a creature's hit point maximum to return to normal before that time passes.",
-        "Evoke": "Evoke 22",
-        "Evoke Mod": [
-            "INT",
-            "WIS"
-        ],
-        "Hit": "CON Save",
-        "Hit Mod": [
-            "INT"
-        ],
-        "Roll": "Damage",
-        "Roll Mod": [
-            "14",
-            "d6",
-            ""
-        ]
-    },
-    "Inflict Wounds": {
-        "level": "1",
-        "school": "necromancy",
-        "casting": "Casting Time: 1 action",
-        "duration": "Duration: Instantaneous",
-        "description": "Make a melee spell attack against a creature you can reach. On a hit, the target takes 3d10 necrotic damage.",
-        "Evoke": "Evoke 12",
-        "Evoke Mod": [
-            "INT",
-            "WIS"
-        ],
-        "Hit": "Hit",
-        "Hit Mod": [
-            "INT"
-        ],
-        "Roll": "Damage",
-        "Roll Mod": [
-            "3",
-            "d10",
-            ""
-        ]
-    },
-    "Magic Jar": {
-        "level": "6",
-        "school": "necromancy",
-        "casting": "Casting Time: 1 minute",
-        "duration": "Duration: Until dispelled",
-        "description": "Your body falls into a catatonic state as your soul leaves it and enters the container you used for the spell's material component. While your soul inhabits the container, you are aware of your surroundings as if you were in the container's space. You can't move or use reactions. The only action you can take is to project your soul up to 100 feet out of the container, either returning to your living body (and ending the spell) or attempting to possess a humanoids body.You can attempt to possess any humanoid within 100 feet of you that you can see (creatures warded by a protection from evil and good or magic circle spell can't be possessed). The target must make a Charisma saving throw. On a failure, your soul moves into the target's body, and the target's soul becomes trapped in the container. On a success, the target resists your efforts to possess it, and you can't attempt to possess it again for 24 hours.Once you possess a creature's body, you control it. Your game statistics are replaced by the statistics of the creature, though you retain your alignment and your Intelligence, Wisdom, and Charisma scores. You retain the benefit of your own class features. If the target has any class levels, you can't use any of its class features.Meanwhile, the possessed creature's soul can perceive from the container using its own senses, but it can't move or take actions at all.While possessing a body, you can use your action to return from the host body to the container if it is within 100 feet of you, returning the host creature's soul to its body. If the host body dies while you're in it, the creature dies, and you must make a Charisma saving throw against your own spellcasting DC. On a success, you return to the container if it is within 100 feet of you. Otherwise, you die.If the container is destroyed or the spell ends, your soul immediately returns to your body. If your body is more than 100 feet away from you or if your body is dead when you attempt to return to it, you die. If another creature's soul is in the container when it is destroyed, the creature's soul returns to its body if the body is alive and within 100 feet. Otherwise, that creature dies.When the spell ends, the container is destroyed.",
-        "Evoke": "Evoke 22",
-        "Evoke Mod": [
-            "INT",
-            "WIS"
-        ],
-        "Hit": "WIS Save",
-        "Hit Mod": [
-            "INT"
-        ],
-        "Roll": "",
-        "Roll Mod": [
-            "",
-            "",
-            ""
-        ]
-    },
-    "Raise Dead": {
-        "level": "5",
-        "school": "necromancy",
-        "casting": "Casting Time: 1 hour",
-        "duration": "Duration: Instantaneous",
-        "description": "You return a dead creature you touch to life, provided that it has been dead no longer than 10 days. If the creature's soul is both willing and at liberty to rejoin the body, the creature returns to life with 1 hit point.This spell also neutralizes any poisons and cures nonmagical diseases that affected the creature at the time it died. This spell doesn't, however, remove magical diseases, curses, or similar effects; if these aren't first removed prior to casting the spell, they take effect when the creature returns to life. The spell can't return an undead creature to life.This spell closes all mortal wounds, but it doesn't restore missing body parts. If the creature is lacking body parts or organs integral for its survival\u2014its head, for instance\u2014the spell automatically fails.Coming back from the dead is an ordeal. The target takes a -4 penalty to all attack rolls, saving throws, and ability checks. Every time the target finishes a long rest, the penalty is reduced by 1 until it disappears.",
-        "Evoke": "Evoke 20",
-        "Evoke Mod": [
-            "INT",
-            "WIS"
-        ],
-        "Hit": "",
-        "Hit Mod": [
-            "",
-            ""
-        ],
-        "Roll": "",
-        "Roll Mod": [
-            "",
-            "",
-            ""
-        ]
-    },
-    "Ray of Enfeeblement": {
-        "level": "2",
-        "school": "necromancy",
-        "casting": "Casting Time: 1 action",
-        "duration": "Duration: Concentration, up to 1 minute",
-        "description": "A black beam of enervating energy springs from your finger toward a creature within range. Make a ranged spell attack against the target. On a hit, the target deals only half damage with weapon attacks that use Strength until the spell ends.At the end of each of the target's turns, it can make a Constitution saving throw against the spell. On a success, the spell ends.",
-        "Evoke": "Evoke 14",
-        "Evoke Mod": [
-            "INT",
-            "WIS"
-        ],
-        "Hit": "STR Save",
-        "Hit Mod": [
-            "INT"
-        ],
-        "Roll": "Damage",
-        "Roll Mod": [
-            "",
-            "",
-            ""
-        ]
-    },
-    "Ray of Sickness": {
-        "level": "1",
-        "school": "necromancy",
-        "casting": "Casting Time: 1 action",
-        "duration": "Duration: Instantaneous",
-        "description": "A ray of sickening greenish energy lashes out toward a creature within range. Make a ranged spell attack against the target. On a hit, the target takes 2d8 poison damage and must make a Constitution saving throw. On a failed save, it is also poisoned until the end of your next turn.",
-        "Evoke": "Evoke 12",
-        "Evoke Mod": [
-            "INT",
-            "WIS"
-        ],
-        "Hit": "CON Save",
-        "Hit Mod": [
-            "INT"
-        ],
-        "Roll": "Damage",
-        "Roll Mod": [
-            "2",
-            "d8",
-            ""
-        ]
-    },
-    "Resurrection": {
-        "level": "7",
-        "school": "necromancy",
-        "casting": "Casting Time: 1 hour",
-        "duration": "Duration: Instantaneous",
-        "description": "You touch a dead creature that has been dead for no more than a century, that didn't die of old age, and that isn't undead. If its soul is free and willing, the target returns to life with all its hit points.This spell neutralizes any poisons and cures normal diseases afflicting the creature when it died. It doesn't, however, remove magical diseases, curses, and the like; if such effects aren't removed prior to casting the spell, they afflict the target on its return to life.This spell closes all mortal wounds and restores any missing body parts.Coming back from the dead is an ordeal. The target takes a -4 penalty to all attack rolls, saving throws, and ability checks. Every time the target finishes a long rest, the penalty is reduced by 1 until it disappears.Casting this spell to restore life to a creature that has been dead for one year or longer taxes you greatly. Until you finish a long rest, you can't cast spells again, and you have disadvantage on all attack rolls, ability checks, and saving throws.",
-        "Evoke": "Evoke 24",
-        "Evoke Mod": [
-            "INT",
-            "WIS"
-        ],
-        "Hit": "",
-        "Hit Mod": [
-            "",
-            ""
-        ],
-        "Roll": "",
-        "Roll Mod": [
-            "",
-            "",
-            ""
-        ]
-    },
-    "Revivify": {
-        "level": "3",
-        "school": "necromancy",
-        "casting": "Casting Time: 1 action",
-        "duration": "Duration: Instantaneous",
-        "description": "You touch a creature that has died within the last minute. That creature returns to life with 1 hit point. This spell can't return to life a creature that has died of old age, nor can it restore any missing body parts.",
-        "Evoke": "Evoke 16",
-        "Evoke Mod": [
-            "INT",
-            "WIS"
-        ],
-        "Hit": "",
-        "Hit Mod": [
-            "",
-            ""
-        ],
-        "Roll": "",
-        "Roll Mod": [
-            "",
-            "",
-            ""
-        ]
-    },
     "Spare the Dying": {
-        "level": "0",
+        "level": 0,
         "school": "necromancy",
         "casting": "Casting Time: 1 action",
         "duration": "Duration: Instantaneous",
@@ -538,8 +44,233 @@
             ""
         ]
     },
+    "False Life": {
+        "level": 1,
+        "school": "necromancy",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: 1 hour",
+        "description": "Bolstering yourself with a necromantic facsimile of life, you gain 1d4 + 4 temporary hit points for the duration.",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "1",
+            "d4",
+            ""
+        ]
+    },
+    "Inflict Wounds": {
+        "level": 1,
+        "school": "necromancy",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Instantaneous",
+        "description": "Make a melee spell attack against a creature you can reach. On a hit, the target takes 3d10 necrotic damage.",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "Hit",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "3",
+            "d10",
+            ""
+        ]
+    },
+    "Ray of Sickness": {
+        "level": 1,
+        "school": "necromancy",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Instantaneous",
+        "description": "A ray of sickening greenish energy lashes out toward a creature within range. Make a ranged spell attack against the target. On a hit, the target takes 2d8 poison damage and must make a Constitution saving throw. On a failed save, it is also poisoned until the end of your next turn.",
+        "Evoke": "Evoke 12",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "CON Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "2",
+            "d8",
+            ""
+        ]
+    },
+    "Blindness/Deafness": {
+        "level": 2,
+        "school": "necromancy",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: 1 minute",
+        "description": "You can blind or deafen a foe. Choose one creature that you can see within range to make a Constitution saving throw. If it fails, the target is either blinded or deafened (your choice) for the duration. At the end of each of its turns, the target can make a Constitution saving throw. On a success, the spell ends.",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "CON Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Gentle Repose": {
+        "level": 2,
+        "school": "necromancy",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: 10 days",
+        "description": "You touch a corpse or other remains. For the duration, the target is protected from decay and can't become undead.The spell also effectively extends the time limit on raising the target from the dead, since days spent under the influence of this spell don't count against the time limit of spells such as raise dead.",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Ray of Enfeeblement": {
+        "level": 2,
+        "school": "necromancy",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Concentration, up to 1 minute",
+        "description": "A black beam of enervating energy springs from your finger toward a creature within range. Make a ranged spell attack against the target. On a hit, the target deals only half damage with weapon attacks that use Strength until the spell ends.At the end of each of the target's turns, it can make a Constitution saving throw against the spell. On a success, the spell ends.",
+        "Evoke": "Evoke 14",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "STR Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Animate Dead": {
+        "level": 3,
+        "school": "necromancy",
+        "casting": "Casting Time: 1 minute",
+        "duration": "Duration: Instantaneous",
+        "description": "This spell creates an undead servant. Choose a pile of bones or a corpse of a Medium or Small humanoid within range. Your spell imbues the target with a foul mimicry of life, raising it as an undead creature. The target becomes a skeleton if you chose bones or a zombie if you chose a corpse (the DM has the creature's game statistics).On each of your turns, you can use a bonus action to mentally command any creature you made with this spell if the creature is within 60 feet of you (if you control multiple creatures, you can command any or all of them at the same time, issuing the same command to each one). You decide what action the creature will take and where it will move during its next turn, or you can issue a general command, such as to guard a particular chamber or corridor. If you issue no commands, the creature only defends itself against hostile creatures. Once given an order, the creature continues to follow it until its task is complete.The creature is under your control for 24 hours, after which it stops obeying any command you've given it. To maintain control of the creature for another 24 hours, you must cast this spell on the creature again before the current 24-hour period ends. This use of the spell reasserts your control over up to four creatures you have animated with this spell, rather than animating a new one.",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Bestow Curse": {
+        "level": 3,
+        "school": "necromancy",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Concentration, up to 1 minute",
+        "description": "You touch a creature, and that creature must succeed on a Wisdom saving throw or become cursed for the duration of the spell. When you cast this spell, choose the nature of the curse from the following options:\u2022 Choose one ability score. While cursed, the target has disadvantage on ability checks and saving throws made with that ability score.\u2022 While cursed, the target has disadvantage on attack rolls against you.\u2022 While cursed, the target must make a Wisdom saving throw at the start of each of its turns. If it fails, it wastes its action that turn doing nothing.\u2022 While the target is cursed, your attacks and spells deal an extra 1d8 necrotic damage to the target.A remove curse spell ends this effect. At the DM's option, you may choose an alternative curse effect, but it should be no more powerful than those described above. The DM has final say on such a curse's effect.",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "WIS Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "1",
+            "d8",
+            ""
+        ]
+    },
+    "Feign Death": {
+        "level": 3,
+        "school": "necromancy",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: 1 hour",
+        "description": "The willing target appears dead to all outward inspection.",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Revivify": {
+        "level": 3,
+        "school": "necromancy",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Instantaneous",
+        "description": "You touch a creature that has died within the last minute. That creature returns to life with 1 hit point. This spell can't return to life a creature that has died of old age, nor can it restore any missing body parts.",
+        "Evoke": "Evoke 16",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
     "Speak with Dead": {
-        "level": "3",
+        "level": 3,
         "school": "necromancy",
         "casting": "Casting Time: 1 action",
         "duration": "Duration: 10 minutes",
@@ -561,31 +292,8 @@
             ""
         ]
     },
-    "True Resurrection": {
-        "level": "9",
-        "school": "necromancy",
-        "casting": "Casting Time: 1 hour",
-        "duration": "Duration: Instantaneous",
-        "description": "You touch a creature that has been dead for no longer than 200 years and that died for any reason except old age. If the creature's soul is free and willing, the creature is restored to life with all its hit points.This spell closes all wounds, neutralizes any poison, cures all diseases, and lifts any curses affecting the creature when it died. The spell replaces damaged or missing organs and limbs. If the creature was undead, it is restored to its non-undead form.The spell can even provide a new body if the original no longer exists, in which case you must speak the creature's name. The creature then appears in an unoccupied space you choose within 10 feet of you.",
-        "Evoke": "Evoke 28",
-        "Evoke Mod": [
-            "INT",
-            "WIS"
-        ],
-        "Hit": "",
-        "Hit Mod": [
-            "",
-            ""
-        ],
-        "Roll": "Damage",
-        "Roll Mod": [
-            "",
-            "",
-            ""
-        ]
-    },
     "Vampiric Touch": {
-        "level": "3",
+        "level": 3,
         "school": "necromancy",
         "casting": "Casting Time: 1 action",
         "duration": "Duration: Concentration, up to 1 minute",
@@ -603,6 +311,73 @@
         "Roll Mod": [
             "3",
             "d6",
+            ""
+        ]
+    },
+    "Blight": {
+        "level": 4,
+        "school": "necromancy",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: Instantaneous",
+        "description": "Necromantic energy washes over a creature of your choice that you can see within range, draining moisture and vitality from it. The target must make a Constitution saving throw. The target takes 8d8 necrotic damage on a failed save, or half as much damage on a successful one. This spell has no effect on undead or constructs. If you target a plant creature or a magical plant, it makes the saving throw with disadvantage, and the spell deals maximum damage to it.If you target a nonmagical plant that isn't a creature, such as a tree or shrub, it doesn't make a saving throw; it simply withers and dies.",
+        "Evoke": "Evoke 18",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "CON Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "8",
+            "d8",
+            ""
+        ]
+    },
+    "Contagion": {
+        "level": 5,
+        "school": "necromancy",
+        "casting": "Casting Time: 1 action",
+        "duration": "Duration: 7 days",
+        "description": "Your touch inflicts disease. Make a melee spell attack against a creature within your reach. On a hit, the target is poisoned.At the end of each of the poisoned target's turns, the target must make a Constitution saving throw. If the target succeeds on three of these saving throws, it is no longer poisoned, and the spell ends. If the target fails three of these saves, the target is no longer poisoned, but choose one of the diseases below. The target is subjected to the chosen disease for the spell's duration.Since this spell induces a natural disease in its target, any effect that removes a disease or otherwise ameliorates a disease's effects apply to it.Blinding Sickness. Pain grips the creature's mind, and its eyes turn milky white. The creature has disadvantage on Wisdom checks and Wisdom saving throws and is blinded.Filth Fever. A raging fever sweeps through the creature's body. The creature has disadvantage on Strength checks, Strength saving throws, and attack rolls that use Strength.Flesh Rot. The creature's flesh decays. The creature has disadvantage on Charisma checks and vulnerability to all damage.Mindfire. The creature's mind becomes feverish. The creature has disadvantage on Intelligence checks and Intelligence saving throws, and the creature behaves as if under the effects of the confusion spell during combat.Seizure. The creature is overcome with shaking. The creature has disadvantage on Dexterity checks, Dexterity saving throws, and attack rolls that use Dexterity.Slimy Doom. The creature begins to bleed uncontrollably. The creature has disadvantage on Constitution checks and Constitution saving throws. In addition, whenever the creature takes damage, it is stunned until the end of its next turn.",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "STR Save",
+        "Hit Mod": [
+            "INT"
+        ],
+        "Roll": "Damage",
+        "Roll Mod": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "Raise Dead": {
+        "level": 5,
+        "school": "necromancy",
+        "casting": "Casting Time: 1 hour",
+        "duration": "Duration: Instantaneous",
+        "description": "You return a dead creature you touch to life, provided that it has been dead no longer than 10 days. If the creature's soul is both willing and at liberty to rejoin the body, the creature returns to life with 1 hit point.This spell also neutralizes any poisons and cures nonmagical diseases that affected the creature at the time it died. This spell doesn't, however, remove magical diseases, curses, or similar effects; if these aren't first removed prior to casting the spell, they take effect when the creature returns to life. The spell can't return an undead creature to life.This spell closes all mortal wounds, but it doesn't restore missing body parts. If the creature is lacking body parts or organs integral for its survival\u2014its head, for instance\u2014the spell automatically fails.Coming back from the dead is an ordeal. The target takes a -4 penalty to all attack rolls, saving throws, and ability checks. Every time the target finishes a long rest, the penalty is reduced by 1 until it disappears.",
+        "Evoke": "Evoke 20",
+        "Evoke Mod": [
+            "INT",
+            "WIS"
+        ],
+        "Hit": "",
+        "Hit Mod": [
+            "",
+            ""
+        ],
+        "Roll": "",
+        "Roll Mod": [
+            "",
+            "",
             ""
         ]
     }

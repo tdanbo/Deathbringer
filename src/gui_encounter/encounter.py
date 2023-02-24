@@ -47,15 +47,15 @@ class Encounter:
         The functions below divide all the different attack modifiers on all the creatures. Remember to iterrate over them for the attacks, hit and damage.
         '''
 
-        attack_system = [
+        attack_system = {
             "1": [1.0],
-            "2": [0.75, 0.25],
-            "3": [0.25, 0.25, 0.50]
-        ]
+            "2": [0.75, 0.25], # with 2 attacks you will get 2 types and the primary will do the most damage
+            "3": [0.25, 0.50] # with 3 attacks you will get 3 types and the secondary will do the most damage
+        }
         
         for c in self.creature_stats:
             creature_type = c["type"]
-            creature_json = json.load(open(f".creatures/{creature_type.lower()}.json", "r"))
+            self.creature_json = json.load(open(f".creatures/{creature_type.lower()}.json", "r"))
             creature_attacks = c["attacks"]
             creature_damage = c["damage"]
             creature_hit = c["hit"]
@@ -66,57 +66,75 @@ class Encounter:
             print(f"Creature: attacks {creature_attacks}")
             print(attack_distribution)
 
-            for attack,multiplier in enumerate(attack_distribution):
-                print(attack)
+            if creature_attacks == 1:
+                damage1 = round(creature_damage*attack_distribution[0])
+                attack_dict1 = self.attack_dictionary(damage=damage1,attack = 1, dmg_type = creature_damage_type)
+                c["actions"].append(attack_dict1)
 
-                single_attack_damage = round(creature_damage*multiplier)
+            elif creature_attacks == 2:
+                damage1 = round(creature_damage*attack_distribution[0])
+                attack_dict1 = self.attack_dictionary(damage=damage1,attack = 1, dmg_type = creature_damage_type)
+                c["actions"].append(attack_dict1)
 
-                if attack == 0:
-                    attack_modifier = random.sample(creature_json["Basic Mod"], k=1)  
-                    single_action = {}
-                    apply_static = True
-                    if attack_modifier == ["Hybrid"]:
-                        physical_damage = single_attack_damage*0.25
-                        elemental_damage = single_attack_damage*0.75
-                        single_action["Primary Type"] = "Physical"
-                        single_action["Primary Damage"] = self.damage_convert(physical_damage, static=True)
-                        single_action["Secondary Type"] = creature_damage_type
-                        single_action["Secondary Damage"] = self.damage_convert(elemental_damage, static=False)
-                        single_action["Modifiers"] = attack_modifier
-                    else:
-                        single_action["Primary Type"] = "Physical"
-                        single_action["Primary Damage"] = self.damage_convert(single_attack_damage, static=True)
-                        single_action["Secondary Type"] = ""
-                        single_action["Secondary Damage"] = ""
-                        single_action["Modifiers"] = []
+                damage2 = round(creature_damage*attack_distribution[1])
+                attack_dict2 = self.attack_dictionary(damage=damage2,attack = 2, dmg_type = creature_damage_type)
+                c["actions"].append(attack_dict2)
 
-                    c["actions"].append(single_action)
+            elif creature_attacks == 3:
+                damage1and2 = round(creature_damage*attack_distribution[0])
+                attack_dict1and2 = self.attack_dictionary(damage=damage1and2,attack = 1, dmg_type = creature_damage_type)
+                c["actions"].append(attack_dict1and2) # We have 3 attacks so we use this lowered attack twice
 
-                if attack == 1:
-                    single_action = {}
-                    attack_modifier = random.sample(creature_json["Elemental Mod"], k=1)
+                damage3 = round(creature_damage*attack_distribution[1])
+                attack_dict3 = self.attack_dictionary(damage=damage3,attack = 2, dmg_type = creature_damage_type)
+                c["actions"].append(attack_dict3)
 
-                    single_action["Primary Type"] = creature_damage_type
-                    single_action["Primary Damage"] = self.damage_convert(single_attack_damage, static=False)
-                    single_action["Secondary Type"] = ""
-                    single_action["Secondary Damage"] = ""
-                    single_action["Modifiers"] = attack_modifier
+            print(c["actions"])
 
-                    c["actions"].append(single_action)
+            c["hit"] = creature_hit
 
-                if attack == 2:
-                    single_action = {}
-                    attack_modifier = random.sample(creature_json["Elemental Mod"], k=2)
+    def attack_dictionary(self, damage, attack, dmg_type):
+        single_action = {}
 
-                    single_action["Primary Type"] = creature_damage_type
-                    single_action["Primary Damage"] = self.damage_convert(single_attack_damage, static=False)
-                    single_action["Secondary Type"] = ""
-                    single_action["Secondary Damage"] = ""
-                    single_action["Modifiers"] = attack_modifier
+        if attack == 1:
+            attack_modifier = random.sample(self.creature_json["Basic Mod"], k=1)
+            if attack_modifier == ["Hybrid"]:
+                physical_damage = damage*0.25
+                elemental_damage = damage*0.75
+                single_action["Primary Type"] = "Physical"
+                single_action["Primary Damage"] = self.damage_convert(physical_damage, static=True)
+                single_action["Secondary Type"] = dmg_type
+                single_action["Secondary Damage"] = self.damage_convert(elemental_damage, static=False)
+                single_action["Modifiers"] = [] # We don't add modifiers to the simple attacks
+            else:
+                single_action["Primary Type"] = "Physical"
+                single_action["Primary Damage"] = self.damage_convert(damage, static=True)
+                single_action["Secondary Type"] = ""
+                single_action["Secondary Damage"] = ""
+                single_action["Modifiers"] = [] # We don't add modifiers to the simple attacks
+            
+            return single_action
 
-                    c["actions"].append(single_action)
-                
-                c["hit"] = creature_hit
+        elif attack == 2:
+            attack_modifier = random.sample(self.creature_json["Elemental Mod"], k=1)
+            single_action["Primary Type"] = dmg_type
+            single_action["Primary Damage"] = self.damage_convert(damage, static=False)
+            single_action["Secondary Type"] = ""
+            single_action["Secondary Damage"] = ""
+            single_action["Modifiers"] = attack_modifier
+
+            return single_action
+            
+        elif attack == 3:
+            attack_modifier = random.sample(self.creature_json["Elemental Mod"], k=2)
+
+            single_action["Primary Type"] = creature_damage_type
+            single_action["Primary Damage"] = self.damage_convert(single_attack_damage, static=False)
+            single_action["Secondary Type"] = ""
+            single_action["Secondary Damage"] = ""
+            single_action["Modifiers"] = attack_modifier
+
+            return single_action
 
     # This function convers average damage numbers in to dice notations. And add their static damage value.
     # Static can be set to False. This will make the attack completely based on dice.

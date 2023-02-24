@@ -309,7 +309,8 @@ class EncounterGUI(QWidget):
             else:
                 creature_base = CreatureBase(creature["type"],creature["rank"])
                 for attack,action in enumerate(creature["actions"]):
-                    creature_action = CreatureAction(attack,action)
+                    print(attack,creature["attacks"])
+                    creature_action = CreatureAction(attack,action,creature["attacks"])
                     creature_base.get_action_layout().addWidget(creature_action)
                 creature_base.set_creature_stats(creature) # Setting the create stats using the encounter class
                 self.creature_layout.inner_layout(1).addWidget(creature_base)
@@ -318,7 +319,6 @@ class EncounterGUI(QWidget):
         self.level = level
         self.start_level = level
         self.level_max = math.ceil(self.level*0.5)
-        print(self.creature_list)
         if "Leader" in [creature[1] for creature in self.creature_list]:
             self.level += self.level_max
             level_string = f"{stage.capitalize()} Encounter {self.start_level} with a +{self.level_max} difficulty"
@@ -329,7 +329,6 @@ class EncounterGUI(QWidget):
 
         title_label = self.creature_layout.get_title()[1]
         title_label.setText(level_string)
-        print(level_string)
         return self.level
 
     def open_partyselect(self):

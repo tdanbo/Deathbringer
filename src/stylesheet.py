@@ -43,6 +43,7 @@ GUI_BACKGROUND = f"hsl(0, {SATURATION}, 12%)"
 BUTTONS_BACKGROUND = f"hsl(0, {SATURATION}, 10%)"
 DISABLED_COLOR = f"hsl(0, {SATURATION}, 14%);"
 DISABLED_COLOR2 = f"hsl(0, {SATURATION}, 30%);"
+DISABLED_COLOR3 = f"hsl(0, {SATURATION}, 20%);"
 
 QTITLE = f"QToolButton {{background-color: {GROUP_HEADER}}}"\
          f"QLabel {{background-color: {GROUP_HEADER}; border-top-right-radius: {RADIUS}}}"\

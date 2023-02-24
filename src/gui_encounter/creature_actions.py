@@ -9,34 +9,59 @@ from pyside import SimpleSection
 import stylesheet as style
 import constants as cons
 
-class CreatureAction(QWidget):
-    def __init__(self, attack, action):
-        super().__init__()
+import gui_encounter.encounter_style as estyle
 
+class CreatureAction(QWidget):
+    def __init__(self, attack, action, total_attacks):
+        super().__init__()
+        print(action["Modifiers"])
+        print(len(action["Modifiers"]))
         if len(action["Modifiers"]) == 0:
             modifier1icon = ""
             modifier2icon = ""
+            mod1_text = ""
+            mod2_text = ""
         if len(action["Modifiers"]) == 1:
             modifier1icon = f'{action["Modifiers"][0]}.png'
             modifier2icon = ""
+            mod1_text = "MOD"
+            mod2_text = ""
         if len(action["Modifiers"]) == 2:
             modifier1icon = f'{action["Modifiers"][0]}.png'
             modifier2icon = f'{action["Modifiers"][1]}.png'
+            mod1_text = "MOD"
+            mod2_text = "MOD"
 
         self.action_sections = []
         self.action_widgets = []
 
-        self.master_layout = QVBoxLayout()
+        self.master_layout = QHBoxLayout()
 
         self.slot_layot = Section(
             outer_layout = QHBoxLayout(),
             inner_layout = ("VBox", 8),
             parent_layout=self.master_layout,
-            class_group=self.action_sections
+            class_group=self.action_sections,
+
         )
 
+        if total_attacks == 1:
+            attack_times = "x1"
+        elif total_attacks == 2:
+            if attack == 0:
+                attack_times = "x1"
+            elif attack == 1:
+                attack_times = "x1"
+        elif total_attacks == 3:
+            if attack == 0:
+                attack_times = "x2"
+            elif attack == 1:
+                attack_times = "x1"
+
+
+
         self.backpack= Widget(
-            widget_type=QToolButton(),
+            widget_type=QPushButton(),
             stylesheet=style.INVENTORY,
             parent_layout=self.slot_layot.inner_layout(1),
             width = cons.WSIZE*2,
@@ -49,14 +74,14 @@ class CreatureAction(QWidget):
 
         self.backpack_label = Widget(
             widget_type=QLabel(),
-            stylesheet=style.INVENTORY,
+            stylesheet=estyle.SUB_LABEL,
             parent_layout=self.slot_layot.inner_layout(1),
             height = cons.WSIZE/1.5,
             objectname=f"icon_label",
-            text=f"{attack+1}.",
-            align="center",
+            text=attack_times,
             class_group=self.action_widgets,
-            width = cons.WSIZE*2
+            width = cons.WSIZE*2,
+            align="center"
         )
 
         self.first_mod= Widget(
@@ -71,16 +96,16 @@ class CreatureAction(QWidget):
             icon=(modifier1icon,cons.WSIZE*1.5,cons.ICON_COLOR),
         )
 
-        self.first_mod_label = Widget(
+        self.first_label = Widget(
             widget_type=QLabel(),
-            stylesheet=style.INVENTORY,
+            stylesheet=estyle.SUB_LABEL,
             parent_layout=self.slot_layot.inner_layout(2),
             height = cons.WSIZE/1.5,
-            objectname=f"first_mod_label",
-            text="",
-            align="center",
+            objectname=f"icon_label",
+            text=mod1_text,
             class_group=self.action_widgets,
-            width = cons.WSIZE*2
+            width = cons.WSIZE*2,
+            align="center",
         )
 
         self.second_mod= Widget(
@@ -95,23 +120,23 @@ class CreatureAction(QWidget):
             icon=(modifier2icon,cons.WSIZE*1.5,cons.ICON_COLOR),
         )
 
-        self.second_mod_label = Widget(
+        self.second_label = Widget(
             widget_type=QLabel(),
-            stylesheet=style.INVENTORY,
+            stylesheet=estyle.SUB_LABEL,
             parent_layout=self.slot_layot.inner_layout(3),
             height = cons.WSIZE/1.5,
             objectname=f"icon_label",
-            text="",
-            align="center",
+            text=mod2_text,
             class_group=self.action_widgets,
-            width = cons.WSIZE*2
+            width = cons.WSIZE*2,
+            align="center"
         )
 
         self.spacer = Widget(
             widget_type=QPushButton(),
             stylesheet=style.INVENTORY,
             parent_layout=self.slot_layot.inner_layout(4),
-            width = 60,
+            width = 20,
             height = cons.WSIZE,
             objectname=f"spacer",
             class_group=self.action_widgets,	
@@ -124,7 +149,7 @@ class CreatureAction(QWidget):
             height = cons.WSIZE/1.5,
             objectname=f"spacer_label",
             class_group=self.action_widgets,
-            width = 60,
+            width = 20,
         )
 
         self.backpack_item = Widget(

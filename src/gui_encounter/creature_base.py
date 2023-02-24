@@ -28,17 +28,15 @@ class CreatureBase(QWidget):
             inner_layout = ("VBox", 4),
             class_group=self.section_creatures_group,
             parent_layout=self.master_layout,
+            spacing=1,
             content_margin=(0,0,8,1),
-            spacing=1
         )   
 
         self.slot_layot = Section(
             outer_layout = QHBoxLayout(),
-            inner_layout = ("VBox", 12),
+            inner_layout = ("VBox", 10),
             parent_layout=self.single_creature_layout.inner_layout(1),
-            class_group=self.section_creatures_group,
-
-            
+            class_group=self.section_creatures_group,            
         ) 
         self.action_layout = Section(
             outer_layout = QHBoxLayout(),
@@ -110,7 +108,7 @@ class CreatureBase(QWidget):
 
         self.passive = Widget(
             widget_type=QToolButton(),
-            parent_layout=self.slot_layot.inner_layout(4),
+            parent_layout=self.slot_layot.inner_layout(3),
             width = cons.WSIZE*2,
             height = cons.WSIZE*2,
             objectname=f"passive",
@@ -120,7 +118,7 @@ class CreatureBase(QWidget):
 
         self.passive_label = Widget(
             widget_type=QLabel(),
-            parent_layout=self.slot_layot.inner_layout(4),
+            parent_layout=self.slot_layot.inner_layout(3),
             height = cons.WSIZE/1.5,
             objectname=f"passive_label",
             text="",
@@ -130,32 +128,9 @@ class CreatureBase(QWidget):
             stylesheet=estyle.SUB_LABEL
         )
 
-        # self.icon = Widget(
-        #     widget_type=QLabel(),
-        #     parent_layout=self.slot_layot.inner_layout(5),
-        #     width = cons.WSIZE*5,
-        #     height = cons.WSIZE*2,
-        #     objectname=f"icon",
-        #     class_group=self.widget_creatures_group,
-        #     icon=(f"{creature_type}.png","","",100),
-        #     stylesheet=estyle.ICON_LABEL,
-        # )
-
-        # self.speed_label = Widget(
-        #     widget_type=QLabel(),
-        #     parent_layout=self.slot_layot.inner_layout(5),
-        #     height = cons.WSIZE/1.5,
-        #     objectname=f"speed",
-        #     text="",
-        #     align="center",
-        #     class_group=self.widget_creatures_group,
-        #     width = cons.WSIZE*5,
-        #     stylesheet=estyle.SUB_LABEL,
-        # )
-
         self.creature_type = Widget(
             widget_type=QLineEdit(),
-            parent_layout=self.slot_layot.inner_layout(6),
+            parent_layout=self.slot_layot.inner_layout(4),
             height = cons.WSIZE*2,
             #signal= self.select_item,
             objectname=f"{creature_type}",
@@ -168,7 +143,7 @@ class CreatureBase(QWidget):
         self.rank = Widget(
             widget_type=QLabel(),
             text=creature_rank,
-            parent_layout=self.slot_layot.inner_layout(6),
+            parent_layout=self.slot_layot.inner_layout(4),
             height = cons.WSIZE/1.5,
             objectname=f"rank",
             align="center",
@@ -179,7 +154,7 @@ class CreatureBase(QWidget):
         for number, stat in enumerate(["STR", "DEX", "CON", "INT", "WIS", "CHA"]):
             self.stat = Widget(
                 widget_type=QPushButton(),
-                parent_layout=self.slot_layot.inner_layout(number+7),
+                parent_layout=self.slot_layot.inner_layout(number+5),
                 width = cons.WSIZE*1.40,
                 height = cons.WSIZE*2,
                 objectname=f"{stat}",
@@ -193,7 +168,7 @@ class CreatureBase(QWidget):
             self.stat_label = Widget(
                 widget_type=QLabel(),
                 text=stat,
-                parent_layout=self.slot_layot.inner_layout(number+7),
+                parent_layout=self.slot_layot.inner_layout(number+5),
                 height = cons.WSIZE/1.5,
                 objectname=f"stat_label",
                 align="center",
@@ -226,8 +201,12 @@ class CreatureBase(QWidget):
         self.rank.get_widget().setText(str(dict["rank"]))
 
         if "passive" in dict:
+            if dict["passive"] != "":
+                print(dict["passive"])
+                self.passive_label.get_widget().setText("MOD")
             print(f'{dict["passive"]}.png')
             func.set_icon(self.passive.get_widget(),f'{dict["passive"]}.png',cons.ICON_COLOR)
+            
 
         for stat in ["STR", "DEX", "CON", "INT", "WIS", "CHA"]:
             stat_button = self.findChild(QPushButton, stat)
